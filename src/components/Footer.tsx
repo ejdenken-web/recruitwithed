@@ -72,13 +72,12 @@ function Footer() {
             marginTop: "10px",
           }}
         >
-          AI-Powered Technical Recruiter • Talent Acquisition • Recruitment
-          Operations • Connecting Exceptional Talent with Leading Organizations
+          Designed and developed by <strong>Ed Johnson</strong>.
         </p>
 
         <p
           style={{
-            marginTop: "30px",
+            marginTop: "25px",
             color: "#64748B",
             fontSize: "14px",
           }}
