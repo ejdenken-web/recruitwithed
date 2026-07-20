@@ -52,7 +52,7 @@ function Organizations() {
           marginBottom: "20px",
         }}
       >
-        Organizations I've Supported
+        Clients I've Supported
       </h2>
 
       <p

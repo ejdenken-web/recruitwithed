@@ -4,21 +4,19 @@ function Projects() {
       title: "RecruitWithEd",
       subtitle: "Personal Recruiting Portfolio",
       description:
-        "Designed and developed my personal recruiting portfolio using React, TypeScript, Vite, and Netlify. The portfolio showcases my recruiting experience, AI certifications, organizations supported, technical expertise, and modern talent acquisition approach.",
+        "Designed and developed my personal recruiting portfolio using React, TypeScript, Vite, and Netlify. The portfolio highlights my recruiting experience, AI certifications, organizations supported, technical expertise, and modern talent acquisition approach.",
       technologies:
-        "React • TypeScript • Vite • Netlify • GitHub",
-      status: "Live",
-      link: "https://recruitwithed.netlify.app/",
+        "React • TypeScript • Vite • GitHub • Netlify",
+      status: "🟢 Live Portfolio",
     },
     {
       title: "Chhota Bheem Animation Portfolio",
       subtitle: "Professional Portfolio Website",
       description:
-        "Designed and developed a professional portfolio website for an animation professional who contributed to the Chhota Bheem franchise. The project was created with assistance from Claude AI and focused on presenting artwork, experience, and achievements in a modern portfolio format.",
+        "Designed and developed a professional portfolio website for an animation professional who contributed to the Chhota Bheem franchise. Built with assistance from Claude AI to showcase artwork, experience, and career achievements in a clean, modern portfolio.",
       technologies:
         "React • TypeScript • Claude AI • Netlify",
-      status: "Available Upon Request",
-      link: "",
+      status: "Portfolio Available Upon Request",
     },
   ];
 
@@ -59,9 +57,8 @@ function Projects() {
             margin: "0 auto 60px",
           }}
         >
-          A selection of portfolio projects demonstrating my interest in
-          recruiting, technology, AI-assisted workflows, and modern web
-          development.
+          Selected projects that reflect my passion for recruiting, technology,
+          AI-assisted workflows, and modern web development.
         </p>
 
         <div
@@ -84,8 +81,8 @@ function Projects() {
               <h3
                 style={{
                   color: "#38BDF8",
-                  marginBottom: "10px",
                   fontSize: "24px",
+                  marginBottom: "10px",
                 }}
               >
                 {project.title}
@@ -94,8 +91,8 @@ function Projects() {
               <h4
                 style={{
                   color: "#E2E8F0",
-                  marginBottom: "20px",
                   fontWeight: "normal",
+                  marginBottom: "20px",
                 }}
               >
                 {project.subtitle}
@@ -115,53 +112,25 @@ function Projects() {
                 style={{
                   color: "#38BDF8",
                   fontWeight: "bold",
-                  marginBottom: "12px",
+                  marginBottom: "20px",
                 }}
               >
                 {project.technologies}
               </p>
 
-              <p
+              <div
                 style={{
-                  color: "#94A3B8",
+                  display: "inline-block",
+                  background: "#0F172A",
+                  color: "#22C55E",
+                  border: "1px solid #22C55E",
+                  borderRadius: "999px",
+                  padding: "10px 18px",
                   fontWeight: "bold",
-                  marginBottom: "25px",
                 }}
               >
-                Status: {project.status}
-              </p>
-
-              {project.link ? (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: "inline-block",
-                    background: "#38BDF8",
-                    color: "#0F172A",
-                    padding: "12px 24px",
-                    borderRadius: "8px",
-                    textDecoration: "none",
-                    fontWeight: "bold",
-                  }}
-                >
-                  View Live Project
-                </a>
-              ) : (
-                <span
-                  style={{
-                    display: "inline-block",
-                    background: "#334155",
-                    color: "#CBD5E1",
-                    padding: "12px 24px",
-                    borderRadius: "8px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Available Upon Request
-                </span>
-              )}
+                {project.status}
+              </div>
             </div>
           ))}
         </div>

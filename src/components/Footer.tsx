@@ -43,8 +43,8 @@ function Footer() {
             margin: "0 auto 35px",
           }}
         >
-          Whether you're looking for a Technical Recruiter, want to discuss
-          talent acquisition strategies, or simply want to connect with a fellow
+          Whether you're looking for a Technical Recruiter, discussing talent
+          acquisition strategies, or simply want to connect with a fellow
           recruiting professional, I'd be happy to hear from you.
         </p>
 
@@ -69,11 +69,11 @@ function Footer() {
             color: "#94A3B8",
             fontSize: "15px",
             lineHeight: "1.8",
+            marginTop: "10px",
           }}
         >
-          RecruitWithEd was designed and developed by <strong>Ed Johnson</strong>
-          using React, TypeScript, Vite, GitHub, Netlify, and AI-assisted
-          development workflows.
+          AI-Powered Technical Recruiter • Talent Acquisition • Recruitment
+          Operations • Connecting Exceptional Talent with Leading Organizations
         </p>
 
         <p
