@@ -72,7 +72,7 @@ function Footer() {
             marginTop: "10px",
           }}
         >
-          Designed and developed by <strong>Ed Johnson</strong>.
+          
         </p>
 
         <p
