@@ -1,10 +1,11 @@
 function Footer() {
   return (
     <footer
+      id="contact"
       style={{
         background: "#020617",
         color: "#CBD5E1",
-        padding: "50px 30px",
+        padding: "70px 30px 40px",
         textAlign: "center",
         fontFamily: "Arial, sans-serif",
       }}
@@ -18,31 +19,71 @@ function Footer() {
         <hr
           style={{
             border: "none",
-            borderTop: "1px solid #1F2937",
-            marginBottom: "30px",
+            borderTop: "1px solid #1E293B",
+            marginBottom: "50px",
           }}
         />
 
-        <p
+        <h2
           style={{
-            fontSize: "15px",
-            lineHeight: "1.8",
-            color: "#94A3B8",
+            color: "#38BDF8",
+            fontSize: "2.3rem",
             marginBottom: "20px",
           }}
         >
-          Website designed with <strong>React</strong> and developed using{" "}
-          <strong>AI-assisted coding</strong> to deliver a modern, responsive,
-          and user-friendly portfolio experience.
+          Let's Connect
+        </h2>
+
+        <p
+          style={{
+            color: "#CBD5E1",
+            fontSize: "18px",
+            lineHeight: "1.8",
+            maxWidth: "700px",
+            margin: "0 auto 35px",
+          }}
+        >
+          Whether you're looking for a Technical Recruiter, want to discuss
+          talent acquisition strategies, or simply want to connect with a fellow
+          recruiting professional, I'd be happy to hear from you.
+        </p>
+
+        <a
+          href="mailto:recruitwithed@gmail.com"
+          style={{
+            display: "inline-block",
+            background: "#38BDF8",
+            color: "#0B1120",
+            padding: "14px 30px",
+            borderRadius: "8px",
+            textDecoration: "none",
+            fontWeight: "bold",
+            marginBottom: "40px",
+          }}
+        >
+          recruitwithed@gmail.com
+        </a>
+
+        <p
+          style={{
+            color: "#94A3B8",
+            fontSize: "15px",
+            lineHeight: "1.8",
+          }}
+        >
+          RecruitWithEd was designed and developed by <strong>Ed Johnson</strong>
+          using React, TypeScript, Vite, GitHub, Netlify, and AI-assisted
+          development workflows.
         </p>
 
         <p
           style={{
-            fontSize: "14px",
+            marginTop: "30px",
             color: "#64748B",
+            fontSize: "14px",
           }}
         >
-          © 2026 Your Name. All Rights Reserved.
+          © 2026 Ed Johnson. All Rights Reserved.
         </p>
       </div>
     </footer>

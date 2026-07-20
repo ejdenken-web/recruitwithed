@@ -6,12 +6,12 @@ function Organizations() {
     "Fifth Third Bank",
     "Nomura Securities International",
     "BNP Paribas",
-    "Adobe" ,
-    "Chevron" ,
+    "Adobe",
+    "Chevron",
     "PricewaterhouseCoopers (PwC)",
     "Cigna Healthcare",
-    "AbbVie" ,
-    "Best Buy" ,
+    "AbbVie",
+    "Best Buy",
     "Toyota Motor North America (TMNA)",
     "DoorDash",
     "American Airlines",
@@ -24,17 +24,14 @@ function Organizations() {
     "Bayer",
     "Accenture",
     "Genpact",
-    "Kelloggs" ,
-    "Speedway" ,
-    "Schneider Electric" ,
-    "Walmart" ,
-    "John Deere" ,
-    "Gibson" ,
-    "Caesars Entertainment" , 
+    "Kellogg's",
+    "Speedway",
+    "Schneider Electric",
+    "Walmart",
+    "John Deere",
+    "Gibson",
+    "Caesars Entertainment",
     "Caterpillar",
-    
-    
-    
   ];
 
   return (
@@ -43,20 +40,34 @@ function Organizations() {
       style={{
         background: "#0B1120",
         color: "white",
-        padding: "80px 40px",
+        padding: "90px 40px",
         textAlign: "center",
-        fontFamily: "Arial",
+        fontFamily: "Arial, sans-serif",
       }}
     >
       <h2
         style={{
           color: "#38BDF8",
-          fontSize: "2.5rem",
-          marginBottom: "40px",
+          fontSize: "2.6rem",
+          marginBottom: "20px",
         }}
       >
         Organizations I've Supported
       </h2>
+
+      <p
+        style={{
+          maxWidth: "900px",
+          margin: "0 auto 50px",
+          color: "#CBD5E1",
+          fontSize: "18px",
+          lineHeight: "1.8",
+        }}
+      >
+        Throughout my recruiting career, I have supported hiring initiatives for
+        organizations across technology, financial services, healthcare,
+        consulting, retail, manufacturing, aviation, and consumer industries.
+      </p>
 
       <div
         style={{
@@ -64,18 +75,21 @@ function Organizations() {
           gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
           gap: "20px",
           maxWidth: "1200px",
-          margin: "auto",
+          margin: "0 auto",
         }}
       >
-        {companies.map((company, index) => (
+        {companies.map((company) => (
           <div
-            key={index}
+            key={company}
             style={{
               background: "#1E293B",
-              padding: "20px",
+              border: "1px solid #334155",
               borderRadius: "12px",
-              color: "#CBD5E1",
+              padding: "20px",
+              color: "#E2E8F0",
               fontSize: "16px",
+              fontWeight: "500",
+              transition: "0.3s ease",
             }}
           >
             {company}

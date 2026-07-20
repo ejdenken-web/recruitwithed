@@ -30,26 +30,43 @@ function About() {
         }}
       >
         <p>
-          I believe successful recruiting begins with trust, clear
-          communication, and understanding the people behind every career
-          decision.
+          With over a decade of recruiting experience, I believe successful
+          hiring begins with trust, meaningful conversations, and understanding
+          the people behind every career decision.
         </p>
 
         <p style={{ marginTop: "24px" }}>
-          I have built my career sourcing, engaging, and hiring top-tier
-          technology professionals across a wide range of disciplines. I
-          specialize in navigating competitive talent markets to connect
-          software engineers, data professionals, cloud specialists,
-          architects, and engineering leaders with rewarding career
-          opportunities. My approach is built on data-driven sourcing,
-          strategic talent mapping, transparent communication, and delivering
-          consistent results.
+          Throughout my career, I have sourced, engaged, and recruited
+          technology professionals across a wide range of industries and
+          technologies. My experience includes identifying software engineers,
+          cloud specialists, data professionals, cybersecurity experts,
+          architects, DevOps engineers, AI professionals, and engineering
+          leaders for organizations ranging from fast-growing companies to
+          global enterprises.
         </p>
 
         <p style={{ marginTop: "24px" }}>
-          RecruitWithEd reflects my journey of continuous learning, embracing
-          emerging technologies, and sharing knowledge to help shape the future
-          of modern talent acquisition.
+          My recruiting approach combines advanced Boolean search, AI-assisted
+          sourcing, strategic talent mapping, market research, and transparent
+          communication to build strong candidate relationships and deliver
+          consistent hiring results.
+        </p>
+
+        <p style={{ marginTop: "24px" }}>
+          RecruitWithEd represents my commitment to continuous learning,
+          responsible use of AI, and modern recruiting practices that improve
+          both the candidate and hiring manager experience.
+        </p>
+
+        <p
+          style={{
+            marginTop: "35px",
+            color: "#38BDF8",
+            fontWeight: "bold",
+            fontSize: "20px",
+          }}
+        >
+          Building meaningful connections. Delivering exceptional talent.
         </p>
       </div>
     </section>

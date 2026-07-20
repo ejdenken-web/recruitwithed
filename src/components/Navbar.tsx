@@ -1,4 +1,12 @@
 function Navbar() {
+  const navItemStyle = {
+    cursor: "pointer",
+    color: "#E2E8F0",
+    textDecoration: "none",
+    transition: "0.3s",
+    fontSize: "15px",
+  };
+
   return (
     <nav
       style={{
@@ -11,30 +19,48 @@ function Navbar() {
         position: "sticky",
         top: 0,
         zIndex: 1000,
+        boxShadow: "0 2px 10px rgba(0,0,0,0.25)",
       }}
     >
-      <h2
+      <a
+        href="#hero"
         style={{
           color: "#38BDF8",
           margin: 0,
-          cursor: "pointer",
+          textDecoration: "none",
+          fontSize: "24px",
+          fontWeight: "bold",
         }}
       >
         RecruitWithEd
-      </h2>
+      </a>
 
       <div
         style={{
           display: "flex",
           gap: "28px",
-          fontWeight: "500",
+          alignItems: "center",
         }}
       >
-        <span style={{ cursor: "pointer" }}>About</span>
-        <span style={{ cursor: "pointer" }}>Why Work With Me</span>
-        <span style={{ cursor: "pointer" }}>Certifications</span>
-        <span style={{ cursor: "pointer" }}>Featured Projects</span>
-        <span style={{ cursor: "pointer" }}>Let's Connect</span>
+        <a href="#about" style={navItemStyle}>
+          About
+        </a>
+
+        <a href="#why-work-with-me" style={navItemStyle}>
+          Why Work With Me
+        </a>
+
+        <a href="#certifications" style={navItemStyle}>
+          Certifications
+        </a>
+
+        <a href="#projects" style={navItemStyle}>
+          Featured Projects
+        </a>
+
+        <a href="#contact" style={navItemStyle}>
+          Let's Connect
+        </a>
       </div>
     </nav>
   );

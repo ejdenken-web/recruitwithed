@@ -1,6 +1,7 @@
 function Hero() {
   return (
-    <div
+    <section
+      id="hero"
       style={{
         minHeight: "100vh",
         background: "#0B1120",
@@ -11,64 +12,100 @@ function Hero() {
         alignItems: "center",
         textAlign: "center",
         padding: "2rem",
-        fontFamily: "Arial",
+        fontFamily: "Arial, sans-serif",
       }}
     >
-      <h1 style={{ color: "#38BDF8", fontSize: "4rem" }}>
+      <h1
+        style={{
+          color: "#38BDF8",
+          fontSize: "4rem",
+          marginBottom: "10px",
+        }}
+      >
         RecruitWithEd
       </h1>
 
-      <h2>Ed Johnson</h2>
+      <h2
+        style={{
+          fontSize: "2rem",
+          marginBottom: "10px",
+        }}
+      >
+        Ed Johnson
+      </h2>
 
-      <h3>Senior Information Technology Recruiter</h3>
+      <h3
+        style={{
+          fontWeight: "normal",
+          color: "#E2E8F0",
+          marginBottom: "20px",
+        }}
+      >
+        Senior Information Technology Recruiter
+      </h3>
 
-<p
-  style={{
-    color: "#38BDF8",
-    fontWeight: "bold",
-    fontSize: "20px",
-    marginTop: "10px",
-  }}
->
-  Boolean Search Specialist | AI Recruiting Specialist
-</p>
-
-      <p style={{ maxWidth: "700px", color: "#CBD5E1", lineHeight: "1.8" }}>
-        Connecting exceptional technology talent through AI-assisted recruiting,
-        advanced Boolean search, and modern talent acquisition strategies.
-      
+      <p
+        style={{
+          color: "#38BDF8",
+          fontWeight: "bold",
+          fontSize: "20px",
+          marginBottom: "25px",
+        }}
+      >
+        Boolean Search Specialist | AI Recruiting Specialist
       </p>
 
-      <div style={{ marginTop: "40px" }}>
-        <button
+      <p
+        style={{
+          maxWidth: "760px",
+          color: "#CBD5E1",
+          lineHeight: "1.8",
+          fontSize: "18px",
+        }}
+      >
+        Connecting exceptional technology talent through AI-assisted recruiting,
+        advanced Boolean search, and modern talent acquisition strategies.
+      </p>
+
+      <div
+        style={{
+          marginTop: "40px",
+          display: "flex",
+          gap: "20px",
+          flexWrap: "wrap",
+          justifyContent: "center",
+        }}
+      >
+        <a
+          href="#certifications"
           style={{
             padding: "14px 28px",
             background: "#38BDF8",
-            border: "none",
+            color: "#0B1120",
+            textDecoration: "none",
             borderRadius: "8px",
             fontWeight: "bold",
-            cursor: "pointer",
-            marginRight: "15px",
           }}
         >
           View Certifications
-        </button>
+        </a>
 
-        <button
+        <a
+          href="#contact"
           style={{
             padding: "14px 28px",
             background: "transparent",
             color: "white",
+            textDecoration: "none",
             border: "2px solid #38BDF8",
             borderRadius: "8px",
             fontWeight: "bold",
-            cursor: "pointer",
           }}
         >
-          Lets connect
-        </button>
+          Let's Connect
+        </a>
       </div>
-    </div>
+    </section>
   );
 }
 

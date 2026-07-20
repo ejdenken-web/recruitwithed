@@ -5,6 +5,7 @@ import WhyWorkWithMe from "./components/WhyWorkWithMe";
 import Impact from "./components/Impact";
 import Organizations from "./components/Organizations";
 import Certifications from "./components/Certifications";
+import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Impact />
       <Organizations />
       <Certifications />
+      <Projects />
       <Footer />
     </>
   );

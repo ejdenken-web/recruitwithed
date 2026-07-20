@@ -1,58 +1,24 @@
 function Projects() {
   const projects = [
     {
-      title: "🚀 RecruitWithEd",
-      subtitle: "AI-Powered Recruiting Initiative",
+      title: "RecruitWithEd",
+      subtitle: "Personal Recruiting Portfolio",
       description:
-        "RecruitWithEd showcases how I integrate Artificial Intelligence into modern talent acquisition by combining advanced sourcing strategies, technical recruiting expertise, workflow optimization, and AI-powered research to improve recruiting efficiency and candidate engagement.",
-      highlights: [
-        "Claude AI",
-        "ChatGPT",
-        "Microsoft Copilot",
-        "DeepSeek",
-        "Perplexity AI",
-        "Google AI",
-      ],
+        "Designed and developed my personal recruiting portfolio using React, TypeScript, Vite, and Netlify. The portfolio showcases my recruiting experience, AI certifications, organizations supported, technical expertise, and modern talent acquisition approach.",
       technologies:
-        "React • TypeScript • GitHub • AI-Assisted Development",
-      status: "🟢 Continuously Evolving",
+        "React • TypeScript • Vite • Netlify • GitHub",
+      status: "Live",
+      link: "https://recruitwithed.netlify.app/",
     },
-
     {
-      title: "🎬 Animation Portfolio Website",
-      subtitle: "Case Study | Professional Portfolio Development",
+      title: "Chhota Bheem Animation Portfolio",
+      subtitle: "Professional Portfolio Website",
       description:
-        "Designed and developed a modern, responsive portfolio website for an animation professional associated with productions within the Chhota Bheem animation franchise. The project transformed years of creative work into a polished digital presence using modern web technologies and AI-assisted development.",
-      highlights: [
-        "Portfolio Planning",
-        "React Development",
-        "TypeScript",
-        "Claude AI",
-        "GitHub",
-        "Netlify",
-      ],
+        "Designed and developed a professional portfolio website for an animation professional who contributed to the Chhota Bheem franchise. The project was created with assistance from Claude AI and focused on presenting artwork, experience, and achievements in a modern portfolio format.",
       technologies:
-        "React • TypeScript • HTML5 • CSS3 • GitHub • Netlify",
-      status:
-        "🟢 Live | Portfolio link available upon request to respect client privacy.",
-    },
-
-    {
-      title: "💼 Professional Recruiting Portfolio",
-      subtitle: "Personal Branding Website",
-      description:
-        "Designed and developed my personal recruiting portfolio to showcase over 10 years of experience in technical recruiting, leadership, AI certifications, global hiring expertise, and AI-assisted development projects.",
-      highlights: [
-        "React",
-        "TypeScript",
-        "Responsive Design",
-        "Professional Branding",
-        "Netlify",
-        "Claude AI",
-      ],
-      technologies:
-        "React • TypeScript • GitHub • Netlify",
-      status: "🟢 Live",
+        "React • TypeScript • Claude AI • Netlify",
+      status: "Available Upon Request",
+      link: "",
     },
   ];
 
@@ -75,8 +41,8 @@ function Projects() {
         <h2
           style={{
             color: "#38BDF8",
-            fontSize: "2.6rem",
             textAlign: "center",
+            fontSize: "2.6rem",
             marginBottom: "20px",
           }}
         >
@@ -85,23 +51,23 @@ function Projects() {
 
         <p
           style={{
-            color: "#CBD5E1",
             textAlign: "center",
+            color: "#CBD5E1",
             fontSize: "18px",
             lineHeight: "1.8",
-            maxWidth: "900px",
+            maxWidth: "850px",
             margin: "0 auto 60px",
           }}
         >
-          A selection of AI-assisted recruiting initiatives, web development
-          projects, and portfolio case studies demonstrating my expertise in
-          talent acquisition, AI adoption, and modern web development.
+          A selection of portfolio projects demonstrating my interest in
+          recruiting, technology, AI-assisted workflows, and modern web
+          development.
         </p>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
             gap: "30px",
           }}
         >
@@ -110,17 +76,16 @@ function Projects() {
               key={project.title}
               style={{
                 background: "#1E293B",
-                borderRadius: "16px",
-                padding: "30px",
                 border: "1px solid #334155",
-                boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
+                borderRadius: "14px",
+                padding: "30px",
               }}
             >
               <h3
                 style={{
                   color: "#38BDF8",
-                  fontSize: "24px",
                   marginBottom: "10px",
+                  fontSize: "24px",
                 }}
               >
                 {project.title}
@@ -129,8 +94,8 @@ function Projects() {
               <h4
                 style={{
                   color: "#E2E8F0",
-                  fontWeight: "normal",
                   marginBottom: "20px",
+                  fontWeight: "normal",
                 }}
               >
                 {project.subtitle}
@@ -140,67 +105,63 @@ function Projects() {
                 style={{
                   color: "#CBD5E1",
                   lineHeight: "1.8",
-                  marginBottom: "25px",
+                  marginBottom: "20px",
                 }}
               >
                 {project.description}
               </p>
 
-              <h4
-                style={{
-                  color: "#38BDF8",
-                  marginBottom: "15px",
-                }}
-              >
-                Highlights
-              </h4>
-
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "10px",
-                  marginBottom: "25px",
-                }}
-              >
-                {project.highlights.map((item) => (
-                  <span
-                    key={item}
-                    style={{
-                      background: "#0F172A",
-                      color: "#E2E8F0",
-                      padding: "8px 12px",
-                      borderRadius: "20px",
-                      fontSize: "14px",
-                    }}
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-
               <p
                 style={{
-                  color: "#CBD5E1",
-                  lineHeight: "1.7",
+                  color: "#38BDF8",
+                  fontWeight: "bold",
+                  marginBottom: "12px",
                 }}
               >
-                <strong style={{ color: "#38BDF8" }}>
-                  Technologies
-                </strong>
-                <br />
                 {project.technologies}
               </p>
 
               <p
                 style={{
-                  marginTop: "20px",
-                  color: "#22C55E",
+                  color: "#94A3B8",
                   fontWeight: "bold",
+                  marginBottom: "25px",
                 }}
               >
-                {project.status}
+                Status: {project.status}
               </p>
+
+              {project.link ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-block",
+                    background: "#38BDF8",
+                    color: "#0F172A",
+                    padding: "12px 24px",
+                    borderRadius: "8px",
+                    textDecoration: "none",
+                    fontWeight: "bold",
+                  }}
+                >
+                  View Live Project
+                </a>
+              ) : (
+                <span
+                  style={{
+                    display: "inline-block",
+                    background: "#334155",
+                    color: "#CBD5E1",
+                    padding: "12px 24px",
+                    borderRadius: "8px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Available Upon Request
+                </span>
+              )}
             </div>
           ))}
         </div>
