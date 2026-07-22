@@ -1,35 +1,77 @@
 function Organizations() {
-  const companies = [
-    "Accenture",
-    "Tata Consultancy Services (TCS)",
-    "Tech Mahindra",
-    "HCL America",
-    "LTIMindtree",
-    "Birlasoft",
-    "Bahwan CyberTek (BCT)",
-    "Cleartelligence",
-    "Genpact",
-    "Bayer",
-    "AbbVie",
-    "PricewaterhouseCoopers (PwC)",
-    "Nomura Securities International",
-    "BNP Paribas",
-    "Wells Fargo",
-    "Fifth Third Bank",
-    "Toyota Motor North America (TMNA)",
-    "JetBlue Airways",
-    "Abercrombie & Fitch",
-    "Lululemon Athletica",
-    "Victoria's Secret",
-    "HanesBrands",
-    "Exeter Finance",
-    "Kellogg's",
-    "Speedway",
-    "Schneider Electric",
-    "John Deere",
-    "Gibson",
-    "Caesars Entertainment",
-    "Caterpillar",
+  const clientGroups = [
+    {
+      industry: "💻 Technology, IT Services & Consulting",
+      companies: [
+        "Accenture",
+        "Tata Consultancy Services (TCS)",
+        "Tech Mahindra",
+        "HCL America",
+        "LTIMindtree",
+        "Birlasoft",
+        "Bahwan CyberTek (BCT)",
+        "Cleartelligence",
+        "Genpact",
+        "Innova Solutions (formerly AIC)",
+      ],
+    },
+    {
+      industry: "🏦 Banking & Financial Services",
+      companies: [
+        "Wells Fargo",
+        "Fifth Third Bank",
+        "BNP Paribas",
+        "Nomura Securities International",
+        "Exeter Finance",
+      ],
+    },
+    {
+      industry: "🏥 Healthcare, Life Sciences & Health Insurance",
+      companies: [
+        "AbbVie",
+        "Bayer",
+        "Blue Cross Blue Shield of Texas",
+        "Blue Cross Blue Shield of New York",
+        "Blue Cross Blue Shield of Michigan",
+        "Blue Cross Blue Shield of Florida",
+      ],
+    },
+    {
+      industry: "🛍️ Retail, Apparel & Consumer Goods",
+      companies: [
+        "Abercrombie & Fitch",
+        "Lululemon Athletica",
+        "Victoria's Secret",
+        "HanesBrands",
+        "Kellogg's",
+        "Speedway",
+      ],
+    },
+    {
+      industry: "🚗 Automotive",
+      companies: ["Toyota Motor North America (TMNA)"],
+    },
+    {
+      industry: "✈️ Aviation",
+      companies: ["JetBlue Airways"],
+    },
+    {
+      industry: "🏭 Manufacturing & Industrial Engineering",
+      companies: [
+        "Caterpillar",
+        "John Deere",
+        "Schneider Electric",
+        "Gibson",
+      ],
+    },
+    {
+      industry: "📊 Professional Services",
+      companies: ["PricewaterhouseCoopers (PwC)"],
+    },
+    {
+      industry: "🎰 Hospitality & Entertainment",
+      companies: ["Caesars Entertainment"],
+    },
   ];
 
   return (
@@ -39,46 +81,96 @@ function Organizations() {
         background: "#0B1120",
         color: "white",
         padding: "90px 40px",
-        textAlign: "center",
         fontFamily: "Arial, sans-serif",
       }}
     >
-      <h2
-        style={{
-          color: "#38BDF8",
-          fontSize: "2.6rem",
-          marginBottom: "50px",
-        }}
-      >
-        Clients I've Supported
-      </h2>
-
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: "20px",
           maxWidth: "1200px",
           margin: "0 auto",
         }}
       >
-        {companies.map((company) => (
-          <div
-            key={company}
-            style={{
-              background: "#1E293B",
-              border: "1px solid #334155",
-              borderRadius: "12px",
-              padding: "20px",
-              color: "#E2E8F0",
-              fontSize: "16px",
-              fontWeight: "500",
-              transition: "0.3s ease",
-            }}
-          >
-            {company}
-          </div>
-        ))}
+        <h2
+          style={{
+            color: "#38BDF8",
+            fontSize: "2.7rem",
+            textAlign: "center",
+            marginBottom: "20px",
+          }}
+        >
+          Clients I've Supported
+        </h2>
+
+        <p
+          style={{
+            maxWidth: "900px",
+            margin: "0 auto 60px",
+            color: "#CBD5E1",
+            fontSize: "18px",
+            lineHeight: "1.8",
+            textAlign: "center",
+          }}
+        >
+          Supporting Fortune 500 companies, global consulting firms, financial
+          institutions, healthcare organizations, retail brands,
+          manufacturers, and leading technology companies.
+        </p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
+            gap: "28px",
+          }}
+        >
+          {clientGroups.map((group) => (
+            <div
+              key={group.industry}
+              style={{
+                background: "#111827",
+                border: "1px solid #1F2937",
+                borderRadius: "16px",
+                padding: "28px",
+                boxShadow: "0 12px 30px rgba(0,0,0,0.25)",
+              }}
+            >
+              <h3
+                style={{
+                  color: "#38BDF8",
+                  fontSize: "22px",
+                  marginBottom: "20px",
+                }}
+              >
+                {group.industry}
+              </h3>
+
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "12px",
+                }}
+              >
+                {group.companies.map((company) => (
+                  <span
+                    key={company}
+                    style={{
+                      background: "#1E293B",
+                      color: "#E2E8F0",
+                      padding: "10px 14px",
+                      borderRadius: "999px",
+                      border: "1px solid #334155",
+                      fontSize: "14px",
+                      lineHeight: "1.5",
+                    }}
+                  >
+                    {company}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
