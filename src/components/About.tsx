@@ -20,7 +20,7 @@ function About() {
           style={{
             color: "#38BDF8",
             fontSize: "2.7rem",
-            marginBottom: "30px",
+            marginBottom: "35px",
           }}
         >
           About Me
@@ -34,12 +34,9 @@ function About() {
             marginBottom: "28px",
           }}
         >
-          I'm <strong>Ed Johnson</strong>, a Senior Information Technology
-          Recruiter with over <strong>10 years of experience</strong> delivering
-          talent acquisition solutions across the United States, Canada, India,
-          and Japan. My expertise includes full-cycle recruiting, technical
-          sourcing, Boolean search, stakeholder management, recruitment
-          operations, and AI-powered recruiting strategies.
+          With over a decade of recruiting experience, I believe successful
+          hiring begins with trust, meaningful conversations, and understanding
+          the people behind every career decision.
         </p>
 
         <p
@@ -58,13 +55,28 @@ function About() {
 
         <p
           style={{
-            color: "#38BDF8",
-            fontWeight: "bold",
-            fontSize: "20px",
-            marginTop: "35px",
+            color: "#CBD5E1",
+            fontSize: "18px",
+            lineHeight: "1.9",
+            marginBottom: "28px",
           }}
         >
-          Building meaningful connections. Delivering exceptional talent.
+          My recruiting approach combines AI-assisted sourcing, strategic talent
+          mapping, market research, advanced Boolean search, and transparent
+          communication to build strong candidate relationships and deliver
+          consistent hiring results.
+        </p>
+
+        <p
+          style={{
+            color: "#CBD5E1",
+            fontSize: "18px",
+            lineHeight: "1.9",
+          }}
+        >
+          RecruitWithEd represents my commitment to continuous learning,
+          responsible use of AI, and modern recruiting practices that improve
+          both the candidate and hiring manager experience.
         </p>
       </div>
     </section>
