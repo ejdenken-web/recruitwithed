@@ -3,107 +3,65 @@ function Hero() {
     <section
       id="hero"
       style={{
-        minHeight: "100vh",
-        background: "#0B1120",
+        background: "linear-gradient(135deg, #0F172A, #111827)",
         color: "white",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
+        padding: "140px 30px 110px",
         textAlign: "center",
-        padding: "2rem",
         fontFamily: "Arial, sans-serif",
       }}
     >
-      <h1
-        style={{
-          color: "#38BDF8",
-          fontSize: "4rem",
-          marginBottom: "10px",
-        }}
-      >
-        RecruitWithEd
-      </h1>
-
-      <h2
-        style={{
-          fontSize: "2rem",
-          marginBottom: "10px",
-        }}
-      >
-        Ed Johnson
-      </h2>
-
-      <h3
-        style={{
-          fontWeight: "normal",
-          color: "#E2E8F0",
-          marginBottom: "20px",
-        }}
-      >
-        Senior Information Technology Recruiter
-      </h3>
-
-      <p
-        style={{
-          color: "#38BDF8",
-          fontWeight: "bold",
-          fontSize: "20px",
-          marginBottom: "25px",
-        }}
-      >
-        Boolean Search Specialist | AI Recruiting Specialist
-      </p>
-
-      <p
-        style={{
-          maxWidth: "760px",
-          color: "#CBD5E1",
-          lineHeight: "1.8",
-          fontSize: "18px",
-        }}
-      >
-        Connecting exceptional technology talent through AI-assisted recruiting,
-        advanced Boolean search, and modern talent acquisition strategies.
-      </p>
-
       <div
         style={{
-          marginTop: "40px",
-          display: "flex",
-          gap: "20px",
-          flexWrap: "wrap",
-          justifyContent: "center",
+          maxWidth: "900px",
+          margin: "0 auto",
         }}
       >
-        <a
-          href="#certifications"
+        <p
           style={{
-            padding: "14px 28px",
-            background: "#38BDF8",
-            color: "#0B1120",
-            textDecoration: "none",
-            borderRadius: "8px",
+            color: "#38BDF8",
+            fontSize: "20px",
             fontWeight: "bold",
+            letterSpacing: "2px",
+            marginBottom: "18px",
           }}
         >
-          View Certifications
-        </a>
+          RecruitWithEd
+        </p>
 
-        <a
-          href="#contact"
+        <h1
           style={{
-            padding: "14px 28px",
-            background: "transparent",
-            color: "white",
-            textDecoration: "none",
-            border: "2px solid #38BDF8",
-            borderRadius: "8px",
+            fontSize: "4rem",
             fontWeight: "bold",
+            marginBottom: "18px",
           }}
         >
-          Let's Connect
-        </a>
+          Ed Johnson
+        </h1>
+
+        <h2
+          style={{
+            color: "#38BDF8",
+            fontSize: "2rem",
+            fontWeight: "600",
+            marginBottom: "35px",
+          }}
+        >
+          Senior Information Technology Consultant - AI Recruiting
+        </h2>
+
+        <p
+          style={{
+            maxWidth: "850px",
+            margin: "0 auto",
+            color: "#CBD5E1",
+            fontSize: "20px",
+            lineHeight: "1.9",
+          }}
+        >
+          Helping organizations identify, engage, and hire exceptional
+          technology talent through AI-assisted recruiting, strategic sourcing,
+          advanced Boolean search, and modern talent acquisition practices.
+        </p>
       </div>
     </section>
   );
