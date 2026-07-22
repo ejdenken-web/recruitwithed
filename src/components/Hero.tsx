@@ -43,11 +43,23 @@ function Hero() {
             color: "#38BDF8",
             fontSize: "2rem",
             fontWeight: "600",
-            marginBottom: "0",
+            marginBottom: "20px",
           }}
         >
           Senior Information Technology Consultant - AI Recruiting
         </h2>
+
+        <p
+          style={{
+            color: "#CBD5E1",
+            fontSize: "22px",
+            fontStyle: "italic",
+            fontWeight: "500",
+            margin: 0,
+          }}
+        >
+          Building meaningful connections, delivering exceptional talent.
+        </p>
       </div>
     </section>
   );
