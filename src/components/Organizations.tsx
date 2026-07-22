@@ -34,7 +34,7 @@ function Organizations() {
 
   return (
     <section
-      id="organizations"
+      id="Clients">
       style={{
         background: "#0B1120",
         color: "white",
@@ -50,7 +50,7 @@ function Organizations() {
           marginBottom: "20px",
         }}
       >
-        Selected Clients I've Supported
+        Clients I've Supported
       </h2>
 
       <p

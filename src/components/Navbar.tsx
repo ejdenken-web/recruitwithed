@@ -50,6 +50,10 @@ function Navbar() {
           Why Work With Me
         </a>
 
+        <a href="#clients" style={navItemStyle}>
+          Clients
+        </a>
+
         <a href="#certifications" style={navItemStyle}>
           Certifications
         </a>
