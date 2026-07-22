@@ -51,10 +51,10 @@ function Hero() {
 
         <p
           style={{
-            color: "#CBD5E1",
+            color: "#E2E8F0",
             fontSize: "22px",
-            fontStyle: "italic",
-            fontWeight: "500",
+            fontWeight: "600",
+            letterSpacing: "0.5px",
             margin: 0,
           }}
         >
