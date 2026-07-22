@@ -43,25 +43,11 @@ function Hero() {
             color: "#38BDF8",
             fontSize: "2rem",
             fontWeight: "600",
-            marginBottom: "35px",
+            marginBottom: "0",
           }}
         >
           Senior Information Technology Consultant - AI Recruiting
         </h2>
-
-        <p
-          style={{
-            maxWidth: "850px",
-            margin: "0 auto",
-            color: "#CBD5E1",
-            fontSize: "20px",
-            lineHeight: "1.9",
-          }}
-        >
-          Helping organizations identify, engage, and hire exceptional
-          technology talent through AI-assisted recruiting, strategic sourcing,
-          advanced Boolean search, and modern talent acquisition practices.
-        </p>
       </div>
     </section>
   );

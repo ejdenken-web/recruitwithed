@@ -77,26 +77,11 @@ function Certifications() {
             color: "#38BDF8",
             fontSize: "2.7rem",
             textAlign: "center",
-            marginBottom: "20px",
+            marginBottom: "60px",
           }}
         >
           Professional Certifications
         </h2>
-
-        <p
-          style={{
-            color: "#CBD5E1",
-            textAlign: "center",
-            fontSize: "18px",
-            lineHeight: "1.8",
-            maxWidth: "900px",
-            margin: "0 auto 60px",
-          }}
-        >
-          Continuous learning across Artificial Intelligence, Technical
-          Recruiting, Talent Acquisition, Candidate Sourcing, Recruitment
-          Analytics, Recruitment Automation, and modern hiring technologies.
-        </p>
 
         <div
           style={{
