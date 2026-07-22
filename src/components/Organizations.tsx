@@ -47,26 +47,11 @@ function Organizations() {
         style={{
           color: "#38BDF8",
           fontSize: "2.6rem",
-          marginBottom: "20px",
+          marginBottom: "50px",
         }}
       >
         Clients I've Supported
       </h2>
-
-      <p
-        style={{
-          maxWidth: "900px",
-          margin: "0 auto 50px",
-          color: "#CBD5E1",
-          fontSize: "18px",
-          lineHeight: "1.8",
-        }}
-      >
-        Throughout my recruiting career, I have supported hiring initiatives
-        for diverse clients across Technology, Financial Services, Healthcare,
-        Consulting, Retail, Manufacturing, Aviation, Consumer Goods, and
-        Engineering.
-      </p>
 
       <div
         style={{
