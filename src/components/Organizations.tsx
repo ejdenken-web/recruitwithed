@@ -1,33 +1,31 @@
 function Organizations() {
   const companies = [
-    "Microsoft",
-    "Verizon",
-    "Wells Fargo",
-    "Fifth Third Bank",
+    "Accenture",
+    "Tata Consultancy Services (TCS)",
+    "Tech Mahindra",
+    "HCL America",
+    "LTIMindtree",
+    "Birlasoft",
+    "Bahwan CyberTek (BCT)",
+    "Cleartelligence",
+    "Genpact",
+    "Bayer",
+    "AbbVie",
+    "PricewaterhouseCoopers (PwC)",
     "Nomura Securities International",
     "BNP Paribas",
-    "Adobe",
-    "Chevron",
-    "PricewaterhouseCoopers (PwC)",
-    "Cigna Healthcare",
-    "AbbVie",
-    "Best Buy",
+    "Wells Fargo",
+    "Fifth Third Bank",
     "Toyota Motor North America (TMNA)",
-    "DoorDash",
-    "American Airlines",
     "JetBlue Airways",
     "Abercrombie & Fitch",
     "Lululemon Athletica",
     "Victoria's Secret",
     "HanesBrands",
     "Exeter Finance",
-    "Bayer",
-    "Accenture",
-    "Genpact",
     "Kellogg's",
     "Speedway",
     "Schneider Electric",
-    "Walmart",
     "John Deere",
     "Gibson",
     "Caesars Entertainment",
@@ -52,7 +50,7 @@ function Organizations() {
           marginBottom: "20px",
         }}
       >
-        Clients I've Supported
+        Selected Clients I've Supported
       </h2>
 
       <p
@@ -64,9 +62,10 @@ function Organizations() {
           lineHeight: "1.8",
         }}
       >
-        Throughout my recruiting career, I have supported hiring initiatives for
-        organizations across technology, financial services, healthcare,
-        consulting, retail, manufacturing, aviation, and consumer industries.
+        Throughout my recruiting career, I have supported hiring initiatives
+        for diverse clients across technology, financial services,
+        healthcare, consulting, retail, manufacturing, aviation, and
+        consumer industries.
       </p>
 
       <div
