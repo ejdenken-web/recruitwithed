@@ -20,7 +20,7 @@ function Hero() {
           style={{
             color: "#38BDF8",
             fontSize: "20px",
-            fontWeight: "bold",
+            fontWeight: "700",
             letterSpacing: "2px",
             marginBottom: "18px",
           }}
@@ -31,7 +31,7 @@ function Hero() {
         <h1
           style={{
             fontSize: "4rem",
-            fontWeight: "bold",
+            fontWeight: "700",
             marginBottom: "18px",
           }}
         >
@@ -46,7 +46,7 @@ function Hero() {
             marginBottom: "20px",
           }}
         >
-          Senior Information Technology Consultant - AI Recruiting
+          Senior Information Technology Consultant | AI Recruiting
         </h2>
 
         <p
@@ -54,7 +54,6 @@ function Hero() {
             color: "#E2E8F0",
             fontSize: "22px",
             fontWeight: "600",
-            letterSpacing: "0.5px",
             margin: 0,
           }}
         >
