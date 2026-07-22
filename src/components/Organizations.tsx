@@ -34,7 +34,7 @@ function Organizations() {
 
   return (
     <section
-      id="Clients">
+      id="clients"
       style={{
         background: "#0B1120",
         color: "white",
@@ -63,9 +63,9 @@ function Organizations() {
         }}
       >
         Throughout my recruiting career, I have supported hiring initiatives
-        for diverse clients across technology, financial services,
-        healthcare, consulting, retail, manufacturing, aviation, and
-        consumer industries.
+        for diverse clients across Technology, Financial Services, Healthcare,
+        Consulting, Retail, Manufacturing, Aviation, Consumer Goods, and
+        Engineering.
       </p>
 
       <div
