@@ -95,26 +95,11 @@ function Organizations() {
             color: "#38BDF8",
             fontSize: "2.7rem",
             textAlign: "center",
-            marginBottom: "20px",
+            marginBottom: "60px",
           }}
         >
           Clients I've Supported
         </h2>
-
-        <p
-          style={{
-            maxWidth: "900px",
-            margin: "0 auto 60px",
-            color: "#CBD5E1",
-            fontSize: "18px",
-            lineHeight: "1.8",
-            textAlign: "center",
-          }}
-        >
-          Supporting Fortune 500 companies, global consulting firms, financial
-          institutions, healthcare organizations, retail brands,
-          manufacturers, and leading technology companies.
-        </p>
 
         <div
           style={{

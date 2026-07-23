@@ -59,7 +59,6 @@ function Impact() {
           </p>
         </div>
 
-
         {/* Leadership */}
         <div
           style={{
@@ -90,8 +89,7 @@ function Impact() {
           </p>
         </div>
 
-
-        {/* Global Reach - Centered */}
+        {/* Global Reach */}
         <div
           style={{
             background: "#111827",
@@ -109,7 +107,7 @@ function Impact() {
               marginBottom: "15px",
             }}
           >
-            🌎 Global Reach
+            Global Reach
           </h3>
 
           <p
@@ -121,7 +119,6 @@ function Impact() {
             North America • Japan • India
           </p>
         </div>
-
       </div>
     </section>
   );
