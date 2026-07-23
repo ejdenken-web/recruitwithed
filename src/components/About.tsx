@@ -54,12 +54,12 @@ function About() {
             marginBottom: "28px",
           }}
         >
-          Throughout my career, I have sourced, engaged, and recruited
-          technology professionals across diverse industries. My expertise spans
-          identifying software engineers, cloud specialists, data
-          professionals, cybersecurity experts, architects, DevOps engineers,
-          AI professionals, and technology leaders—supporting organizations
-          from fast-growing startups to global enterprises.
+          Throughout my career, I have supported hiring initiatives across
+          Technology, IT Services & Consulting, Banking & Financial Services,
+          Healthcare & Life Sciences, Health Insurance, Retail & Consumer
+          Goods, Manufacturing & Industrial Engineering, Automotive,
+          Aviation, and Professional Services—partnering with organizations
+          ranging from fast-growing startups to global enterprises.
         </p>
 
         <p
