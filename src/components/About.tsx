@@ -58,8 +58,8 @@ function About() {
           Technology, IT Services & Consulting, Banking & Financial Services,
           Healthcare & Life Sciences, Health Insurance, Retail & Consumer
           Goods, Manufacturing & Industrial Engineering, Automotive,
-          Aviation, and Professional Services—partnering with organizations
-          ranging from fast-growing startups to global enterprises.
+          Aviation, and Professional Services.
+          
         </p>
 
         <p
