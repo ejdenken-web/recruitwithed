@@ -12,7 +12,7 @@ function About() {
     >
       <div
         style={{
-          maxWidth: "900px",
+          maxWidth: "950px",
           margin: "0 auto",
         }}
       >
@@ -23,60 +23,57 @@ function About() {
             marginBottom: "35px",
           }}
         >
-          About Me
+          About
         </h2>
 
         <p
           style={{
-            color: "#CBD5E1",
             fontSize: "18px",
             lineHeight: "1.9",
+            color: "#CBD5E1",
             marginBottom: "28px",
           }}
         >
           With over a decade of recruiting experience, I believe successful
-          hiring begins with trust, meaningful conversations, and understanding
-          the people behind every career decision.
+          hiring begins with trust and understanding the people behind every
+          career decision. I've built my career on the belief that recruiting
+          isn't just about matching resumes to job descriptions—it's about
+          listening, asking the right questions, and helping both candidates
+          and organizations make confident hiring decisions. Whether I'm
+          partnering with a startup building its first team or supporting an
+          enterprise organization hiring specialized technology talent, my
+          approach remains the same: transparency, genuine curiosity, and a
+          commitment to delivering the right long-term fit.
         </p>
 
         <p
           style={{
-            color: "#CBD5E1",
             fontSize: "18px",
             lineHeight: "1.9",
+            color: "#CBD5E1",
             marginBottom: "28px",
           }}
         >
-          I have partnered with clients across Technology, Financial Services,
-          Healthcare, Consulting, Retail, Manufacturing, Aviation, Consumer
-          Goods, and Engineering, helping organizations build high-performing
-          teams through strategic talent acquisition.
+          Throughout my career, I have sourced, engaged, and recruited
+          technology professionals across diverse industries. My expertise spans
+          identifying software engineers, cloud specialists, data
+          professionals, cybersecurity experts, architects, DevOps engineers,
+          AI professionals, and technology leaders—supporting organizations
+          from fast-growing startups to global enterprises.
         </p>
 
         <p
           style={{
-            color: "#CBD5E1",
             fontSize: "18px",
             lineHeight: "1.9",
-            marginBottom: "28px",
-          }}
-        >
-          My recruiting approach combines AI-assisted sourcing, strategic talent
-          mapping, market research, advanced Boolean search, and transparent
-          communication to build strong candidate relationships and deliver
-          consistent hiring results.
-        </p>
-
-        <p
-          style={{
             color: "#CBD5E1",
-            fontSize: "18px",
-            lineHeight: "1.9",
+            margin: 0,
           }}
         >
-          RecruitWithEd represents my commitment to continuous learning,
-          responsible use of AI, and modern recruiting practices that improve
-          both the candidate and hiring manager experience.
+          RecruitWithEd reflects my commitment to continuous learning,
+          AI-assisted recruiting, strategic sourcing, advanced Boolean search,
+          and delivering an exceptional hiring experience for both clients and
+          candidates.
         </p>
       </div>
     </section>
