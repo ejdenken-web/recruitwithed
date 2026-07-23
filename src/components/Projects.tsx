@@ -6,7 +6,7 @@ function Projects() {
       description:
         "Designed and developed my personal recruiting portfolio using React, TypeScript, Vite, and Netlify. The portfolio highlights my recruiting experience, AI certifications, organizations supported, technical expertise, and modern talent acquisition approach.",
       technologies:
-        "React • TypeScript • Vite • GitHub • Netlify",
+        "React • TypeScript • Vite • GitHub • Netlify • Vercel",
       status: "🟢 Live Portfolio",
     },
     {
