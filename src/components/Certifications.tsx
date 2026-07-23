@@ -106,22 +106,11 @@ function Certifications() {
                 style={{
                   color: "#38BDF8",
                   fontSize: "22px",
-                  marginBottom: "8px",
+                  marginBottom: "22px",
                 }}
               >
                 {group.provider}
               </h3>
-
-              <p
-                style={{
-                  color: "#94A3B8",
-                  fontSize: "14px",
-                  marginBottom: "22px",
-                }}
-              >
-                {group.certifications.length} Certification
-                {group.certifications.length > 1 ? "s" : ""}
-              </p>
 
               <div
                 style={{
