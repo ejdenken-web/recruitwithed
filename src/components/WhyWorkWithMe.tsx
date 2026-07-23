@@ -8,7 +8,7 @@ function WhyWorkWithMe() {
     {
       title: "AI-Assisted Recruiting",
       description:
-        "Using modern AI tools including ChatGPT, Claude, Microsoft Copilot, Google AI, Perplexity AI, and DeepSeek to enhance research, sourcing, content creation, and recruiting workflows while maintaining a human-centered hiring approach.",
+        "Using modern AI tools including ChatGPT, Claude and DeepSeek to enhance research, sourcing, content creation, and recruiting workflows while maintaining a human-centered hiring approach.",
     },
     {
       title: "Continuous Learning",
