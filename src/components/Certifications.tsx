@@ -1,7 +1,7 @@
 function Certifications() {
   const certificationGroups = [
     {
-      provider: "🤖 Anthropic",
+      provider: "Anthropic",
       certifications: [
         "Claude 101",
         "Claude Platform 101",
@@ -13,28 +13,28 @@ function Certifications() {
       ],
     },
     {
-      provider: "🔗 LangChain",
+      provider: "LangChain",
       certifications: [
         "Introduction to LangGraph – Python",
         "Introduction to LangSmith Deployment",
       ],
     },
     {
-      provider: "💻 Microsoft",
+      provider: "Microsoft",
       certifications: [
         "Use AI for Everyday Tasks",
         "Explore Internet Search and Beyond",
       ],
     },
     {
-      provider: "💼 LinkedIn",
+      provider: "LinkedIn",
       certifications: [
         "AI-Driven Excellence – LinkedIn Hiring Assistant Assessment",
         "Recruiter Assessment",
       ],
     },
     {
-      provider: "🎯 NextInHR",
+      provider: "NextInHR",
       certifications: [
         "AI-Powered Recruiter Certification",
         "Talent Acquisition Certification",
@@ -49,7 +49,7 @@ function Certifications() {
       ],
     },
     {
-      provider: "📈 SalaryBox",
+      provider: "SalaryBox",
       certifications: [
         "Advanced Recruitment Strategies",
       ],
