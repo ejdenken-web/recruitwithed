@@ -1,77 +1,39 @@
 function Organizations() {
-  const clientGroups = [
-    {
-      industry: "💻 Technology, IT Services & Consulting",
-      companies: [
-        "Accenture",
-        "Tata Consultancy Services (TCS)",
-        "Tech Mahindra",
-        "HCL America",
-        "LTIMindtree",
-        "Birlasoft",
-        "Bahwan CyberTek (BCT)",
-        "Cleartelligence",
-        "Genpact",
-        "Innova Solutions (formerly AIC)",
-      ],
-    },
-    {
-      industry: "🏦 Banking & Financial Services",
-      companies: [
-        "Wells Fargo",
-        "Fifth Third Bank",
-        "BNP Paribas",
-        "Nomura Securities International",
-        "Exeter Finance",
-      ],
-    },
-    {
-      industry: "🏥 Healthcare, Life Sciences & Health Insurance",
-      companies: [
-        "AbbVie",
-        "Bayer",
-        "Blue Cross Blue Shield of Texas",
-        "Blue Cross Blue Shield of New York",
-        "Blue Cross Blue Shield of Michigan",
-        "Blue Cross Blue Shield of Florida",
-      ],
-    },
-    {
-      industry: "🛍️ Retail, Apparel & Consumer Goods",
-      companies: [
-        "Abercrombie & Fitch",
-        "Lululemon Athletica",
-        "Victoria's Secret",
-        "HanesBrands",
-        "Kellogg's",
-        "Speedway",
-      ],
-    },
-    {
-      industry: "🚗 Automotive",
-      companies: ["Toyota Motor North America (TMNA)"],
-    },
-    {
-      industry: "✈️ Aviation",
-      companies: ["JetBlue Airways"],
-    },
-    {
-      industry: "🏭 Manufacturing & Industrial Engineering",
-      companies: [
-        "Caterpillar",
-        "John Deere",
-        "Schneider Electric",
-        "Gibson",
-      ],
-    },
-    {
-      industry: "📊 Professional Services",
-      companies: ["PricewaterhouseCoopers (PwC)"],
-    },
-    {
-      industry: "🎰 Hospitality & Entertainment",
-      companies: ["Caesars Entertainment"],
-    },
+  const companies = [
+    "Accenture",
+    "AbbVie",
+    "Abercrombie & Fitch",
+    "Bahwan CyberTek (BCT)",
+    "Bayer",
+    "Birlasoft",
+    "Blue Cross Blue Shield of Florida",
+    "Blue Cross Blue Shield of Michigan",
+    "Blue Cross Blue Shield of New York",
+    "Blue Cross Blue Shield of Texas",
+    "BNP Paribas",
+    "Caterpillar",
+    "Cleartelligence",
+    "Exeter Finance",
+    "Fifth Third Bank",
+    "Genpact",
+    "Gibson",
+    "HanesBrands",
+    "HCL America",
+    "Innova Solutions (formerly AIC)",
+    "JetBlue Airways",
+    "John Deere",
+    "Kellogg's",
+    "LTIMindtree",
+    "Lululemon Athletica",
+    "Nomura Securities International",
+    "PricewaterhouseCoopers (PwC)",
+    "Schneider Electric",
+    "Speedway",
+    "Tata Consultancy Services (TCS)",
+    "Tech Mahindra",
+    "Toyota Motor North America (TMNA)",
+    "Victoria's Secret",
+    "Wells Fargo",
   ];
 
   return (
@@ -86,16 +48,16 @@ function Organizations() {
     >
       <div
         style={{
-          maxWidth: "1200px",
+          maxWidth: "1100px",
           margin: "0 auto",
+          textAlign: "center",
         }}
       >
         <h2
           style={{
             color: "#38BDF8",
             fontSize: "2.7rem",
-            textAlign: "center",
-            marginBottom: "60px",
+            marginBottom: "50px",
           }}
         >
           Clients I've Supported
@@ -103,56 +65,28 @@ function Organizations() {
 
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
-            gap: "28px",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "14px",
           }}
         >
-          {clientGroups.map((group) => (
+          {companies.map((company) => (
             <div
-              key={group.industry}
+              key={company}
               style={{
                 background: "#111827",
-                border: "1px solid #1F2937",
-                borderRadius: "16px",
-                padding: "28px",
-                boxShadow: "0 12px 30px rgba(0,0,0,0.25)",
+                border: "1px solid #334155",
+                borderRadius: "999px",
+                padding: "10px 18px",
+                color: "#E2E8F0",
+                fontSize: "15px",
+                fontWeight: "500",
+                whiteSpace: "nowrap",
               }}
             >
-              <h3
-                style={{
-                  color: "#38BDF8",
-                  fontSize: "22px",
-                  marginBottom: "20px",
-                }}
-              >
-                {group.industry}
-              </h3>
-
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "12px",
-                }}
-              >
-                {group.companies.map((company) => (
-                  <span
-                    key={company}
-                    style={{
-                      background: "#1E293B",
-                      color: "#E2E8F0",
-                      padding: "10px 14px",
-                      borderRadius: "999px",
-                      border: "1px solid #334155",
-                      fontSize: "14px",
-                      lineHeight: "1.5",
-                    }}
-                  >
-                    {company}
-                  </span>
-                ))}
-              </div>
+              {company}
             </div>
           ))}
         </div>
