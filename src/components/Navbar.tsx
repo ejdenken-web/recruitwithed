@@ -4,7 +4,8 @@ function Navbar() {
     color: "#E2E8F0",
     textDecoration: "none",
     transition: "0.3s",
-    fontSize: "15px",
+    fontSize: "clamp(14px, 1.5vw, 15px)",
+    whiteSpace: "nowrap" as const,
   };
 
   return (
@@ -12,10 +13,12 @@ function Navbar() {
       style={{
         background: "#111827",
         color: "white",
-        padding: "18px 40px",
+        padding: "16px clamp(20px, 5vw, 40px)",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        flexWrap: "wrap",
+        gap: "15px",
         position: "sticky",
         top: 0,
         zIndex: 1000,
@@ -26,10 +29,10 @@ function Navbar() {
         href="#hero"
         style={{
           color: "#38BDF8",
-          margin: 0,
           textDecoration: "none",
-          fontSize: "24px",
+          fontSize: "clamp(22px, 3vw, 26px)",
           fontWeight: "bold",
+          whiteSpace: "nowrap",
         }}
       >
         RecruitWithEd
@@ -38,8 +41,11 @@ function Navbar() {
       <div
         style={{
           display: "flex",
-          gap: "28px",
+          flexWrap: "wrap",
+          justifyContent: "center",
           alignItems: "center",
+          gap: "20px",
+          flex: 1,
         }}
       >
         <a href="#about" style={navItemStyle}>
