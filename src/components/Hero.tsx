@@ -5,7 +5,7 @@ function Hero() {
       style={{
         background: "linear-gradient(135deg, #0F172A, #111827)",
         color: "white",
-        padding: "140px 30px 110px",
+        padding: "clamp(90px, 12vw, 140px) 20px clamp(70px, 8vw, 110px)",
         textAlign: "center",
         fontFamily: "Arial, sans-serif",
       }}
@@ -19,8 +19,8 @@ function Hero() {
         <p
           style={{
             color: "#38BDF8",
-            fontSize: "20px",
-            fontWeight: "700",
+            fontSize: "clamp(16px, 2vw, 20px)",
+            fontWeight: 700,
             letterSpacing: "2px",
             marginBottom: "18px",
           }}
@@ -30,9 +30,11 @@ function Hero() {
 
         <h1
           style={{
-            fontSize: "4rem",
-            fontWeight: "700",
-            marginBottom: "18px",
+            fontSize: "clamp(2.8rem, 8vw, 4.5rem)",
+            fontWeight: 700,
+            lineHeight: 1.15,
+            margin: "0 0 18px",
+            wordBreak: "break-word",
           }}
         >
           Ed Johnson
@@ -41,9 +43,11 @@ function Hero() {
         <h2
           style={{
             color: "#38BDF8",
-            fontSize: "2rem",
-            fontWeight: "600",
-            marginBottom: "20px",
+            fontSize: "clamp(1.3rem, 4vw, 2rem)",
+            fontWeight: 600,
+            lineHeight: 1.4,
+            margin: "0 auto 22px",
+            maxWidth: "850px",
           }}
         >
           Senior Information Technology Consultant | AI Recruiting
@@ -52,9 +56,11 @@ function Hero() {
         <p
           style={{
             color: "#E2E8F0",
-            fontSize: "22px",
-            fontWeight: "600",
-            margin: 0,
+            fontSize: "clamp(1rem, 2.5vw, 1.35rem)",
+            fontWeight: 500,
+            lineHeight: 1.7,
+            maxWidth: "700px",
+            margin: "0 auto",
           }}
         >
           Building meaningful connections, delivering exceptional talent.
