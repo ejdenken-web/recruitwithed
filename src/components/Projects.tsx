@@ -4,7 +4,7 @@ function Projects() {
       title: "RecruitWithEd",
       subtitle: "Personal Recruiting Portfolio",
       description:
-        "Designed and developed my personal recruiting portfolio using React, TypeScript, Vite, GitHub, and Vercel. The portfolio showcases my recruiting experience, AI certifications, organizations supported, featured projects, and modern AI-assisted recruiting approach.",
+        "Designed and developed my personal recruiting portfolio using React, TypeScript, Vite, GitHub, and Vercel. This portfolio showcases my recruiting experience, AI certifications, organizations supported, featured projects, and modern AI-assisted recruiting approach.",
       technologies:
         "React • TypeScript • Vite • GitHub • Vercel",
       status: "🟢 Live Portfolio",
