@@ -5,21 +5,21 @@ function About() {
       style={{
         background: "#111827",
         color: "white",
-        padding: "90px 40px",
+        padding: "clamp(70px, 10vw, 90px) 20px",
         textAlign: "center",
         fontFamily: "Arial, sans-serif",
       }}
     >
       <div
         style={{
-          maxWidth: "950px",
+          maxWidth: "900px",
           margin: "0 auto",
         }}
       >
         <h2
           style={{
             color: "#38BDF8",
-            fontSize: "2.7rem",
+            fontSize: "clamp(2rem, 5vw, 2.7rem)",
             marginBottom: "35px",
           }}
         >
@@ -28,7 +28,7 @@ function About() {
 
         <p
           style={{
-            fontSize: "18px",
+            fontSize: "clamp(16px, 2vw, 18px)",
             lineHeight: "1.9",
             color: "#CBD5E1",
             marginBottom: "28px",
@@ -48,7 +48,7 @@ function About() {
 
         <p
           style={{
-            fontSize: "18px",
+            fontSize: "clamp(16px, 2vw, 18px)",
             lineHeight: "1.9",
             color: "#CBD5E1",
             marginBottom: "28px",
@@ -59,12 +59,11 @@ function About() {
           Healthcare & Life Sciences, Health Insurance, Retail & Consumer
           Goods, Manufacturing & Industrial Engineering, Automotive,
           Aviation, and Professional Services.
-          
         </p>
 
         <p
           style={{
-            fontSize: "18px",
+            fontSize: "clamp(16px, 2vw, 18px)",
             lineHeight: "1.9",
             color: "#CBD5E1",
             margin: 0,
