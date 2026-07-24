@@ -15,7 +15,7 @@ function Projects() {
       description:
         "Designed and developed a professional portfolio website for an animation professional who contributed to the Chhota Bheem franchise. Developed with Claude AI assistance to showcase artwork, experience, and career achievements in a clean, modern portfolio.",
       technologies:
-        "React • TypeScript • Claude AI • Vercel",
+        "React • TypeScript • Claude AI • Netlify",
       status: "Portfolio Available Upon Request",
     },
   ];
