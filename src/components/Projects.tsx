@@ -4,18 +4,18 @@ function Projects() {
       title: "RecruitWithEd",
       subtitle: "Personal Recruiting Portfolio",
       description:
-        "Designed and developed my personal recruiting portfolio using React, TypeScript, Vite, and Netlify. The portfolio highlights my recruiting experience, AI certifications, organizations supported, technical expertise, and modern talent acquisition approach.",
+        "Designed and developed my personal recruiting portfolio using React, TypeScript, Vite, GitHub, and Vercel. The portfolio showcases my recruiting experience, AI certifications, organizations supported, featured projects, and modern AI-assisted recruiting approach.",
       technologies:
-        "React • TypeScript • Vite • GitHub • Netlify • Vercel",
+        "React • TypeScript • Vite • GitHub • Vercel",
       status: "🟢 Live Portfolio",
     },
     {
       title: "Chhota Bheem Animation Portfolio",
       subtitle: "Professional Portfolio Website",
       description:
-        "Designed and developed a professional portfolio website for an animation professional who contributed to the Chhota Bheem franchise. Built with assistance from Claude AI to showcase artwork, experience, and career achievements in a clean, modern portfolio.",
+        "Designed and developed a professional portfolio website for an animation professional who contributed to the Chhota Bheem franchise. Developed with Claude AI assistance to showcase artwork, experience, and career achievements in a clean, modern portfolio.",
       technologies:
-        "React • TypeScript • Claude AI • Netlify",
+        "React • TypeScript • Claude AI • Vercel",
       status: "Portfolio Available Upon Request",
     },
   ];
