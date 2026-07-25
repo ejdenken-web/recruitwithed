@@ -1,8 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
+import AboutImpact from "./components/AboutImpact";
 import WhyWorkWithMe from "./components/WhyWorkWithMe";
-import Impact from "./components/Impact";
 import Organizations from "./components/Organizations";
 import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
@@ -12,13 +11,19 @@ function App() {
   return (
     <>
       <Navbar />
+
       <Hero />
-      <About />
+
+      <AboutImpact />
+
       <WhyWorkWithMe />
-      <Impact />
+
       <Organizations />
+
       <Certifications />
+
       <Projects />
+
       <Footer />
     </>
   );
