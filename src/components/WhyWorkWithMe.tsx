@@ -8,7 +8,7 @@ function WhyWorkWithMe() {
     {
       title: "AI-Assisted Recruiting",
       description:
-        "Using modern AI tools including ChatGPT, Claude and DeepSeek to enhance research, sourcing, content creation, and recruiting workflows while maintaining a human-centered hiring approach.",
+        "Using modern AI tools including ChatGPT, Claude, and DeepSeek to enhance research, sourcing, content creation, and recruiting workflows while maintaining a human-centered hiring approach.",
     },
     {
       title: "Continuous Learning",
@@ -23,7 +23,7 @@ function WhyWorkWithMe() {
       style={{
         background: "#0B1120",
         color: "white",
-        padding: "90px 40px",
+        padding: "clamp(70px, 10vw, 90px) 20px",
         textAlign: "center",
         fontFamily: "Arial, sans-serif",
       }}
@@ -31,7 +31,7 @@ function WhyWorkWithMe() {
       <h2
         style={{
           color: "#38BDF8",
-          fontSize: "2.6rem",
+          fontSize: "clamp(2rem, 5vw, 2.6rem)",
           marginBottom: "20px",
         }}
       >
@@ -43,7 +43,7 @@ function WhyWorkWithMe() {
           maxWidth: "850px",
           margin: "0 auto 50px",
           color: "#CBD5E1",
-          fontSize: "18px",
+          fontSize: "clamp(16px, 2vw, 18px)",
           lineHeight: "1.8",
         }}
       >
@@ -56,7 +56,7 @@ function WhyWorkWithMe() {
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "25px",
+          gap: "30px",
           maxWidth: "1100px",
           margin: "0 auto",
         }}
@@ -66,17 +66,18 @@ function WhyWorkWithMe() {
             key={item.title}
             style={{
               background: "#1E293B",
-              padding: "30px",
-              borderRadius: "15px",
+              padding: "35px 30px",
+              borderRadius: "16px",
               border: "1px solid #334155",
-              transition: "0.3s ease",
+              boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
             }}
           >
             <h3
               style={{
                 color: "#38BDF8",
                 marginBottom: "18px",
-                fontSize: "22px",
+                fontSize: "clamp(20px, 3vw, 22px)",
+                lineHeight: "1.4",
               }}
             >
               {item.title}
@@ -85,8 +86,9 @@ function WhyWorkWithMe() {
             <p
               style={{
                 color: "#CBD5E1",
-                lineHeight: "1.8",
-                fontSize: "16px",
+                lineHeight: "1.9",
+                fontSize: "clamp(15px, 2vw, 16px)",
+                margin: 0,
               }}
             >
               {item.description}
