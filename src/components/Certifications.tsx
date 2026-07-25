@@ -62,20 +62,20 @@ function Certifications() {
       style={{
         background: "#0F172A",
         color: "white",
-        padding: "90px 40px",
+        padding: "clamp(70px, 10vw, 90px) 20px",
         fontFamily: "Arial, sans-serif",
       }}
     >
       <div
         style={{
-          maxWidth: "1200px",
+          maxWidth: "1250px",
           margin: "0 auto",
         }}
       >
         <h2
           style={{
             color: "#38BDF8",
-            fontSize: "2.7rem",
+            fontSize: "clamp(2rem, 5vw, 2.7rem)",
             textAlign: "center",
             marginBottom: "60px",
           }}
@@ -86,7 +86,7 @@ function Certifications() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
             gap: "30px",
           }}
         >
@@ -97,7 +97,7 @@ function Certifications() {
                 background: "#111827",
                 border: "1px solid #1F2937",
                 borderRadius: "16px",
-                padding: "30px",
+                padding: "35px 30px",
                 textAlign: "center",
                 boxShadow: "0 12px 30px rgba(0,0,0,0.25)",
               }}
@@ -105,8 +105,8 @@ function Certifications() {
               <h3
                 style={{
                   color: "#38BDF8",
-                  fontSize: "22px",
-                  marginBottom: "22px",
+                  fontSize: "clamp(20px, 3vw, 22px)",
+                  marginBottom: "24px",
                 }}
               >
                 {group.provider}
@@ -127,9 +127,9 @@ function Certifications() {
                     style={{
                       background: "#1E293B",
                       color: "#E2E8F0",
-                      padding: "10px 14px",
+                      padding: "10px 16px",
                       borderRadius: "999px",
-                      fontSize: "14px",
+                      fontSize: "clamp(13px, 1.8vw, 14px)",
                       lineHeight: "1.5",
                       border: "1px solid #334155",
                     }}
