@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Stats from "./components/Stats";
 import AboutImpact from "./components/AboutImpact";
 import WhyWorkWithMe from "./components/WhyWorkWithMe";
 import Organizations from "./components/Organizations";
@@ -13,6 +14,8 @@ function App() {
       <Navbar />
 
       <Hero />
+
+      <Stats />
 
       <AboutImpact />
 
