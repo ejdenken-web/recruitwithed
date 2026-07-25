@@ -1,6 +1,5 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Stats from "./components/Stats";
 import AboutImpact from "./components/AboutImpact";
 import WhyWorkWithMe from "./components/WhyWorkWithMe";
 import Organizations from "./components/Organizations";
@@ -8,27 +7,33 @@ import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 
+import "./Layout.css";
+
 function App() {
   return (
-    <>
+    <div className="website">
+
       <Navbar />
 
-      <Hero />
+      <main>
 
-      <Stats />
+        <Hero />
 
-      <AboutImpact />
+        <AboutImpact />
 
-      <WhyWorkWithMe />
+        <WhyWorkWithMe />
 
-      <Organizations />
+        <Organizations />
 
-      <Certifications />
+        <Certifications />
 
-      <Projects />
+        <Projects />
+
+      </main>
 
       <Footer />
-    </>
+
+    </div>
   );
 }
 
