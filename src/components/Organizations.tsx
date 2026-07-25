@@ -42,13 +42,13 @@ function Organizations() {
       style={{
         background: "#0B1120",
         color: "white",
-        padding: "90px 40px",
+        padding: "clamp(70px, 10vw, 90px) 20px",
         fontFamily: "Arial, sans-serif",
       }}
     >
       <div
         style={{
-          maxWidth: "1100px",
+          maxWidth: "1200px",
           margin: "0 auto",
           textAlign: "center",
         }}
@@ -56,7 +56,7 @@ function Organizations() {
         <h2
           style={{
             color: "#38BDF8",
-            fontSize: "2.7rem",
+            fontSize: "clamp(2rem, 5vw, 2.7rem)",
             marginBottom: "50px",
           }}
         >
@@ -69,7 +69,7 @@ function Organizations() {
             flexWrap: "wrap",
             justifyContent: "center",
             alignItems: "center",
-            gap: "14px",
+            gap: "16px",
           }}
         >
           {companies.map((company) => (
@@ -79,11 +79,12 @@ function Organizations() {
                 background: "#111827",
                 border: "1px solid #334155",
                 borderRadius: "999px",
-                padding: "10px 18px",
+                padding: "12px 20px",
                 color: "#E2E8F0",
-                fontSize: "15px",
-                fontWeight: "500",
+                fontSize: "clamp(14px, 1.8vw, 16px)",
+                fontWeight: 500,
                 whiteSpace: "nowrap",
+                boxShadow: "0 8px 20px rgba(0,0,0,0.20)",
               }}
             >
               {company}
