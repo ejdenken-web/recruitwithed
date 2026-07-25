@@ -59,88 +59,53 @@ function Certifications() {
   return (
     <section
       id="certifications"
-      style={{
-        background: "#0F172A",
-        color: "white",
-        padding: "clamp(70px, 10vw, 90px) 20px",
-        fontFamily: "Arial, sans-serif",
-      }}
+      className="certifications"
     >
-      <div
-        style={{
-          maxWidth: "1250px",
-          margin: "0 auto",
-        }}
-      >
-        <h2
-          style={{
-            color: "#38BDF8",
-            fontSize: "clamp(2rem, 5vw, 2.7rem)",
-            textAlign: "center",
-            marginBottom: "60px",
-          }}
-        >
-          Professional Certifications
-        </h2>
+      <div className="cert-container">
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "30px",
-          }}
-        >
+        <div className="cert-header">
+
+          <p>CERTIFICATIONS</p>
+
+          <h2>Professional Certifications</h2>
+
+          <span>
+            Continuous learning has been central to my recruiting journey.
+            These certifications reflect my commitment to AI, strategic sourcing,
+            talent acquisition, and modern recruiting technologies.
+          </span>
+
+        </div>
+
+        <div className="provider-grid">
+
           {certificationGroups.map((group) => (
+
             <div
               key={group.provider}
-              style={{
-                background: "#111827",
-                border: "1px solid #1F2937",
-                borderRadius: "16px",
-                padding: "35px 30px",
-                textAlign: "center",
-                boxShadow: "0 12px 30px rgba(0,0,0,0.25)",
-              }}
+              className="provider-card"
             >
-              <h3
-                style={{
-                  color: "#38BDF8",
-                  fontSize: "clamp(20px, 3vw, 22px)",
-                  marginBottom: "24px",
-                }}
-              >
-                {group.provider}
-              </h3>
 
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  gap: "12px",
-                }}
-              >
+              <h3>{group.provider}</h3>
+
+              <div className="cert-list">
+
                 {group.certifications.map((cert) => (
-                  <span
-                    key={cert}
-                    style={{
-                      background: "#1E293B",
-                      color: "#E2E8F0",
-                      padding: "10px 16px",
-                      borderRadius: "999px",
-                      fontSize: "clamp(13px, 1.8vw, 14px)",
-                      lineHeight: "1.5",
-                      border: "1px solid #334155",
-                    }}
-                  >
+
+                  <span key={cert}>
                     {cert}
                   </span>
+
                 ))}
+
               </div>
+
             </div>
+
           ))}
+
         </div>
+
       </div>
     </section>
   );
