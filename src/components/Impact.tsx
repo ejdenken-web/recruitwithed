@@ -4,7 +4,7 @@ function Impact() {
       style={{
         background: "#0F172A",
         color: "white",
-        padding: "70px 30px",
+        padding: "clamp(70px, 10vw, 90px) 20px",
         textAlign: "center",
         fontFamily: "Arial, sans-serif",
       }}
@@ -12,8 +12,8 @@ function Impact() {
       <h2
         style={{
           color: "#38BDF8",
-          fontSize: "2.5rem",
-          marginBottom: "40px",
+          fontSize: "clamp(2rem, 5vw, 2.5rem)",
+          marginBottom: "45px",
         }}
       >
         Impact at a Glance
@@ -21,29 +21,27 @@ function Impact() {
 
       <div
         style={{
-          maxWidth: "1000px",
+          maxWidth: "1100px",
           margin: "0 auto",
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          gap: "25px",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "30px",
         }}
       >
         {/* Experience */}
         <div
           style={{
             background: "#111827",
-            padding: "30px",
+            padding: "35px 30px",
             borderRadius: "16px",
-            width: "280px",
             boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
           }}
         >
           <h3
             style={{
-              fontSize: "2.5rem",
+              fontSize: "clamp(2rem, 6vw, 2.8rem)",
               color: "#38BDF8",
-              marginBottom: "10px",
+              marginBottom: "12px",
             }}
           >
             10+
@@ -52,7 +50,8 @@ function Impact() {
           <p
             style={{
               color: "#CBD5E1",
-              fontSize: "1.1rem",
+              fontSize: "clamp(16px, 2vw, 18px)",
+              margin: 0,
             }}
           >
             Years of Experience
@@ -63,17 +62,16 @@ function Impact() {
         <div
           style={{
             background: "#111827",
-            padding: "30px",
+            padding: "35px 30px",
             borderRadius: "16px",
-            width: "280px",
             boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
           }}
         >
           <h3
             style={{
-              fontSize: "2.5rem",
+              fontSize: "clamp(2rem, 6vw, 2.8rem)",
               color: "#38BDF8",
-              marginBottom: "10px",
+              marginBottom: "12px",
             }}
           >
             6–40
@@ -82,7 +80,8 @@ function Impact() {
           <p
             style={{
               color: "#CBD5E1",
-              fontSize: "1.1rem",
+              fontSize: "clamp(16px, 2vw, 18px)",
+              margin: 0,
             }}
           >
             Recruiters Managed & Mentored
@@ -93,16 +92,14 @@ function Impact() {
         <div
           style={{
             background: "#111827",
-            padding: "30px",
+            padding: "35px 30px",
             borderRadius: "16px",
-            width: "600px",
-            maxWidth: "90%",
             boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
           }}
         >
           <h3
             style={{
-              fontSize: "2rem",
+              fontSize: "clamp(1.7rem, 5vw, 2.2rem)",
               color: "#38BDF8",
               marginBottom: "15px",
             }}
@@ -113,7 +110,8 @@ function Impact() {
           <p
             style={{
               color: "#CBD5E1",
-              fontSize: "1.1rem",
+              fontSize: "clamp(16px, 2vw, 18px)",
+              margin: 0,
             }}
           >
             North America • Japan • India
