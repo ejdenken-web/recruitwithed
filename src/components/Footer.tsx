@@ -5,7 +5,7 @@ function Footer() {
       style={{
         background: "#020617",
         color: "#CBD5E1",
-        padding: "70px 30px 40px",
+        padding: "clamp(70px, 10vw, 90px) 20px 40px",
         textAlign: "center",
         fontFamily: "Arial, sans-serif",
       }}
@@ -27,7 +27,7 @@ function Footer() {
         <h2
           style={{
             color: "#38BDF8",
-            fontSize: "2.3rem",
+            fontSize: "clamp(2rem, 5vw, 2.3rem)",
             marginBottom: "20px",
           }}
         >
@@ -37,8 +37,8 @@ function Footer() {
         <p
           style={{
             color: "#CBD5E1",
-            fontSize: "18px",
-            lineHeight: "1.8",
+            fontSize: "clamp(16px, 2vw, 18px)",
+            lineHeight: "1.9",
             maxWidth: "700px",
             margin: "0 auto 35px",
           }}
@@ -55,10 +55,12 @@ function Footer() {
             background: "#38BDF8",
             color: "#0B1120",
             padding: "14px 30px",
-            borderRadius: "8px",
+            borderRadius: "10px",
             textDecoration: "none",
             fontWeight: "bold",
-            marginBottom: "40px",
+            fontSize: "clamp(15px, 2vw, 17px)",
+            marginBottom: "45px",
+            boxShadow: "0 10px 25px rgba(56,189,248,0.25)",
           }}
         >
           recruitwithed@gmail.com
@@ -66,20 +68,10 @@ function Footer() {
 
         <p
           style={{
-            color: "#94A3B8",
-            fontSize: "15px",
-            lineHeight: "1.8",
             marginTop: "10px",
-          }}
-        >
-          
-        </p>
-
-        <p
-          style={{
-            marginTop: "25px",
             color: "#64748B",
-            fontSize: "14px",
+            fontSize: "clamp(13px, 2vw, 14px)",
+            lineHeight: "1.8",
           }}
         >
           © 2026 Ed Johnson. All Rights Reserved.
