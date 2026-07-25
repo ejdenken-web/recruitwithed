@@ -2,78 +2,75 @@ import "./Hero.css";
 
 function Hero() {
   return (
-    <section className="hero" id="hero">
-      <div className="hero-container">
+    <section className="hero">
 
-        <div className="hero-left">
+      <div className="hero-left">
 
-          <p className="hero-label">
-            RECRUITWITHED
-          </p>
+        <p className="hero-tag">
+          RECRUITWITHED
+        </p>
 
-          <h1>
-            Ed <span>Johnson</span>
-          </h1>
+        <h1>
+          Connecting Great
+          <br />
+          Talent With
+          <br />
+          Great Companies.
+        </h1>
 
-          <h2>
-            Senior Information Technology Recruiter
-          </h2>
+        <p className="hero-text">
+          Senior Information Technology Consultant specializing in
+          AI-assisted recruiting, strategic sourcing, executive search,
+          Boolean search, and technology hiring across North America.
+        </p>
 
-          <p className="hero-description">
-            Helping organizations identify exceptional technology talent through
-            strategic sourcing, AI-assisted recruiting, market intelligence,
-            and relationship-driven hiring.
-          </p>
+        <div className="hero-buttons">
 
-          <div className="hero-buttons">
+          <a href="#projects" className="btn-primary">
+            View Projects
+          </a>
 
-            <a
-              href="#contact"
-              className="primary-btn"
-            >
-              Let's Connect
-            </a>
-
-            <a
-              href="#projects"
-              className="secondary-btn"
-            >
-              View Portfolio
-            </a>
-
-          </div>
+          <a href="#contact" className="btn-secondary">
+            Let's Connect
+          </a>
 
         </div>
 
-        <div className="hero-right">
+      </div>
 
-          <div className="profile-circle">
+      <div className="hero-right">
 
-            <div className="profile-placeholder">
+        <div className="hero-card">
 
-              <svg
-                width="140"
-                height="140"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  cx="12"
-                  cy="8"
-                  r="4"
-                  stroke="#38BDF8"
-                  strokeWidth="1.5"
-                />
+          <span className="small-title">
+            RecruitWithEd
+          </span>
 
-                <path
-                  d="M5 20C5 16.7 8.1 14 12 14C15.9 14 19 16.7 19 20"
-                  stroke="#38BDF8"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
+          <h2>
+            Ed Johnson
+          </h2>
 
+          <p>
+            Senior Information Technology Consultant
+          </p>
+
+          <div className="card-divider"></div>
+
+          <div className="hero-stats">
+
+            <div>
+              <h3>10+</h3>
+              <span>Years</span>
+            </div>
+
+            <div>
+              <h3>25</h3>
+              <span>Certifications</span>
+            </div>
+
+            <div>
+              <h3>35+</h3>
+              <span>Clients</span>
             </div>
 
           </div>
@@ -81,6 +78,7 @@ function Hero() {
         </div>
 
       </div>
+
     </section>
   );
 }
