@@ -4,6 +4,7 @@ import Services from "./components/Services";
 import AboutImpact from "./components/AboutImpact";
 import WhyWorkWithMe from "./components/WhyWorkWithMe";
 import Organizations from "./components/Organizations";
+import CaseStudies from "./components/CaseStudies";
 import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
@@ -22,6 +23,8 @@ function App() {
       <WhyWorkWithMe />
 
       <Organizations />
+
+      <CaseStudies />
 
       <Certifications />
 
