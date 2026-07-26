@@ -1,3 +1,5 @@
+import "./Clients.css";
+
 function Organizations() {
   const companies = [
     "Accenture",
@@ -26,7 +28,7 @@ function Organizations() {
     "PwC",
     "Schneider Electric",
     "Speedway",
-    "Tata Consultancy Services",
+    "TCS",
     "Tech Mahindra",
     "Toyota",
     "Victoria's Secret",
@@ -34,22 +36,19 @@ function Organizations() {
   ];
 
   return (
-    <section className="clients-section" id="clients">
+    <section
+      id="clients"
+      className="clients-section"
+    >
+      <div className="clients-header">
 
-      <div className="section-header">
+        <h2>Clients</h2>
 
-        <p className="section-tag">
-          CLIENTS
-        </p>
-
-        <h2>
-          Organizations I've Supported
-        </h2>
-
-        <p className="section-description">
-          Throughout my recruiting career, I have partnered with global
-          organizations across technology, banking, healthcare,
-          manufacturing, retail, aviation, engineering, and consulting.
+        <p>
+          Over the course of my recruiting career, I have partnered with
+          organizations across technology, financial services, healthcare,
+          manufacturing, consulting, aviation, retail, and consumer goods,
+          supporting hiring initiatives for technical and professional talent.
         </p>
 
       </div>
@@ -58,10 +57,11 @@ function Organizations() {
 
         {companies.map((company) => (
 
-          <div className="client-card" key={company}>
-
+          <div
+            key={company}
+            className="client-card"
+          >
             {company}
-
           </div>
 
         ))}
