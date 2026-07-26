@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import AboutImpact from "./components/AboutImpact";
+import Timeline from "./components/Timeline";
 import WhyWorkWithMe from "./components/WhyWorkWithMe";
 import Organizations from "./components/Organizations";
 import CaseStudies from "./components/CaseStudies";
@@ -18,6 +19,7 @@ function App() {
       <Hero />
       <Services />
       <AboutImpact />
+      <Timeline />
       <WhyWorkWithMe />
       <Organizations />
       <CaseStudies />
