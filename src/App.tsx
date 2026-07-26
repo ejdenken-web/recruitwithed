@@ -8,6 +8,7 @@ import CaseStudies from "./components/CaseStudies";
 import Testimonials from "./components/Testimonials";
 import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
+import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Testimonials />
       <Certifications />
       <Projects />
+      <CTA />
       <Footer />
     </>
   );
