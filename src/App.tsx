@@ -12,6 +12,7 @@ import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Projects />
       <CTA />
       <Footer />
+      <ScrollToTop />
     </>
   );
 }
