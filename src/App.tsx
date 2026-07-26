@@ -4,6 +4,7 @@ import Services from "./components/Services";
 import AboutImpact from "./components/AboutImpact";
 import Timeline from "./components/Timeline";
 import Skills from "./components/Skills";
+import Experience from "./components/Experience";
 import WhyWorkWithMe from "./components/WhyWorkWithMe";
 import Organizations from "./components/Organizations";
 import CaseStudies from "./components/CaseStudies";
@@ -20,56 +21,21 @@ function App() {
     <>
       <Navbar />
 
-      <FadeIn>
-        <Hero />
-      </FadeIn>
-
-      <FadeIn>
-        <Services />
-      </FadeIn>
-
-      <FadeIn>
-        <AboutImpact />
-      </FadeIn>
-
-      <FadeIn>
-        <Timeline />
-      </FadeIn>
-
-      <FadeIn>
-        <Skills />
-      </FadeIn>
-
-      <FadeIn>
-        <WhyWorkWithMe />
-      </FadeIn>
-
-      <FadeIn>
-        <Organizations />
-      </FadeIn>
-
-      <FadeIn>
-        <CaseStudies />
-      </FadeIn>
-
-      <FadeIn>
-        <Testimonials />
-      </FadeIn>
-
-      <FadeIn>
-        <Certifications />
-      </FadeIn>
-
-      <FadeIn>
-        <Projects />
-      </FadeIn>
-
-      <FadeIn>
-        <CTA />
-      </FadeIn>
+      <FadeIn><Hero /></FadeIn>
+      <FadeIn><Services /></FadeIn>
+      <FadeIn><AboutImpact /></FadeIn>
+      <FadeIn><Timeline /></FadeIn>
+      <FadeIn><Skills /></FadeIn>
+      <FadeIn><Experience /></FadeIn>
+      <FadeIn><WhyWorkWithMe /></FadeIn>
+      <FadeIn><Organizations /></FadeIn>
+      <FadeIn><CaseStudies /></FadeIn>
+      <FadeIn><Testimonials /></FadeIn>
+      <FadeIn><Certifications /></FadeIn>
+      <FadeIn><Projects /></FadeIn>
+      <FadeIn><CTA /></FadeIn>
 
       <Footer />
-
       <ScrollToTop />
     </>
   );
