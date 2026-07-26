@@ -5,6 +5,7 @@ import AboutImpact from "./components/AboutImpact";
 import WhyWorkWithMe from "./components/WhyWorkWithMe";
 import Organizations from "./components/Organizations";
 import CaseStudies from "./components/CaseStudies";
+import Testimonials from "./components/Testimonials";
 import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
@@ -13,23 +14,15 @@ function App() {
   return (
     <>
       <Navbar />
-
       <Hero />
-
       <Services />
-
       <AboutImpact />
-
       <WhyWorkWithMe />
-
       <Organizations />
-
       <CaseStudies />
-
+      <Testimonials />
       <Certifications />
-
       <Projects />
-
       <Footer />
     </>
   );
