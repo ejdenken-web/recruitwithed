@@ -1,93 +1,75 @@
-import "./Organizations.css";
-
 function Organizations() {
+  const companies = [
+    "Accenture",
+    "AbbVie",
+    "Abercrombie & Fitch",
+    "Bahwan CyberTek",
+    "Bayer",
+    "Birlasoft",
+    "Blue Cross Blue Shield",
+    "BNP Paribas",
+    "Caterpillar",
+    "Cleartelligence",
+    "Exeter Finance",
+    "Fifth Third Bank",
+    "Genpact",
+    "Gibson",
+    "HanesBrands",
+    "HCL America",
+    "Innova Solutions",
+    "JetBlue Airways",
+    "John Deere",
+    "Kellogg's",
+    "LTIMindtree",
+    "Lululemon",
+    "Nomura",
+    "PwC",
+    "Schneider Electric",
+    "Speedway",
+    "Tata Consultancy Services",
+    "Tech Mahindra",
+    "Toyota",
+    "Victoria's Secret",
+    "Wells Fargo",
+  ];
 
-const companies = [
+  return (
+    <section className="clients-section" id="clients">
 
-"Accenture",
-"AbbVie",
-"Abercrombie & Fitch",
-"Bahwan CyberTek",
-"Bayer",
-"Birlasoft",
-"BNP Paribas",
-"Caterpillar",
-"Cleartelligence",
-"Exeter Finance",
-"Fifth Third Bank",
-"Genpact",
-"Gibson",
-"HanesBrands",
-"HCL America",
-"Innova Solutions",
-"JetBlue Airways",
-"John Deere",
-"Kellogg's",
-"LTIMindtree",
-"Lululemon",
-"Nomura",
-"PwC",
-"Schneider Electric",
-"Speedway",
-"TCS",
-"Tech Mahindra",
-"Toyota",
-"Victoria's Secret",
-"Wells Fargo"
+      <div className="section-header">
 
-];
+        <p className="section-tag">
+          CLIENTS
+        </p>
 
-return(
+        <h2>
+          Organizations I've Supported
+        </h2>
 
-<section
-id="clients"
-className="organizations"
->
+        <p className="section-description">
+          Throughout my recruiting career, I have partnered with global
+          organizations across technology, banking, healthcare,
+          manufacturing, retail, aviation, engineering, and consulting.
+        </p>
 
-<div className="org-container">
+      </div>
 
-<div className="org-heading">
+      <div className="clients-grid">
 
-<p>CLIENTS</p>
+        {companies.map((company) => (
 
-<h2>
-Organizations I've Supported
-</h2>
+          <div className="client-card" key={company}>
 
-</div>
+            {company}
 
-<p className="org-subtitle">
+          </div>
 
-Throughout my recruiting career, I have supported hiring initiatives
-across global consulting firms, Fortune 500 organizations,
-technology companies, healthcare, financial services,
-manufacturing, retail, aviation, and engineering.
+        ))}
 
-</p>
+      </div>
 
-<div className="org-grid">
-
-{companies.map((company)=>(
-
-<div
-className="org-card"
-key={company}
->
-
-<h3>{company}</h3>
-
-</div>
-
-))}
-
-</div>
-
-</div>
-
-</section>
-
-)
-
+    </section>
+  );
 }
 
-export default Organizations; 
+export default Organizations;

@@ -1,3 +1,5 @@
+import "./Certifications.css";
+
 function Certifications() {
   const certificationGroups = [
     {
@@ -57,33 +59,29 @@ function Certifications() {
   ];
 
   return (
-    <section
-      id="certifications"
-      className="certifications"
-    >
-      <div className="cert-container">
+    <section id="certifications">
 
-        <div className="cert-header">
+      <div className="certifications-container">
 
-          <p>CERTIFICATIONS</p>
+        <div className="certifications-title">
 
           <h2>Professional Certifications</h2>
 
-          <span>
+          <p>
             Continuous learning has been central to my recruiting journey.
             These certifications reflect my commitment to AI, strategic sourcing,
             talent acquisition, and modern recruiting technologies.
-          </span>
+          </p>
 
         </div>
 
-        <div className="provider-grid">
+        <div className="certification-grid">
 
           {certificationGroups.map((group) => (
 
             <div
-              key={group.provider}
               className="provider-card"
+              key={group.provider}
             >
 
               <h3>{group.provider}</h3>
@@ -92,7 +90,10 @@ function Certifications() {
 
                 {group.certifications.map((cert) => (
 
-                  <span key={cert}>
+                  <span
+                    className="cert-item"
+                    key={cert}
+                  >
                     {cert}
                   </span>
 
@@ -107,6 +108,7 @@ function Certifications() {
         </div>
 
       </div>
+
     </section>
   );
 }
