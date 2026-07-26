@@ -13,24 +13,63 @@ import Projects from "./components/Projects";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import FadeIn from "./components/FadeIn";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Services />
-      <AboutImpact />
-      <Timeline />
-      <Skills />
-      <WhyWorkWithMe />
-      <Organizations />
-      <CaseStudies />
-      <Testimonials />
-      <Certifications />
-      <Projects />
-      <CTA />
+
+      <FadeIn>
+        <Hero />
+      </FadeIn>
+
+      <FadeIn>
+        <Services />
+      </FadeIn>
+
+      <FadeIn>
+        <AboutImpact />
+      </FadeIn>
+
+      <FadeIn>
+        <Timeline />
+      </FadeIn>
+
+      <FadeIn>
+        <Skills />
+      </FadeIn>
+
+      <FadeIn>
+        <WhyWorkWithMe />
+      </FadeIn>
+
+      <FadeIn>
+        <Organizations />
+      </FadeIn>
+
+      <FadeIn>
+        <CaseStudies />
+      </FadeIn>
+
+      <FadeIn>
+        <Testimonials />
+      </FadeIn>
+
+      <FadeIn>
+        <Certifications />
+      </FadeIn>
+
+      <FadeIn>
+        <Projects />
+      </FadeIn>
+
+      <FadeIn>
+        <CTA />
+      </FadeIn>
+
       <Footer />
+
       <ScrollToTop />
     </>
   );
