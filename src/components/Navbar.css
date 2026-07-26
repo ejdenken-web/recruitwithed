@@ -1,57 +1,74 @@
-.navbar {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 92%;
-  max-width: 1400px;
-  z-index: 1000;
+.navbar{
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+position:fixed;
 
-  padding: 16px 32px;
+top:0;
 
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(14px);
+left:0;
 
-  border: 1px solid rgba(56,189,248,.15);
+width:100%;
 
-  border-radius: 18px;
+z-index:999;
 
-  box-shadow: 0 12px 40px rgba(0,0,0,.35);
-}
+backdrop-filter:blur(18px);
 
-.logo{
+background:rgba(8,16,31,.78);
 
-font-size:28px;
-
-font-weight:700;
-
-color:#38BDF8;
-
-text-decoration:none;
-
-letter-spacing:.5px;
+border-bottom:1px solid rgba(255,255,255,.08);
 
 }
 
-.nav-links{
+.navbar-container{
+
+max-width:1400px;
+
+margin:auto;
+
+padding:22px 40px;
 
 display:flex;
 
-gap:32px;
+justify-content:space-between;
 
 align-items:center;
 
 }
 
-.nav-links a{
+.logo{
 
-color:#E2E8F0;
+font-size:32px;
+
+font-weight:800;
 
 text-decoration:none;
+
+color:white;
+
+letter-spacing:-1px;
+
+}
+
+.logo span{
+
+color:#38BDF8;
+
+}
+
+nav{
+
+display:flex;
+
+align-items:center;
+
+gap:38px;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:#CBD5E1;
 
 font-size:16px;
 
@@ -63,13 +80,13 @@ position:relative;
 
 }
 
-.nav-links a:hover{
+nav a:hover{
 
 color:#38BDF8;
 
 }
 
-.nav-links a::after{
+nav a::after{
 
 content:"";
 
@@ -79,9 +96,9 @@ left:0;
 
 bottom:-8px;
 
-height:2px;
-
 width:0;
+
+height:2px;
 
 background:#38BDF8;
 
@@ -89,7 +106,7 @@ transition:.3s;
 
 }
 
-.nav-links a:hover::after{
+nav a:hover::after{
 
 width:100%;
 
@@ -97,21 +114,15 @@ width:100%;
 
 .contact-btn{
 
-background:#38BDF8;
-
-color:#020617 !important;
-
-padding:12px 22px;
+padding:14px 24px;
 
 border-radius:10px;
 
-font-weight:700 !important;
+background:#38BDF8;
 
-}
+color:#08101F !important;
 
-.contact-btn:hover{
-
-transform:translateY(-2px);
+font-weight:700;
 
 }
 
@@ -121,23 +132,31 @@ display:none;
 
 }
 
-@media(max-width:900px){
+.contact-btn:hover{
 
-.navbar{
-
-padding:18px;
+transform:translateY(-3px);
 
 }
 
-.nav-links{
+@media(max-width:1000px){
 
-display:none;
+.navbar-container{
+
+flex-direction:column;
+
+gap:25px;
+
+padding:20px;
 
 }
 
-.logo{
+nav{
 
-font-size:24px;
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:18px;
 
 }
 

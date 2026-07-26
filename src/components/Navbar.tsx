@@ -2,44 +2,35 @@ import "./Navbar.css";
 
 function Navbar() {
   return (
-    <nav className="navbar">
+    <header className="navbar">
 
-      <a href="#hero" className="logo">
-        RecruitWithEd
-      </a>
+      <div className="navbar-container">
 
-      <div className="nav-links">
-
-        <a href="#about">
-          About
+        <a href="#hero" className="logo">
+          Recruit<span>WithEd</span>
         </a>
 
-        <a href="#why-work-with-me">
-          Why Me
-        </a>
+        <nav>
 
-        <a href="#clients">
-          Clients
-        </a>
+          <a href="#about">About</a>
 
-        <a href="#certifications">
-          Certifications
-        </a>
+          <a href="#why-work-with-me">Expertise</a>
 
-        <a href="#projects">
-          Projects
-        </a>
+          <a href="#clients">Clients</a>
 
-        <a
-          href="#contact"
-          className="contact-btn"
-        >
-          Let's Connect
-        </a>
+          <a href="#certifications">Certifications</a>
+
+          <a href="#projects">Projects</a>
+
+          <a href="#contact" className="contact-btn">
+            Let's Connect
+          </a>
+
+        </nav>
 
       </div>
 
-    </nav>
+    </header>
   );
 }
 
