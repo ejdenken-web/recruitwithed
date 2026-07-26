@@ -1,113 +1,75 @@
 import "./Projects.css";
 
 function Projects() {
+  const projects = [
+    {
+      title: "RecruitWithEd",
+      category: "Recruiting Portfolio",
+      description:
+        "Designed and developed a modern recruiting portfolio showcasing recruiting expertise, AI certifications, enterprise clients, featured projects, and technology capabilities using React and TypeScript.",
+      stack: "React • TypeScript • Vite • GitHub • Netlify",
+      status: "LIVE WEBSITE",
+    },
+    {
+      title: "Chhota Bheem Portfolio",
+      category: "Creative Portfolio",
+      description:
+        "Designed and developed a professional portfolio for an animation artist who contributed to the Chhota Bheem franchise. Created with Claude AI assistance using a modern responsive design.",
+      stack: "React • TypeScript • Claude AI • Netlify",
+      status: "AVAILABLE UPON REQUEST",
+    },
+  ];
 
-const projects = [
+  return (
+    <section className="projects-section" id="projects">
 
-{
-title:"RecruitWithEd",
-subtitle:"Personal Recruiting Portfolio",
-status:"LIVE PROJECT",
-description:"Designed and developed my personal recruiting portfolio showcasing recruiting experience, AI certifications, supported organizations, featured projects, and a modern AI-assisted recruiting approach.",
-tech:[
-"React",
-"TypeScript",
-"Vite",
-"GitHub",
-"Vercel"
-]
-},
+      <div className="projects-header">
 
-{
-title:"Chhota Bheem Portfolio",
-subtitle:"Professional Animation Portfolio",
-status:"AVAILABLE UPON REQUEST",
-description:"Designed and developed a modern portfolio website for an animation professional who contributed to the Chhota Bheem franchise. The project highlights artwork, career achievements, and portfolio presentation with assistance from Claude AI.",
-tech:[
-"React",
-"TypeScript",
-"Claude AI",
-"Netlify"
-]
-}
+        <p className="section-tag">FEATURED WORK</p>
 
-];
+        <h2>Selected Projects</h2>
 
-return(
+        <p>
+          A selection of portfolio projects demonstrating recruiting,
+          branding, web development, and AI-assisted workflows.
+        </p>
 
-<section
-id="projects"
-className="projects"
->
+      </div>
 
-<div className="projects-container">
+      <div className="projects-grid">
 
-<div className="projects-header">
+        {projects.map((project) => (
 
-<p>FEATURED PROJECTS</p>
+          <div className="project-card" key={project.title}>
 
-<h2>
-Recent Work
-</h2>
+            <div className="project-top">
 
-<span>
+              <span className="project-category">
+                {project.category}
+              </span>
 
-A selection of projects that demonstrate my passion for recruiting,
-AI-assisted workflows, and modern web development.
+              <div className="project-status">
+                {project.status}
+              </div>
 
-</span>
+            </div>
 
-</div>
+            <h3>{project.title}</h3>
 
-<div className="projects-grid">
+            <p>{project.description}</p>
 
-{projects.map(project=>(
+            <div className="project-stack">
+              {project.stack}
+            </div>
 
-<div
-key={project.title}
-className="project-card"
->
+          </div>
 
-<div className="project-status">
-{project.status}
-</div>
+        ))}
 
-<h3>
-{project.title}
-</h3>
+      </div>
 
-<h4>
-{project.subtitle}
-</h4>
-
-<p>
-{project.description}
-</p>
-
-<div className="tech-stack">
-
-{project.tech.map(item=>(
-
-<span key={item}>
-{item}
-</span>
-
-))}
-
-</div>
-
-</div>
-
-))}
-
-</div>
-
-</div>
-
-</section>
-
-)
-
+    </section>
+  );
 }
 
 export default Projects;
