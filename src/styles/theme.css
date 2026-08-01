@@ -1,0 +1,28 @@
+:root{
+
+--bg:#050816;
+--bg2:#0B1022;
+--card:#101827;
+--card2:#131D31;
+
+--primary:#38BDF8;
+--secondary:#6366F1;
+
+--white:#FFFFFF;
+
+--text:#CBD5E1;
+--muted:#94A3B8;
+
+--border:rgba(255,255,255,.08);
+
+--radius:24px;
+
+--shadow:
+0 10px 30px rgba(0,0,0,.25),
+0 25px 80px rgba(56,189,248,.08);
+
+--transition:.35s ease;
+
+--max-width:1380px;
+
+}
