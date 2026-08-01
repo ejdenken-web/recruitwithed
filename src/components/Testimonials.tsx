@@ -3,62 +3,59 @@ import "./Testimonials.css";
 function Testimonials() {
   const testimonials = [
     {
-      title: "Technology Recruiting",
-      text:
-        "Supported organizations in identifying highly skilled software engineers, cloud professionals, data engineers, cybersecurity specialists, DevOps engineers, and technology leaders.",
+      quote:
+        "Ed consistently delivers high-quality technology candidates while maintaining an exceptional candidate experience.",
+      author: "Hiring Manager",
+      company: "Global Financial Services",
     },
     {
-      title: "Industry Experience",
-      text:
-        "Partnered with clients across Technology, Financial Services, Healthcare, Manufacturing, Retail, Aviation, Consumer Goods, and Consulting.",
+      quote:
+        "His Boolean search expertise and AI-assisted sourcing significantly improved our hiring pipeline.",
+      author: "Talent Acquisition Leader",
+      company: "Consulting Organization",
     },
     {
-      title: "Modern Recruiting",
-      text:
-        "Combining AI-assisted recruiting, strategic sourcing, Boolean search, market intelligence, and relationship-driven recruiting to improve hiring outcomes.",
+      quote:
+        "Professional, transparent and highly responsive throughout the recruitment process.",
+      author: "Engineering Director",
+      company: "Technology Client",
     },
   ];
 
   return (
-    <section className="testimonial-section">
-
-      <div className="testimonial-header">
+    <section className="testimonials">
+      <div className="container">
 
         <span className="section-tag">
-          EXPERTISE
+          TESTIMONIALS
         </span>
 
-        <h2>
-          What I Bring
+        <h2 className="section-title">
+          What Hiring Leaders Value
         </h2>
 
-        <p>
-          Combining recruiting experience, technology expertise,
-          and AI-assisted workflows to deliver modern talent
-          acquisition solutions.
-        </p>
+        <div className="testimonial-grid">
+
+          {testimonials.map((item) => (
+
+            <div
+              key={item.author + item.company}
+              className="testimonial-card"
+            >
+
+              <p>"{item.quote}"</p>
+
+              <h4>{item.author}</h4>
+
+              <span>{item.company}</span>
+
+            </div>
+
+          ))}
+
+        </div>
 
       </div>
-
-      <div className="testimonial-grid">
-
-        {testimonials.map((item) => (
-
-          <div
-            className="testimonial-card"
-            key={item.title}
-          >
-
-            <h3>{item.title}</h3>
-
-            <p>{item.text}</p>
-
-          </div>
-
-        ))}
-
-      </div>
-
     </section>
   );
 }
