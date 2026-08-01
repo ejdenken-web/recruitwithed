@@ -1,65 +1,52 @@
 import "./Services.css";
+import IconCard from "./IconCard";
 
 function Services() {
-  const services = [
-    {
-      title: "Technology Recruiting",
-      description:
-        "Connecting organizations with software engineers, cloud professionals, data experts, cybersecurity specialists, DevOps engineers, AI professionals, and technology leaders.",
-    },
-    {
-      title: "Strategic Talent Sourcing",
-      description:
-        "Advanced Boolean search, LinkedIn sourcing, talent mapping, market research, and proactive candidate engagement to identify exceptional professionals.",
-    },
-    {
-      title: "AI-Assisted Recruiting",
-      description:
-        "Leveraging modern AI tools including ChatGPT, Claude, Microsoft Copilot, Perplexity, and DeepSeek to improve research, sourcing, and recruiting workflows.",
-    },
-  ];
-
   return (
-    <section className="services-section">
+    <section className="services">
 
       <div className="services-header">
 
-        <p className="section-tag">
-          EXPERTISE
-        </p>
+        <span className="section-tag">
+          SERVICES
+        </span>
 
         <h2>
-          What I Do
+          How I Help Organizations
         </h2>
 
         <p>
-          I help organizations build high-performing technology teams through
-          strategic recruiting, modern sourcing techniques, and AI-assisted
-          recruiting workflows.
+          Delivering modern recruiting solutions through strategic sourcing,
+          executive search, AI-assisted recruiting, and talent acquisition.
         </p>
 
       </div>
 
       <div className="services-grid">
 
-        {services.map((service) => (
+        <IconCard
+          icon="🎯"
+          title="Technology Recruiting"
+          description="Software Engineers, Cloud, Data, AI, DevOps, Cybersecurity and Engineering professionals."
+        />
 
-          <div
-            className="service-card"
-            key={service.title}
-          >
+        <IconCard
+          icon="🤖"
+          title="AI Recruiting"
+          description="Leveraging AI tools to improve sourcing, recruiting workflows, candidate engagement and productivity."
+        />
 
-            <div className="service-icon">
-              ★
-            </div>
+        <IconCard
+          icon="🔍"
+          title="Executive Search"
+          description="Strategic sourcing and recruiting for senior technical and leadership positions."
+        />
 
-            <h3>{service.title}</h3>
-
-            <p>{service.description}</p>
-
-          </div>
-
-        ))}
+        <IconCard
+          icon="📊"
+          title="Talent Strategy"
+          description="Boolean Search, Talent Mapping, Market Intelligence and modern recruiting methodologies."
+        />
 
       </div>
 
