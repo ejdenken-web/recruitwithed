@@ -1,0 +1,21 @@
+import { useEffect } from "react";
+import "./CursorGlow.css";
+
+function CursorGlow() {
+  useEffect(() => {
+    const glow = document.querySelector(".cursor-glow") as HTMLDivElement;
+
+    const move = (e: MouseEvent) => {
+      glow.style.left = `${e.clientX}px`;
+      glow.style.top = `${e.clientY}px`;
+    };
+
+    window.addEventListener("mousemove", move);
+
+    return () => window.removeEventListener("mousemove", move);
+  }, []);
+
+  return <div className="cursor-glow"></div>;
+}
+
+export default CursorGlow;
