@@ -2,77 +2,67 @@ import "./Hero.css";
 
 function Hero() {
   return (
-    <section className="hero" id="hero">
+    <section className="hero">
 
-      <div className="hero-left">
+      <div className="hero-container">
 
-        <p className="hero-tag">
-          RECRUITWITHED
-        </p>
+        <div className="hero-content">
 
-        <h1>
-          Building High-Performing
-          <br />
-          Technology Teams
-        </h1>
+          <span className="hero-tag">
+            AI-POWERED TECHNOLOGY RECRUITER
+          </span>
 
-        <p className="hero-description">
-          Senior Information Technology Consultant specializing in
-          AI-assisted recruiting, strategic talent acquisition,
-          executive search, and modern sourcing strategies for
-          organizations across North America, Japan, and India.
-        </p>
+          <h1>
+            Connecting Exceptional Talent with Exceptional Organizations.
+          </h1>
 
-        <div className="hero-buttons">
+          <p>
+            I help organizations build high-performing technology teams through
+            AI-assisted recruiting, executive search, strategic sourcing,
+            Boolean search, and modern talent acquisition practices.
+          </p>
 
-          <a href="#projects">
-            View Projects
-          </a>
+          <div className="hero-buttons">
 
-          <a
-            href="#contact"
-            className="secondary-btn"
-          >
-            Let's Connect
-          </a>
+            <a
+              href="#clients"
+              className="primary-btn"
+            >
+              View Clients
+            </a>
+
+            <a
+              href="#contact"
+              className="secondary-btn"
+            >
+              Contact Me
+            </a>
+
+          </div>
 
         </div>
 
-      </div>
+        <div className="hero-side">
 
-      <div className="hero-right">
+          <div className="hero-panel">
 
-        <div className="hero-panel">
+            <h3>Core Focus</h3>
 
-          <div className="panel-title">
-            RecruitWithEd
-          </div>
+            <ul>
 
-          <div className="panel-subtitle">
-            AI-Assisted Recruiting
-          </div>
+              <li>Technology Recruiting</li>
 
-          <div className="stats-grid">
+              <li>Executive Search</li>
 
-            <div className="stat-box">
-              <h2>10+</h2>
-              <span>Years</span>
-            </div>
+              <li>AI-Assisted Recruiting</li>
 
-            <div className="stat-box">
-              <h2>35+</h2>
-              <span>Clients</span>
-            </div>
+              <li>Strategic Talent Acquisition</li>
 
-            <div className="stat-box">
-              <h2>25</h2>
-              <span>Certifications</span>
-            </div>
+              <li>Boolean Search</li>
 
-            <div className="stat-box">
-              <h2>3</h2>
-              <span>Regions</span>
-            </div>
+              <li>Talent Mapping</li>
+
+            </ul>
 
           </div>
 
