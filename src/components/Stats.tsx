@@ -4,38 +4,45 @@ function Stats() {
   const stats = [
     {
       number: "10+",
-      title: "Years Experience",
+      label: "Years of Recruiting Experience",
     },
     {
-      number: "30+",
-      title: "Enterprise Clients",
+      number: "6–40",
+      label: "Recruiters Led & Mentored",
     },
     {
-      number: "25",
-      title: "Professional Certifications",
+      number: "Fortune 500",
+      label: "Client Experience",
     },
     {
-      number: "Global",
-      title: "North America • Japan • India",
+      number: "AI + Boolean",
+      label: "Modern Recruiting Expertise",
     },
   ];
 
   return (
-    <section className="stats-section">
+    <section className="stats">
 
-      <div className="stats-container">
+      <div className="container">
 
-        {stats.map((item) => (
+        <div className="stats-grid">
 
-          <div className="stat-card" key={item.title}>
+          {stats.map((stat) => (
 
-            <h2>{item.number}</h2>
+            <div
+              key={stat.label}
+              className="stat-card"
+            >
 
-            <p>{item.title}</p>
+              <h2>{stat.number}</h2>
 
-          </div>
+              <p>{stat.label}</p>
 
-        ))}
+            </div>
+
+          ))}
+
+        </div>
 
       </div>
 
