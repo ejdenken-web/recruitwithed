@@ -1,11 +1,9 @@
-import "./AboutImpact.css";
+import "./About.css";
 
-function AboutImpact() {
+function About() {
   return (
-    <section
-      id="about"
-      className="about-section"
-    >
+    <section id="about" className="about">
+
       <div className="about-container">
 
         <div className="about-left">
@@ -14,30 +12,27 @@ function AboutImpact() {
             ABOUT
           </span>
 
-          <h2>
-            Recruiting Built on Relationships,
-            Strategy & Innovation
+          <h2 className="section-title">
+            Building Strong Teams Through Modern Recruiting.
           </h2>
 
-          <p>
-            With over a decade of recruiting experience, I believe successful
-            hiring begins with trust, meaningful conversations, and
-            understanding the people behind every career decision.
+          <p className="section-description">
+            With over 10 years of recruiting experience, I believe successful
+            hiring begins with trust, meaningful conversations, and understanding
+            the people behind every career decision.
           </p>
 
-          <p>
-            Throughout my career, I have partnered with clients across
-            Technology, Financial Services, Healthcare, Consulting,
-            Manufacturing, Retail, Aviation, Consumer Goods, and Engineering,
-            helping organizations build high-performing teams through strategic
-            talent acquisition.
+          <p className="section-description">
+            I have partnered with clients across Technology, Financial Services,
+            Healthcare, Consulting, Retail, Manufacturing, Aviation, Consumer
+            Goods, and Engineering, helping organizations build high-performing
+            teams through strategic talent acquisition.
           </p>
 
-          <p>
-            My recruiting approach combines AI-assisted sourcing, strategic
-            talent mapping, advanced Boolean search, market research, and
-            transparent communication to deliver an exceptional experience for
-            both candidates and hiring managers.
+          <p className="section-description">
+            My recruiting approach combines AI-assisted sourcing, strategic talent
+            mapping, advanced Boolean search, market intelligence and transparent
+            communication to deliver consistent hiring results.
           </p>
 
         </div>
@@ -46,41 +41,48 @@ function AboutImpact() {
 
           <div className="about-card">
 
-            <h3>10+</h3>
+            <h3>Highlights</h3>
 
-            <span>Years of Recruiting Experience</span>
+            <div className="about-item">
 
-          </div>
+              <strong>10+ Years</strong>
 
-          <div className="about-card">
+              <span>Technology Recruiting</span>
 
-            <h3>35+</h3>
+            </div>
 
-            <span>Clients Supported</span>
+            <div className="about-item">
 
-          </div>
+              <strong>Fortune 500</strong>
 
-          <div className="about-card">
+              <span>Client Experience</span>
 
-            <h3>25</h3>
+            </div>
 
-            <span>Professional Certifications</span>
+            <div className="about-item">
 
-          </div>
+              <strong>AI + Boolean</strong>
 
-          <div className="about-card">
+              <span>Modern Recruiting</span>
 
-            <h3>6–40</h3>
+            </div>
 
-            <span>Recruiters Managed & Mentored</span>
+            <div className="about-item">
+
+              <strong>6–40</strong>
+
+              <span>Recruiters Led & Mentored</span>
+
+            </div>
 
           </div>
 
         </div>
 
       </div>
+
     </section>
   );
 }
 
-export default AboutImpact;
+export default About;
