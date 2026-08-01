@@ -1,79 +1,159 @@
-.icon-card{
+main{
 
-background:#111827;
+display:flex;
+
+flex-direction:column;
+
+gap:0;
+
+overflow:hidden;
+
+}
+
+section{
+
+position:relative;
+
+padding:120px 8%;
+
+}
+
+.section-tag{
+
+display:inline-block;
+
+padding:8px 18px;
+
+border-radius:999px;
+
+background:rgba(56,189,248,.12);
+
+border:1px solid rgba(56,189,248,.25);
+
+color:#38BDF8;
+
+font-size:13px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+margin-bottom:25px;
+
+text-transform:uppercase;
+
+}
+
+.section-title{
+
+font-size:54px;
+
+font-weight:800;
+
+line-height:1.1;
+
+margin-bottom:24px;
+
+color:#fff;
+
+}
+
+.section-description{
+
+max-width:760px;
+
+font-size:20px;
+
+line-height:1.9;
+
+color:#CBD5E1;
+
+}
+
+.container{
+
+max-width:1380px;
+
+margin:auto;
+
+}
+
+.grid-2{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:70px;
+
+align-items:center;
+
+}
+
+.grid-3{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+.card{
+
+background:#101827;
 
 border:1px solid rgba(255,255,255,.08);
 
 border-radius:24px;
 
-padding:40px;
+padding:36px;
 
-transition:.35s ease;
-
-height:100%;
+transition:.35s;
 
 }
 
-.icon-card:hover{
+.card:hover{
 
-transform:translateY(-10px);
+transform:translateY(-8px);
 
 border-color:#38BDF8;
 
-box-shadow:0 20px 40px rgba(56,189,248,.15);
+box-shadow:0 25px 80px rgba(56,189,248,.08);
 
 }
 
-.icon-circle{
+@media(max-width:1100px){
 
-width:72px;
+.grid-2{
 
-height:72px;
-
-border-radius:18px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-background:rgba(56,189,248,.12);
-
-color:#38BDF8;
-
-margin-bottom:28px;
-
-transition:.3s;
+grid-template-columns:1fr;
 
 }
 
-.icon-card:hover .icon-circle{
+.grid-3{
 
-background:#38BDF8;
-
-color:#08101F;
+grid-template-columns:1fr;
 
 }
 
-.icon-card h3{
+.section-title{
 
-font-size:24px;
-
-font-weight:700;
-
-margin-bottom:18px;
-
-color:white;
+font-size:42px;
 
 }
 
-.icon-card p{
+.section-description{
 
-font-size:17px;
+font-size:18px;
 
-line-height:1.8;
+}
 
-color:#CBD5E1;
+section{
+
+padding:90px 24px;
+
+}
 
 }
