@@ -4,61 +4,47 @@ function Footer() {
   return (
     <footer id="contact" className="footer">
 
-      <div className="footer-container">
+      <div className="container footer-content">
 
-        <div className="footer-brand">
+        <div>
 
           <h2>RecruitWithEd</h2>
 
           <p>
-            AI-powered technology recruiting, executive search,
-            strategic sourcing, and modern talent acquisition.
+            Senior Technology Recruiter specializing in AI-assisted recruiting,
+            Boolean search, executive search, and strategic talent acquisition.
           </p>
 
         </div>
 
         <div className="footer-links">
 
-          <h3>Navigation</h3>
-
           <a href="#about">About</a>
+
           <a href="#services">Services</a>
+
           <a href="#clients">Clients</a>
+
           <a href="#certifications">Certifications</a>
 
         </div>
 
-        <div className="footer-contact">
-
-          <h3>Connect</h3>
-
-          <a href="mailto:recruitwithed@gmail.com">
-            recruitwithed@gmail.com
-          </a>
+        <div>
 
           <a
-            href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noreferrer"
+            className="footer-email"
+            href="mailto:johnson@allknownservices.com"
           >
-            LinkedIn
-          </a>
-
-          <a
-            href="https://github.com/ejdenken-web/recruitwithed"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
+            johnson@allknownservices.com
           </a>
 
         </div>
 
       </div>
 
-      <div className="footer-bottom">
+      <div className="copyright">
 
-        © 2026 RecruitWithEd. All Rights Reserved.
+        © 2026 RecruitWithEd • Designed & Developed by Ed Johnson
 
       </div>
 
