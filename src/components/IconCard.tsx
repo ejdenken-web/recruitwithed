@@ -1,5 +1,5 @@
 interface Props {
-  icon: string;
+  icon: ReactNode;
   title: string;
   description: string;
 }
@@ -7,17 +7,13 @@ interface Props {
 function IconCard({ icon, title, description }: Props) {
   return (
     <div className="icon-card">
-
       <div className="icon-circle">
-
         {icon}
-
       </div>
 
       <h3>{title}</h3>
 
       <p>{description}</p>
-
     </div>
   );
 }
