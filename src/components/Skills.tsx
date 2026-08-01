@@ -3,50 +3,50 @@ import "./Skills.css";
 function Skills() {
   const skills = [
     "Technology Recruiting",
-    "AI-Assisted Recruiting",
     "Executive Search",
-    "Strategic Talent Acquisition",
+    "AI-Assisted Recruiting",
     "Boolean Search",
     "Talent Mapping",
     "Candidate Sourcing",
-    "Recruitment Operations",
-    "ATS Management",
-    "Recruiting Analytics",
-    "Employer Branding",
+    "LinkedIn Recruiter",
     "Market Intelligence",
+    "Recruitment Strategy",
+    "Stakeholder Management",
+    "Team Leadership",
+    "Recruiting Operations",
+    "ATS",
+    "Talent Acquisition",
+    "Candidate Engagement",
+    "Negotiation",
   ];
 
   return (
-    <section className="skills-section">
+    <section className="skills">
 
-      <div className="skills-header">
+      <div className="container">
 
         <span className="section-tag">
           EXPERTISE
         </span>
 
-        <h2>
-          Core Expertise
+        <h2 className="section-title">
+          Core Skills
         </h2>
 
-        <p>
-          Areas where I help organizations identify, attract, and hire exceptional talent.
-        </p>
+        <div className="skills-grid">
 
-      </div>
+          {skills.map((skill) => (
 
-      <div className="skills-grid">
+            <div
+              key={skill}
+              className="skill-pill"
+            >
+              {skill}
+            </div>
 
-        {skills.map((skill) => (
+          ))}
 
-          <div
-            key={skill}
-            className="skill-card"
-          >
-            {skill}
-          </div>
-
-        ))}
+        </div>
 
       </div>
 
