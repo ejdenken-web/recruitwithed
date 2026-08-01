@@ -1,21 +1,21 @@
-interface Props {
+import type { ReactNode } from "react";
+
+interface IconCardProps {
   icon: ReactNode;
   title: string;
   description: string;
 }
 
-function IconCard({ icon, title, description }: Props) {
+export default function IconCard({
+  icon,
+  title,
+  description,
+}: IconCardProps) {
   return (
     <div className="icon-card">
-      <div className="icon-circle">
-        {icon}
-      </div>
-
-      <h3>{title}</h3>
-
-      <p>{description}</p>
+      <div className="icon-card__icon">{icon}</div>
+      <h3 className="icon-card__title">{title}</h3>
+      <p className="icon-card__description">{description}</p>
     </div>
   );
 }
-
-export default IconCard;
