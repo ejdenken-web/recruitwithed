@@ -4,27 +4,23 @@ function Navbar() {
   return (
     <header className="navbar">
 
-      <div className="navbar-container">
+      <div className="nav-container">
 
-        <a href="#hero" className="logo">
-          Recruit<span>WithEd</span>
+        <a href="#" className="logo">
+          RecruitWithEd
         </a>
 
         <nav>
 
           <a href="#about">About</a>
 
-          <a href="#why-work-with-me">Expertise</a>
+          <a href="#services">Services</a>
 
           <a href="#clients">Clients</a>
 
           <a href="#certifications">Certifications</a>
 
-          <a href="#projects">Projects</a>
-
-          <a href="#contact" className="contact-btn">
-            Let's Connect
-          </a>
+          <a href="#contact">Contact</a>
 
         </nav>
 
