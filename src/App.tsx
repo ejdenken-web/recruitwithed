@@ -15,10 +15,13 @@ import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import FadeIn from "./components/FadeIn";
+import BackgroundEffects from "./components/BackgroundEffects";
 
 function App() {
   return (
     <>
+      <BackgroundEffects />
+
       <Navbar />
 
       <FadeIn><Hero /></FadeIn>
