@@ -3,68 +3,68 @@ import "./Timeline.css";
 function Timeline() {
   const timeline = [
     {
-      year: "2010",
-      title: "Started Recruiting Career",
-      description:
-        "Began recruiting and talent acquisition, building a strong foundation in candidate sourcing and relationship management.",
+      year: "2024 – Present",
+      role: "Senior Information Technology Recruiter",
+      company: "All Known Services",
     },
     {
-      year: "2016",
-      title: "Technology Recruiting",
-      description:
-        "Focused on recruiting software engineers, cloud professionals, data engineers, cybersecurity experts, and technology leaders.",
+      year: "2022 – 2024",
+      role: "Recruiting Manager",
+      company: "Technology Consulting",
     },
     {
-      year: "2024",
-      title: "RecruitWithEd",
-      description:
-        "Launched RecruitWithEd to showcase modern recruiting, AI-assisted sourcing, professional branding, and portfolio development.",
+      year: "2018 – 2022",
+      role: "Operations & Recruiting Manager",
+      company: "Talent Acquisition",
     },
     {
-      year: "Today",
-      title: "AI-Assisted Recruiting",
-      description:
-        "Continuously learning and applying AI tools to improve recruiting workflows, sourcing strategies, and candidate engagement.",
+      year: "2010 – 2018",
+      role: "Technical Recruiter",
+      company: "Technology Staffing",
     },
   ];
 
   return (
-    <section className="timeline-section">
+    <section className="timeline">
 
-      <div className="timeline-header">
+      <div className="container">
 
         <span className="section-tag">
-          JOURNEY
+          CAREER
         </span>
 
-        <h2>Career Timeline</h2>
+        <h2 className="section-title">
+          Professional Journey
+        </h2>
 
-      </div>
+        <div className="timeline-wrapper">
 
-      <div className="timeline">
+          {timeline.map((item) => (
 
-        {timeline.map((item) => (
+            <div
+              key={item.year}
+              className="timeline-item"
+            >
 
-          <div
-            className="timeline-item"
-            key={item.year}
-          >
+              <div className="timeline-year">
 
-            <div className="timeline-year">
-              {item.year}
+                {item.year}
+
+              </div>
+
+              <div className="timeline-card">
+
+                <h3>{item.role}</h3>
+
+                <p>{item.company}</p>
+
+              </div>
+
             </div>
 
-            <div className="timeline-content">
+          ))}
 
-              <h3>{item.title}</h3>
-
-              <p>{item.description}</p>
-
-            </div>
-
-          </div>
-
-        ))}
+        </div>
 
       </div>
 
