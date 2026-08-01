@@ -10,7 +10,7 @@ function Navbar() {
           RecruitWithEd
         </a>
 
-        <nav>
+        <nav className="nav-links">
 
           <a href="#about">About</a>
 
