@@ -17,10 +17,12 @@ import ScrollToTop from "./components/ScrollToTop";
 import FadeIn from "./components/FadeIn";
 import BackgroundEffects from "./components/BackgroundEffects";
 import CursorGlow from "./components/CursorGlow";
+import PageLoader from "./components/PageLoader";
 
 function App() {
   return (
     <>
+      <PageLoader />
       <BackgroundEffects />
       <CursorGlow />
 
@@ -41,7 +43,6 @@ function App() {
       <FadeIn><CTA /></FadeIn>
 
       <Footer />
-
       <ScrollToTop />
     </>
   );
