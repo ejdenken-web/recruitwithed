@@ -40,10 +40,10 @@ function Certifications() {
       certifications: [
         "AI-Powered Recruiter Certification",
         "Talent Acquisition Certification",
-        "Executive Search Specialist Certification",
-        "Candidate Sourcing Certification",
         "Recruitment Analytics Professional Certification",
+        "Candidate Sourcing Certification",
         "Recruitment Automation Certification",
+        "Executive Search Specialist Certification",
         "ATS & Talent Acquisition Expert Certification",
         "Recruiting CRM Specialist Certification",
         "Multilingual Recruitment Specialist Certification",
@@ -65,15 +65,23 @@ function Certifications() {
 
         <div className="certifications-title">
 
-          <h2>Professional Certifications</h2>
+          <span className="section-tag">
+            CERTIFICATIONS
+          </span>
+
+          <h2>
+            Professional Certifications
+          </h2>
 
           <p>
-            Continuous learning has been central to my recruiting journey.
-            These certifications reflect my commitment to AI, strategic sourcing,
-            talent acquisition, and modern recruiting technologies.
+            Continuous learning is an important part of my professional journey.
+            These certifications represent my commitment to improving recruiting
+            practices, expanding knowledge, and staying current with industry
+            developments.
           </p>
 
         </div>
+
 
         <div className="certification-grid">
 
@@ -84,18 +92,21 @@ function Certifications() {
               key={group.provider}
             >
 
-              <h3>{group.provider}</h3>
+              <h3>
+                {group.provider}
+              </h3>
+
 
               <div className="cert-list">
 
                 {group.certifications.map((cert) => (
 
-                  <span
+                  <div
                     className="cert-item"
                     key={cert}
                   >
                     {cert}
-                  </span>
+                  </div>
 
                 ))}
 

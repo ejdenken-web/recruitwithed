@@ -14,10 +14,35 @@ function Clients() {
     "Wipro",
     "Cognizant",
     "Accenture",
+    "Deloitte",
+    "KPMG",
+    "PwC",
+    "EY",
+    "IBM",
+    "Microsoft",
+    "Oracle",
+    "SAP",
+    "JPMorgan Chase",
+    "Bank of America",
+    "Wells Fargo",
+    "Citigroup",
+    "UnitedHealth Group",
+    "CVS Health",
+    "Elevance Health",
+    "Humana",
+    "Kaiser Permanente",
+    "General Motors",
+    "Ford Motor Company",
+    "Honeywell",
+    "Siemens",
+    "GE Aerospace",
+    "Emerson",
+    "Schneider Electric",
   ];
 
   return (
     <section id="clients" className="clients">
+
       <div className="container">
 
         <span className="section-tag">
@@ -25,16 +50,17 @@ function Clients() {
         </span>
 
         <h2 className="section-title">
-          Organizations I Have Supported
+          Clients I Supported
         </h2>
 
         <p className="section-description">
           Throughout my recruiting career, I have supported hiring initiatives
-          across Fortune 500 companies, consulting firms, financial institutions,
-          engineering organizations, healthcare, retail and manufacturing.
+          across technology, financial services, healthcare, consulting,
+          retail, manufacturing, aviation, and engineering organizations.
         </p>
 
         <div className="clients-grid">
+
           {clients.map((client) => (
             <div
               key={client}
@@ -43,9 +69,11 @@ function Clients() {
               {client}
             </div>
           ))}
+
         </div>
 
       </div>
+
     </section>
   );
 }

@@ -35,15 +35,8 @@ function About() {
           }}
         >
           With over a decade of recruiting experience, I believe successful
-          hiring begins with trust and understanding the people behind every
-          career decision. I've built my career on the belief that recruiting
-          isn't just about matching resumes to job descriptions—it's about
-          listening, asking the right questions, and helping both candidates
-          and organizations make confident hiring decisions. Whether I'm
-          partnering with a startup building its first team or supporting an
-          enterprise organization hiring specialized technology talent, my
-          approach remains the same: transparency, genuine curiosity, and a
-          commitment to delivering the right long-term fit.
+          hiring begins with trust, meaningful conversations, and understanding
+          the people behind every career decision.
         </p>
 
         <p
@@ -54,11 +47,23 @@ function About() {
             marginBottom: "28px",
           }}
         >
-          Throughout my career, I have supported hiring initiatives across
-          Technology, IT Services & Consulting, Banking & Financial Services,
-          Healthcare & Life Sciences, Health Insurance, Retail & Consumer
-          Goods, Manufacturing & Industrial Engineering, Automotive,
-          Aviation, and Professional Services.
+          I have partnered with clients across Technology, Financial Services,
+          Healthcare, Consulting, Retail, Manufacturing, Aviation, Consumer
+          Goods, and Engineering, helping organizations build high-performing
+          teams through strategic talent acquisition.
+        </p>
+
+        <p
+          style={{
+            fontSize: "clamp(16px, 2vw, 18px)",
+            lineHeight: "1.9",
+            color: "#CBD5E1",
+            marginBottom: "28px",
+          }}
+        >
+          My recruiting approach combines talent research, market insights,
+          strategic sourcing, and transparent communication to build strong
+          candidate relationships and deliver consistent hiring results.
         </p>
 
         <p
@@ -69,11 +74,11 @@ function About() {
             margin: 0,
           }}
         >
-          RecruitWithEd reflects my commitment to continuous learning,
-          AI-assisted recruiting, strategic sourcing, advanced Boolean search,
-          and delivering an exceptional hiring experience for both clients and
-          candidates.
+          RecruitWithEd represents my commitment to continuous learning,
+          responsible use of modern recruiting practices, and creating a better
+          experience for both candidates and hiring teams.
         </p>
+
       </div>
     </section>
   );

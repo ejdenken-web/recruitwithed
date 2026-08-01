@@ -3,24 +3,22 @@ import "./Hero.css";
 function Hero() {
   return (
     <section className="hero">
-
       <div className="hero-container">
 
         <div className="hero-left">
 
           <span className="hero-tag">
-            AI-POWERED TECHNOLOGY RECRUITER
+            SENIOR INFORMATION TECHNOLOGY RECRUITER
           </span>
 
           <h1>
-            Helping Organizations Build Exceptional Technology Teams.
+            Helping Organizations Build High-Performing Teams Through Strategic Talent Acquisition.
           </h1>
 
           <p>
-            Over 10 years of recruiting experience supporting Fortune 500 companies,
-            global enterprises, consulting firms, financial institutions, retail,
-            healthcare, manufacturing and engineering organizations through strategic
-            talent acquisition and AI-assisted recruiting.
+            With over a decade of recruiting experience, I partner with organizations
+            to identify, engage, and connect with exceptional professionals across
+            technology and engineering domains.
           </p>
 
           <div className="hero-buttons">
@@ -41,26 +39,16 @@ function Hero() {
 
           <div className="hero-card">
 
-            <h3>Core Expertise</h3>
+            <h3>
+              Recruiting Focus
+            </h3>
 
             <ul>
-
-              <li>Technology Recruiting</li>
-
-              <li>Executive Search</li>
-
-              <li>AI Recruiting</li>
-
-              <li>Boolean Search</li>
-
-              <li>Talent Mapping</li>
-
+              <li>Technology Talent Acquisition</li>
+              <li>Strategic Sourcing</li>
               <li>Candidate Engagement</li>
-
-              <li>Strategic Hiring</li>
-
-              <li>Recruiting Leadership</li>
-
+              <li>Executive Search</li>
+              <li>Talent Advisory</li>
             </ul>
 
           </div>
@@ -68,7 +56,6 @@ function Hero() {
         </div>
 
       </div>
-
     </section>
   );
 }

@@ -8,39 +8,53 @@ function Footer() {
 
         <div>
 
-          <h2>RecruitWithEd</h2>
+          <h2>
+            RecruitWithEd
+          </h2>
 
           <p>
-            Senior Technology Recruiter specializing in AI-assisted recruiting,
-            Boolean search, executive search, and strategic talent acquisition.
+            A professional recruiting portfolio by Ed Johnson, focused on
+            building meaningful connections between organizations and
+            exceptional talent through strategic talent acquisition.
           </p>
 
         </div>
 
+
         <div className="footer-links">
 
-          <a href="#about">About</a>
+          <a href="#about">
+            About
+          </a>
 
-          <a href="#services">Services</a>
+          <a href="#services">
+            Services
+          </a>
 
-          <a href="#clients">Clients</a>
+          <a href="#clients">
+            Clients
+          </a>
 
-          <a href="#certifications">Certifications</a>
+          <a href="#certifications">
+            Certifications
+          </a>
 
         </div>
+
 
         <div>
 
           <a
             className="footer-email"
-            href="mailto:johnson@allknownservices.com"
+            href="#contact"
           >
-            johnson@allknownservices.com
+            Let's Connect
           </a>
 
         </div>
 
       </div>
+
 
       <div className="copyright">
 
