@@ -6,59 +6,39 @@ function Footer() {
 
       <div className="container footer-content">
 
-        <div>
+        <div className="footer-brand">
 
           <h2>
             RecruitWithEd
           </h2>
 
           <p>
-            A professional recruiting portfolio by Ed Johnson, focused on
-            building meaningful connections between organizations and
-            exceptional talent through strategic talent acquisition.
+            Senior Information Technology Consultant focused on strategic
+            talent acquisition, executive search, recruiting leadership,
+            and long-term hiring partnerships.
           </p>
 
         </div>
 
-
         <div className="footer-links">
 
-          <a href="#about">
-            About
-          </a>
+          <h3>Quick Links</h3>
 
-          <a href="#services">
-            Services
-          </a>
+          <a href="#about">About</a>
 
-          <a href="#clients">
-            Clients
-          </a>
+          <a href="#clients">Clients</a>
 
-          <a href="#certifications">
-            Certifications
-          </a>
+          <a href="#certifications">Certifications</a>
 
-        </div>
-
-
-        <div>
-
-          <a
-            className="footer-email"
-            href="#contact"
-          >
-            Let's Connect
-          </a>
+          <a href="#projects">Projects</a>
 
         </div>
 
       </div>
 
-
       <div className="copyright">
 
-        © 2026 RecruitWithEd • Designed & Developed by Ed Johnson
+        © 2026 RecruitWithEd • Designed &amp; Developed by Ed Johnson
 
       </div>
 

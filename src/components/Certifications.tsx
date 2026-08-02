@@ -59,7 +59,7 @@ function Certifications() {
   ];
 
   return (
-    <section id="certifications">
+    <section id="certifications" className="certifications-section">
 
       <div className="certifications-container">
 
@@ -69,19 +69,7 @@ function Certifications() {
             CERTIFICATIONS
           </span>
 
-          <h2>
-            Professional Certifications
-          </h2>
-
-          <p>
-            Continuous learning is an important part of my professional journey.
-            These certifications represent my commitment to improving recruiting
-            practices, expanding knowledge, and staying current with industry
-            developments.
-          </p>
-
         </div>
-
 
         <div className="certification-grid">
 
@@ -92,10 +80,7 @@ function Certifications() {
               key={group.provider}
             >
 
-              <h3>
-                {group.provider}
-              </h3>
-
+              <h3>{group.provider}</h3>
 
               <div className="cert-list">
 

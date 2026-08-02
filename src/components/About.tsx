@@ -3,11 +3,8 @@ function About() {
     <section
       id="about"
       style={{
-        background: "#111827",
-        color: "white",
-        padding: "clamp(70px, 10vw, 90px) 20px",
-        textAlign: "center",
-        fontFamily: "Arial, sans-serif",
+        background: "#0b1022",
+        padding: "100px 24px",
       }}
     >
       <div
@@ -16,21 +13,24 @@ function About() {
           margin: "0 auto",
         }}
       >
-        <h2
+        <span
           style={{
+            display: "inline-block",
             color: "#38BDF8",
-            fontSize: "clamp(2rem, 5vw, 2.7rem)",
-            marginBottom: "35px",
+            fontSize: "13px",
+            fontWeight: 700,
+            letterSpacing: "3px",
+            marginBottom: "30px",
           }}
         >
-          About
-        </h2>
+          ABOUT
+        </span>
 
         <p
           style={{
-            fontSize: "clamp(16px, 2vw, 18px)",
-            lineHeight: "1.9",
             color: "#CBD5E1",
+            fontSize: "18px",
+            lineHeight: "1.9",
             marginBottom: "28px",
           }}
         >
@@ -41,44 +41,30 @@ function About() {
 
         <p
           style={{
-            fontSize: "clamp(16px, 2vw, 18px)",
-            lineHeight: "1.9",
             color: "#CBD5E1",
+            fontSize: "18px",
+            lineHeight: "1.9",
             marginBottom: "28px",
           }}
         >
-          I have partnered with clients across Technology, Financial Services,
-          Healthcare, Consulting, Retail, Manufacturing, Aviation, Consumer
-          Goods, and Engineering, helping organizations build high-performing
-          teams through strategic talent acquisition.
+          Throughout my career, I have partnered with organizations across
+          Technology, Financial Services, Healthcare, Consulting, Retail,
+          Manufacturing, Aviation, Consumer Goods, and Engineering, helping
+          build high-performing teams through strategic talent acquisition.
         </p>
 
         <p
           style={{
-            fontSize: "clamp(16px, 2vw, 18px)",
-            lineHeight: "1.9",
             color: "#CBD5E1",
-            marginBottom: "28px",
-          }}
-        >
-          My recruiting approach combines talent research, market insights,
-          strategic sourcing, and transparent communication to build strong
-          candidate relationships and deliver consistent hiring results.
-        </p>
-
-        <p
-          style={{
-            fontSize: "clamp(16px, 2vw, 18px)",
+            fontSize: "18px",
             lineHeight: "1.9",
-            color: "#CBD5E1",
             margin: 0,
           }}
         >
           RecruitWithEd represents my commitment to continuous learning,
-          responsible use of modern recruiting practices, and creating a better
-          experience for both candidates and hiring teams.
+          responsible use of AI, and modern recruiting practices that improve
+          the experience for both hiring managers and candidates.
         </p>
-
       </div>
     </section>
   );
