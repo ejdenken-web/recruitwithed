@@ -6,6 +6,7 @@ function Clients() {
     "Accenture",
     "AIC",
     "Bank of America",
+    "BCT",
     "BNP Paribas",
     "Capgemini",
     "Caterpillar",
@@ -28,14 +29,15 @@ function Clients() {
     "KPMG",
     "Lululemon Athletica",
     "Microsoft",
-    "Nomura Securities",
+    "Birlasoft" ,
+    "Nomura Securities International",
     "Photon Infotech",
     "PwC",
     "Schneider Electric",
     "Siemens",
     "Tata Consultancy Services",
     "UnitedHealth Group",
-    "Wells Fargo"
+    "Wells Fargo",
   ];
 
   return (

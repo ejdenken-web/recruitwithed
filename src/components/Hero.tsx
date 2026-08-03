@@ -23,28 +23,8 @@ function Hero() {
           <p>
             Helping organizations build high-performing teams through strategic
             talent acquisition, meaningful candidate relationships, and trusted
-            hiring partnerships across technology, engineering, financial
-            services, healthcare, consulting, retail, manufacturing, and
-            aviation.
+            hiring partnerships.
           </p>
-
-          <div className="hero-buttons">
-
-            <a
-              href="#clients"
-              className="primary-btn"
-            >
-              View Clients
-            </a>
-
-            <a
-              href="#contact"
-              className="secondary-btn"
-            >
-              Let's Connect
-            </a>
-
-          </div>
 
         </div>
 

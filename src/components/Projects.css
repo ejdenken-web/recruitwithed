@@ -21,6 +21,9 @@
   color: #cbd5e1;
 }
 
+
+/* PROJECT GRID */
+
 .projects-grid {
   max-width: 1320px;
   margin: 0 auto;
@@ -29,10 +32,13 @@
   gap: 32px;
 }
 
+
+/* PROJECT CARD */
+
 .project-card {
   position: relative;
   background: #111827;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 20px;
   padding: 36px;
   transition: all 0.3s ease;
@@ -41,15 +47,37 @@
 .project-card:hover {
   transform: translateY(-8px);
   border-color: #38bdf8;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
 }
+
+
+/* TOP AREA */
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+
+.project-category {
+  color: #38bdf8;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+/* STATUS */
 
 .project-status {
   display: inline-block;
-  margin-bottom: 22px;
   padding: 8px 16px;
   border-radius: 999px;
-  background: rgba(56, 189, 248, 0.12);
+  background: rgba(56,189,248,0.12);
   color: #38bdf8;
   font-size: 12px;
   font-weight: 700;
@@ -57,32 +85,160 @@
   text-transform: uppercase;
 }
 
+
+/* TITLE */
+
 .project-card h3 {
   color: #ffffff;
   font-size: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
+  line-height: 1.3;
 }
 
-.project-card h4 {
-  color: #38bdf8;
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
 
 .project-card p {
   color: #cbd5e1;
   line-height: 1.8;
   font-size: 17px;
-  margin: 0;
+  margin-bottom: 24px;
 }
 
+
+/* TECHNOLOGY STACK */
+
+.project-stack {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.7;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* CHHOTA BHEEM ANIMATION */
+
+.animation-preview {
+  margin: 25px 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+
+.animation-scene {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(
+    skyblue,
+    #ffffff
+  );
+}
+
+
+.sun {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: gold;
+  top: 25px;
+  right: 35px;
+}
+
+
+.character {
+  position: absolute;
+  font-size: 70px;
+  bottom: 45px;
+  left: 40px;
+  animation: walk 4s infinite alternate ease-in-out;
+}
+
+
+.cloud {
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  background: white;
+  border-radius: 30px;
+  opacity: .85;
+}
+
+
+.cloud-one {
+  top: 50px;
+  left: 40px;
+}
+
+
+.cloud-two {
+  top: 90px;
+  right: 80px;
+}
+
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  background: #55a630;
+}
+
+
+.animation-label {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+
+@keyframes walk {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(220px);
+  }
+
+}
+
+
+/* MOBILE */
+
 @media (max-width: 900px) {
+
   .projects-section {
     padding: 80px 20px;
   }
 
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
+
+
+  .project-card {
+    padding: 28px;
+  }
+
+
+  .project-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+  .project-card h3 {
+    font-size: 25px;
+  }
+
 }

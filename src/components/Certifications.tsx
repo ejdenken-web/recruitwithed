@@ -63,13 +63,9 @@ function Certifications() {
 
       <div className="certifications-container">
 
-        <div className="certifications-title">
-
-          <span className="section-tag">
-            CERTIFICATIONS
-          </span>
-
-        </div>
+        <span className="section-tag">
+          CERTIFICATIONS
+        </span>
 
         <div className="certification-grid">
 
