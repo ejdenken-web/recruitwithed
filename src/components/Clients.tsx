@@ -1,6 +1,7 @@
 import "./Clients.css";
 
 function Clients() {
+
   const clients = [
     "Abercrombie & Fitch",
     "Accenture",
@@ -8,13 +9,13 @@ function Clients() {
     "Bank of America",
     "BCT",
     "BNP Paribas",
+    "Birlasoft",
     "Capgemini",
     "Caterpillar",
     "Citigroup",
     "Cognizant",
     "CVS Health",
     "Deloitte",
-    "Elevance Health",
     "EY",
     "Ford Motor Company",
     "GE Aerospace",
@@ -29,7 +30,6 @@ function Clients() {
     "KPMG",
     "Lululemon Athletica",
     "Microsoft",
-    "Birlasoft" ,
     "Nomura Securities International",
     "Photon Infotech",
     "PwC",
@@ -45,15 +45,21 @@ function Clients() {
 
       <div className="container">
 
+        <h2 className="section-title">
+          Clients
+        </h2>
+
         <div className="clients-grid">
 
           {clients.map((client) => (
+
             <div
               key={client}
               className="client-card"
             >
               {client}
             </div>
+
           ))}
 
         </div>
