@@ -3,6 +3,7 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <header className="navbar">
+
       <div className="nav-container">
 
         <a href="#" className="logo">
@@ -28,16 +29,13 @@ function Navbar() {
           </a>
 
           <a href="#projects">
-            Projects
-          </a>
-
-          <a href="#contact">
-            Let's Connect
+            Featured Projects
           </a>
 
         </nav>
 
       </div>
+
     </header>
   );
 }

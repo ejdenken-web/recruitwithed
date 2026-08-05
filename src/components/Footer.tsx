@@ -2,7 +2,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" id="contact">
 
       <div className="footer-container">
 
@@ -18,7 +18,6 @@ function Footer() {
           </p>
 
         </div>
-
 
         <div className="footer-links">
 
@@ -41,20 +40,14 @@ function Footer() {
             </a>
 
             <a href="#projects">
-              Projects
-            </a>
-
-            <a href="#contact">
-              Let's Connect
+              Featured Projects
             </a>
 
           </nav>
 
         </div>
 
-
       </div>
-
 
       <div className="footer-bottom">
 
@@ -63,7 +56,6 @@ function Footer() {
         </p>
 
       </div>
-
 
     </footer>
   );

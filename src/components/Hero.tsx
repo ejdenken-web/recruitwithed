@@ -6,11 +6,7 @@ function Hero() {
 
       <div className="hero-container">
 
-        <div className="hero-left">
-
-          <span className="hero-tag">
-            RECRUITWITHED
-          </span>
+        <div className="hero-content">
 
           <h1>
             Ed Johnson
