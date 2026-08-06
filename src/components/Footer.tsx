@@ -2,48 +2,46 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="footer" id="contact">
+    <footer
+      className="footer"
+      id="contact"
+    >
 
       <div className="footer-container">
 
         <div className="footer-brand">
 
-          <h3>
-            RecruitWithEd
-          </h3>
+          <span className="section-tag">
+            LET'S CONNECT
+          </span>
 
-          <p>
-            Modern talent acquisition, AI-assisted recruiting,
-            strategic sourcing, and professional portfolio development.
-          </p>
+          <h2>
+            RecruitWithEd
+          </h2>
 
         </div>
 
         <div className="footer-links">
 
-          <h4>
-            Quick Links
-          </h4>
+          <a href="#about">
+            About
+          </a>
 
-          <nav>
+          <a href="#impact">
+            Career Highlights
+          </a>
 
-            <a href="#about">
-              About
-            </a>
+          <a href="#clients">
+            Clients
+          </a>
 
-            <a href="#clients">
-              Clients
-            </a>
+          <a href="#certifications">
+            Certifications
+          </a>
 
-            <a href="#certifications">
-              Certifications
-            </a>
-
-            <a href="#projects">
-              Featured Projects
-            </a>
-
-          </nav>
+          <a href="#projects">
+            Projects
+          </a>
 
         </div>
 
@@ -51,9 +49,7 @@ function Footer() {
 
       <div className="footer-bottom">
 
-        <p>
-          © 2026 RecruitWithEd • Designed & Developed by Ed Johnson
-        </p>
+        © 2026 RecruitWithEd • Designed & Developed by Ed Johnson
 
       </div>
 

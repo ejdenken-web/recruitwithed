@@ -1,87 +1,127 @@
 .certifications-section{
-    padding:120px 40px;
+    padding:120px 8%;
     background:#08101F;
 }
 
 .certifications-container{
-    max-width:1400px;
-    margin:0 auto;
+    max-width:1320px;
+    margin:auto;
     text-align:center;
 }
 
-.certifications-container .section-tag{
-    display:block;
-    color:#38BDF8;
-    font-size:14px;
-    font-weight:700;
-    letter-spacing:4px;
-    margin-bottom:50px;
-}
-
 .certification-grid{
+    margin-top:60px;
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(360px,360px));
-    justify-content:center;
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+
     gap:30px;
 }
 
 .provider-card{
+
     background:#111827;
-    border:1px solid #1F2937;
+
+    border:1px solid rgba(56,189,248,.18);
+
     border-radius:22px;
+
     padding:35px;
-    text-align:center;
+
     transition:.35s;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
 }
 
 .provider-card:hover{
+
     transform:translateY(-8px);
+
     border-color:#38BDF8;
-    box-shadow:0 25px 45px rgba(0,0,0,.35);
+
+    box-shadow:0 20px 45px rgba(56,189,248,.18);
+
 }
 
 .provider-card h3{
+
+    width:100%;
+
+    text-align:center;
+
     color:#38BDF8;
+
     font-size:30px;
-    margin-bottom:25px;
+
+    font-weight:800;
+
+    margin:0 0 28px;
+
 }
 
 .cert-list{
+
     display:flex;
+
     flex-wrap:wrap;
+
     justify-content:center;
-    align-items:center;
+
     gap:14px;
+
 }
 
 .cert-item{
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     text-align:center;
-    background:#0B1022;
-    border:1px solid rgba(56,189,248,.25);
-    border-radius:999px;
+
     padding:10px 18px;
+
+    border-radius:999px;
+
+    background:#0B1022;
+
+    border:1px solid rgba(56,189,248,.22);
+
     color:#CBD5E1;
-    font-size:15px;
+
+    font-size:14px;
+
     line-height:1.5;
+
+    transition:.3s;
+
 }
 
-@media (max-width:900px){
+.cert-item:hover{
 
-    .certifications-section{
-        padding:80px 20px;
-    }
+    background:#38BDF8;
 
-    .certification-grid{
-        grid-template-columns:1fr;
-        justify-items:center;
-    }
+    color:#08101F;
 
-    .provider-card{
-        width:100%;
-        max-width:420px;
-    }
+}
+
+@media(max-width:900px){
+
+.certifications-section{
+
+padding:90px 24px;
+
+}
+
+.certification-grid{
+
+grid-template-columns:1fr;
+
+}
 
 }

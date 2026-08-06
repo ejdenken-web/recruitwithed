@@ -1,47 +1,63 @@
 import "./AboutImpact.css";
 
-export default function AboutImpact() {
+function AboutImpact() {
+
+  const stats = [
+    {
+      value: "10+",
+      title: "Years of Professional Recruiting Experience",
+    },
+    {
+      value: "35+",
+      title: "Enterprise Clients Supported",
+    },
+    {
+      value: "25+",
+      title: "Professional Certifications",
+    },
+    {
+      value: "6–40",
+      title: "Recruiters Managed & Mentored",
+    },
+  ];
+
   return (
-    <section className="about-impact" id="impact">
+
+    <section
+      className="about-impact"
+      id="impact"
+    >
 
       <div className="about-impact__container">
 
+        <span className="section-tag">
+          CAREER HIGHLIGHTS
+        </span>
+
         <div className="about-impact__grid">
 
-          <div className="impact-card">
+          {stats.map((item) => (
 
-            <h3>10+</h3>
+            <div
+              className="impact-card"
+              key={item.title}
+            >
 
-            <p>
-              Years of Professional Recruiting Experience
-            </p>
+              <h3>{item.value}</h3>
 
-          </div>
+              <p>{item.title}</p>
 
-          <div className="impact-card">
+            </div>
 
-            <h3>35+</h3>
-
-            <p>
-              Enterprise Clients Supported
-            </p>
-
-          </div>
-
-          <div className="impact-card">
-
-            <h3>6–40</h3>
-
-            <p>
-              Recruiters Managed &amp; Mentored
-            </p>
-
-          </div>
+          ))}
 
         </div>
 
       </div>
 
     </section>
+
   );
 }
+
+export default AboutImpact;

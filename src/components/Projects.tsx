@@ -1,44 +1,56 @@
 import "./Projects.css";
 
 function Projects() {
+
   const projects = [
     {
       title: "RecruitWithEd",
-      category: "Recruiting Portfolio",
+      type: "Professional Recruiting Portfolio",
+      status: "LIVE",
       description:
-        "A modern personal brand website showcasing recruiting expertise, client partnerships, professional certifications, featured work, and continuous learning through a clean, responsive user experience.",
-      stack:
-        "React • TypeScript • CSS • Responsive Design • Claude AI",
-      status: "LIVE WEBSITE",
+        "Designed and developed a modern recruiting portfolio showcasing enterprise recruiting experience, AI certifications, client engagements, featured projects, and professional accomplishments.",
+
+      stack: [
+        "React",
+        "TypeScript",
+        "CSS",
+        "ChatGPT",
+        "Claude AI",
+        "GitHub",
+        "Vercel",
+      ],
     },
+
     {
       title: "Chhota Bheem Animation Portfolio",
-      category: "Creative Portfolio",
-      description:
-        "Designed and developed a responsive portfolio website for a professional 2D Animator and Background Artist, showcasing animation projects, background artwork, creative storytelling, and production experience through a modern, mobile-friendly user experience.",
-      stack:
-        "React • TypeScript • CSS • Responsive Design • Claude AI",
+      type: "Creative Portfolio",
       status: "AVAILABLE UPON REQUEST",
+      description:
+        "Designed and developed a modern portfolio for a professional 2D Animator and Background Artist showcasing production work, artwork, animation projects, and creative storytelling.",
+
+      stack: [
+        "React",
+        "TypeScript",
+        "CSS",
+        "ChatGPT",
+        "Claude AI",
+        "Netlify",
+      ],
     },
   ];
 
   return (
-    <section className="projects-section" id="projects">
+
+    <section
+      className="projects-section"
+      id="projects"
+    >
 
       <div className="projects-header">
 
-        <p className="section-tag">
+        <span className="section-tag">
           FEATURED WORK
-        </p>
-
-        <h2>
-          Selected Projects
-        </h2>
-
-        <p>
-          A selection of projects showcasing recruiting, branding, responsive web
-          development, and AI-assisted workflows.
-        </p>
+        </span>
 
       </div>
 
@@ -54,12 +66,12 @@ function Projects() {
             <div className="project-top">
 
               <span className="project-category">
-                {project.category}
+                {project.type}
               </span>
 
-              <div className="project-status">
+              <span className="project-status">
                 {project.status}
-              </div>
+              </span>
 
             </div>
 
@@ -71,9 +83,19 @@ function Projects() {
               {project.description}
             </p>
 
-            <div className="project-stack">
-              <strong>Tech Stack:</strong><br />
-              {project.stack}
+            <div className="pill-group">
+
+              {project.stack.map((item) => (
+
+                <span
+                  className="tech-pill"
+                  key={item}
+                >
+                  {item}
+                </span>
+
+              ))}
+
             </div>
 
           </div>
@@ -83,6 +105,7 @@ function Projects() {
       </div>
 
     </section>
+
   );
 }
 

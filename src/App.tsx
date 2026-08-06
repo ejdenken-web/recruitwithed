@@ -12,24 +12,16 @@ import ScrollToTop from "./components/ScrollToTop";
 
 import ChhotaBheemAnimation from "./pages/ChhotaBheemAnimation";
 
-
 function App() {
 
   const currentPath = window.location.pathname;
 
-
   if (currentPath === "/chhota-bheem-animation") {
-
-    return (
-      <ChhotaBheemAnimation />
-    );
-
+    return <ChhotaBheemAnimation />;
   }
-
 
   return (
     <>
-
       <Navbar />
 
       <main>
@@ -48,7 +40,6 @@ function App() {
 
       </main>
 
-
       <Footer />
 
       <ScrollToTop />
@@ -56,6 +47,5 @@ function App() {
     </>
   );
 }
-
 
 export default App;

@@ -6,9 +6,9 @@ right:30px;
 
 bottom:30px;
 
-width:56px;
+width:54px;
 
-height:56px;
+height:54px;
 
 border:none;
 
@@ -18,19 +18,33 @@ background:#38BDF8;
 
 color:#08101F;
 
-display:flex;
+font-size:24px;
 
-justify-content:center;
-
-align-items:center;
+font-weight:700;
 
 cursor:pointer;
 
-box-shadow:0 15px 40px rgba(56,189,248,.35);
+opacity:0;
+
+visibility:hidden;
+
+transform:translateY(20px);
 
 transition:.35s;
 
-z-index:9999;
+z-index:999;
+
+box-shadow:0 12px 35px rgba(56,189,248,.35);
+
+}
+
+.scroll-top.show{
+
+opacity:1;
+
+visibility:visible;
+
+transform:translateY(0);
 
 }
 
@@ -38,6 +52,22 @@ z-index:9999;
 
 transform:translateY(-6px);
 
-background:#67D3FF;
+background:#7DD3FC;
+
+}
+
+@media(max-width:768px){
+
+.scroll-top{
+
+right:20px;
+
+bottom:20px;
+
+width:48px;
+
+height:48px;
+
+}
 
 }

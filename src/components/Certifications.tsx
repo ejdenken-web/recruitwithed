@@ -19,6 +19,7 @@ function Certifications() {
       certifications: [
         "Introduction to LangGraph – Python",
         "Introduction to LangSmith Deployment",
+        "Autonomous Agent Improvement with LangSmith Engine",
       ],
     },
     {
@@ -59,7 +60,10 @@ function Certifications() {
   ];
 
   return (
-    <section id="certifications" className="certifications-section">
+    <section
+      id="certifications"
+      className="certifications-section"
+    >
 
       <div className="certifications-container">
 
@@ -72,19 +76,21 @@ function Certifications() {
           {certificationGroups.map((group) => (
 
             <div
-              className="provider-card"
               key={group.provider}
+              className="provider-card"
             >
 
-              <h3>{group.provider}</h3>
+              <h3>
+                {group.provider}
+              </h3>
 
               <div className="cert-list">
 
                 {group.certifications.map((cert) => (
 
                   <div
-                    className="cert-item"
                     key={cert}
+                    className="cert-item"
                   >
                     {cert}
                   </div>

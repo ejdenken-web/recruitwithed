@@ -40,21 +40,50 @@ function Clients() {
     "Wells Fargo",
   ];
 
+  const firstRow = clients.slice(0, 18);
+  const secondRow = clients.slice(18);
+
   return (
-    <section id="clients" className="clients">
+    <section
+      id="clients"
+      className="clients"
+    >
 
-      <div className="container">
+      <div className="clients-header">
 
-        <h2 className="section-title">
-          Clients
-        </h2>
+        <span className="section-tag">
+          CLIENTS
+        </span>
 
-        <div className="clients-grid">
+      </div>
 
-          {clients.map((client) => (
+      <div className="marquee">
+
+        <div className="marquee-track">
+
+          {[...firstRow, ...firstRow].map((client, index) => (
 
             <div
-              key={client}
+              key={index}
+              className="client-card"
+            >
+              {client}
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+      <div className="marquee reverse">
+
+        <div className="marquee-track">
+
+          {[...secondRow, ...secondRow].map((client, index) => (
+
+            <div
+              key={index}
               className="client-card"
             >
               {client}

@@ -4,46 +4,55 @@
   left: 0;
   width: 100%;
   z-index: 1000;
+
+  background: rgba(11, 16, 34, 0.82);
   backdrop-filter: blur(18px);
-  background: rgba(5, 8, 22, 0.82);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+
+  transition: all 0.35s ease;
 }
 
 .nav-container {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 18px 32px;
+  padding: 18px 8%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
+  color: #38bdf8;
+  text-decoration: none;
   font-size: 28px;
   font-weight: 800;
-  color: #ffffff;
-  text-decoration: none;
   letter-spacing: 0.5px;
-  transition: color 0.25s ease;
+  transition: 0.3s;
 }
 
 .logo:hover {
-  color: #38bdf8;
+  color: #7dd3fc;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 34px;
 }
 
 .nav-links a {
   position: relative;
+
   color: #cbd5e1;
   text-decoration: none;
+
   font-size: 15px;
   font-weight: 600;
-  transition: color 0.25s ease;
+
+  transition: 0.3s;
 }
 
 .nav-links a:hover {
@@ -52,35 +61,50 @@
 
 .nav-links a::after {
   content: "";
+
   position: absolute;
+
   left: 0;
   bottom: -8px;
+
   width: 0;
   height: 2px;
+
   background: #38bdf8;
-  transition: width 0.25s ease;
+
+  transition: width 0.3s ease;
 }
 
+/* Hover underline */
 .nav-links a:hover::after {
   width: 100%;
 }
 
+/* Active page */
+.nav-links a.active {
+  color: #38bdf8;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
 @media (max-width: 900px) {
+
   .nav-container {
-    padding: 16px 20px;
+    padding: 16px 24px;
+    flex-direction: column;
+    gap: 18px;
   }
 
   .logo {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .nav-links {
-    gap: 16px;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
+    gap: 18px;
   }
 
-  .nav-links a {
-    font-size: 14px;
-  }
 }
