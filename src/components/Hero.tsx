@@ -22,24 +22,7 @@ function Hero() {
             search, and trusted hiring partnerships.
           </p>
 
-          <div className="hero-buttons">
-
-            <a
-              href="#projects"
-              className="primary-btn"
-            >
-              View My Work
-            </a>
-
-            <a
-              href="#contact"
-              className="secondary-btn"
-            >
-              Let's Connect
-            </a>
-
-          </div>
-
+          
         </div>
 
       </div>
