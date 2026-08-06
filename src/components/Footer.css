@@ -1,74 +1,102 @@
 .footer{
-    background:#08101F;
-    padding:110px 8% 40px;
-    border-top:1px solid rgba(56,189,248,.12);
+  background:#020617;
+  border-top:1px solid rgba(56,189,248,.12);
+  padding:80px 30px 35px;
 }
 
 .footer-container{
-    max-width:1320px;
-    margin:auto;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:60px;
+  max-width:1320px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:80px;
 }
 
-.footer-brand h2{
-    margin-top:24px;
-    color:#38BDF8;
-    font-size:48px;
-    font-weight:800;
+.footer-brand h3{
+  color:#38BDF8;
+  font-size:34px;
+  font-weight:800;
+  margin-bottom:28px;
 }
 
-.footer-links{
-    display:flex;
-    gap:28px;
-    flex-wrap:wrap;
+.footer-social{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.footer-social a{
+  padding:10px 22px;
+  border-radius:999px;
+  text-decoration:none;
+  border:1px solid rgba(56,189,248,.25);
+  background:rgba(56,189,248,.10);
+  color:#38BDF8;
+  font-size:15px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.footer-social a:hover{
+  background:#38BDF8;
+  color:#08101F;
+  transform:translateY(-2px);
+}
+
+.footer-links h4{
+  color:#38BDF8;
+  font-size:18px;
+  margin-bottom:20px;
+}
+
+.footer-links nav{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
 }
 
 .footer-links a{
-    color:#CBD5E1;
-    text-decoration:none;
-    font-size:16px;
-    font-weight:600;
-    transition:.3s;
+  color:#CBD5E1;
+  text-decoration:none;
+  transition:.3s;
 }
 
 .footer-links a:hover{
-    color:#38BDF8;
+  color:#38BDF8;
 }
 
 .footer-bottom{
-    max-width:1320px;
-    margin:70px auto 0;
-    padding-top:30px;
+  max-width:1320px;
+  margin:60px auto 0;
+  padding-top:25px;
+  border-top:1px solid rgba(56,189,248,.12);
+  text-align:center;
+}
 
-    border-top:1px solid rgba(56,189,248,.12);
-
-    color:#64748B;
-    text-align:center;
-    font-size:15px;
+.footer-bottom p{
+  color:#64748B;
+  margin:0;
 }
 
 @media(max-width:900px){
 
-.footer{
-    padding:90px 24px 35px;
-}
+  .footer{
+    padding:60px 20px 30px;
+  }
 
-.footer-container{
+  .footer-container{
     flex-direction:column;
     text-align:center;
-}
+    align-items:center;
+    gap:40px;
+  }
 
-.footer-brand h2{
-    font-size:36px;
-}
-
-.footer-links{
+  .footer-social{
     justify-content:center;
-    gap:20px;
-}
+  }
+
+  .footer-links nav{
+    align-items:center;
+  }
 
 }

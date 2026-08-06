@@ -2,46 +2,69 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer
-      className="footer"
-      id="contact"
-    >
+    <footer className="footer" id="contact">
 
       <div className="footer-container">
 
         <div className="footer-brand">
 
-          <span className="section-tag">
-            LET'S CONNECT
-          </span>
-
-          <h2>
+          <h3>
             RecruitWithEd
-          </h2>
+          </h3>
+
+          <div className="footer-social">
+
+            <a
+              href="https://www.linkedin.com/in/ed-johnson-8884a1369/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+           
+            <a
+            href="https://github.com/ejdenken-web"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            GitHub
+            </a>
+
+            <a
+              href="mailto:recruitwithed@gmail.com"
+            >
+              Email
+            </a>
+
+          </div>
 
         </div>
 
         <div className="footer-links">
 
-          <a href="#about">
-            About
-          </a>
+          <h4>
+            Quick Links
+          </h4>
 
-          <a href="#impact">
-            Career Highlights
-          </a>
+          <nav>
 
-          <a href="#clients">
-            Clients
-          </a>
+            <a href="#about">
+              About
+            </a>
 
-          <a href="#certifications">
-            Certifications
-          </a>
+            <a href="#clients">
+              Clients
+            </a>
 
-          <a href="#projects">
-            Projects
-          </a>
+            <a href="#certifications">
+              Certifications
+            </a>
+
+            <a href="#projects">
+              Featured Projects
+            </a>
+
+          </nav>
 
         </div>
 
@@ -49,7 +72,9 @@ function Footer() {
 
       <div className="footer-bottom">
 
-        © 2026 RecruitWithEd • Designed & Developed by Ed Johnson
+        <p>
+          © 2026 RecruitWithEd • Designed & Developed by Ed Johnson
+        </p>
 
       </div>
 
