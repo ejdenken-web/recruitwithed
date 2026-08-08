@@ -28,26 +28,26 @@ function About() {
 
         .recruiting-orbit {
           position: relative;
-          width: 430px;
-          height: 430px;
-          max-width: 90vw;
-          margin: 45px auto 0;
+          width: 560px;
+          height: 560px;
+          max-width: 92vw;
+          margin: 55px auto 0;
         }
 
         .orbit-circle {
           position: absolute;
-          inset: 0;
-          border: 1px solid rgba(56,189,248,.20);
+          inset: 15px;
+          border: 1px solid rgba(56,189,248,.22);
           border-radius: 50%;
           box-shadow:
-            0 0 45px rgba(56,189,248,.05),
-            inset 0 0 45px rgba(56,189,248,.03);
+            0 0 55px rgba(56,189,248,.06),
+            inset 0 0 55px rgba(56,189,248,.03);
         }
 
         .orbit-animation {
           position: absolute;
           inset: 0;
-          animation: platformOrbit 28s linear infinite;
+          animation: platformOrbit 30s linear infinite;
           animation-play-state: ${paused ? "paused" : "running"};
         }
 
@@ -55,8 +55,8 @@ function About() {
           position: absolute;
           top: 50%;
           left: 50%;
-          width: 150px;
-          min-height: 46px;
+          width: 155px;
+          min-height: 48px;
           padding: 11px 14px;
 
           display: flex;
@@ -76,20 +76,24 @@ function About() {
           font-weight: 700;
           line-height: 1.3;
 
-          box-shadow: 0 0 18px rgba(56,189,248,.08);
+          box-shadow:
+            0 0 20px rgba(56,189,248,.08);
+
+          z-index: 2;
         }
 
         .orbit-platform:hover {
           background: rgba(56,189,248,.14);
           border-color: #38BDF8;
-          box-shadow: 0 0 30px rgba(56,189,248,.25);
+          box-shadow:
+            0 0 30px rgba(56,189,248,.25);
         }
 
         .orbit-platform:nth-child(1) {
           transform:
             translate(-50%, -50%)
             rotate(0deg)
-            translateY(-175px)
+            translateY(-235px)
             rotate(0deg);
         }
 
@@ -97,7 +101,7 @@ function About() {
           transform:
             translate(-50%, -50%)
             rotate(60deg)
-            translateY(-175px)
+            translateY(-235px)
             rotate(-60deg);
         }
 
@@ -105,7 +109,7 @@ function About() {
           transform:
             translate(-50%, -50%)
             rotate(120deg)
-            translateY(-175px)
+            translateY(-235px)
             rotate(-120deg);
         }
 
@@ -113,7 +117,7 @@ function About() {
           transform:
             translate(-50%, -50%)
             rotate(180deg)
-            translateY(-175px)
+            translateY(-235px)
             rotate(-180deg);
         }
 
@@ -121,7 +125,7 @@ function About() {
           transform:
             translate(-50%, -50%)
             rotate(240deg)
-            translateY(-175px)
+            translateY(-235px)
             rotate(-240deg);
         }
 
@@ -129,7 +133,7 @@ function About() {
           transform:
             translate(-50%, -50%)
             rotate(300deg)
-            translateY(-175px)
+            translateY(-235px)
             rotate(-300deg);
         }
 
@@ -138,8 +142,8 @@ function About() {
           top: 50%;
           left: 50%;
 
-          width: 150px;
-          height: 150px;
+          width: 160px;
+          height: 160px;
 
           transform: translate(-50%, -50%);
 
@@ -156,22 +160,22 @@ function About() {
           background:
             radial-gradient(
               circle,
-              rgba(56,189,248,.22),
+              rgba(56,189,248,.23),
               #0B1022 70%
             );
 
-          border: 2px solid rgba(56,189,248,.55);
+          border: 2px solid rgba(56,189,248,.58);
 
           color: #38BDF8;
 
-          font-size: 16px;
+          font-size: 17px;
           font-weight: 800;
           line-height: 1.35;
           letter-spacing: 1px;
 
           box-shadow:
-            0 0 50px rgba(56,189,248,.16),
-            inset 0 0 30px rgba(56,189,248,.08);
+            0 0 55px rgba(56,189,248,.17),
+            inset 0 0 35px rgba(56,189,248,.08);
 
           z-index: 3;
         }
@@ -213,13 +217,14 @@ function About() {
           }
 
           .recruiting-orbit {
-            width: 350px;
-            height: 350px;
+            width: 450px;
+            height: 450px;
+            max-width: 94vw;
           }
 
           .orbit-platform {
-            width: 115px;
-            min-height: 40px;
+            width: 120px;
+            min-height: 42px;
             padding: 9px 10px;
             font-size: 10px;
           }
@@ -228,7 +233,7 @@ function About() {
             transform:
               translate(-50%, -50%)
               rotate(0deg)
-              translateY(-142px)
+              translateY(-190px)
               rotate(0deg);
           }
 
@@ -236,7 +241,7 @@ function About() {
             transform:
               translate(-50%, -50%)
               rotate(60deg)
-              translateY(-142px)
+              translateY(-190px)
               rotate(-60deg);
           }
 
@@ -244,7 +249,7 @@ function About() {
             transform:
               translate(-50%, -50%)
               rotate(120deg)
-              translateY(-142px)
+              translateY(-190px)
               rotate(-120deg);
           }
 
@@ -252,7 +257,7 @@ function About() {
             transform:
               translate(-50%, -50%)
               rotate(180deg)
-              translateY(-142px)
+              translateY(-190px)
               rotate(-180deg);
           }
 
@@ -260,7 +265,7 @@ function About() {
             transform:
               translate(-50%, -50%)
               rotate(240deg)
-              translateY(-142px)
+              translateY(-190px)
               rotate(-240deg);
           }
 
@@ -268,14 +273,14 @@ function About() {
             transform:
               translate(-50%, -50%)
               rotate(300deg)
-              translateY(-142px)
+              translateY(-190px)
               rotate(-300deg);
           }
 
           .orbit-center {
-            width: 110px;
-            height: 110px;
-            font-size: 12px;
+            width: 125px;
+            height: 125px;
+            font-size: 13px;
           }
         }
 
@@ -297,13 +302,14 @@ function About() {
           }
 
           .recruiting-orbit {
-            width: 290px;
-            height: 290px;
+            width: 350px;
+            height: 350px;
+            max-width: 96vw;
           }
 
           .orbit-platform {
-            width: 88px;
-            min-height: 36px;
+            width: 92px;
+            min-height: 38px;
             padding: 7px 6px;
             font-size: 8px;
           }
@@ -312,7 +318,7 @@ function About() {
             transform:
               translate(-50%, -50%)
               rotate(0deg)
-              translateY(-116px)
+              translateY(-150px)
               rotate(0deg);
           }
 
@@ -320,7 +326,7 @@ function About() {
             transform:
               translate(-50%, -50%)
               rotate(60deg)
-              translateY(-116px)
+              translateY(-150px)
               rotate(-60deg);
           }
 
@@ -328,7 +334,7 @@ function About() {
             transform:
               translate(-50%, -50%)
               rotate(120deg)
-              translateY(-116px)
+              translateY(-150px)
               rotate(-120deg);
           }
 
@@ -336,7 +342,7 @@ function About() {
             transform:
               translate(-50%, -50%)
               rotate(180deg)
-              translateY(-116px)
+              translateY(-150px)
               rotate(-180deg);
           }
 
@@ -344,7 +350,7 @@ function About() {
             transform:
               translate(-50%, -50%)
               rotate(240deg)
-              translateY(-116px)
+              translateY(-150px)
               rotate(-240deg);
           }
 
@@ -352,13 +358,13 @@ function About() {
             transform:
               translate(-50%, -50%)
               rotate(300deg)
-              translateY(-116px)
+              translateY(-150px)
               rotate(-300deg);
           }
 
           .orbit-center {
-            width: 85px;
-            height: 85px;
+            width: 90px;
+            height: 90px;
             font-size: 9px;
             padding: 10px;
           }
