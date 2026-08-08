@@ -21,30 +21,32 @@ function About() {
       }}
     >
       <style>{`
-        .recruiting-platforms-area {
-          margin-top: 140px;
-          padding-top: 10px;
+        .platform-section {
+          margin-top: 150px;
+          padding-top: 20px;
+          text-align: center;
         }
 
         .platform-tag {
           display: inline-block;
-          padding: 8px 18px;
+          padding: 10px 20px;
           border-radius: 999px;
           background: rgba(56,189,248,.12);
-          border: 1px solid rgba(56,189,248,.25);
+          border: 1px solid rgba(56,189,248,.30);
           color: #38BDF8;
           font-size: 13px;
           font-weight: 700;
           letter-spacing: 2px;
           margin-bottom: 28px;
+          box-shadow: 0 0 25px rgba(56,189,248,.08);
         }
 
-        .platform-heading {
-          margin: 0 0 18px;
+        .platform-title {
+          margin: 0 0 20px;
           color: #38BDF8;
-          font-size: clamp(2.6rem, 5vw, 3.4rem);
+          font-size: clamp(2.7rem, 5vw, 3.6rem);
           font-weight: 800;
-          line-height: 1.2;
+          line-height: 1.15;
         }
 
         .platform-description {
@@ -55,40 +57,46 @@ function About() {
           line-height: 1.8;
         }
 
-        .recruiting-orbit {
-          position: relative;
-          width: 650px;
-          height: 650px;
+        .orbit-wrapper {
+          width: 620px;
+          height: 620px;
           max-width: 94vw;
-          margin: 65px auto 0;
+          margin: 70px auto 0;
+          position: relative;
         }
 
-        .orbit-circle {
+        .orbit-ring {
           position: absolute;
-          inset: 45px;
+          width: 500px;
+          height: 500px;
+          top: 60px;
+          left: 60px;
           border: 2px solid rgba(56,189,248,.30);
           border-radius: 50%;
-
           box-shadow:
-            0 0 65px rgba(56,189,248,.08),
-            inset 0 0 65px rgba(56,189,248,.04);
+            0 0 70px rgba(56,189,248,.08),
+            inset 0 0 70px rgba(56,189,248,.04);
         }
 
-        .orbit-animation {
+        .orbit-rotating {
           position: absolute;
           inset: 0;
-          animation: platformOrbit 32s linear infinite;
+          animation: recruitingOrbit 40s linear infinite;
           animation-play-state: ${paused ? "paused" : "running"};
         }
 
-        .orbit-platform {
-          position: absolute;
-          top: 50%;
-          left: 50%;
+        /*
+          IMPORTANT:
+          The portals are positioned INSIDE the 500px circle.
+          The outer circle runs from 60px to 560px.
+          Each portal is deliberately inset from the edge.
+        */
 
-          width: 145px;
-          min-height: 48px;
-          padding: 10px 12px;
+        .platform-item {
+          position: absolute;
+          width: 140px;
+          min-height: 46px;
+          padding: 9px 12px;
 
           display: flex;
           align-items: center;
@@ -96,10 +104,9 @@ function About() {
 
           text-align: center;
 
-          border-radius: 999px;
-
           background: #0B1528;
-          border: 1px solid rgba(56,189,248,.60);
+          border: 1px solid rgba(56,189,248,.65);
+          border-radius: 999px;
 
           color: #38BDF8;
 
@@ -110,94 +117,75 @@ function About() {
           box-shadow:
             0 0 20px rgba(56,189,248,.10);
 
-          z-index: 2;
+          z-index: 5;
         }
 
-        .orbit-platform:hover {
-          background: rgba(56,189,248,.16);
+        .platform-item:hover {
+          background: rgba(56,189,248,.18);
           border-color: #38BDF8;
           box-shadow:
-            0 0 35px rgba(56,189,248,.28);
+            0 0 35px rgba(56,189,248,.30);
         }
 
-        /*
-          The orbit radius is 250px.
-          The circle radius is 280px.
-          The platform width is 145px.
-          This keeps the entire pill safely inside the circle.
-        */
-
-        .orbit-platform:nth-child(1) {
-          transform:
-            translate(-50%, -50%)
-            rotate(0deg)
-            translateY(-250px)
-            rotate(0deg);
+        /* TOP */
+        .platform-item:nth-child(1) {
+          top: 70px;
+          left: 180px;
         }
 
-        .orbit-platform:nth-child(2) {
-          transform:
-            translate(-50%, -50%)
-            rotate(60deg)
-            translateY(-250px)
-            rotate(-60deg);
+        /* UPPER RIGHT */
+        .platform-item:nth-child(2) {
+          top: 155px;
+          right: 75px;
         }
 
-        .orbit-platform:nth-child(3) {
-          transform:
-            translate(-50%, -50%)
-            rotate(120deg)
-            translateY(-250px)
-            rotate(-120deg);
+        /* LOWER RIGHT */
+        .platform-item:nth-child(3) {
+          bottom: 155px;
+          right: 75px;
         }
 
-        .orbit-platform:nth-child(4) {
-          transform:
-            translate(-50%, -50%)
-            rotate(180deg)
-            translateY(-250px)
-            rotate(-180deg);
+        /* BOTTOM */
+        .platform-item:nth-child(4) {
+          bottom: 70px;
+          left: 180px;
         }
 
-        .orbit-platform:nth-child(5) {
-          transform:
-            translate(-50%, -50%)
-            rotate(240deg)
-            translateY(-250px)
-            rotate(-240deg);
+        /* LOWER LEFT */
+        .platform-item:nth-child(5) {
+          bottom: 155px;
+          left: 75px;
         }
 
-        .orbit-platform:nth-child(6) {
-          transform:
-            translate(-50%, -50%)
-            rotate(300deg)
-            translateY(-250px)
-            rotate(-300deg);
+        /* UPPER LEFT */
+        .platform-item:nth-child(6) {
+          top: 155px;
+          left: 75px;
         }
 
         .orbit-center {
           position: absolute;
-          top: 50%;
-          left: 50%;
 
           width: 180px;
           height: 180px;
 
-          transform: translate(-50%, -50%);
-
-          border-radius: 50%;
+          top: 220px;
+          left: 220px;
 
           display: flex;
           align-items: center;
           justify-content: center;
 
           text-align: center;
+
           padding: 25px;
+
+          border-radius: 50%;
 
           background:
             radial-gradient(
               circle,
-              rgba(56,189,248,.24),
+              rgba(56,189,248,.25),
               #0B1022 70%
             );
 
@@ -208,23 +196,22 @@ function About() {
           font-size: 21px;
           font-weight: 800;
           line-height: 1.3;
-          letter-spacing: .5px;
 
           box-shadow:
             0 0 60px rgba(56,189,248,.20),
             inset 0 0 40px rgba(56,189,248,.08);
 
-          z-index: 3;
+          z-index: 10;
         }
 
-        .orbit-status {
+        .orbit-note {
           margin-top: 25px;
           color: #64748B;
           font-size: 12px;
           text-align: center;
         }
 
-        @keyframes platformOrbit {
+        @keyframes recruitingOrbit {
           from {
             transform: rotate(0deg);
           }
@@ -234,26 +221,20 @@ function About() {
           }
         }
 
+        /* =========================
+           TABLET
+        ========================= */
+
         @media (max-width: 900px) {
           #about {
             padding: 40px 24px 80px !important;
           }
 
-          #about h2 {
-            font-size: 42px !important;
-            line-height: 1.15 !important;
-          }
-
-          #about p {
-            font-size: 17px !important;
-            line-height: 1.75 !important;
-          }
-
-          .recruiting-platforms-area {
+          .platform-section {
             margin-top: 110px;
           }
 
-          .platform-heading {
+          .platform-title {
             font-size: 2.5rem;
           }
 
@@ -261,175 +242,155 @@ function About() {
             font-size: 16px;
           }
 
-          .recruiting-orbit {
+          .orbit-wrapper {
             width: 500px;
             height: 500px;
             max-width: 96vw;
             margin-top: 55px;
           }
 
-          .orbit-circle {
-            inset: 35px;
+          .orbit-ring {
+            width: 400px;
+            height: 400px;
+            top: 50px;
+            left: 50px;
           }
 
-          .orbit-platform {
-            width: 110px;
-            min-height: 42px;
-            padding: 8px 9px;
+          .platform-item {
+            width: 108px;
+            min-height: 40px;
+            padding: 7px;
             font-size: 9px;
           }
 
-          .orbit-platform:nth-child(1) {
-            transform:
-              translate(-50%, -50%)
-              rotate(0deg)
-              translateY(-195px)
-              rotate(0deg);
+          .platform-item:nth-child(1) {
+            top: 60px;
+            left: 146px;
           }
 
-          .orbit-platform:nth-child(2) {
-            transform:
-              translate(-50%, -50%)
-              rotate(60deg)
-              translateY(-195px)
-              rotate(-60deg);
+          .platform-item:nth-child(2) {
+            top: 125px;
+            right: 65px;
           }
 
-          .orbit-platform:nth-child(3) {
-            transform:
-              translate(-50%, -50%)
-              rotate(120deg)
-              translateY(-195px)
-              rotate(-120deg);
+          .platform-item:nth-child(3) {
+            bottom: 125px;
+            right: 65px;
           }
 
-          .orbit-platform:nth-child(4) {
-            transform:
-              translate(-50%, -50%)
-              rotate(180deg)
-              translateY(-195px)
-              rotate(-180deg);
+          .platform-item:nth-child(4) {
+            bottom: 60px;
+            left: 146px;
           }
 
-          .orbit-platform:nth-child(5) {
-            transform:
-              translate(-50%, -50%)
-              rotate(240deg)
-              translateY(-195px)
-              rotate(-240deg);
+          .platform-item:nth-child(5) {
+            bottom: 125px;
+            left: 65px;
           }
 
-          .orbit-platform:nth-child(6) {
-            transform:
-              translate(-50%, -50%)
-              rotate(300deg)
-              translateY(-195px)
-              rotate(-300deg);
+          .platform-item:nth-child(6) {
+            top: 125px;
+            left: 65px;
           }
 
           .orbit-center {
             width: 140px;
             height: 140px;
+            top: 180px;
+            left: 180px;
             font-size: 15px;
           }
         }
+
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 480px) {
           #about {
             padding: 30px 18px 70px !important;
           }
 
-          #about h2 {
-            font-size: 35px !important;
-          }
-
-          #about p {
-            font-size: 16px !important;
-          }
-
-          .recruiting-platforms-area {
+          .platform-section {
             margin-top: 90px;
           }
 
-          .platform-heading {
-            font-size: 2.2rem;
+          .platform-tag {
+            font-size: 11px;
+            padding: 8px 15px;
+          }
+
+          .platform-title {
+            font-size: 2.15rem;
           }
 
           .platform-description {
             font-size: 15px;
+            line-height: 1.7;
           }
 
-          .recruiting-orbit {
+          .orbit-wrapper {
             width: 350px;
             height: 350px;
             max-width: 98vw;
             margin-top: 45px;
           }
 
-          .orbit-circle {
-            inset: 28px;
+          .orbit-ring {
+            width: 290px;
+            height: 290px;
+            top: 30px;
+            left: 30px;
           }
 
-          .orbit-platform {
-            width: 82px;
-            min-height: 34px;
-            padding: 6px 5px;
+          .platform-item {
+            width: 76px;
+            min-height: 32px;
+            padding: 5px 4px;
             font-size: 7px;
           }
 
-          .orbit-platform:nth-child(1) {
-            transform:
-              translate(-50%, -50%)
-              rotate(0deg)
-              translateY(-138px)
-              rotate(0deg);
+          .platform-item:nth-child(1) {
+            top: 37px;
+            left: 87px;
           }
 
-          .orbit-platform:nth-child(2) {
-            transform:
-              translate(-50%, -50%)
-              rotate(60deg)
-              translateY(-138px)
-              rotate(-60deg);
+          .platform-item:nth-child(2) {
+            top: 82px;
+            right: 32px;
           }
 
-          .orbit-platform:nth-child(3) {
-            transform:
-              translate(-50%, -50%)
-              rotate(120deg)
-              translateY(-138px)
-              rotate(-120deg);
+          .platform-item:nth-child(3) {
+            bottom: 82px;
+            right: 32px;
           }
 
-          .orbit-platform:nth-child(4) {
-            transform:
-              translate(-50%, -50%)
-              rotate(180deg)
-              translateY(-138px)
-              rotate(-180deg);
+          .platform-item:nth-child(4) {
+            bottom: 37px;
+            left: 87px;
           }
 
-          .orbit-platform:nth-child(5) {
-            transform:
-              translate(-50%, -50%)
-              rotate(240deg)
-              translateY(-138px)
-              rotate(-240deg);
+          .platform-item:nth-child(5) {
+            bottom: 82px;
+            left: 32px;
           }
 
-          .orbit-platform:nth-child(6) {
-            transform:
-              translate(-50%, -50%)
-              rotate(300deg)
-              translateY(-138px)
-              rotate(-300deg);
+          .platform-item:nth-child(6) {
+            top: 82px;
+            left: 32px;
           }
 
           .orbit-center {
             width: 100px;
             height: 100px;
+            top: 125px;
+            left: 125px;
             font-size: 10px;
             padding: 12px;
+          }
+
+          .orbit-note {
+            font-size: 10px;
           }
         }
       `}</style>
@@ -441,6 +402,8 @@ function About() {
           textAlign: "center",
         }}
       >
+        {/* ABOUT BUTTON */}
+
         <span
           style={{
             display: "inline-block",
@@ -458,6 +421,8 @@ function About() {
           ABOUT
         </span>
 
+        {/* MAIN HEADING */}
+
         <h2
           style={{
             color: "#38BDF8",
@@ -470,6 +435,8 @@ function About() {
           <br />
           Building Teams.
         </h2>
+
+        {/* ABOUT CONTENT */}
 
         <p
           style={{
@@ -511,51 +478,69 @@ function About() {
           better hiring experiences for both organizations and professionals.
         </p>
 
-        <div className="recruiting-platforms-area">
+        {/* RECRUITING PLATFORMS */}
+
+        <div className="platform-section">
+
+          {/* BUTTON / TAG */}
 
           <span className="platform-tag">
             RECRUITING PLATFORMS
           </span>
 
-          <h3 className="platform-heading">
-            Recruiting Platforms
+          {/* HEADING */}
+
+          <h3 className="platform-title">
+            Platforms
           </h3>
+
+          {/* DESCRIPTION */}
 
           <p className="platform-description">
             Talent sourcing and recruiting platforms used to identify,
             connect with, and engage technology professionals.
           </p>
 
+          {/* ORBIT */}
+
           <div
-            className="recruiting-orbit"
+            className="orbit-wrapper"
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >
-            <div className="orbit-circle" />
+            <div className="orbit-ring" />
 
-            <div className="orbit-animation">
+            <div className="orbit-rotating">
+
               {platforms.map((platform) => (
                 <div
                   key={platform}
-                  className="orbit-platform"
+                  className="platform-item"
                 >
                   {platform}
                 </div>
               ))}
+
             </div>
+
+            {/* CENTER */}
 
             <div className="orbit-center">
               Recruiting
               <br />
               Platforms
             </div>
+
           </div>
 
-          <div className="orbit-status">
+          {/* PAUSE MESSAGE */}
+
+          <div className="orbit-note">
             {paused
               ? "Paused"
               : "Hover over the platforms to pause"}
           </div>
+
         </div>
       </div>
     </section>
