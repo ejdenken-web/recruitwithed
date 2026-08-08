@@ -1,102 +1,171 @@
-.footer{
-  background:#020617;
-  border-top:1px solid rgba(56,189,248,.12);
-  padding:80px 30px 35px;
+.hero {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 8%;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(56, 189, 248, .12),
+      transparent 55%
+    ),
+    #0B1022;
+  position: relative;
+  overflow: hidden;
 }
 
-.footer-container{
-  max-width:1320px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  gap:80px;
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, .08);
+  filter: blur(120px);
+  top: -250px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.footer-brand h3{
-  color:#38BDF8;
-  font-size:34px;
-  font-weight:800;
-  margin-bottom:28px;
+.hero-container {
+  width: 100%;
+  max-width: 1320px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
 }
 
-.footer-social{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
+.hero-left {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
 }
 
-.footer-social a{
-  padding:10px 22px;
-  border-radius:999px;
-  text-decoration:none;
-  border:1px solid rgba(56,189,248,.25);
-  background:rgba(56,189,248,.10);
-  color:#38BDF8;
-  font-size:15px;
-  font-weight:600;
-  transition:.3s;
+.hero-tag {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, .12);
+  border: 1px solid rgba(56, 189, 248, .25);
+  color: #38BDF8;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
 }
 
-.footer-social a:hover{
-  background:#38BDF8;
-  color:#08101F;
-  transform:translateY(-2px);
+.hero-left h1 {
+  color: #38BDF8;
+  font-size: clamp(4rem, 8vw, 5.8rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin-bottom: 18px;
+  text-shadow: 0 0 35px rgba(56, 189, 248, .35);
 }
 
-.footer-links h4{
-  color:#38BDF8;
-  font-size:18px;
-  margin-bottom:20px;
+.hero-left h2 {
+  color: #7DD3FC;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 600;
+  margin-bottom: 30px;
 }
 
-.footer-links nav{
-  display:flex;
-  flex-direction:column;
-  gap:15px;
+.hero-left p {
+  max-width: 760px;
+  margin: auto;
+  color: #CBD5E1;
+  font-size: 20px;
+  line-height: 1.9;
 }
 
-.footer-links a{
-  color:#CBD5E1;
-  text-decoration:none;
-  transition:.3s;
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 60px;
 }
 
-.footer-links a:hover{
-  color:#38BDF8;
+.hero-stat {
+  min-width: 190px;
+  padding: 30px;
+  background: #111827;
+  border: 1px solid rgba(56, 189, 248, .18);
+  border-radius: 20px;
+  transition: all .35s ease;
 }
 
-.footer-bottom{
-  max-width:1320px;
-  margin:60px auto 0;
-  padding-top:25px;
-  border-top:1px solid rgba(56,189,248,.12);
-  text-align:center;
+.hero-stat:hover {
+  transform: translateY(-8px);
+  border-color: #38BDF8;
+  box-shadow: 0 20px 45px rgba(56, 189, 248, .18);
 }
 
-.footer-bottom p{
-  color:#64748B;
-  margin:0;
+.hero-stat h3 {
+  margin: 0 0 10px;
+  color: #38BDF8;
+  font-size: 42px;
+  font-weight: 800;
 }
 
-@media(max-width:900px){
+.hero-stat span {
+  color: #CBD5E1;
+  font-size: 15px;
+  font-weight: 500;
+}
 
-  .footer{
-    padding:60px 20px 30px;
+@media (max-width: 900px) {
+
+  .hero {
+    min-height: 0;
+    height: auto;
+    padding: 75px 24px 55px;
   }
 
-  .footer-container{
-    flex-direction:column;
-    text-align:center;
-    align-items:center;
-    gap:40px;
+  .hero-left h1 {
+    font-size: 3.4rem;
   }
 
-  .footer-social{
-    justify-content:center;
+  .hero-left h2 {
+    font-size: 1.5rem;
   }
 
-  .footer-links nav{
-    align-items:center;
+  .hero-left p {
+    font-size: 17px;
+    line-height: 1.7;
   }
 
+  .hero-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-stat {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 65px 20px 45px;
+  }
+
+  .hero-left h1 {
+    font-size: 2.9rem;
+    letter-spacing: -1px;
+  }
+
+  .hero-left h2 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-bottom: 22px;
+  }
+
+  .hero-left p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
 }

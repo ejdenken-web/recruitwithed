@@ -1,85 +1,27 @@
-import "./Footer.css";
+import "./Hero.css";
 
-function Footer() {
+function Hero() {
   return (
-    <footer className="footer" id="contact">
+    <section className="hero" id="home">
+      <div className="hero-container">
+        <div className="hero-left">
 
-      <div className="footer-container">
+          <h1>Ed Johnson</h1>
 
-        <div className="footer-brand">
+          <h2>
+            Senior Information Technology Consultant
+          </h2>
 
-          <h3>
-            RecruitWithEd
-          </h3>
-
-          <div className="footer-social">
-
-            <a
-              href="https://www.linkedin.com/in/ed-johnson-8884a1369/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-           
-            <a
-            href="https://github.com/ejdenken-web"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            GitHub
-            </a>
-
-            <a
-              href="mailto:recruitwithed@gmail.com"
-            >
-              Email
-            </a>
-
-          </div>
+          <p>
+            Helping organizations build exceptional technology teams through
+            strategic talent acquisition, AI-powered recruiting, executive
+            search, and trusted hiring partnerships.
+          </p>
 
         </div>
-
-        <div className="footer-links">
-
-          <h4>
-            Quick Links
-          </h4>
-
-          <nav>
-
-            <a href="#about">
-              About
-            </a>
-
-            <a href="#clients">
-              Clients
-            </a>
-
-            <a href="#certifications">
-              Certifications
-            </a>
-
-            <a href="#projects">
-              Featured Projects
-            </a>
-
-          </nav>
-
-        </div>
-
       </div>
-
-      <div className="footer-bottom">
-
-        <p>
-          © 2026 RecruitWithEd • Designed & Developed by Ed Johnson
-        </p>
-
-      </div>
-
-    </footer>
+    </section>
   );
 }
 
-export default Footer;
+export default Hero;

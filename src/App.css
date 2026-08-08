@@ -4,6 +4,7 @@ main {
   overflow: hidden;
 }
 
+
 /* ---------- Global Sections ---------- */
 
 section {
@@ -11,10 +12,12 @@ section {
   padding: 120px 8%;
 }
 
+
 .container {
   max-width: 1320px;
   margin: 0 auto;
 }
+
 
 /* ---------- Shared Header ---------- */
 
@@ -22,72 +25,81 @@ section {
   display: inline-block;
   padding: 8px 18px;
   border-radius: 999px;
-  background: rgba(56,189,248,.12);
-  border: 1px solid rgba(56,189,248,.25);
-
+  background: rgba(56, 189, 248, .12);
+  border: 1px solid rgba(56, 189, 248, .25);
   color: #38BDF8;
-
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
+
 .section-title {
   margin-top: 24px;
   margin-bottom: 24px;
-
   color: #38BDF8;
-
-  font-size: clamp(2.6rem,5vw,3.4rem);
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
   font-weight: 800;
   line-height: 1.2;
 }
 
+
 .section-description {
   max-width: 760px;
-
   color: #CBD5E1;
-
   font-size: 18px;
   line-height: 1.9;
 }
+
 
 /* ---------- Shared Cards ---------- */
 
 .card {
   background: #111827;
-
-  border: 1px solid rgba(56,189,248,.18);
+  border: 1px solid rgba(56, 189, 248, .18);
   border-radius: 22px;
-
   padding: 34px;
-
   transition: all .35s ease;
 }
 
+
 .card:hover {
   transform: translateY(-8px);
-
   border-color: #38BDF8;
-
-  box-shadow: 0 20px 45px rgba(56,189,248,.18);
+  box-shadow: 0 20px 45px rgba(56, 189, 248, .18);
 }
+
 
 /* ---------- Responsive ---------- */
 
-@media (max-width:900px){
+@media (max-width: 900px) {
 
-  section{
-    padding:90px 24px;
+  section {
+    padding: 90px 24px;
   }
 
-  .section-title{
-    font-size:2.2rem;
+  .section-title {
+    font-size: 2.2rem;
   }
 
-  .section-description{
-    font-size:16px;
+  .section-description {
+    font-size: 16px;
+  }
+
+  /* Reduce the large gap between Hero and About */
+  #about {
+    padding-top: 35px !important;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  /* Keep About close to the Hero on small phones */
+  #about {
+    padding-top: 30px !important;
   }
 
 }
