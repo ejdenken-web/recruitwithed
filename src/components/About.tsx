@@ -490,14 +490,11 @@ function About() {
 
           {/* HEADING */}
 
-          <h3 className="platform-title">
-            Platforms
-          </h3>
-
+          
           {/* DESCRIPTION */}
 
           <p className="platform-description">
-            Talent sourcing and recruiting platforms used to identify,
+            Talent sourcing and platforms used to identify,
             connect with, and engage technology professionals.
           </p>
 
