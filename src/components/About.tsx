@@ -20,6 +20,351 @@ function About() {
         padding: "120px 8%",
       }}
     >
+      <style>{`
+        .recruiting-platforms-area {
+          margin-top: 120px;
+          padding-top: 20px;
+        }
+
+        .recruiting-orbit {
+          position: relative;
+          width: 430px;
+          height: 430px;
+          max-width: 90vw;
+          margin: 45px auto 0;
+        }
+
+        .orbit-circle {
+          position: absolute;
+          inset: 0;
+          border: 1px solid rgba(56,189,248,.20);
+          border-radius: 50%;
+          box-shadow:
+            0 0 45px rgba(56,189,248,.05),
+            inset 0 0 45px rgba(56,189,248,.03);
+        }
+
+        .orbit-animation {
+          position: absolute;
+          inset: 0;
+          animation: platformOrbit 28s linear infinite;
+          animation-play-state: ${paused ? "paused" : "running"};
+        }
+
+        .orbit-platform {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 150px;
+          min-height: 46px;
+          padding: 11px 14px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          text-align: center;
+
+          border-radius: 999px;
+
+          background: #0B1528;
+          border: 1px solid rgba(56,189,248,.50);
+
+          color: #38BDF8;
+
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 1.3;
+
+          box-shadow: 0 0 18px rgba(56,189,248,.08);
+        }
+
+        .orbit-platform:hover {
+          background: rgba(56,189,248,.14);
+          border-color: #38BDF8;
+          box-shadow: 0 0 30px rgba(56,189,248,.25);
+        }
+
+        .orbit-platform:nth-child(1) {
+          transform:
+            translate(-50%, -50%)
+            rotate(0deg)
+            translateY(-175px)
+            rotate(0deg);
+        }
+
+        .orbit-platform:nth-child(2) {
+          transform:
+            translate(-50%, -50%)
+            rotate(60deg)
+            translateY(-175px)
+            rotate(-60deg);
+        }
+
+        .orbit-platform:nth-child(3) {
+          transform:
+            translate(-50%, -50%)
+            rotate(120deg)
+            translateY(-175px)
+            rotate(-120deg);
+        }
+
+        .orbit-platform:nth-child(4) {
+          transform:
+            translate(-50%, -50%)
+            rotate(180deg)
+            translateY(-175px)
+            rotate(-180deg);
+        }
+
+        .orbit-platform:nth-child(5) {
+          transform:
+            translate(-50%, -50%)
+            rotate(240deg)
+            translateY(-175px)
+            rotate(-240deg);
+        }
+
+        .orbit-platform:nth-child(6) {
+          transform:
+            translate(-50%, -50%)
+            rotate(300deg)
+            translateY(-175px)
+            rotate(-300deg);
+        }
+
+        .orbit-center {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+
+          width: 150px;
+          height: 150px;
+
+          transform: translate(-50%, -50%);
+
+          border-radius: 50%;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          text-align: center;
+
+          padding: 20px;
+
+          background:
+            radial-gradient(
+              circle,
+              rgba(56,189,248,.22),
+              #0B1022 70%
+            );
+
+          border: 2px solid rgba(56,189,248,.55);
+
+          color: #38BDF8;
+
+          font-size: 16px;
+          font-weight: 800;
+          line-height: 1.35;
+          letter-spacing: 1px;
+
+          box-shadow:
+            0 0 50px rgba(56,189,248,.16),
+            inset 0 0 30px rgba(56,189,248,.08);
+
+          z-index: 3;
+        }
+
+        .orbit-status {
+          margin-top: 20px;
+          color: #64748B;
+          font-size: 12px;
+          text-align: center;
+        }
+
+        @keyframes platformOrbit {
+          from {
+            transform: rotate(0deg);
+          }
+
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        @media (max-width: 900px) {
+          #about {
+            padding: 35px 24px 75px !important;
+          }
+
+          #about h2 {
+            font-size: 42px !important;
+            line-height: 1.15 !important;
+          }
+
+          #about p {
+            font-size: 17px !important;
+            line-height: 1.75 !important;
+          }
+
+          .recruiting-platforms-area {
+            margin-top: 100px;
+          }
+
+          .recruiting-orbit {
+            width: 350px;
+            height: 350px;
+          }
+
+          .orbit-platform {
+            width: 115px;
+            min-height: 40px;
+            padding: 9px 10px;
+            font-size: 10px;
+          }
+
+          .orbit-platform:nth-child(1) {
+            transform:
+              translate(-50%, -50%)
+              rotate(0deg)
+              translateY(-142px)
+              rotate(0deg);
+          }
+
+          .orbit-platform:nth-child(2) {
+            transform:
+              translate(-50%, -50%)
+              rotate(60deg)
+              translateY(-142px)
+              rotate(-60deg);
+          }
+
+          .orbit-platform:nth-child(3) {
+            transform:
+              translate(-50%, -50%)
+              rotate(120deg)
+              translateY(-142px)
+              rotate(-120deg);
+          }
+
+          .orbit-platform:nth-child(4) {
+            transform:
+              translate(-50%, -50%)
+              rotate(180deg)
+              translateY(-142px)
+              rotate(-180deg);
+          }
+
+          .orbit-platform:nth-child(5) {
+            transform:
+              translate(-50%, -50%)
+              rotate(240deg)
+              translateY(-142px)
+              rotate(-240deg);
+          }
+
+          .orbit-platform:nth-child(6) {
+            transform:
+              translate(-50%, -50%)
+              rotate(300deg)
+              translateY(-142px)
+              rotate(-300deg);
+          }
+
+          .orbit-center {
+            width: 110px;
+            height: 110px;
+            font-size: 12px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          #about {
+            padding: 25px 20px 65px !important;
+          }
+
+          #about h2 {
+            font-size: 36px !important;
+          }
+
+          #about p {
+            font-size: 16px !important;
+          }
+
+          .recruiting-platforms-area {
+            margin-top: 90px;
+          }
+
+          .recruiting-orbit {
+            width: 290px;
+            height: 290px;
+          }
+
+          .orbit-platform {
+            width: 88px;
+            min-height: 36px;
+            padding: 7px 6px;
+            font-size: 8px;
+          }
+
+          .orbit-platform:nth-child(1) {
+            transform:
+              translate(-50%, -50%)
+              rotate(0deg)
+              translateY(-116px)
+              rotate(0deg);
+          }
+
+          .orbit-platform:nth-child(2) {
+            transform:
+              translate(-50%, -50%)
+              rotate(60deg)
+              translateY(-116px)
+              rotate(-60deg);
+          }
+
+          .orbit-platform:nth-child(3) {
+            transform:
+              translate(-50%, -50%)
+              rotate(120deg)
+              translateY(-116px)
+              rotate(-120deg);
+          }
+
+          .orbit-platform:nth-child(4) {
+            transform:
+              translate(-50%, -50%)
+              rotate(180deg)
+              translateY(-116px)
+              rotate(-180deg);
+          }
+
+          .orbit-platform:nth-child(5) {
+            transform:
+              translate(-50%, -50%)
+              rotate(240deg)
+              translateY(-116px)
+              rotate(-240deg);
+          }
+
+          .orbit-platform:nth-child(6) {
+            transform:
+              translate(-50%, -50%)
+              rotate(300deg)
+              translateY(-116px)
+              rotate(-300deg);
+          }
+
+          .orbit-center {
+            width: 85px;
+            height: 85px;
+            font-size: 9px;
+            padding: 10px;
+          }
+        }
+      `}</style>
+
       <div
         style={{
           maxWidth: "900px",
@@ -89,7 +434,7 @@ function About() {
             color: "#CBD5E1",
             fontSize: "19px",
             lineHeight: "1.9",
-            marginBottom: "45px",
+            marginBottom: "0",
           }}
         >
           RecruitWithEd reflects my commitment to continuous learning,
@@ -97,139 +442,38 @@ function About() {
           better hiring experiences for both organizations and professionals.
         </p>
 
-        <h3
-          style={{
-            color: "#FFFFFF",
-            fontSize: "22px",
-            fontWeight: 700,
-            marginBottom: "8px",
-          }}
-        >
-          Recruiting Platforms
-        </h3>
-
-        <p
-          style={{
-            color: "#64748B",
-            fontSize: "13px",
-            marginBottom: "30px",
-          }}
-        >
-          Hover to pause
-        </p>
-
-        <div
-          style={{
-            position: "relative",
-            width: "420px",
-            height: "420px",
-            maxWidth: "90vw",
-            margin: "0 auto",
-          }}
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-        >
+        <div className="recruiting-platforms-area">
           <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              border: "1px solid rgba(56,189,248,.18)",
-              borderRadius: "50%",
-            }}
-          />
-
-          <div
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              width: "130px",
-              height: "130px",
-              transform: "translate(-50%, -50%)",
-              borderRadius: "50%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
-              background:
-                "radial-gradient(circle, rgba(56,189,248,.18), #0F172A 70%)",
-              border: "1px solid rgba(56,189,248,.35)",
-              color: "#38BDF8",
-              fontSize: "14px",
-              fontWeight: 800,
-              boxShadow: "0 0 45px rgba(56,189,248,.12)",
-            }}
+            className="recruiting-orbit"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
           >
-            RecruitWithEd
-          </div>
+            <div className="orbit-circle" />
 
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              animation: "recruitingOrbit 24s linear infinite",
-              animationPlayState: paused ? "paused" : "running",
-            }}
-          >
-            {platforms.map((platform, index) => {
-              const angle = index * 60;
-
-              return (
+            <div className="orbit-animation">
+              {platforms.map((platform) => (
                 <div
                   key={platform}
-                  style={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    width: "145px",
-                    padding: "12px 14px",
-                    borderRadius: "999px",
-                    background: "#101827",
-                    border: "1px solid rgba(56,189,248,.25)",
-                    color: "#E2E8F0",
-                    fontSize: "12px",
-                    fontWeight: 700,
-                    textAlign: "center",
-                    transform: `
-                      translate(-50%, -50%)
-                      rotate(${angle}deg)
-                      translateX(140px)
-                      rotate(-${angle}deg)
-                    `,
-                  }}
+                  className="orbit-platform"
                 >
                   {platform}
                 </div>
-              );
-            })}
+              ))}
+            </div>
+
+            <div className="orbit-center">
+              Recruiting
+              <br />
+              Platforms
+            </div>
+          </div>
+
+          <div className="orbit-status">
+            {paused
+              ? "Paused"
+              : "Recruiting Technology & Talent Sourcing"}
           </div>
         </div>
-
-        <style>{`
-          @keyframes recruitingOrbit {
-            from {
-              transform: rotate(0deg);
-            }
-
-            to {
-              transform: rotate(360deg);
-            }
-          }
-
-          @media (max-width: 600px) {
-            #about {
-              padding: 35px 20px 65px !important;
-            }
-
-            #about h2 {
-              font-size: 36px !important;
-            }
-
-            #about p {
-              font-size: 16px !important;
-            }
-          }
-        `}</style>
       </div>
     </section>
   );
