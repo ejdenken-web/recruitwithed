@@ -3,14 +3,9 @@ import "./Hero.css";
 function Hero() {
   return (
     <section className="hero" id="home">
-
       <div className="hero-container">
-
         <div className="hero-left">
-
-          <h1>
-            Ed Johnson
-          </h1>
+          <h1>Ed Johnson</h1>
 
           <h2>
             Senior Information Technology Consultant
@@ -21,12 +16,8 @@ function Hero() {
             strategic talent acquisition, AI-powered recruiting, executive
             search, and trusted hiring partnerships.
           </p>
-
-          
         </div>
-
       </div>
-
     </section>
   );
 }
