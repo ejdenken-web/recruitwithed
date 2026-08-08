@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function About() {
   const platforms = [
     "LinkedIn Recruiter (RPS)",
@@ -8,6 +10,8 @@ function About() {
     "TechFetch",
   ];
 
+  const [paused, setPaused] = useState(false);
+
   return (
     <section
       id="about"
@@ -16,47 +20,7 @@ function About() {
         padding: "120px 8%",
       }}
     >
-      <style>
-        {`
-          @media (max-width: 900px) {
-            #about {
-              padding: 35px 24px 90px !important;
-            }
-
-            #about .about-content {
-              max-width: 900px;
-            }
-
-            #about h2 {
-              font-size: 42px !important;
-              line-height: 1.15 !important;
-              margin-bottom: 28px !important;
-            }
-
-            #about p {
-              font-size: 17px !important;
-              line-height: 1.75 !important;
-            }
-          }
-
-          @media (max-width: 480px) {
-            #about {
-              padding: 25px 20px 75px !important;
-            }
-
-            #about h2 {
-              font-size: 36px !important;
-            }
-
-            #about p {
-              font-size: 16px !important;
-            }
-          }
-        `}
-      </style>
-
       <div
-        className="about-content"
         style={{
           maxWidth: "900px",
           margin: "0 auto",
@@ -138,37 +102,134 @@ function About() {
             color: "#FFFFFF",
             fontSize: "22px",
             fontWeight: 700,
-            marginBottom: "24px",
+            marginBottom: "8px",
           }}
         >
           Recruiting Platforms
         </h3>
 
-        <div
+        <p
           style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: "14px",
+            color: "#64748B",
+            fontSize: "13px",
+            marginBottom: "30px",
           }}
         >
-          {platforms.map((platform) => (
-            <span
-              key={platform}
-              style={{
-                padding: "10px 18px",
-                borderRadius: "999px",
-                background: "rgba(56,189,248,.10)",
-                border: "1px solid rgba(56,189,248,.20)",
-                color: "#E2E8F0",
-                fontSize: "14px",
-                fontWeight: 600,
-              }}
-            >
-              {platform}
-            </span>
-          ))}
+          Hover to pause
+        </p>
+
+        <div
+          style={{
+            position: "relative",
+            width: "420px",
+            height: "420px",
+            maxWidth: "90vw",
+            margin: "0 auto",
+          }}
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              border: "1px solid rgba(56,189,248,.18)",
+              borderRadius: "50%",
+            }}
+          />
+
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              width: "130px",
+              height: "130px",
+              transform: "translate(-50%, -50%)",
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+              background:
+                "radial-gradient(circle, rgba(56,189,248,.18), #0F172A 70%)",
+              border: "1px solid rgba(56,189,248,.35)",
+              color: "#38BDF8",
+              fontSize: "14px",
+              fontWeight: 800,
+              boxShadow: "0 0 45px rgba(56,189,248,.12)",
+            }}
+          >
+            RecruitWithEd
+          </div>
+
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              animation: "recruitingOrbit 24s linear infinite",
+              animationPlayState: paused ? "paused" : "running",
+            }}
+          >
+            {platforms.map((platform, index) => {
+              const angle = index * 60;
+
+              return (
+                <div
+                  key={platform}
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    width: "145px",
+                    padding: "12px 14px",
+                    borderRadius: "999px",
+                    background: "#101827",
+                    border: "1px solid rgba(56,189,248,.25)",
+                    color: "#E2E8F0",
+                    fontSize: "12px",
+                    fontWeight: 700,
+                    textAlign: "center",
+                    transform: `
+                      translate(-50%, -50%)
+                      rotate(${angle}deg)
+                      translateX(140px)
+                      rotate(-${angle}deg)
+                    `,
+                  }}
+                >
+                  {platform}
+                </div>
+              );
+            })}
+          </div>
         </div>
+
+        <style>{`
+          @keyframes recruitingOrbit {
+            from {
+              transform: rotate(0deg);
+            }
+
+            to {
+              transform: rotate(360deg);
+            }
+          }
+
+          @media (max-width: 600px) {
+            #about {
+              padding: 35px 20px 65px !important;
+            }
+
+            #about h2 {
+              font-size: 36px !important;
+            }
+
+            #about p {
+              font-size: 16px !important;
+            }
+          }
+        `}</style>
       </div>
     </section>
   );
