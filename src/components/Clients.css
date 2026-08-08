@@ -1,20 +1,20 @@
-.clients {
-  padding: 120px 0;
-  background: #0B1022;
+.clients-section {
+  padding: 120px 8%;
+  background: #08101F;
   overflow: hidden;
 }
 
 .clients-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 55px;
 }
 
 .clients-header .section-tag {
   display: inline-block;
   padding: 8px 18px;
   border-radius: 999px;
-  background: rgba(56,189,248,.12);
-  border: 1px solid rgba(56,189,248,.25);
+  background: rgba(56, 189, 248, .12);
+  border: 1px solid rgba(56, 189, 248, .25);
   color: #38BDF8;
   font-size: 13px;
   font-weight: 700;
@@ -24,85 +24,97 @@
 .marquee {
   width: 100%;
   overflow: hidden;
-  margin: 18px 0;
+  margin-bottom: 22px;
+  cursor: default;
 }
 
 .marquee-track {
   display: flex;
   width: max-content;
-  gap: 22px;
-  animation: scrollLeft 45s linear infinite;
+  gap: 18px;
+  animation: clients-scroll 35s linear infinite;
+  will-change: transform;
 }
 
-.reverse .marquee-track {
-  animation: scrollRight 45s linear infinite;
-}
-
+/* Pause only while the cursor is over the client list */
 .marquee:hover .marquee-track {
   animation-play-state: paused;
 }
 
+.marquee.reverse .marquee-track {
+  animation-name: clients-scroll-reverse;
+  animation-duration: 38s;
+}
+
 .client-card {
   flex: 0 0 auto;
-
-  background: #111827;
-  border: 1px solid rgba(56,189,248,.18);
-  border-radius: 18px;
-
-  padding: 18px 28px;
-
-  color: #38BDF8;
-  font-size: 16px;
+  padding: 15px 24px;
+  border-radius: 999px;
+  background: #101827;
+  border: 1px solid rgba(255, 255, 255, .08);
+  color: #E2E8F0;
+  font-size: 15px;
   font-weight: 600;
-
   white-space: nowrap;
-
-  transition: .3s;
+  transition: .3s ease;
 }
 
 .client-card:hover {
   border-color: #38BDF8;
-  background: #16213A;
-  transform: translateY(-4px);
+  color: #38BDF8;
+  background: rgba(56, 189, 248, .08);
 }
 
-@keyframes scrollLeft {
+@keyframes clients-scroll {
 
-  from {
+  0% {
     transform: translateX(0);
   }
 
-  to {
-    transform: translateX(-50%);
+  100% {
+    transform: translateX(calc(-50% - 9px));
   }
 
 }
 
-@keyframes scrollRight {
+@keyframes clients-scroll-reverse {
 
-  from {
-    transform: translateX(-50%);
+  0% {
+    transform: translateX(calc(-50% - 9px));
   }
 
-  to {
+  100% {
     transform: translateX(0);
   }
 
 }
 
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-  .clients{
-    padding:90px 0;
+  .clients-section {
+    padding: 90px 20px;
   }
 
-  .client-card{
-    font-size:14px;
-    padding:14px 22px;
+  .clients-header {
+    margin-bottom: 40px;
   }
 
-  .marquee-track{
-    animation-duration:30s;
+  .marquee {
+    margin-bottom: 16px;
+  }
+
+  .marquee-track {
+    gap: 12px;
+    animation-duration: 30s;
+  }
+
+  .marquee.reverse .marquee-track {
+    animation-duration: 33s;
+  }
+
+  .client-card {
+    padding: 12px 18px;
+    font-size: 13px;
   }
 
 }

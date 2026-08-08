@@ -1,7 +1,6 @@
 import "./Clients.css";
 
 function Clients() {
-
   const clients = [
     "Abercrombie & Fitch",
     "Accenture",
@@ -44,17 +43,12 @@ function Clients() {
   const secondRow = clients.slice(18);
 
   return (
-    <section
-      id="clients"
-      className="clients"
-    >
+    <section id="clients" className="clients-section">
 
       <div className="clients-header">
-
         <span className="section-tag">
           CLIENTS
         </span>
-
       </div>
 
       <div className="marquee">
@@ -62,14 +56,12 @@ function Clients() {
         <div className="marquee-track">
 
           {[...firstRow, ...firstRow].map((client, index) => (
-
             <div
-              key={index}
+              key={`${client}-${index}`}
               className="client-card"
             >
               {client}
             </div>
-
           ))}
 
         </div>
@@ -81,14 +73,12 @@ function Clients() {
         <div className="marquee-track">
 
           {[...secondRow, ...secondRow].map((client, index) => (
-
             <div
-              key={index}
+              key={`${client}-${index}`}
               className="client-card"
             >
               {client}
             </div>
-
           ))}
 
         </div>
