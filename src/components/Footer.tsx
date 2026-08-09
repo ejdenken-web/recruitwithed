@@ -59,7 +59,7 @@ function Footer() {
             </a>
 
             <a href="#projects">
-              Featured Projects
+              Projects
             </a>
 
             <a href="#recruiting-platforms">

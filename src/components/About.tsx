@@ -107,7 +107,6 @@ function About() {
         }
 
         .platform-node {
-          position: relative;
           min-height: 82px;
           padding: 18px 20px;
           border-radius: 16px;
@@ -130,18 +129,6 @@ function About() {
             color .25s ease;
         }
 
-        .platform-node::after {
-          content: "";
-          position: absolute;
-          top: 10px;
-          right: 12px;
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background: rgba(56,189,248,.45);
-          box-shadow: 0 0 10px rgba(56,189,248,.35);
-        }
-
         .platform-node:hover,
         .platform-node.active {
           transform: translateY(-5px);
@@ -150,21 +137,6 @@ function About() {
           border-color: rgba(56,189,248,.65);
           box-shadow:
             0 14px 35px rgba(56,189,248,.14);
-        }
-
-        .platform-node.active::after {
-          background: #38BDF8;
-          box-shadow: 0 0 14px rgba(56,189,248,.85);
-        }
-
-        .platform-status {
-          margin-top: 24px;
-          color: #64748B;
-          font-size: 12px;
-        }
-
-        .platform-status strong {
-          color: #38BDF8;
         }
 
         @media (max-width: 900px) {
@@ -283,13 +255,6 @@ function About() {
 
             </div>
 
-          </div>
-
-          <div className="platform-status">
-            Currently exploring:{" "}
-            <strong>
-              {platforms[activePlatform]}
-            </strong>
           </div>
 
         </div>
