@@ -1,4 +1,4 @@
-import "./App.css";
+import { Analytics } from "@vercel/analytics/react";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -13,7 +13,6 @@ import ScrollToTop from "./components/ScrollToTop";
 import ChhotaBheemAnimation from "./pages/ChhotaBheemAnimation";
 
 function App() {
-
   const currentPath = window.location.pathname;
 
   if (currentPath === "/chhota-bheem-animation") {
@@ -25,7 +24,6 @@ function App() {
       <Navbar />
 
       <main>
-
         <Hero />
 
         <About />
@@ -37,13 +35,13 @@ function App() {
         <Certifications />
 
         <Projects />
-
       </main>
 
       <Footer />
 
       <ScrollToTop />
 
+      <Analytics />
     </>
   );
 }

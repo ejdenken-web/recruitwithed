@@ -59,6 +59,7 @@ function About() {
           margin-top: 150px;
           padding-top: 20px;
           text-align: center;
+          scroll-margin-top: 100px;
         }
 
         .platform-tag {
@@ -82,10 +83,6 @@ function About() {
           font-size: 18px;
           line-height: 1.8;
         }
-
-        /*
-          LARGE ORBIT
-        */
 
         .orbit-wrapper {
           position: relative;
@@ -115,42 +112,24 @@ function About() {
           animation-play-state: ${paused ? "paused" : "running"};
         }
 
-        /*
-          PORTALS ARE POSITIONED WELL INSIDE
-          THE LARGE CIRCLE.
-        */
-
         .platform-item {
           position: absolute;
-
           width: 150px;
           min-height: 50px;
-
           padding: 10px 14px;
-
           display: flex;
           align-items: center;
           justify-content: center;
-
           text-align: center;
-
           background: #0B1528;
-
           border: 1px solid rgba(56,189,248,.70);
-
           border-radius: 999px;
-
           color: #38BDF8;
-
           font-size: 12px;
           font-weight: 700;
           line-height: 1.25;
-
-          box-shadow:
-            0 0 25px rgba(56,189,248,.12);
-
+          box-shadow: 0 0 25px rgba(56,189,248,.12);
           z-index: 5;
-
           transition:
             background .25s ease,
             border-color .25s ease,
@@ -160,14 +139,8 @@ function About() {
         .platform-item:hover {
           background: rgba(56,189,248,.18);
           border-color: #38BDF8;
-          box-shadow:
-            0 0 40px rgba(56,189,248,.30);
+          box-shadow: 0 0 40px rgba(56,189,248,.30);
         }
-
-        /*
-          SIX EVEN POSITIONS
-          AROUND THE EMPTY CENTER
-        */
 
         .platform-item:nth-child(1) {
           top: 80px;
@@ -215,12 +188,7 @@ function About() {
           font-size: 12px;
         }
 
-        /*
-          TABLET
-        */
-
         @media (max-width: 900px) {
-
           .about-content {
             max-width: 100%;
           }
@@ -288,12 +256,7 @@ function About() {
           }
         }
 
-        /*
-          MOBILE
-        */
-
         @media (max-width: 480px) {
-
           #about {
             padding: 70px 18px 80px !important;
           }
@@ -380,8 +343,6 @@ function About() {
 
       <div className="about-content">
 
-        {/* ABOUT */}
-
         <span className="about-tag">
           ABOUT
         </span>
@@ -414,9 +375,10 @@ function About() {
           better hiring experiences for both organizations and professionals.
         </p>
 
-        {/* RECRUITING PLATFORMS */}
-
-        <div className="platform-section">
+        <div
+          className="platform-section"
+          id="recruiting-platforms"
+        >
 
           <span className="platform-tag">
             RECRUITING PLATFORMS
@@ -426,8 +388,6 @@ function About() {
             Talent sourcing and platforms used to identify, connect with,
             and engage technology professionals.
           </p>
-
-          {/* LARGE CIRCLE */}
 
           <div
             className="orbit-wrapper"

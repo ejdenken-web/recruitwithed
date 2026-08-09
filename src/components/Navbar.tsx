@@ -2,59 +2,50 @@ import { useEffect, useState } from "react";
 import "./Navbar.css";
 
 function Navbar() {
-
   const [active, setActive] = useState("about");
 
   useEffect(() => {
-
     const sections = [
       "about",
       "impact",
       "clients",
+      "recruiting-platforms",
       "certifications",
       "projects",
       "contact",
     ];
 
     const handleScroll = () => {
-
-      const scroll = window.scrollY + 180;
+      const scrollPosition = window.scrollY + 180;
 
       for (const section of sections) {
-
         const element = document.getElementById(section);
 
         if (!element) continue;
 
         if (
-          scroll >= element.offsetTop &&
-          scroll < element.offsetTop + element.offsetHeight
+          scrollPosition >= element.offsetTop &&
+          scrollPosition < element.offsetTop + element.offsetHeight
         ) {
           setActive(section);
+          break;
         }
-
       }
-
     };
 
     window.addEventListener("scroll", handleScroll);
-
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
-
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-
     <header className="navbar">
-
       <div className="nav-container">
 
-        <a
-          href="#"
-          className="logo"
-        >
+        <a href="#" className="logo">
           RecruitWithEd
         </a>
 
@@ -82,6 +73,15 @@ function Navbar() {
           </a>
 
           <a
+            href="#recruiting-platforms"
+            className={
+              active === "recruiting-platforms" ? "active" : ""
+            }
+          >
+            Recruiting Platforms
+          </a>
+
+          <a
             href="#certifications"
             className={active === "certifications" ? "active" : ""}
           >
@@ -103,11 +103,8 @@ function Navbar() {
           </a>
 
         </nav>
-
       </div>
-
     </header>
-
   );
 }
 
