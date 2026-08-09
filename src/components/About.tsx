@@ -10,7 +10,7 @@ function About() {
     "TechFetch",
   ];
 
-  const [paused, setPaused] = useState(false);
+  const [activePlatform, setActivePlatform] = useState(0);
 
   return (
     <section
@@ -22,7 +22,7 @@ function About() {
     >
       <style>{`
         .about-content {
-          max-width: 900px;
+          max-width: 1000px;
           margin: 0 auto;
           text-align: center;
         }
@@ -56,10 +56,9 @@ function About() {
         }
 
         .platform-section {
-          margin-top: 150px;
+          margin-top: 130px;
           padding-top: 20px;
           text-align: center;
-          scroll-margin-top: 100px;
         }
 
         .platform-tag {
@@ -72,8 +71,7 @@ function About() {
           font-size: 14px;
           font-weight: 800;
           letter-spacing: 2px;
-          margin-bottom: 28px;
-          box-shadow: 0 0 25px rgba(56,189,248,.08);
+          margin-bottom: 24px;
         }
 
         .platform-description {
@@ -84,181 +82,241 @@ function About() {
           line-height: 1.8;
         }
 
-        .orbit-wrapper {
+        .platform-stage {
           position: relative;
-          width: 760px;
-          height: 760px;
-          max-width: 94vw;
-          margin: 75px auto 0;
-        }
-
-        .orbit-ring {
-          position: absolute;
-          width: 680px;
-          height: 680px;
-          top: 40px;
-          left: 40px;
-          border: 2px solid rgba(56,189,248,.35);
-          border-radius: 50%;
+          max-width: 900px;
+          min-height: 500px;
+          margin: 65px auto 0;
+          padding: 45px;
+          border-radius: 32px;
+          background:
+            radial-gradient(
+              circle at center,
+              rgba(56,189,248,.10),
+              transparent 38%
+            ),
+            linear-gradient(
+              145deg,
+              rgba(17,24,39,.96),
+              rgba(8,16,31,.98)
+            );
+          border: 1px solid rgba(56,189,248,.18);
           box-shadow:
-            0 0 80px rgba(56,189,248,.10),
-            inset 0 0 80px rgba(56,189,248,.04);
+            0 30px 80px rgba(0,0,0,.28),
+            inset 0 0 80px rgba(56,189,248,.025);
+          overflow: hidden;
         }
 
-        .orbit-rotating {
+        .platform-stage::before {
+          content: "";
           position: absolute;
           inset: 0;
-          animation: recruitingOrbit 42s linear infinite;
-          animation-play-state: ${paused ? "paused" : "running"};
+          background:
+            linear-gradient(
+              90deg,
+              transparent 49.8%,
+              rgba(56,189,248,.06) 50%,
+              transparent 50.2%
+            ),
+            linear-gradient(
+              0deg,
+              transparent 49.8%,
+              rgba(56,189,248,.06) 50%,
+              transparent 50.2%
+            );
+          pointer-events: none;
         }
 
-        .platform-item {
+        .platform-center {
           position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
           width: 150px;
-          min-height: 50px;
-          padding: 10px 14px;
+          height: 150px;
+          border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           text-align: center;
-          background: #0B1528;
-          border: 1px solid rgba(56,189,248,.70);
-          border-radius: 999px;
+          padding: 20px;
+          background:
+            radial-gradient(
+              circle,
+              rgba(56,189,248,.22),
+              rgba(11,21,40,.98) 65%
+            );
+          border: 1px solid rgba(56,189,248,.55);
+          box-shadow:
+            0 0 45px rgba(56,189,248,.16),
+            inset 0 0 30px rgba(56,189,248,.08);
+          z-index: 3;
+        }
+
+        .platform-center span {
           color: #38BDF8;
+          font-size: 13px;
+          font-weight: 800;
+          letter-spacing: 1px;
+          line-height: 1.5;
+        }
+
+        .platform-node {
+          position: absolute;
+          width: 185px;
+          min-height: 70px;
+          padding: 14px 18px;
+          border-radius: 18px;
+          background: rgba(11,21,40,.95);
+          border: 1px solid rgba(56,189,248,.20);
+          color: #CBD5E1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
           font-size: 12px;
           font-weight: 700;
-          line-height: 1.25;
-          box-shadow: 0 0 25px rgba(56,189,248,.12);
-          z-index: 5;
+          line-height: 1.35;
+          cursor: pointer;
           transition:
-            background .25s ease,
-            border-color .25s ease,
-            box-shadow .25s ease;
+            transform .3s ease,
+            border-color .3s ease,
+            background .3s ease,
+            box-shadow .3s ease,
+            color .3s ease;
+          z-index: 4;
         }
 
-        .platform-item:hover {
-          background: rgba(56,189,248,.18);
-          border-color: #38BDF8;
-          box-shadow: 0 0 40px rgba(56,189,248,.30);
+        .platform-node:hover,
+        .platform-node.active {
+          color: #38BDF8;
+          background: rgba(56,189,248,.10);
+          border-color: rgba(56,189,248,.65);
+          box-shadow:
+            0 12px 35px rgba(56,189,248,.16);
+          transform: translateY(-5px);
         }
 
-        .platform-item:nth-child(1) {
-          top: 80px;
-          left: 305px;
+        .platform-node::before {
+          content: "";
+          position: absolute;
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: #38BDF8;
+          box-shadow: 0 0 12px rgba(56,189,248,.75);
         }
 
-        .platform-item:nth-child(2) {
-          top: 205px;
-          right: 95px;
+        .platform-node:nth-child(1) {
+          top: 55px;
+          left: 50%;
+          transform: translateX(-50%);
         }
 
-        .platform-item:nth-child(3) {
-          bottom: 205px;
-          right: 95px;
+        .platform-node:nth-child(2) {
+          top: 145px;
+          right: 55px;
         }
 
-        .platform-item:nth-child(4) {
-          bottom: 80px;
-          left: 305px;
+        .platform-node:nth-child(3) {
+          bottom: 65px;
+          right: 55px;
         }
 
-        .platform-item:nth-child(5) {
-          bottom: 205px;
-          left: 95px;
+        .platform-node:nth-child(4) {
+          bottom: 55px;
+          left: 50%;
+          transform: translateX(-50%);
         }
 
-        .platform-item:nth-child(6) {
-          top: 205px;
-          left: 95px;
+        .platform-node:nth-child(5) {
+          bottom: 65px;
+          left: 55px;
         }
 
-        @keyframes recruitingOrbit {
-          from {
-            transform: rotate(0deg);
-          }
-
-          to {
-            transform: rotate(360deg);
-          }
+        .platform-node:nth-child(6) {
+          top: 145px;
+          left: 55px;
         }
 
-        .orbit-note {
+        .platform-node:nth-child(1)::before,
+        .platform-node:nth-child(4)::before {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .platform-node:nth-child(2)::before,
+        .platform-node:nth-child(3)::before {
+          left: -4px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        .platform-node:nth-child(5)::before,
+        .platform-node:nth-child(6)::before {
+          right: -4px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        .platform-status {
           margin-top: 25px;
           color: #64748B;
           font-size: 12px;
         }
 
+        .platform-status strong {
+          color: #38BDF8;
+        }
+
         @media (max-width: 900px) {
-          .about-content {
-            max-width: 100%;
+          .platform-stage {
+            min-height: 600px;
+            padding: 25px;
           }
 
-          .about-text {
-            font-size: 17px;
+          .platform-center {
+            width: 125px;
+            height: 125px;
           }
 
-          .platform-section {
-            margin-top: 110px;
+          .platform-node {
+            width: 155px;
+            font-size: 11px;
           }
 
-          .platform-description {
-            font-size: 16px;
+          .platform-node:nth-child(1) {
+            top: 35px;
           }
 
-          .orbit-wrapper {
-            width: 560px;
-            height: 560px;
-            max-width: 96vw;
+          .platform-node:nth-child(2) {
+            right: 20px;
+            top: 150px;
           }
 
-          .orbit-ring {
-            width: 500px;
-            height: 500px;
-            top: 30px;
-            left: 30px;
+          .platform-node:nth-child(3) {
+            right: 20px;
+            bottom: 90px;
           }
 
-          .platform-item {
-            width: 110px;
-            min-height: 42px;
-            padding: 7px;
-            font-size: 9px;
+          .platform-node:nth-child(4) {
+            bottom: 30px;
           }
 
-          .platform-item:nth-child(1) {
-            top: 55px;
-            left: 225px;
+          .platform-node:nth-child(5) {
+            left: 20px;
+            bottom: 90px;
           }
 
-          .platform-item:nth-child(2) {
-            top: 145px;
-            right: 70px;
-          }
-
-          .platform-item:nth-child(3) {
-            bottom: 145px;
-            right: 70px;
-          }
-
-          .platform-item:nth-child(4) {
-            bottom: 55px;
-            left: 225px;
-          }
-
-          .platform-item:nth-child(5) {
-            bottom: 145px;
-            left: 70px;
-          }
-
-          .platform-item:nth-child(6) {
-            top: 145px;
-            left: 70px;
+          .platform-node:nth-child(6) {
+            left: 20px;
+            top: 150px;
           }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
           #about {
-            padding: 70px 18px 80px !important;
+            padding: 75px 18px 85px !important;
           }
 
           .about-title {
@@ -274,69 +332,55 @@ function About() {
             margin-top: 90px;
           }
 
-          .platform-tag {
-            font-size: 11px;
-            padding: 8px 15px;
-          }
-
           .platform-description {
             font-size: 15px;
-            line-height: 1.7;
           }
 
-          .orbit-wrapper {
-            width: 360px;
-            height: 360px;
-            max-width: 98vw;
-            margin-top: 50px;
+          .platform-stage {
+            min-height: 650px;
+            margin-top: 45px;
+            padding: 15px;
           }
 
-          .orbit-ring {
-            width: 320px;
-            height: 320px;
-            top: 20px;
-            left: 20px;
+          .platform-center {
+            width: 105px;
+            height: 105px;
+            font-size: 11px;
           }
 
-          .platform-item {
-            width: 78px;
-            min-height: 34px;
-            padding: 5px;
-            font-size: 7px;
+          .platform-node {
+            width: 125px;
+            min-height: 58px;
+            padding: 10px;
+            font-size: 9px;
           }
 
-          .platform-item:nth-child(1) {
-            top: 35px;
-            left: 101px;
+          .platform-node:nth-child(1) {
+            top: 30px;
           }
 
-          .platform-item:nth-child(2) {
-            top: 85px;
-            right: 25px;
+          .platform-node:nth-child(2) {
+            right: 8px;
+            top: 155px;
           }
 
-          .platform-item:nth-child(3) {
-            bottom: 85px;
-            right: 25px;
+          .platform-node:nth-child(3) {
+            right: 8px;
+            bottom: 125px;
           }
 
-          .platform-item:nth-child(4) {
+          .platform-node:nth-child(4) {
             bottom: 35px;
-            left: 101px;
           }
 
-          .platform-item:nth-child(5) {
-            bottom: 85px;
-            left: 25px;
+          .platform-node:nth-child(5) {
+            left: 8px;
+            bottom: 125px;
           }
 
-          .platform-item:nth-child(6) {
-            top: 85px;
-            left: 25px;
-          }
-
-          .orbit-note {
-            font-size: 10px;
+          .platform-node:nth-child(6) {
+            left: 8px;
+            top: 155px;
           }
         }
       `}</style>
@@ -389,33 +433,36 @@ function About() {
             and engage technology professionals.
           </p>
 
-          <div
-            className="orbit-wrapper"
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-          >
+          <div className="platform-stage">
 
-            <div className="orbit-ring" />
-
-            <div className="orbit-rotating">
-
-              {platforms.map((platform) => (
-                <div
-                  key={platform}
-                  className="platform-item"
-                >
-                  {platform}
-                </div>
-              ))}
-
+            <div className="platform-center">
+              <span>
+                TALENT
+                <br />
+                SOURCING
+              </span>
             </div>
+
+            {platforms.map((platform, index) => (
+              <button
+                key={platform}
+                type="button"
+                className={`platform-node ${
+                  activePlatform === index ? "active" : ""
+                }`}
+                onClick={() => setActivePlatform(index)}
+              >
+                {platform}
+              </button>
+            ))}
 
           </div>
 
-          <div className="orbit-note">
-            {paused
-              ? "Paused"
-              : "Hover over the platforms to pause"}
+          <div className="platform-status">
+            Currently exploring:{" "}
+            <strong>
+              {platforms[activePlatform]}
+            </strong>
           </div>
 
         </div>

@@ -80,6 +80,8 @@ function Certifications() {
     );
   };
 
+  const isSalaryBox = activeGroup.provider === "SalaryBox";
+
   return (
     <section
       id="certifications"
@@ -130,7 +132,6 @@ function Certifications() {
             <div className="provider-visual">
               <div className="provider-orbit orbit-one" />
               <div className="provider-orbit orbit-two" />
-
               <div className="provider-core" />
             </div>
 
@@ -138,7 +139,19 @@ function Certifications() {
               {activeGroup.provider}
             </h3>
 
-            <div className="certification-pills">
+            <div
+              className="certification-pills"
+              style={
+                isSalaryBox
+                  ? {
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "100%",
+                    }
+                  : undefined
+              }
+            >
 
               {activeGroup.certifications.map(
                 (certification, index) => (
@@ -147,6 +160,11 @@ function Certifications() {
                     className="interactive-cert"
                     style={{
                       animationDelay: `${index * 0.06}s`,
+                      ...(isSalaryBox
+                        ? {
+                            width: "min(360px, 100%)",
+                          }
+                        : {}),
                     }}
                   >
                     <span className="cert-dot" />

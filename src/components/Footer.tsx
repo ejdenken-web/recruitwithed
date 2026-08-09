@@ -2,7 +2,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="footer" id="contact">
+    <footer className="footer">
 
       <div className="footer-container">
 
@@ -46,6 +46,10 @@ function Footer() {
               About
             </a>
 
+            <a href="#impact">
+              Career Highlights
+            </a>
+
             <a href="#clients">
               Clients
             </a>
@@ -56,6 +60,10 @@ function Footer() {
 
             <a href="#projects">
               Featured Projects
+            </a>
+
+            <a href="#recruiting-platforms">
+              Recruiting Platforms
             </a>
 
             <a href="#contact">
