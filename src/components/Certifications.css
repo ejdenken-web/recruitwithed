@@ -1,156 +1,168 @@
 .certifications-section {
   padding: 120px 8%;
-  background: #08101F;
+  background: #08101f;
 }
 
 .certifications-container {
   max-width: 1320px;
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
 }
 
-/* ================================
-   PROVIDER SELECTOR
-================================ */
+/* PROVIDERS */
 
 .provider-selector {
-  margin: 45px auto 0;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-
   gap: 12px;
-
-  max-width: 1000px;
+  margin: 50px auto 45px;
 }
 
 .provider-selector-item {
   padding: 11px 20px;
-
   border-radius: 999px;
-
-  background: #0B1528;
-
-  border: 1px solid rgba(56, 189, 248, 0.18);
-
-  color: #94A3B8;
-
+  background: #0b1528;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: #94a3b8;
   font-size: 13px;
   font-weight: 700;
-
   cursor: pointer;
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: 0.3s ease;
 }
 
 .provider-selector-item:hover {
-  color: #38BDF8;
-
-  border-color: rgba(56, 189, 248, 0.5);
-
-  transform: translateY(-2px);
+  color: #38bdf8;
+  border-color: #38bdf8;
+  transform: translateY(-3px);
 }
 
 .provider-selector-item.selected {
-  color: #38BDF8;
-
-  background: rgba(56, 189, 248, 0.10);
-
-  border-color: rgba(56, 189, 248, 0.65);
-
-  box-shadow:
-    0 8px 25px rgba(56, 189, 248, 0.10);
+  color: #08101f;
+  background: #38bdf8;
+  border-color: #38bdf8;
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
 }
 
-.provider-name {
-  white-space: nowrap;
-}
-
-/* ================================
-   CAROUSEL
-================================ */
+/* CAROUSEL */
 
 .certification-carousel {
   display: flex;
-
   align-items: center;
   justify-content: center;
-
-  gap: 25px;
-
-  margin-top: 45px;
+  gap: 18px;
 }
 
 .certification-showcase {
+  position: relative;
   width: 100%;
   max-width: 1000px;
-
-  min-height: 430px;
-
+  min-height: 470px;
   padding: 45px 55px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: linear-gradient(145deg, #111827, #08101f);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+}
 
-  border-radius: 28px;
+/* SOFT LIGHT */
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(17, 24, 39, 0.96),
-      rgba(8, 16, 31, 0.98)
-    );
+.certification-showcase::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.1),
+    transparent 70%
+  );
+  animation: certificationGlow 4s ease-in-out infinite;
+  pointer-events: none;
+}
 
-  border: 1px solid rgba(56, 189, 248, 0.16);
+@keyframes certificationGlow {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+/* FLOATING BACKGROUND PARTICLES */
+
+.certification-showcase::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 25px;
+  left: 25px;
+  border-radius: 50%;
+  background: #38bdf8;
 
   box-shadow:
-    0 25px 70px rgba(0, 0, 0, 0.25);
+    100px 60px 0 rgba(56, 189, 248, 0.35),
+    220px 25px 0 rgba(125, 211, 252, 0.25),
+    350px 90px 0 rgba(56, 189, 248, 0.3),
+    500px 35px 0 rgba(125, 211, 252, 0.25),
+    650px 80px 0 rgba(56, 189, 248, 0.35),
+    800px 30px 0 rgba(125, 211, 252, 0.25),
+    120px 380px 0 rgba(56, 189, 248, 0.3),
+    300px 330px 0 rgba(125, 211, 252, 0.25),
+    480px 390px 0 rgba(56, 189, 248, 0.35),
+    680px 340px 0 rgba(125, 211, 252, 0.25),
+    850px 390px 0 rgba(56, 189, 248, 0.3);
 
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: flex-start;
+  animation: particlesFloat 7s ease-in-out infinite;
+  pointer-events: none;
 }
 
-/* ================================
-   VERIFIED LEARNING
-================================ */
+@keyframes particlesFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translateY(-22px);
+    opacity: 1;
+  }
+}
+
+/* VERIFIED LEARNING */
 
 .provider-label {
+  position: relative;
+  z-index: 5;
   display: inline-block;
-
-  color: #64748B;
-
+  margin-bottom: 15px;
+  color: #64748b;
   font-size: 11px;
-
   font-weight: 800;
-
   letter-spacing: 2px;
-
-  margin-bottom: 20px;
 }
 
-/* ================================
-   PROVIDER VISUAL
-================================ */
+/* PROVIDER ORBIT */
 
 .provider-visual {
   position: relative;
-
-  width: 85px;
-  height: 85px;
-
-  margin-bottom: 15px;
-
+  z-index: 5;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 10px;
   display: flex;
-
   align-items: center;
   justify-content: center;
 }
@@ -158,270 +170,246 @@
 .provider-core {
   width: 18px;
   height: 18px;
-
   border-radius: 50%;
-
-  background: #38BDF8;
-
+  background: #38bdf8;
   box-shadow:
-    0 0 25px rgba(56, 189, 248, 0.75);
+    0 0 20px rgba(56, 189, 248, 0.8),
+    0 0 50px rgba(56, 189, 248, 0.35);
+  animation: corePulse 2s ease-in-out infinite;
+}
+
+@keyframes corePulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.35);
+  }
 }
 
 .provider-orbit {
   position: absolute;
-
-  border: 1px solid rgba(56, 189, 248, 0.28);
-
   border-radius: 50%;
+  border: 1px solid rgba(56, 189, 248, 0.35);
 }
 
 .orbit-one {
-  width: 55px;
-  height: 55px;
-
-  transform: rotate(35deg);
+  width: 58px;
+  height: 58px;
+  animation: orbitSpin 4s linear infinite;
 }
 
 .orbit-two {
-  width: 80px;
-  height: 42px;
-
-  transform: rotate(-35deg);
+  width: 84px;
+  height: 45px;
+  animation: orbitSpin 6s linear infinite reverse;
 }
 
-/* ================================
-   ACTIVE PROVIDER
-================================ */
+@keyframes orbitSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* PROVIDER NAME */
 
 .active-provider {
+  position: relative;
+  z-index: 5;
   margin: 0 0 30px;
-
-  color: #38BDF8;
-
+  color: #38bdf8;
   font-size: 30px;
-
   font-weight: 800;
-
-  text-align: center;
 }
 
-/* ================================
-   CERTIFICATION PILLS
-================================ */
+/* CERTIFICATIONS */
 
 .certification-pills {
-  width: 100%;
-
+  position: relative;
+  z-index: 10;
   display: flex;
-
   flex-wrap: wrap;
-
   justify-content: flex-start;
-
   align-items: center;
-
-  gap: 12px;
-
-  margin: 0 auto;
+  gap: 16px;
+  width: 100%;
 }
 
-.interactive-cert {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 11px 18px;
-
-  min-height: 42px;
-
-  border-radius: 999px;
-
-  background: #0B1022;
-
-  border: 1px solid rgba(56, 189, 248, 0.20);
-
-  color: #CBD5E1;
-
-  font-size: 13px;
-
-  line-height: 1.4;
-
-  text-align: center;
-
-  animation: certificationPop 0.45s ease both;
-
-  transition:
-    background 0.25s ease,
-    border-color 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.interactive-cert:hover {
-  color: #08101F;
-
-  background: #38BDF8;
-
-  border-color: #38BDF8;
-
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 10px 25px rgba(56, 189, 248, 0.18);
-}
-
-/* ==========================================
-   ONLY ANTHROPIC + LANGCHAIN
-   ========================================== */
+/* CENTER ANTHROPIC + LANGCHAIN ONLY */
 
 .centered-certifications {
   justify-content: center !important;
-
-  align-items: center !important;
-
-  text-align: center;
-
   max-width: 900px;
-
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin: 0 auto;
 }
 
-.centered-certifications .interactive-cert {
+/* EVERY CERTIFICATION FLOATS */
+
+.interactive-cert {
+  position: relative;
+  display: flex;
+  align-items: center;
   justify-content: center;
 
+  min-height: 48px;
+  padding: 12px 20px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    #0b1022,
+    #101d33
+  );
+
+  border: 1px solid rgba(56, 189, 248, 0.28);
+
+  color: #cbd5e1;
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
   text-align: center;
+
+  animation: certificationFloat 3.5s ease-in-out infinite;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* ================================
-   ARROWS
-================================ */
+/* RANDOM-LOOKING FLOAT TIMING */
+
+.interactive-cert:nth-child(2n) {
+  animation-delay: -0.8s;
+}
+
+.interactive-cert:nth-child(3n) {
+  animation-delay: -1.6s;
+}
+
+.interactive-cert:nth-child(4n) {
+  animation-delay: -2.4s;
+}
+
+.interactive-cert:nth-child(5n) {
+  animation-delay: -1.2s;
+}
+
+.interactive-cert:nth-child(6n) {
+  animation-delay: -2.8s;
+
+}
+
+.interactive-cert:nth-child(7n) {
+  animation-delay: -1.9s;
+}
+
+/* FLOAT */
+
+@keyframes certificationFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-8px) rotate(-0.5deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(0.5deg);
+  }
+
+  75% {
+    transform: translateY(-7px) rotate(-0.3deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* HOVER */
+
+.interactive-cert:hover {
+  color: #08101f;
+  background: #38bdf8;
+  border-color: #38bdf8;
+  box-shadow: 0 18px 45px rgba(56, 189, 248, 0.35);
+}
+
+/* ARROWS */
 
 .carousel-arrow {
   width: 46px;
   height: 46px;
-
   flex-shrink: 0;
 
   border-radius: 50%;
 
-  background: #0B1528;
+  background: #0b1528;
+  border: 1px solid rgba(56, 189, 248, 0.25);
 
-  border: 1px solid rgba(56, 189, 248, 0.22);
-
-  color: #38BDF8;
+  color: #38bdf8;
 
   font-size: 28px;
 
-  line-height: 1;
-
   cursor: pointer;
 
-  transition:
-    background 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: 0.3s ease;
 }
 
 .carousel-arrow:hover {
-  background: rgba(56, 189, 248, 0.10);
-
-  border-color: #38BDF8;
-
-  transform: scale(1.08);
-
-  box-shadow:
-    0 8px 25px rgba(56, 189, 248, 0.12);
+  background: rgba(56, 189, 248, 0.12);
+  border-color: #38bdf8;
+  transform: scale(1.1);
 }
 
-/* ================================
-   PROGRESS
-================================ */
+/* PROGRESS */
 
 .carousel-progress {
   display: flex;
-
   justify-content: center;
-  align-items: center;
-
   gap: 8px;
-
   margin-top: 25px;
 }
 
 .progress-dot {
   width: 8px;
   height: 8px;
-
   padding: 0;
 
   border: none;
-
   border-radius: 50%;
 
   background: #334155;
 
   cursor: pointer;
-
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
 }
 
 .progress-dot.active {
-  background: #38BDF8;
-
-  transform: scale(1.35);
-
-  box-shadow:
-    0 0 12px rgba(56, 189, 248, 0.55);
+  background: #38bdf8;
+  transform: scale(1.4);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
 }
 
-/* ================================
-   ANIMATION
-================================ */
-
-@keyframes certificationPop {
-  from {
-    opacity: 0;
-
-    transform: translateY(8px) scale(0.97);
-  }
-
-  to {
-    opacity: 1;
-
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* ================================
-   RESPONSIVE
-================================ */
+/* RESPONSIVE */
 
 @media (max-width: 900px) {
-
   .certifications-section {
     padding: 90px 24px;
   }
 
-  .certification-carousel {
-    gap: 12px;
-  }
-
   .certification-showcase {
     padding: 40px 30px;
-  }
-
-  .carousel-arrow {
-    width: 40px;
-    height: 40px;
-
-    font-size: 24px;
   }
 
   .interactive-cert {
@@ -430,30 +418,16 @@
 }
 
 @media (max-width: 600px) {
-
   .certifications-section {
     padding: 75px 18px;
   }
 
-  .provider-selector {
-    gap: 8px;
-  }
-
-  .provider-selector-item {
-    padding: 9px 14px;
-
-    font-size: 11px;
-  }
-
   .certification-carousel {
     display: block;
-
-    margin-top: 35px;
   }
 
   .certification-showcase {
     min-height: auto;
-
     padding: 35px 18px;
   }
 
@@ -463,25 +437,15 @@
 
   .active-provider {
     font-size: 25px;
-
-    margin-bottom: 25px;
   }
 
-  .certification-pills {
-    justify-content: center;
+  .certification-pills,
+  .centered-certifications {
+    justify-content: center !important;
   }
 
   .interactive-cert {
     width: 100%;
-
     font-size: 11px;
-  }
-
-  /*
-    Keep Anthropic and LangChain centered
-    on mobile as well.
-  */
-  .centered-certifications {
-    justify-content: center !important;
   }
 }
