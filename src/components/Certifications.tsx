@@ -5,8 +5,6 @@ function Certifications() {
   const certificationGroups = [
     {
       provider: "Anthropic",
-      short: "ANTHROPIC",
-      icon: "AI",
       certifications: [
         "Claude 101",
         "Claude Platform 101",
@@ -19,8 +17,6 @@ function Certifications() {
     },
     {
       provider: "LangChain",
-      short: "LANGCHAIN",
-      icon: "LC",
       certifications: [
         "Introduction to LangGraph – Python",
         "Introduction to LangSmith Deployment",
@@ -29,8 +25,6 @@ function Certifications() {
     },
     {
       provider: "Microsoft",
-      short: "MICROSOFT",
-      icon: "MS",
       certifications: [
         "Use AI for Everyday Tasks",
         "Explore Internet Search and Beyond",
@@ -38,8 +32,6 @@ function Certifications() {
     },
     {
       provider: "LinkedIn",
-      short: "LINKEDIN",
-      icon: "IN",
       certifications: [
         "AI-Driven Excellence – LinkedIn Hiring Assistant Assessment",
         "Recruiter Assessment",
@@ -47,8 +39,6 @@ function Certifications() {
     },
     {
       provider: "NextInHR",
-      short: "NEXTINHR",
-      icon: "NH",
       certifications: [
         "AI-Powered Recruiter Certification",
         "Talent Acquisition Certification",
@@ -64,8 +54,6 @@ function Certifications() {
     },
     {
       provider: "SalaryBox",
-      short: "SALARYBOX",
-      icon: "SB",
       certifications: [
         "Advanced Recruitment Strategies",
       ],
@@ -103,19 +91,6 @@ function Certifications() {
           CERTIFICATIONS
         </span>
 
-        <h2 className="certifications-title">
-          Continuous Learning.
-          <br />
-          <span>Continuous Growth.</span>
-        </h2>
-
-        <p className="certifications-intro">
-          Professional certifications across AI, recruiting,
-          talent acquisition, and modern technology platforms.
-        </p>
-
-        {/* PROVIDER NAVIGATION */}
-
         <div className="provider-selector">
 
           {certificationGroups.map((group, index) => (
@@ -127,23 +102,13 @@ function Certifications() {
               }`}
               onClick={() => setActiveIndex(index)}
             >
-              <span className="provider-icon">
-                {group.icon}
-              </span>
-
               <span className="provider-name">
-                {group.short}
-              </span>
-
-              <span className="provider-count">
-                {group.certifications.length}
+                {group.provider}
               </span>
             </button>
           ))}
 
         </div>
-
-        {/* MAIN CERTIFICATION SHOWCASE */}
 
         <div className="certification-carousel">
 
@@ -166,21 +131,12 @@ function Certifications() {
               <div className="provider-orbit orbit-one" />
               <div className="provider-orbit orbit-two" />
 
-              <div className="provider-core">
-                {activeGroup.icon}
-              </div>
+              <div className="provider-core" />
             </div>
 
             <h3 className="active-provider">
               {activeGroup.provider}
             </h3>
-
-            <div className="certification-count">
-              {activeGroup.certifications.length}{" "}
-              {activeGroup.certifications.length === 1
-                ? "Certification"
-                : "Certifications"}
-            </div>
 
             <div className="certification-pills">
 
@@ -213,8 +169,6 @@ function Certifications() {
           </button>
 
         </div>
-
-        {/* PROGRESS */}
 
         <div className="carousel-progress">
 
