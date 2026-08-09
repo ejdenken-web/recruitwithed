@@ -64,7 +64,6 @@ function Certifications() {
       id="certifications"
       className="certifications-section"
     >
-
       <div className="certifications-container">
 
         <span className="section-tag">
@@ -74,10 +73,15 @@ function Certifications() {
         <div className="certification-grid">
 
           {certificationGroups.map((group) => (
-
             <div
               key={group.provider}
-              className="provider-card"
+              className={`provider-card ${
+                group.provider === "NextInHR"
+                  ? "nextinhr-card"
+                  : group.provider === "SalaryBox"
+                  ? "salarybox-card"
+                  : ""
+              }`}
             >
 
               <h3>
@@ -87,26 +91,22 @@ function Certifications() {
               <div className="cert-list">
 
                 {group.certifications.map((cert) => (
-
                   <div
                     key={cert}
                     className="cert-item"
                   >
                     {cert}
                   </div>
-
                 ))}
 
               </div>
 
             </div>
-
           ))}
 
         </div>
 
       </div>
-
     </section>
   );
 }
