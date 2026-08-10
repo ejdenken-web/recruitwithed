@@ -89,12 +89,24 @@ function Certifications() {
     >
       <div className="certifications-container">
 
+        {/* Single section heading */}
         <div className="certifications-heading">
           <span className="section-tag">
             CERTIFICATIONS
           </span>
+
+          <h2 className="section-title">
+            Continuous Learning. Modern Expertise.
+          </h2>
+
+          <p className="section-subtitle">
+            Professional certifications reflecting continuous
+            learning across recruiting, artificial intelligence,
+            and modern talent acquisition technologies.
+          </p>
         </div>
 
+        {/* Certification providers */}
         <div className="provider-selector">
           {certificationGroups.map((group, index) => (
             <button
@@ -110,6 +122,7 @@ function Certifications() {
           ))}
         </div>
 
+        {/* Certification carousel */}
         <div className="certification-carousel">
 
           <button
@@ -168,6 +181,7 @@ function Certifications() {
 
         </div>
 
+        {/* Carousel progress */}
         <div className="carousel-progress">
           {certificationGroups.map((group, index) => (
             <button
