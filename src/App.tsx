@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import CoreExpertise from "./components/CoreExpertise";
+import CareerHighlights from "./components/CareerHighlights";
 import Clients from "./components/Clients";
 import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
@@ -17,7 +17,7 @@ function App() {
 
         <About />
 
-        <CoreExpertise />
+        <CareerHighlights />
 
         <Clients />
 
