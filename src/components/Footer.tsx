@@ -1,6 +1,17 @@
 import "./Footer.css";
 
 function Footer() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <footer id="lets-connect">
       <div className="footer-container">
@@ -35,31 +46,73 @@ function Footer() {
           <h4>Quick Links</h4>
 
           <nav>
-            <a href="#about">
+            <a
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("about");
+              }}
+            >
               About
             </a>
 
-            <a href="#career-highlights">
+            <a
+              href="#career-highlights"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("career-highlights");
+              }}
+            >
               Career Highlights
             </a>
 
-            <a href="#recruiting-platforms">
+            <a
+              href="#recruiting-platforms"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("recruiting-platforms");
+              }}
+            >
               Recruiting Platforms
             </a>
 
-            <a href="#clients">
+            <a
+              href="#clients"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("clients");
+              }}
+            >
               Clients
             </a>
 
-            <a href="#certifications">
+            <a
+              href="#certifications"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("certifications");
+              }}
+            >
               Certifications
             </a>
 
-            <a href="#projects">
+            <a
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("projects");
+              }}
+            >
               Projects
             </a>
 
-            <a href="#lets-connect">
+            <a
+              href="#lets-connect"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("lets-connect");
+              }}
+            >
               Let&apos;s Connect
             </a>
           </nav>

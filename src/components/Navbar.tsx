@@ -7,12 +7,12 @@ function Navbar() {
   useEffect(() => {
     const sections = [
       "about",
-      "impact",
+      "career-highlights",
       "clients",
       "recruiting-platforms",
       "certifications",
       "projects",
-      "contact",
+      "lets-connect",
     ];
 
     const handleScroll = () => {
@@ -42,15 +42,13 @@ function Navbar() {
   }, []);
 
   return (
-    <header className="navbar">
-      <div className="nav-container">
-
-        <a href="#" className="logo">
+    <header>
+      <div className="navbar-container">
+        <a href="#about" className="logo">
           RecruitWithEd
         </a>
 
         <nav className="nav-links">
-
           <a
             href="#about"
             className={active === "about" ? "active" : ""}
@@ -59,8 +57,10 @@ function Navbar() {
           </a>
 
           <a
-            href="#impact"
-            className={active === "impact" ? "active" : ""}
+            href="#career-highlights"
+            className={
+              active === "career-highlights" ? "active" : ""
+            }
           >
             Career Highlights
           </a>
@@ -83,7 +83,9 @@ function Navbar() {
 
           <a
             href="#certifications"
-            className={active === "certifications" ? "active" : ""}
+            className={
+              active === "certifications" ? "active" : ""
+            }
           >
             Certifications
           </a>
@@ -96,12 +98,13 @@ function Navbar() {
           </a>
 
           <a
-            href="#contact"
-            className={active === "contact" ? "active" : ""}
+            href="#lets-connect"
+            className={
+              active === "lets-connect" ? "active" : ""
+            }
           >
-            Let's Connect
+            Let&apos;s Connect
           </a>
-
         </nav>
       </div>
     </header>

@@ -84,10 +84,16 @@ function Certifications() {
 
   return (
     <section
-      id="certifications"
       className="certifications-section"
+      id="certifications"
     >
       <div className="certifications-container">
+
+        <div className="certifications-heading">
+          <span className="section-tag">
+            CERTIFICATIONS
+          </span>
+        </div>
 
         <div className="provider-selector">
           {certificationGroups.map((group, index) => (

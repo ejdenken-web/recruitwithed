@@ -11,7 +11,18 @@
   text-align: center;
 }
 
-.section-tag {
+/* Certifications heading */
+
+.certifications-heading {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 35px;
+  position: relative;
+  z-index: 10;
+}
+
+.certifications-heading .section-tag {
   display: inline-block;
   padding: 8px 18px;
   border-radius: 999px;
@@ -21,21 +32,8 @@
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1px;
-}
-
-.section-title {
-  margin: 18px 0 12px;
-  font-size: clamp(34px, 5vw, 56px);
-  line-height: 1.1;
-  font-weight: 800;
-}
-
-.section-subtitle {
-  max-width: 720px;
-  margin: 0 auto 45px;
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 16px;
-  line-height: 1.7;
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Provider Navigation */
@@ -121,49 +119,35 @@
   justify-content: center;
 }
 
-.provider-core {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #38bdf8;
-  box-shadow:
-    0 0 20px rgba(56, 189, 248, 0.7),
-    0 0 45px rgba(56, 189, 248, 0.25);
-}
-
 .provider-orbit {
   position: absolute;
   border: 1px solid rgba(56, 189, 248, 0.25);
   border-radius: 50%;
-  animation: providerOrbit 5s linear infinite;
 }
 
 .orbit-one {
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 90px;
 }
 
 .orbit-two {
-  width: 88px;
-  height: 88px;
-  animation-duration: 8s;
-  animation-direction: reverse;
+  width: 65px;
+  height: 65px;
 }
 
-@keyframes providerOrbit {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.provider-core {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.8);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
 }
 
 .active-provider {
   margin: 0 0 30px;
   font-size: 28px;
   font-weight: 800;
+  color: #ffffff;
 }
 
 /* Certification Pills */
@@ -172,46 +156,43 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 14px;
-  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .interactive-cert {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 52px;
-  padding: 13px 20px;
-
-  border-radius: 16px;
-
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
-
-  border: 1px solid rgba(255, 255, 255, 0.12);
-
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  background: rgba(255, 255, 255, 0.045);
+  color: rgba(255, 255, 255, 0.82);
   font-size: 14px;
-  font-weight: 600;
   line-height: 1.4;
-  text-align: center;
-
-  backdrop-filter: blur(10px);
-
-  animation: certificationFloat 4s ease-in-out infinite;
-
   transition:
     transform 0.3s ease,
     border-color 0.3s ease,
     background 0.3s ease,
     box-shadow 0.3s ease;
+  animation: certificationFloat 5s ease-in-out infinite;
 }
 
 .interactive-cert:hover {
-  transform: translateY(-7px) scale(1.02);
-  border-color: rgba(56, 189, 248, 0.55);
-  background: rgba(56, 189, 248, 0.09);
-  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.1);
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.65);
+  background: rgba(56, 189, 248, 0.1);
+  box-shadow: 0 8px 30px rgba(56, 189, 248, 0.12);
+}
+
+.nextinhr-certifications {
+  max-width: 900px;
+  gap: 16px;
+}
+
+.nextinhr-certifications .interactive-cert {
+  min-width: 190px;
+  text-align: center;
 }
 
 @keyframes certificationFloat {
@@ -225,94 +206,21 @@
   }
 }
 
-/* =========================================
-   NEXTINHR — 5 + 5 FLOATING LAYOUT
-   ========================================= */
-
-.nextinhr-certifications {
-  width: 100%;
-  max-width: 1000px;
-  margin: 30px auto 20px;
-
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  gap: 18px 28px;
-
-  align-items: center;
-  justify-content: center;
-}
-
-.nextinhr-certifications .interactive-cert {
-  width: 100%;
-  min-height: 62px;
-  box-sizing: border-box;
-
-  padding: 14px 20px;
-
-  border-radius: 18px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(56, 189, 248, 0.1),
-      rgba(139, 92, 246, 0.08)
-    );
-
-  border: 1px solid rgba(56, 189, 248, 0.25);
-
-  box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-
-  animation: nextInHrFloat 4s ease-in-out infinite;
-
-  transition:
-    transform 0.35s ease,
-    border-color 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-.nextinhr-certifications .interactive-cert:hover {
-  transform: translateY(-8px) scale(1.02);
-
-  border-color: rgba(56, 189, 248, 0.65);
-
-  box-shadow:
-    0 16px 35px rgba(0, 0, 0, 0.25),
-    0 0 25px rgba(56, 189, 248, 0.12);
-}
-
-.nextinhr-certifications .interactive-cert:nth-child(2n) {
-  animation-delay: -1.5s;
-}
-
-@keyframes nextInHrFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-/* Progress Indicators */
+/* Progress */
 
 .carousel-progress {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-top: 35px;
+  margin-top: 40px;
 }
 
 .progress-dot {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   padding: 0;
-  border: 0;
+  border: none;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.25);
   cursor: pointer;
@@ -321,87 +229,47 @@
 
 .progress-dot:hover {
   background: rgba(56, 189, 248, 0.6);
+  transform: scale(1.15);
 }
 
 .progress-dot.active {
   width: 24px;
   border-radius: 999px;
   background: #38bdf8;
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
 }
 
-/* =========================================
-   RESPONSIVE
-   ========================================= */
+/* Responsive */
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .certifications-section {
     padding: 90px 6%;
   }
 
   .certification-carousel {
-    gap: 12px;
+    gap: 10px;
   }
 
   .carousel-arrow {
-    width: 42px;
-    height: 42px;
-    font-size: 28px;
-  }
-
-  .nextinhr-certifications {
-    gap: 15px;
-    max-width: 800px;
-  }
-}
-
-@media (max-width: 700px) {
-  .certifications-section {
-    padding: 80px 5%;
-  }
-
-  .section-subtitle {
-    font-size: 15px;
-  }
-
-  .provider-selector {
-    gap: 8px;
-  }
-
-  .provider-selector-item {
-    padding: 8px 14px;
-    font-size: 13px;
-  }
-
-  .certification-carousel {
-    gap: 8px;
-  }
-
-  .carousel-arrow {
-    width: 38px;
-    height: 38px;
-    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
   }
 
   .active-provider {
     font-size: 24px;
   }
 
-  .nextinhr-certifications {
-    grid-template-columns: 1fr;
-    gap: 14px;
+  .interactive-cert {
+    font-size: 13px;
+    padding: 10px 14px;
   }
 
   .nextinhr-certifications .interactive-cert {
-    min-height: 56px;
+    min-width: 0;
   }
 }
 
-@media (max-width: 480px) {
-  .certifications-section {
-    padding: 70px 4%;
-  }
-
+@media (max-width: 520px) {
   .certification-carousel {
     gap: 5px;
   }
@@ -412,12 +280,16 @@
     font-size: 22px;
   }
 
-  .interactive-cert {
-    font-size: 13px;
-    padding: 11px 14px;
+  .provider-selector {
+    gap: 7px;
   }
 
-  .nextinhr-certifications {
-    gap: 12px;
+  .provider-selector-item {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .certification-pills {
+    gap: 9px;
   }
 }
