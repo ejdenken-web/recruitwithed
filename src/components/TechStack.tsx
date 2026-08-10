@@ -76,14 +76,14 @@ function TechStack() {
     },
     {
       name: "Git",
-      category: "Deployment",
+      category: "Version Control",
       angle: 70,
       radius: 190,
       duration: 20,
     },
     {
       name: "GitHub",
-      category: "Deployment",
+      category: "Version Control",
       angle: 140,
       radius: 180,
       duration: 22,
@@ -169,20 +169,21 @@ function TechStack() {
   }, []);
 
   return (
-    <section className="tech-stack-section">
+    <section id="tech-stack" className="tech-stack-section">
       <div className="tech-stack-container">
 
         <span className="section-tag">
-          PORTFOLIO TECH STACK
+          TECHNOLOGY &amp; TOOLS
         </span>
 
         <h2 className="tech-stack-title">
-          Technology in Motion
+          The Technology Behind RecruitWithEd
         </h2>
 
         <p className="tech-stack-description">
-          A visual representation of the technologies, tools,
-          frameworks, and AI-assisted development behind RecruitWithEd.
+          A visual map of the technologies, frameworks,
+          development tools, deployment platforms, and
+          AI tools used to bring RecruitWithEd to life.
         </p>
 
         <div className="tech-universe">
@@ -195,21 +196,22 @@ function TechStack() {
 
           <div className="tech-core">
             <span className="tech-core-small">
-              BUILT WITH
+              RECRUITWITHED
             </span>
 
             <strong>
-              RecruitWithEd
+              Tech Stack
             </strong>
 
             <span className="tech-core-subtitle">
-              Technology • Creativity • AI
+              Code • Design • AI
             </span>
           </div>
 
           {technologies.map((technology, index) => {
             const adjustedAngle =
-              technology.angle + rotation * (index % 2 === 0 ? 1 : -1);
+              technology.angle +
+              rotation * (index % 2 === 0 ? 1 : -1);
 
             const radians =
               (adjustedAngle * Math.PI) / 180;
@@ -263,12 +265,10 @@ function TechStack() {
         </div>
 
         <div className="tech-stack-note">
-          <span>
-            ✦
-          </span>
-
           <p>
-            Every technology has a purpose. Every project tells a story.
+            One portfolio. Multiple technologies.
+            <br />
+            Built with modern development tools and AI-assisted creativity.
           </p>
         </div>
 
