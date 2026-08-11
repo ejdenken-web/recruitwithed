@@ -1,22 +1,23 @@
+import { useState } from "react";
 import "./TechStack.css";
 
-type TechCategory = {
+type TechGroup = {
   title: string;
   icon: string;
   items: string[];
 };
 
 function TechStack() {
-  const categories: TechCategory[] = [
+  const techGroups: TechGroup[] = [
     {
       title: "Languages & Core Technologies",
       icon: "🛠️",
-      items: ["TypeScript (or TSX)", "HTML5", "CSS3"],
+      items: ["TypeScript", "HTML5", "CSS3"],
     },
     {
       title: "Frameworks & Libraries",
       icon: "📦",
-      items: ["React (including React Hooks)"],
+      items: ["React", "React Hooks"],
     },
     {
       title: "Development & Build Tools",
@@ -26,12 +27,16 @@ function TechStack() {
     {
       title: "UI/UX & Frontend Styling",
       icon: "🎨",
-      items: ["CSS Animations", "Glassmorphism UI", "Responsive Design"],
+      items: [
+        "CSS Animations",
+        "Glassmorphism UI",
+        "Responsive Design",
+      ],
     },
     {
       title: "Version Control & Deployment",
       icon: "🔧",
-      items: ["Git", "GitHub", "Netlify / Vercel"],
+      items: ["Git", "GitHub", "Netlify", "Vercel"],
     },
     {
       title: "AI-Assisted Development",
@@ -40,44 +45,120 @@ function TechStack() {
     },
   ];
 
+  const [activeGroup, setActiveGroup] = useState(0);
+  const [activeSkill, setActiveSkill] = useState<string | null>(null);
+
+  const currentGroup = techGroups[activeGroup];
+
   return (
     <section className="tech-stack-section" id="tech-stack">
       <div className="tech-stack-container">
 
-        <span className="section-tag">TECHNOLOGY &amp; TOOLS</span>
+        <span className="section-tag">
+          TECHNOLOGY & TOOLS
+        </span>
 
         <h2 className="tech-stack-title">
-          Technology Behind RecruitWithEd
+          The Technology Behind RecruitWithEd
         </h2>
 
         <p className="tech-stack-description">
-          The technologies, frameworks, development tools, deployment
-          platforms, and AI tools used to bring RecruitWithEd to life.
+          A focused collection of technologies, frameworks,
+          development tools, deployment platforms, and AI tools
+          used to bring RecruitWithEd to life.
         </p>
 
-        <div className="tech-category-grid">
-          {categories.map((category) => (
-            <article
-              className="tech-category-card"
-              key={category.title}
-            >
-              <div className="tech-category-header">
+        <div className="tech-stack-showcase">
+
+          <div className="tech-category-nav">
+            {techGroups.map((group, index) => (
+              <button
+                key={group.title}
+                type="button"
+                className={`tech-category-button ${
+                  activeGroup === index ? "active" : ""
+                }`}
+                onClick={() => {
+                  setActiveGroup(index);
+                  setActiveSkill(null);
+                }}
+              >
                 <span className="tech-category-icon">
-                  {category.icon}
+                  {group.icon}
                 </span>
 
-                <h3>{category.title}</h3>
-              </div>
+                <span>{group.title}</span>
+              </button>
+            ))}
+          </div>
 
-              <div className="tech-pill-group">
-                {category.items.map((item) => (
-                  <span className="tech-pill" key={item}>
+          <div className="tech-display">
+
+            <div className="tech-display-glow" />
+
+            <div className="tech-display-header">
+              <span className="tech-display-number">
+                {String(activeGroup + 1).padStart(2, "0")}
+              </span>
+
+              <div>
+                <span className="tech-display-label">
+                  TECHNOLOGY GROUP
+                </span>
+
+                <h3>{currentGroup.title}</h3>
+              </div>
+            </div>
+
+            <div className="tech-skill-field">
+              {currentGroup.items.map((item, index) => (
+                <button
+                  key={item}
+                  type="button"
+                  className={`tech-skill-card ${
+                    activeSkill === item ? "active" : ""
+                  }`}
+                  style={{
+                    animationDelay: `${index * 0.12}s`,
+                  }}
+                  onMouseEnter={() => setActiveSkill(item)}
+                  onMouseLeave={() => setActiveSkill(null)}
+                  onFocus={() => setActiveSkill(item)}
+                  onBlur={() => setActiveSkill(null)}
+                >
+                  <span className="tech-skill-dot" />
+
+                  <span className="tech-skill-name">
                     {item}
                   </span>
-                ))}
-              </div>
-            </article>
-          ))}
+
+                  <span className="tech-skill-index">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            <div className="tech-display-footer">
+              <span>
+                {currentGroup.items.length} technologies
+              </span>
+
+              <span className="tech-footer-line" />
+
+              <span>
+                RecruitWithEd
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+        <div className="tech-interaction-note">
+          <span>✦</span>
+          <p>
+            Select a technology group to explore the stack.
+          </p>
         </div>
 
       </div>

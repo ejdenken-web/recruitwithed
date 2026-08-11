@@ -6,29 +6,16 @@
 
 .tech-stack-container {
   width: 100%;
-  max-width: 1250px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
-}
-
-.section-tag {
-  display: inline-block;
-  padding: 8px 18px;
-  border-radius: 999px;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  color: #38bdf8;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
 }
 
 .tech-stack-title {
   margin: 18px 0 14px;
   font-size: clamp(34px, 5vw, 58px);
-  line-height: 1.1;
+  line-height: 1.08;
   font-weight: 800;
-  color: #ffffff;
 }
 
 .tech-stack-description {
@@ -39,160 +26,475 @@
   line-height: 1.7;
 }
 
-.tech-category-grid {
+.tech-stack-showcase {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 28px;
+  align-items: stretch;
+  max-width: 1050px;
+  margin: 0 auto;
   text-align: left;
 }
 
-.tech-category-card {
+/* CATEGORY NAV */
+
+.tech-category-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tech-category-button {
   position: relative;
-  padding: 28px;
-  border-radius: 22px;
+  width: 100%;
+  min-height: 58px;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(56, 189, 248, 0.08),
-      rgba(11, 16, 34, 0.82)
-    );
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
-  border: 1px solid rgba(56, 189, 248, 0.16);
+  padding: 12px 16px;
 
-  box-shadow:
-    0 15px 45px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: 14px;
 
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(11, 16, 34, 0.55);
+  color: rgba(255, 255, 255, 0.62);
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+  text-align: left;
 
   transition:
     transform 0.3s ease,
     border-color 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
     box-shadow 0.3s ease;
 }
 
-.tech-category-card:hover {
-  transform: translateY(-5px);
-
-  border-color: rgba(56, 189, 248, 0.4);
-
-  box-shadow:
-    0 20px 55px rgba(0, 0, 0, 0.28),
-    0 0 25px rgba(56, 189, 248, 0.08);
+.tech-category-button:hover {
+  transform: translateX(5px);
+  color: #ffffff;
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(56, 189, 248, 0.07);
 }
 
-.tech-category-header {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  margin-bottom: 22px;
+.tech-category-button.active {
+  transform: translateX(8px);
+  color: #ffffff;
+
+  border-color: rgba(56, 189, 248, 0.55);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(56, 189, 248, 0.14),
+      rgba(11, 16, 34, 0.75)
+    );
+
+  box-shadow:
+    0 0 25px rgba(56, 189, 248, 0.08),
+    inset 3px 0 0 #38bdf8;
 }
 
 .tech-category-icon {
-  width: 42px;
-  height: 42px;
+  font-size: 18px;
+  flex-shrink: 0;
+}
 
+/* MAIN DISPLAY */
+
+.tech-display {
+  position: relative;
+  min-height: 420px;
+
+  padding: 30px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(56, 189, 248, 0.2);
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(56, 189, 248, 0.09),
+      transparent 35%
+    ),
+    rgba(8, 13, 29, 0.78);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.25),
+    inset 0 0 40px rgba(56, 189, 248, 0.025);
+}
+
+.tech-display::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(56, 189, 248, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(56, 189, 248, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 35px 35px;
+
+  mask-image: linear-gradient(
+    to bottom right,
+    black,
+    transparent 75%
+  );
+
+  pointer-events: none;
+}
+
+.tech-display-glow {
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  right: -100px;
+  top: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(56, 189, 248, 0.12);
+
+  filter: blur(60px);
+
+  pointer-events: none;
+}
+
+/* HEADER */
+
+.tech-display-header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-bottom: 30px;
+}
+
+.tech-display-number {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
 
-  border-radius: 13px;
+  border-radius: 14px;
 
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.18);
+  color: #38bdf8;
 
-  font-size: 20px;
-}
+  border: 1px solid rgba(56, 189, 248, 0.25);
 
-.tech-category-header h3 {
-  margin: 0;
-  color: #ffffff;
-  font-size: 17px;
-  font-weight: 750;
-  line-height: 1.35;
-}
-
-.tech-pill-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.tech-pill {
-  display: inline-flex;
-  align-items: center;
-
-  min-height: 38px;
-  padding: 8px 14px;
-
-  border-radius: 999px;
-
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-
-  color: rgba(255, 255, 255, 0.86);
+  background: rgba(56, 189, 248, 0.07);
 
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.tech-display-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: rgba(56, 189, 248, 0.7);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.tech-display-header h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* SKILL CARDS */
+
+.tech-skill-field {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.tech-skill-card {
+  position: relative;
+
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px 16px;
+
+  border-radius: 15px;
+
+  border: 1px solid rgba(56, 189, 248, 0.13);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  overflow: hidden;
+
+  animation: skillAppear 0.5s ease both;
 
   transition:
-    background 0.25s ease,
-    border-color 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.tech-pill:hover {
-  transform: translateY(-2px);
+.tech-skill-card::before {
+  content: "";
 
-  background: rgba(56, 189, 248, 0.1);
-  border-color: rgba(56, 189, 248, 0.35);
-  color: #ffffff;
+  position: absolute;
+
+  left: -100%;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(56, 189, 248, 0.08),
+    transparent
+  );
+
+  transition: left 0.5s ease;
 }
 
-@media (max-width: 850px) {
-  .tech-stack-section {
-    padding: 90px 6%;
+.tech-skill-card:hover::before,
+.tech-skill-card.active::before {
+  left: 100%;
+}
+
+.tech-skill-card:hover,
+.tech-skill-card.active {
+  transform: translateY(-4px);
+
+  border-color: rgba(56, 189, 248, 0.55);
+
+  background: rgba(56, 189, 248, 0.08);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.22),
+    0 0 20px rgba(56, 189, 248, 0.07);
+}
+
+.tech-skill-dot {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #38bdf8;
+
+  box-shadow:
+    0 0 10px rgba(56, 189, 248, 0.7);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.tech-skill-card:hover .tech-skill-dot,
+.tech-skill-card.active .tech-skill-dot {
+  transform: scale(1.5);
+
+  box-shadow:
+    0 0 16px rgba(56, 189, 248, 0.95);
+}
+
+.tech-skill-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.tech-skill-index {
+  margin-left: auto;
+
+  color: rgba(255, 255, 255, 0.25);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* FOOTER */
+
+.tech-display-footer {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 28px;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.tech-footer-line {
+  flex: 1;
+
+  height: 1px;
+
+  background: rgba(56, 189, 248, 0.15);
+}
+
+/* NOTE */
+
+.tech-interaction-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin: 25px auto 0;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 13px;
+}
+
+.tech-interaction-note span {
+  color: #38bdf8;
+  font-size: 17px;
+}
+
+.tech-interaction-note p {
+  margin: 0;
+}
+
+/* ANIMATION */
+
+@keyframes skillAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
 
-  .tech-category-grid {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .tech-stack-showcase {
     grid-template-columns: 1fr;
   }
+
+  .tech-category-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tech-category-button.active,
+  .tech-category-button:hover {
+    transform: translateY(-3px);
+  }
+
+  .tech-display {
+    min-height: 400px;
+  }
 }
+
+/* MOBILE */
 
 @media (max-width: 600px) {
   .tech-stack-section {
-    padding: 75px 5%;
-  }
-
-  .tech-stack-title {
-    font-size: 36px;
+    padding: 85px 5%;
   }
 
   .tech-stack-description {
-    font-size: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
 
-  .tech-category-card {
+  .tech-category-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-display {
     padding: 22px;
-    border-radius: 18px;
+    border-radius: 20px;
   }
 
-  .tech-category-header {
-    align-items: flex-start;
+  .tech-display-header {
+    gap: 12px;
   }
 
-  .tech-category-header h3 {
-    font-size: 15px;
+  .tech-display-header h3 {
+    font-size: 17px;
   }
 
-  .tech-pill {
-    font-size: 12px;
-    padding: 7px 12px;
+  .tech-skill-field {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-skill-card {
+    min-height: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-skill-card {
+    animation: none;
+    transition: none;
   }
 }
