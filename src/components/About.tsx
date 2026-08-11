@@ -27,8 +27,10 @@ function About() {
 
         </div>
 
-        <div className="about-showcase">
-
+        <div
+          className="about-showcase"
+          id="recruiting-platforms"
+        >
           <span className="section-tag">
             RECRUITWITHED / WORK SHOWCASE
           </span>
@@ -51,7 +53,6 @@ function About() {
             </p>
 
           </div>
-
         </div>
 
       </div>

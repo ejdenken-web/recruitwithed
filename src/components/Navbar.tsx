@@ -6,7 +6,6 @@ function Navbar() {
 
   useEffect(() => {
     const sections = [
-      "about",
       "career-highlights",
       "clients",
       "recruiting-platforms",
@@ -17,6 +16,11 @@ function Navbar() {
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 180;
+
+      if (window.scrollY < 250) {
+        setActive("about");
+        return;
+      }
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -41,19 +45,50 @@ function Navbar() {
     };
   }, []);
 
+  const scrollToSection = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
+    event.preventDefault();
+
+    const element = document.getElementById(id);
+
+    if (id === "home") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+      setActive("about");
+      return;
+    }
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <header className="navbar">
       <div className="nav-container">
 
-        <a href="#about" className="logo">
+        <a
+          href="#home"
+          className="logo"
+          onClick={(event) => scrollToSection(event, "home")}
+        >
           RecruitWithEd
         </a>
 
         <nav className="nav-links">
 
           <a
-            href="#about"
+            href="#home"
             className={active === "about" ? "active" : ""}
+            onClick={(event) => scrollToSection(event, "home")}
           >
             About
           </a>
@@ -63,6 +98,9 @@ function Navbar() {
             className={
               active === "career-highlights" ? "active" : ""
             }
+            onClick={(event) =>
+              scrollToSection(event, "career-highlights")
+            }
           >
             Career Highlights
           </a>
@@ -70,6 +108,7 @@ function Navbar() {
           <a
             href="#clients"
             className={active === "clients" ? "active" : ""}
+            onClick={(event) => scrollToSection(event, "clients")}
           >
             Clients
           </a>
@@ -78,6 +117,9 @@ function Navbar() {
             href="#recruiting-platforms"
             className={
               active === "recruiting-platforms" ? "active" : ""
+            }
+            onClick={(event) =>
+              scrollToSection(event, "recruiting-platforms")
             }
           >
             Recruiting Platforms
@@ -88,6 +130,9 @@ function Navbar() {
             className={
               active === "certifications" ? "active" : ""
             }
+            onClick={(event) =>
+              scrollToSection(event, "certifications")
+            }
           >
             Certifications
           </a>
@@ -95,6 +140,7 @@ function Navbar() {
           <a
             href="#projects"
             className={active === "projects" ? "active" : ""}
+            onClick={(event) => scrollToSection(event, "projects")}
           >
             Projects
           </a>
@@ -103,6 +149,9 @@ function Navbar() {
             href="#lets-connect"
             className={
               active === "lets-connect" ? "active" : ""
+            }
+            onClick={(event) =>
+              scrollToSection(event, "lets-connect")
             }
           >
             Let's Connect
