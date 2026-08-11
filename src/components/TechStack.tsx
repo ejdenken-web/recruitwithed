@@ -1,179 +1,143 @@
-import { useEffect, useState } from "react";
 import "./TechStack.css";
 
 type Technology = {
   name: string;
   category: string;
-  angle: number;
-  radius: number;
-  duration: number;
+  ring: "outer" | "middle" | "inner";
+  position: string;
 };
 
 function TechStack() {
   const technologies: Technology[] = [
+    // OUTER RING
     {
       name: "TypeScript / TSX",
-      category: "Languages",
-      angle: 0,
-      radius: 290,
-      duration: 22,
+      category: "LANGUAGES",
+      ring: "outer",
+      position: "p1",
     },
     {
       name: "HTML5",
-      category: "Languages",
-      angle: 45,
-      radius: 250,
-      duration: 19,
+      category: "LANGUAGES",
+      ring: "outer",
+      position: "p2",
     },
     {
       name: "CSS3",
-      category: "Languages",
-      angle: 90,
-      radius: 300,
-      duration: 24,
+      category: "LANGUAGES",
+      ring: "outer",
+      position: "p3",
     },
     {
       name: "React",
-      category: "Frameworks",
-      angle: 135,
-      radius: 255,
-      duration: 20,
-    },
-    {
-      name: "React Hooks",
-      category: "Frameworks",
-      angle: 180,
-      radius: 290,
-      duration: 23,
+      category: "FRAMEWORKS",
+      ring: "outer",
+      position: "p4",
     },
     {
       name: "Vite",
-      category: "Build Tools",
-      angle: 225,
-      radius: 245,
-      duration: 18,
+      category: "BUILD TOOLS",
+      ring: "outer",
+      position: "p5",
     },
     {
       name: "Node.js",
-      category: "Runtime",
-      angle: 270,
-      radius: 300,
-      duration: 25,
+      category: "RUNTIME",
+      ring: "outer",
+      position: "p6",
     },
+
+    // MIDDLE RING
     {
       name: "npm",
-      category: "Package Management",
-      angle: 315,
-      radius: 250,
-      duration: 21,
-    },
-    {
-      name: "CSS Animations",
-      category: "UI/UX",
-      angle: 20,
-      radius: 185,
-      duration: 17,
-    },
-    {
-      name: "Glassmorphism UI",
-      category: "UI/UX",
-      angle: 70,
-      radius: 190,
-      duration: 20,
+      category: "DEVELOPMENT",
+      ring: "middle",
+      position: "p1",
     },
     {
       name: "Responsive Design",
-      category: "UI/UX",
-      angle: 140,
-      radius: 180,
-      duration: 22,
+      category: "UI / UX",
+      ring: "middle",
+      position: "p2",
+    },
+    {
+      name: "CSS Animations",
+      category: "UI / UX",
+      ring: "middle",
+      position: "p3",
+    },
+    {
+      name: "Glassmorphism",
+      category: "UI / UX",
+      ring: "middle",
+      position: "p4",
     },
     {
       name: "Git",
-      category: "Version Control",
-      angle: 210,
-      radius: 190,
-      duration: 19,
+      category: "VERSION CONTROL",
+      ring: "middle",
+      position: "p5",
     },
     {
       name: "GitHub",
-      category: "Version Control",
-      angle: 280,
-      radius: 185,
-      duration: 21,
+      category: "VERSION CONTROL",
+      ring: "middle",
+      position: "p6",
     },
+
+    // INNER RING
     {
       name: "Netlify",
-      category: "Deployment",
-      angle: 340,
-      radius: 190,
-      duration: 23,
+      category: "DEPLOYMENT",
+      ring: "inner",
+      position: "p1",
     },
     {
       name: "Vercel",
-      category: "Deployment",
-      angle: 110,
-      radius: 145,
-      duration: 16,
+      category: "DEPLOYMENT",
+      ring: "inner",
+      position: "p2",
     },
     {
       name: "ChatGPT",
-      category: "AI-Assisted Development",
-      angle: 250,
-      radius: 150,
-      duration: 18,
+      category: "AI-ASSISTED DEVELOPMENT",
+      ring: "inner",
+      position: "p3",
     },
     {
       name: "Claude AI",
-      category: "AI-Assisted Development",
-      angle: 30,
-      radius: 140,
-      duration: 17,
+      category: "AI-ASSISTED DEVELOPMENT",
+      ring: "inner",
+      position: "p4",
     },
   ];
 
-  const [activeTechnology, setActiveTechnology] =
-    useState<string | null>(null);
-
-  const [rotation, setRotation] = useState(0);
-
-  useEffect(() => {
-    let animationFrame: number;
-    let currentRotation = 0;
-
-    const animate = () => {
-      currentRotation += 0.025;
-      setRotation(currentRotation);
-      animationFrame = requestAnimationFrame(animate);
-    };
-
-    animationFrame = requestAnimationFrame(animate);
-
-    return () => {
-      cancelAnimationFrame(animationFrame);
-    };
-  }, []);
-
   return (
-    <section
-      id="tech-stack"
-      className="tech-stack-section"
-    >
+    <section className="tech-stack-section" id="tech-stack">
       <div className="tech-stack-container">
 
         <span className="section-tag">
-          PORTFOLIO TECH STACK
+          MY TECHNOLOGY ECOSYSTEM
         </span>
 
         <h2 className="tech-stack-title">
-          Technology in Motion
+          Technology in <span>Motion</span>
         </h2>
 
         <p className="tech-stack-description">
-          A visual representation of the technologies, frameworks,
-          development tools, runtime, deployment platforms, and
-          AI-assisted development behind RecruitWithEd.
+          The technologies, tools, frameworks, runtime, deployment platforms,
+          and AI-assisted development behind RecruitWithEd.
         </p>
+
+        <div className="tech-category-bar">
+          <span className="active">✦ All</span>
+          <span>⌘ Languages</span>
+          <span>◇ Frameworks</span>
+          <span>◌ Development</span>
+          <span>◈ UI / UX</span>
+          <span>✧ Deployment</span>
+          <span>✦ AI & Tools</span>
+        </div>
 
         <div className="tech-universe">
 
@@ -181,83 +145,129 @@ function TechStack() {
           <div className="tech-orbit tech-orbit-middle" />
           <div className="tech-orbit tech-orbit-inner" />
 
-          <div className="tech-glow" />
+          <div className="tech-orbit-dashed" />
+
+          <div className="tech-core-glow" />
 
           <div className="tech-core">
-            <span className="tech-core-small">
-              BUILT WITH
-            </span>
+            <div className="tech-core-ring">
+              <span>ED</span>
+            </div>
 
-            <strong>
-              RecruitWithEd
-            </strong>
+            <strong>RecruitWithEd</strong>
 
-            <span className="tech-core-subtitle">
-              Technology • Creativity • AI
-            </span>
+            <small>
+              TECHNOLOGY • CREATIVITY • AI
+            </small>
           </div>
 
-          {technologies.map((technology, index) => {
-            const adjustedAngle =
-              technology.angle +
-              rotation * (index % 2 === 0 ? 1 : -1);
+          <div className="tech-ring tech-ring-outer">
+            {technologies
+              .filter((technology) => technology.ring === "outer")
+              .map((technology) => (
+                <div
+                  key={technology.name}
+                  className={`tech-card ${technology.position}`}
+                >
+                  <div className="tech-card-icon">
+                    {technology.name === "TypeScript / TSX" && "TS"}
+                    {technology.name === "HTML5" && "</>"}
+                    {technology.name === "CSS3" && "CSS"}
+                    {technology.name === "React" && "⚛"}
+                    {technology.name === "Vite" && "V"}
+                    {technology.name === "Node.js" && "JS"}
+                  </div>
 
-            const radians =
-              (adjustedAngle * Math.PI) / 180;
+                  <strong>{technology.name}</strong>
+                  <small>{technology.category}</small>
+                </div>
+              ))}
+          </div>
 
-            const x =
-              Math.cos(radians) * technology.radius;
+          <div className="tech-ring tech-ring-middle">
+            {technologies
+              .filter((technology) => technology.ring === "middle")
+              .map((technology) => (
+                <div
+                  key={technology.name}
+                  className={`tech-card ${technology.position}`}
+                >
+                  <div className="tech-card-icon">
+                    {technology.name === "npm" && "npm"}
+                    {technology.name === "Responsive Design" && "⌗"}
+                    {technology.name === "CSS Animations" && "✦"}
+                    {technology.name === "Glassmorphism" && "◈"}
+                    {technology.name === "Git" && "⌘"}
+                    {technology.name === "GitHub" && "◉"}
+                  </div>
 
-            const y =
-              Math.sin(radians) * technology.radius;
+                  <strong>{technology.name}</strong>
+                  <small>{technology.category}</small>
+                </div>
+              ))}
+          </div>
 
-            const isActive =
-              activeTechnology === technology.name;
+          <div className="tech-ring tech-ring-inner">
+            {technologies
+              .filter((technology) => technology.ring === "inner")
+              .map((technology) => (
+                <div
+                  key={technology.name}
+                  className={`tech-card ${technology.position}`}
+                >
+                  <div className="tech-card-icon">
+                    {technology.name === "Netlify" && "N"}
+                    {technology.name === "Vercel" && "▲"}
+                    {technology.name === "ChatGPT" && "AI"}
+                    {technology.name === "Claude AI" && "AI"}
+                  </div>
 
-            return (
-              <button
-                type="button"
-                key={technology.name}
-                className={`floating-tech ${
-                  isActive ? "active" : ""
-                }`}
-                style={{
-                  transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-                  animationDuration: `${technology.duration}s`,
-                  animationDelay: `${-(technology.duration / 2)}s`,
-                }}
-                onMouseEnter={() =>
-                  setActiveTechnology(technology.name)
-                }
-                onMouseLeave={() =>
-                  setActiveTechnology(null)
-                }
-                onFocus={() =>
-                  setActiveTechnology(technology.name)
-                }
-                onBlur={() =>
-                  setActiveTechnology(null)
-                }
-                aria-label={`${technology.name} - ${technology.category}`}
-              >
-                <span className="floating-tech-name">
-                  {technology.name}
-                </span>
+                  <strong>{technology.name}</strong>
+                  <small>{technology.category}</small>
+                </div>
+              ))}
+          </div>
 
-                <span className="floating-tech-category">
-                  {technology.category}
-                </span>
-              </button>
-            );
-          })}
+        </div>
+
+        <div className="tech-stack-footer">
+
+          <div className="tech-footer-intro">
+            <div className="tech-footer-icon">
+              🚀
+            </div>
+
+            <div>
+              <strong>
+                Built to Recruit. Powered by Technology.
+              </strong>
+
+              <p>
+                Leveraging modern technologies to connect great talent
+                with great opportunities.
+              </p>
+            </div>
+          </div>
+
+          <div className="tech-footer-stat">
+            <strong>16+</strong>
+            <span>Technologies</span>
+          </div>
+
+          <div className="tech-footer-stat">
+            <strong>∞</strong>
+            <span>Possibilities</span>
+          </div>
+
+          <div className="tech-footer-stat">
+            <strong>✦</strong>
+            <span>Impact Driven</span>
+          </div>
 
         </div>
 
         <div className="tech-stack-note">
-          <span>
-            ✦
-          </span>
-
+          <span>✦</span>
           <p>
             Every technology has a purpose. Every project tells a story.
           </p>

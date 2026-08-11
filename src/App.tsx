@@ -4,6 +4,7 @@ import About from "./components/About";
 import Clients from "./components/Clients";
 import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
+import TechStack from "./components/TechStack";
 import Footer from "./components/Footer";
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
         <Certifications />
 
         <Projects />
+
+        <TechStack />
       </main>
 
       <Footer />
