@@ -1,0 +1,329 @@
+.recruiting-platforms-section {
+  position: relative;
+  overflow: hidden;
+  padding: 95px 8%;
+  text-align: center;
+}
+
+.recruiting-platforms-container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.recruiting-platforms-title {
+  margin: 22px 0 0;
+
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #38bdf8,
+      #818cf8,
+      #a78bfa,
+      #ffffff
+    );
+
+  background-size: 250% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: platformsTitleGlow 8s ease-in-out infinite;
+}
+
+.recruiting-platforms-intro {
+  max-width: 720px;
+  margin: 20px auto 0;
+
+  color: rgba(203, 213, 225, 0.72);
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.recruiting-platforms-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, minmax(140px, 1fr));
+
+  gap: 16px;
+
+  margin-top: 55px;
+}
+
+/* =========================================================
+   PLATFORM CARD
+   ========================================================= */
+
+.recruiting-platform-card {
+  position: relative;
+
+  min-height: 145px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px 16px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.065),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 18px 45px rgba(0, 0, 0, 0.22);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  cursor: default;
+
+  animation: platformEntrance 0.7s ease both;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+.recruiting-platform-card:hover {
+  transform: translateY(-10px) scale(1.025);
+
+  border-color: rgba(56, 189, 248, 0.65);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(56, 189, 248, 0.12),
+      rgba(129, 140, 248, 0.06)
+    );
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.30),
+    0 0 25px rgba(56, 189, 248, 0.20),
+    0 0 65px rgba(129, 140, 248, 0.10);
+}
+
+/* =========================================================
+   INTERNAL GLOW
+   ========================================================= */
+
+.platform-glow {
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  top: -55px;
+  right: -45px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(56, 189, 248, 0.28),
+      transparent 70%
+    );
+
+  filter: blur(18px);
+
+  opacity: 0.25;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.recruiting-platform-card:hover .platform-glow {
+  opacity: 1;
+  transform: scale(1.35);
+}
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+.platform-number {
+  position: absolute;
+
+  top: 14px;
+  left: 16px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color: rgba(148, 163, 184, 0.45);
+
+  transition:
+    color 0.3s ease;
+}
+
+.recruiting-platform-card:hover .platform-number {
+  color: rgba(56, 189, 248, 0.75);
+}
+
+/* =========================================================
+   PLATFORM NAME
+   ========================================================= */
+
+.platform-name {
+  position: relative;
+  z-index: 2;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.recruiting-platform-card:hover .platform-name {
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  text-shadow:
+    0 0 10px rgba(56, 189, 248, 0.75),
+    0 0 25px rgba(129, 140, 248, 0.45);
+}
+
+/* =========================================================
+   INDICATOR
+   ========================================================= */
+
+.platform-indicator {
+  position: absolute;
+
+  bottom: 17px;
+
+  width: 22px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #38bdf8,
+      #818cf8
+    );
+
+  opacity: 0.25;
+
+  box-shadow:
+    0 0 8px rgba(56, 189, 248, 0.4);
+
+  transition:
+    width 0.35s ease,
+    opacity 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.recruiting-platform-card:hover .platform-indicator {
+  width: 55px;
+  opacity: 1;
+
+  box-shadow:
+    0 0 12px rgba(56, 189, 248, 0.75),
+    0 0 25px rgba(129, 140, 248, 0.45);
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes platformEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes platformsTitleGlow {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .recruiting-platforms-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .recruiting-platforms-section {
+    padding: 75px 20px;
+  }
+
+  .recruiting-platforms-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .recruiting-platform-card {
+    min-height: 125px;
+  }
+
+  .platform-name {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .recruiting-platforms-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recruiting-platform-card,
+  .recruiting-platforms-title {
+    animation: none;
+  }
+}

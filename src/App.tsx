@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import CareerHighlights from "./components/CareerHighlights";
 import Clients from "./components/Clients";
-import CoreExpertise from "./components/CoreExpertise";
+import RecruitingPlatforms from "./components/RecruitingPlatforms";
 import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
 import TechStack from "./components/TechStack";
@@ -29,13 +29,7 @@ function App() {
 
         <Clients />
 
-        <section
-          id="recruiting-platforms"
-          className="recruiting-platforms-anchor"
-          aria-label="Recruiting Platforms"
-        >
-          <CoreExpertise />
-        </section>
+        <RecruitingPlatforms />
 
         <Certifications />
 
