@@ -65,9 +65,8 @@ function TechStack() {
           TECHNOLOGY & TOOLS
         </span>
 
-        <h2 className="tech-stack-title">
-          The Technology Behind RecruitWithEd
-        </h2>
+        
+            
 
         <p className="tech-stack-description">
           A focused collection of technologies, frameworks,
