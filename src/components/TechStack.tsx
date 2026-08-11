@@ -12,137 +12,123 @@ type Technology = {
 function TechStack() {
   const technologies: Technology[] = [
     {
-      name: "TypeScript",
+      name: "TypeScript / TSX",
       category: "Languages",
       angle: 0,
       radius: 290,
       duration: 22,
     },
     {
-      name: "TSX",
+      name: "HTML5",
       category: "Languages",
       angle: 45,
       radius: 250,
       duration: 19,
     },
     {
-      name: "HTML5",
+      name: "CSS3",
       category: "Languages",
       angle: 90,
       radius: 300,
       duration: 24,
     },
     {
-      name: "CSS3",
-      category: "Languages",
+      name: "React",
+      category: "Frameworks",
       angle: 135,
       radius: 255,
       duration: 20,
     },
     {
-      name: "React",
+      name: "React Hooks",
       category: "Frameworks",
       angle: 180,
       radius: 290,
       duration: 23,
     },
     {
-      name: "React Hooks",
-      category: "Frameworks",
+      name: "Vite",
+      category: "Build Tools",
       angle: 225,
       radius: 245,
       duration: 18,
     },
     {
-      name: "Vite",
-      category: "Development",
+      name: "Node.js",
+      category: "Runtime",
       angle: 270,
       radius: 300,
       duration: 25,
     },
     {
-      name: "Node.js",
-      category: "Development",
+      name: "npm",
+      category: "Package Management",
       angle: 315,
       radius: 250,
       duration: 21,
     },
     {
-      name: "npm",
-      category: "Development",
+      name: "CSS Animations",
+      category: "UI/UX",
       angle: 20,
       radius: 185,
       duration: 17,
     },
     {
-      name: "Git",
-      category: "Version Control",
+      name: "Glassmorphism UI",
+      category: "UI/UX",
       angle: 70,
       radius: 190,
       duration: 20,
     },
     {
-      name: "GitHub",
-      category: "Version Control",
+      name: "Responsive Design",
+      category: "UI/UX",
       angle: 140,
       radius: 180,
       duration: 22,
     },
     {
-      name: "Netlify",
-      category: "Deployment",
+      name: "Git",
+      category: "Version Control",
       angle: 210,
       radius: 190,
       duration: 19,
     },
     {
-      name: "Vercel",
-      category: "Deployment",
+      name: "GitHub",
+      category: "Version Control",
       angle: 280,
       radius: 185,
       duration: 21,
     },
     {
-      name: "Responsive Design",
-      category: "UI/UX",
+      name: "Netlify",
+      category: "Deployment",
       angle: 340,
       radius: 190,
       duration: 23,
     },
     {
-      name: "CSS Animations",
-      category: "UI/UX",
+      name: "Vercel",
+      category: "Deployment",
       angle: 110,
       radius: 145,
       duration: 16,
     },
     {
-      name: "Interactive UI",
-      category: "UI/UX",
+      name: "ChatGPT",
+      category: "AI-Assisted Development",
       angle: 250,
       radius: 150,
       duration: 18,
     },
     {
-      name: "Glassmorphism",
-      category: "UI/UX",
+      name: "Claude AI",
+      category: "AI-Assisted Development",
       angle: 30,
       radius: 140,
       duration: 17,
-    },
-    {
-      name: "ChatGPT",
-      category: "AI",
-      angle: 155,
-      radius: 145,
-      duration: 15,
-    },
-    {
-      name: "Claude AI",
-      category: "AI",
-      angle: 325,
-      radius: 150,
-      duration: 16,
     },
   ];
 
@@ -169,21 +155,24 @@ function TechStack() {
   }, []);
 
   return (
-    <section id="tech-stack" className="tech-stack-section">
+    <section
+      id="tech-stack"
+      className="tech-stack-section"
+    >
       <div className="tech-stack-container">
 
         <span className="section-tag">
-          TECHNOLOGY &amp; TOOLS
+          PORTFOLIO TECH STACK
         </span>
 
         <h2 className="tech-stack-title">
-          The Technology Behind RecruitWithEd
+          Technology in Motion
         </h2>
 
         <p className="tech-stack-description">
-          A visual map of the technologies, frameworks,
-          development tools, deployment platforms, and
-          AI tools used to bring RecruitWithEd to life.
+          A visual representation of the technologies, frameworks,
+          development tools, runtime, deployment platforms, and
+          AI-assisted development behind RecruitWithEd.
         </p>
 
         <div className="tech-universe">
@@ -196,15 +185,15 @@ function TechStack() {
 
           <div className="tech-core">
             <span className="tech-core-small">
-              RECRUITWITHED
+              BUILT WITH
             </span>
 
             <strong>
-              Tech Stack
+              RecruitWithEd
             </strong>
 
             <span className="tech-core-subtitle">
-              Code • Design • AI
+              Technology • Creativity • AI
             </span>
           </div>
 
@@ -265,10 +254,12 @@ function TechStack() {
         </div>
 
         <div className="tech-stack-note">
+          <span>
+            ✦
+          </span>
+
           <p>
-            One portfolio. Multiple technologies.
-            <br />
-            Built with modern development tools and AI-assisted creativity.
+            Every technology has a purpose. Every project tells a story.
           </p>
         </div>
 
