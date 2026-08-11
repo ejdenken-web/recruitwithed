@@ -97,10 +97,6 @@ function TechStack() {
             <div className="tech-display-glow" />
 
             <div className="tech-display-header">
-              <span className="tech-display-number">
-                {String(activeGroup + 1).padStart(2, "0")}
-              </span>
-
               <div>
                 <span className="tech-display-label">
                   TECHNOLOGY GROUP
@@ -140,10 +136,6 @@ function TechStack() {
             </div>
 
             <div className="tech-display-footer">
-              <span>
-                {currentGroup.items.length} technologies
-              </span>
-
               <span className="tech-footer-line" />
 
               <span>
