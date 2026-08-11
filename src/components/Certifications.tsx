@@ -95,16 +95,7 @@ function Certifications() {
             CERTIFICATIONS
           </span>
 
-          <h2 className="section-title">
-            Continuous Learning. Modern Expertise.
-          </h2>
-
-          <p className="section-subtitle">
-            Professional certifications reflecting continuous
-            learning across recruiting, artificial intelligence,
-            and modern talent acquisition technologies.
-          </p>
-        </div>
+          </div>
 
         {/* Certification providers */}
         <div className="provider-selector">
