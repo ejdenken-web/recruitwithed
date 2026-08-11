@@ -4,8 +4,8 @@ import "./TechStack.css";
 type TechGroup = {
   title: string;
   icon: string;
-  items: string[];
   accent: string;
+  items: string[];
 };
 
 function TechStack() {
@@ -65,9 +65,6 @@ function TechStack() {
           TECHNOLOGY & TOOLS
         </span>
 
-        
-            
-
         <p className="tech-stack-description">
           A focused collection of technologies, frameworks,
           development tools, deployment platforms, and AI tools
@@ -108,13 +105,11 @@ function TechStack() {
 
           <div className="tech-display">
 
-            <div className="tech-display-glow" />
+            <div className="tech-orb tech-orb-one" />
+            <div className="tech-orb tech-orb-two" />
+            <div className="tech-light-sweep" />
 
             <div className="tech-display-header">
-              <span className="tech-display-label">
-                CURRENT TECHNOLOGY GROUP
-              </span>
-
               <h3>{currentGroup.title}</h3>
 
               <div className="tech-header-line" />
@@ -136,10 +131,6 @@ function TechStack() {
                   onFocus={() => setActiveSkill(item)}
                   onBlur={() => setActiveSkill(null)}
                 >
-                  <span className="tech-skill-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-
                   <span className="tech-skill-dot" />
 
                   <span className="tech-skill-name">
