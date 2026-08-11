@@ -5,6 +5,7 @@ type TechGroup = {
   title: string;
   icon: string;
   items: string[];
+  accent: string;
 };
 
 function TechStack() {
@@ -12,21 +13,25 @@ function TechStack() {
     {
       title: "Languages & Core Technologies",
       icon: "🛠️",
+      accent: "languages",
       items: ["TypeScript", "HTML5", "CSS3"],
     },
     {
       title: "Frameworks & Libraries",
       icon: "📦",
+      accent: "frameworks",
       items: ["React", "React Hooks"],
     },
     {
       title: "Development & Build Tools",
       icon: "⚙️",
+      accent: "development",
       items: ["Vite", "Node.js", "npm"],
     },
     {
       title: "UI/UX & Frontend Styling",
       icon: "🎨",
+      accent: "design",
       items: [
         "CSS Animations",
         "Glassmorphism UI",
@@ -36,11 +41,13 @@ function TechStack() {
     {
       title: "Version Control & Deployment",
       icon: "🔧",
+      accent: "deployment",
       items: ["Git", "GitHub", "Netlify", "Vercel"],
     },
     {
       title: "AI-Assisted Development",
       icon: "🤖",
+      accent: "ai",
       items: ["ChatGPT", "Claude AI"],
     },
   ];
@@ -68,7 +75,9 @@ function TechStack() {
           used to bring RecruitWithEd to life.
         </p>
 
-        <div className="tech-stack-showcase">
+        <div
+          className={`tech-stack-showcase tech-theme-${currentGroup.accent}`}
+        >
 
           <div className="tech-category-nav">
             {techGroups.map((group, index) => (
@@ -87,7 +96,13 @@ function TechStack() {
                   {group.icon}
                 </span>
 
-                <span>{group.title}</span>
+                <span className="tech-category-title">
+                  {group.title}
+                </span>
+
+                {activeGroup === index && (
+                  <span className="tech-active-indicator" />
+                )}
               </button>
             ))}
           </div>
@@ -97,50 +112,46 @@ function TechStack() {
             <div className="tech-display-glow" />
 
             <div className="tech-display-header">
-              <div>
-                <span className="tech-display-label">
-                  TECHNOLOGY GROUP
-                </span>
+              <span className="tech-display-label">
+                CURRENT TECHNOLOGY GROUP
+              </span>
 
-                <h3>{currentGroup.title}</h3>
-              </div>
+              <h3>{currentGroup.title}</h3>
+
+              <div className="tech-header-line" />
             </div>
 
             <div className="tech-skill-field">
               {currentGroup.items.map((item, index) => (
                 <button
-                  key={item}
+                  key={`${currentGroup.title}-${item}`}
                   type="button"
                   className={`tech-skill-card ${
                     activeSkill === item ? "active" : ""
                   }`}
                   style={{
-                    animationDelay: `${index * 0.12}s`,
+                    animationDelay: `${index * 0.1}s`,
                   }}
                   onMouseEnter={() => setActiveSkill(item)}
                   onMouseLeave={() => setActiveSkill(null)}
                   onFocus={() => setActiveSkill(item)}
                   onBlur={() => setActiveSkill(null)}
                 >
+                  <span className="tech-skill-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
                   <span className="tech-skill-dot" />
 
                   <span className="tech-skill-name">
                     {item}
                   </span>
 
-                  <span className="tech-skill-index">
-                    {String(index + 1).padStart(2, "0")}
+                  <span className="tech-skill-arrow">
+                    →
                   </span>
                 </button>
               ))}
-            </div>
-
-            <div className="tech-display-footer">
-              <span className="tech-footer-line" />
-
-              <span>
-                RecruitWithEd
-              </span>
             </div>
 
           </div>
@@ -148,6 +159,7 @@ function TechStack() {
 
         <div className="tech-interaction-note">
           <span>✦</span>
+
           <p>
             Select a technology group to explore the stack.
           </p>
