@@ -1,267 +1,133 @@
+import { useEffect, useState } from "react";
 import "./TechStack.css";
 
 type Technology = {
   name: string;
   category: string;
-  ring: "outer" | "middle" | "inner";
-  position: string;
+  lane: number;
+  duration: number;
+  delay: number;
 };
 
 function TechStack() {
   const technologies: Technology[] = [
-    // OUTER RING
-    {
-      name: "TypeScript / TSX",
-      category: "LANGUAGES",
-      ring: "outer",
-      position: "p1",
-    },
-    {
-      name: "HTML5",
-      category: "LANGUAGES",
-      ring: "outer",
-      position: "p2",
-    },
-    {
-      name: "CSS3",
-      category: "LANGUAGES",
-      ring: "outer",
-      position: "p3",
-    },
-    {
-      name: "React",
-      category: "FRAMEWORKS",
-      ring: "outer",
-      position: "p4",
-    },
-    {
-      name: "Vite",
-      category: "BUILD TOOLS",
-      ring: "outer",
-      position: "p5",
-    },
-    {
-      name: "Node.js",
-      category: "RUNTIME",
-      ring: "outer",
-      position: "p6",
-    },
+    { name: "TypeScript", category: "Languages", lane: 0, duration: 14, delay: 0 },
+    { name: "TSX", category: "Languages", lane: 1, duration: 17, delay: 2 },
+    { name: "HTML5", category: "Languages", lane: 2, duration: 15, delay: 4 },
+    { name: "CSS3", category: "Languages", lane: 3, duration: 18, delay: 1 },
 
-    // MIDDLE RING
-    {
-      name: "npm",
-      category: "DEVELOPMENT",
-      ring: "middle",
-      position: "p1",
-    },
-    {
-      name: "Responsive Design",
-      category: "UI / UX",
-      ring: "middle",
-      position: "p2",
-    },
-    {
-      name: "CSS Animations",
-      category: "UI / UX",
-      ring: "middle",
-      position: "p3",
-    },
-    {
-      name: "Glassmorphism",
-      category: "UI / UX",
-      ring: "middle",
-      position: "p4",
-    },
-    {
-      name: "Git",
-      category: "VERSION CONTROL",
-      ring: "middle",
-      position: "p5",
-    },
-    {
-      name: "GitHub",
-      category: "VERSION CONTROL",
-      ring: "middle",
-      position: "p6",
-    },
+    { name: "React", category: "Frameworks", lane: 4, duration: 16, delay: 5 },
+    { name: "React Hooks", category: "Frameworks", lane: 5, duration: 19, delay: 3 },
 
-    // INNER RING
-    {
-      name: "Netlify",
-      category: "DEPLOYMENT",
-      ring: "inner",
-      position: "p1",
-    },
-    {
-      name: "Vercel",
-      category: "DEPLOYMENT",
-      ring: "inner",
-      position: "p2",
-    },
-    {
-      name: "ChatGPT",
-      category: "AI-ASSISTED DEVELOPMENT",
-      ring: "inner",
-      position: "p3",
-    },
-    {
-      name: "Claude AI",
-      category: "AI-ASSISTED DEVELOPMENT",
-      ring: "inner",
-      position: "p4",
-    },
+    { name: "Vite", category: "Development", lane: 6, duration: 15, delay: 6 },
+    { name: "Node.js", category: "Runtime", lane: 7, duration: 18, delay: 2 },
+    { name: "npm", category: "Development", lane: 8, duration: 16, delay: 7 },
+
+    { name: "Responsive Design", category: "UI/UX", lane: 9, duration: 20, delay: 4 },
+    { name: "CSS Animations", category: "UI/UX", lane: 10, duration: 17, delay: 8 },
+    { name: "Glassmorphism", category: "UI/UX", lane: 11, duration: 19, delay: 5 },
+
+    { name: "Git", category: "Version Control", lane: 12, duration: 15, delay: 9 },
+    { name: "GitHub", category: "Version Control", lane: 13, duration: 18, delay: 6 },
+    { name: "Netlify", category: "Deployment", lane: 14, duration: 17, delay: 10 },
+    { name: "Vercel", category: "Deployment", lane: 15, duration: 20, delay: 7 },
+
+    { name: "ChatGPT", category: "AI", lane: 16, duration: 16, delay: 11 },
+    { name: "Claude AI", category: "AI", lane: 17, duration: 19, delay: 8 },
   ];
+
+  const [activeTechnology, setActiveTechnology] = useState<string | null>(
+    null
+  );
+
+  const [particles, setParticles] = useState<number[]>([]);
+
+  useEffect(() => {
+    setParticles(Array.from({ length: 22 }, (_, index) => index));
+  }, []);
 
   return (
     <section className="tech-stack-section" id="tech-stack">
       <div className="tech-stack-container">
 
-        <span className="section-tag">
-          MY TECHNOLOGY ECOSYSTEM
-        </span>
+        <span className="section-tag">TECHNOLOGY IN FLIGHT</span>
 
         <h2 className="tech-stack-title">
-          Technology in <span>Motion</span>
+          Technology That Moves.
         </h2>
 
         <p className="tech-stack-description">
-          The technologies, tools, frameworks, runtime, deployment platforms,
-          and AI-assisted development behind RecruitWithEd.
+          A dynamic view of the technologies, development tools, frameworks,
+          deployment platforms, and AI tools behind my work.
         </p>
 
-        <div className="tech-category-bar">
-          <span className="active">✦ All</span>
-          <span>⌘ Languages</span>
-          <span>◇ Frameworks</span>
-          <span>◌ Development</span>
-          <span>◈ UI / UX</span>
-          <span>✧ Deployment</span>
-          <span>✦ AI & Tools</span>
-        </div>
+        <div className="flight-deck">
 
-        <div className="tech-universe">
+          <div className="flight-grid" />
 
-          <div className="tech-orbit tech-orbit-outer" />
-          <div className="tech-orbit tech-orbit-middle" />
-          <div className="tech-orbit tech-orbit-inner" />
+          {particles.map((particle) => (
+            <span
+              key={particle}
+              className="flight-particle"
+              style={{
+                animationDelay: `${particle * -0.7}s`,
+                top: `${8 + ((particle * 17) % 84)}%`,
+              }}
+            />
+          ))}
 
-          <div className="tech-orbit-dashed" />
+          {technologies.map((technology) => {
+            const isActive = activeTechnology === technology.name;
 
-          <div className="tech-core-glow" />
-
-          <div className="tech-core">
-            <div className="tech-core-ring">
-              <span>ED</span>
-            </div>
-
-            <strong>RecruitWithEd</strong>
-
-            <small>
-              TECHNOLOGY • CREATIVITY • AI
-            </small>
-          </div>
-
-          <div className="tech-ring tech-ring-outer">
-            {technologies
-              .filter((technology) => technology.ring === "outer")
-              .map((technology) => (
-                <div
-                  key={technology.name}
-                  className={`tech-card ${technology.position}`}
+            return (
+              <div
+                key={technology.name}
+                className={`technology-flight ${
+                  isActive ? "technology-flight-active" : ""
+                }`}
+                style={{
+                  animationDuration: `${technology.duration}s`,
+                  animationDelay: `${-technology.delay}s`,
+                  "--lane": technology.lane,
+                } as React.CSSProperties}
+              >
+                <button
+                  type="button"
+                  className="technology-card"
+                  onMouseEnter={() =>
+                    setActiveTechnology(technology.name)
+                  }
+                  onMouseLeave={() =>
+                    setActiveTechnology(null)
+                  }
+                  onFocus={() =>
+                    setActiveTechnology(technology.name)
+                  }
+                  onBlur={() =>
+                    setActiveTechnology(null)
+                  }
+                  aria-label={`${technology.name} - ${technology.category}`}
                 >
-                  <div className="tech-card-icon">
-                    {technology.name === "TypeScript / TSX" && "TS"}
-                    {technology.name === "HTML5" && "</>"}
-                    {technology.name === "CSS3" && "CSS"}
-                    {technology.name === "React" && "⚛"}
-                    {technology.name === "Vite" && "V"}
-                    {technology.name === "Node.js" && "JS"}
-                  </div>
+                  <span className="technology-card-name">
+                    {technology.name}
+                  </span>
 
-                  <strong>{technology.name}</strong>
-                  <small>{technology.category}</small>
-                </div>
-              ))}
+                  <span className="technology-card-category">
+                    {technology.category}
+                  </span>
+                </button>
+              </div>
+            );
+          })}
+
+          <div className="flight-label flight-label-top">
+            <span className="flight-label-line" />
+            <span>LANGUAGES • FRAMEWORKS • TOOLS</span>
           </div>
 
-          <div className="tech-ring tech-ring-middle">
-            {technologies
-              .filter((technology) => technology.ring === "middle")
-              .map((technology) => (
-                <div
-                  key={technology.name}
-                  className={`tech-card ${technology.position}`}
-                >
-                  <div className="tech-card-icon">
-                    {technology.name === "npm" && "npm"}
-                    {technology.name === "Responsive Design" && "⌗"}
-                    {technology.name === "CSS Animations" && "✦"}
-                    {technology.name === "Glassmorphism" && "◈"}
-                    {technology.name === "Git" && "⌘"}
-                    {technology.name === "GitHub" && "◉"}
-                  </div>
-
-                  <strong>{technology.name}</strong>
-                  <small>{technology.category}</small>
-                </div>
-              ))}
-          </div>
-
-          <div className="tech-ring tech-ring-inner">
-            {technologies
-              .filter((technology) => technology.ring === "inner")
-              .map((technology) => (
-                <div
-                  key={technology.name}
-                  className={`tech-card ${technology.position}`}
-                >
-                  <div className="tech-card-icon">
-                    {technology.name === "Netlify" && "N"}
-                    {technology.name === "Vercel" && "▲"}
-                    {technology.name === "ChatGPT" && "AI"}
-                    {technology.name === "Claude AI" && "AI"}
-                  </div>
-
-                  <strong>{technology.name}</strong>
-                  <small>{technology.category}</small>
-                </div>
-              ))}
-          </div>
-
-        </div>
-
-        <div className="tech-stack-footer">
-
-          <div className="tech-footer-intro">
-            <div className="tech-footer-icon">
-              🚀
-            </div>
-
-            <div>
-              <strong>
-                Built to Recruit. Powered by Technology.
-              </strong>
-
-              <p>
-                Leveraging modern technologies to connect great talent
-                with great opportunities.
-              </p>
-            </div>
-          </div>
-
-          <div className="tech-footer-stat">
-            <strong>16+</strong>
-            <span>Technologies</span>
-          </div>
-
-          <div className="tech-footer-stat">
-            <strong>∞</strong>
-            <span>Possibilities</span>
-          </div>
-
-          <div className="tech-footer-stat">
-            <strong>✦</strong>
-            <span>Impact Driven</span>
+          <div className="flight-label flight-label-bottom">
+            <span>AI • UI/UX • DEPLOYMENT</span>
+            <span className="flight-label-line" />
           </div>
 
         </div>
