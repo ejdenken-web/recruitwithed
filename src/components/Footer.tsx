@@ -6,72 +6,43 @@ function Footer() {
 
     if (!element) return;
 
-    const navbar = document.querySelector(".navbar");
-
-    const navbarHeight =
-      navbar instanceof HTMLElement
-        ? navbar.offsetHeight
-        : 80;
-
-    const elementTop =
-      element.getBoundingClientRect().top +
-      window.scrollY;
-
-    window.scrollTo({
-      top: Math.max(
-        0,
-        elementTop - navbarHeight - 12
-      ),
+    element.scrollIntoView({
       behavior: "smooth",
+      block: "start",
     });
 
-    window.history.replaceState(
-      null,
-      "",
-      `#${id}`
-    );
+    window.history.replaceState(null, "", `#${id}`);
   };
 
   return (
-    <footer
-      id="lets-connect"
-      className="footer"
-    >
+    <footer id="lets-connect" className="footer">
       <div className="footer-container">
 
-        <div className="footer-main">
+        <div className="footer-brand">
+          <h2>Ed Johnson</h2>
 
-          <div className="footer-brand">
-            <h2>Ed Johnson</h2>
+          <p className="footer-title">
+            Senior Information Technology Consultant
+          </p>
 
-            <p>
-              Senior Information Technology Consultant
-            </p>
+          <p className="footer-mission">
+            Building Careers. Building Teams.
+          </p>
+        </div>
 
-            <span>
-              Building Careers. Building Teams.
-            </span>
-          </div>
+        <div className="footer-links">
+          <h3>Quick Links</h3>
 
-          <div className="footer-links">
-            <h3>Quick Links</h3>
-
-            <button
-              type="button"
-              onClick={() => scrollToSection("about")}
-            >
+          <div className="footer-nav">
+            <button onClick={() => scrollToSection("about")}>
               About
             </button>
 
-            <button
-              type="button"
-              onClick={() => scrollToSection("clients")}
-            >
+            <button onClick={() => scrollToSection("clients")}>
               Clients
             </button>
 
             <button
-              type="button"
               onClick={() =>
                 scrollToSection("recruiting-platforms")
               }
@@ -80,57 +51,46 @@ function Footer() {
             </button>
 
             <button
-              type="button"
-              onClick={() =>
-                scrollToSection("certifications")
-              }
+              onClick={() => scrollToSection("certifications")}
             >
               Certifications
             </button>
 
-            <button
-              type="button"
-              onClick={() => scrollToSection("projects")}
-            >
+            <button onClick={() => scrollToSection("projects")}>
               Projects
             </button>
 
+            <button onClick={() => scrollToSection("tech-stack")}>
+              Technology & Tools
+            </button>
+
             <button
-              type="button"
-              onClick={() =>
-                scrollToSection("lets-connect")
-              }
+              onClick={() => scrollToSection("lets-connect")}
             >
               Let's Connect
             </button>
           </div>
-
-          <div className="footer-contact">
-            <h3>Let's Connect</h3>
-
-            <p>
-              Interested in building exceptional
-              technology teams?
-            </p>
-
-            <a href="mailto:johnson@allknownservices.com">
-              johnson@allknownservices.com
-            </a>
-          </div>
-
         </div>
 
-        <div className="footer-bottom">
-          <p>
-            © {new Date().getFullYear()} RecruitWithEd.
-            All rights reserved.
-          </p>
+        <div className="footer-connect">
+          <h3>Let's Connect</h3>
 
           <p>
-            Built by Ed Johnson
+            Interested in building exceptional technology teams?
           </p>
         </div>
 
+      </div>
+
+      <div className="footer-bottom">
+        <p>
+          © {new Date().getFullYear()} RecruitWithEd. All rights
+          reserved.
+        </p>
+
+        <p className="footer-credit">
+          Designed and Developed by <strong>Ed Johnson</strong>
+        </p>
       </div>
     </footer>
   );
