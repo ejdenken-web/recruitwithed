@@ -6,35 +6,30 @@ function Footer() {
 
     if (!element) return;
 
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    const navbarHeight = 90;
 
-    window.history.replaceState(null, "", `#${id}`);
+    const targetPosition =
+      element.getBoundingClientRect().top +
+      window.scrollY -
+      navbarHeight;
+
+    window.scrollTo({
+      top: Math.max(0, targetPosition),
+      behavior: "smooth",
+    });
   };
 
   return (
     <footer id="lets-connect" className="footer">
+
       <div className="footer-container">
 
-        <div className="footer-brand">
-          <h2>Ed Johnson</h2>
-
-          <p className="footer-title">
-            Senior Information Technology Consultant
-          </p>
-
-          <p className="footer-mission">
-            Building Careers. Building Teams.
-          </p>
-        </div>
-
-        <div className="footer-links">
+        <div className="footer-column">
           <h3>Quick Links</h3>
 
           <div className="footer-nav">
-            <button onClick={() => scrollToSection("about")}>
+
+            <button onClick={() => scrollToSection("home")}>
               About
             </button>
 
@@ -51,7 +46,9 @@ function Footer() {
             </button>
 
             <button
-              onClick={() => scrollToSection("certifications")}
+              onClick={() =>
+                scrollToSection("certifications")
+              }
             >
               Certifications
             </button>
@@ -60,7 +57,9 @@ function Footer() {
               Projects
             </button>
 
-            <button onClick={() => scrollToSection("tech-stack")}>
+            <button
+              onClick={() => scrollToSection("tech-stack")}
+            >
               Technology & Tools
             </button>
 
@@ -69,29 +68,59 @@ function Footer() {
             >
               Let's Connect
             </button>
+
           </div>
         </div>
 
-        <div className="footer-connect">
+        <div className="footer-column footer-contact">
+
           <h3>Let's Connect</h3>
 
-          <p>
-            Interested in building exceptional technology teams?
-          </p>
+          <div className="footer-socials">
+
+            <a
+              href="https://github.com/ejdenken-web/recruitwithed"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social"
+            >
+              GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              href="mailto:johnson@allknownservices.com"
+              className="footer-social"
+            >
+              Email
+            </a>
+
+          </div>
+
         </div>
 
       </div>
 
       <div className="footer-bottom">
+
         <p>
-          © {new Date().getFullYear()} RecruitWithEd. All rights
-          reserved.
+          © {new Date().getFullYear()} RecruitWithEd. All rights reserved.
         </p>
 
         <p className="footer-credit">
           Designed and Developed by <strong>Ed Johnson</strong>
         </p>
+
       </div>
+
     </footer>
   );
 }

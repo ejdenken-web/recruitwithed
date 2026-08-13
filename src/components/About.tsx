@@ -1,3 +1,5 @@
+import "./../App.css";
+
 function About() {
   return (
     <section className="about-section" id="about">
@@ -25,34 +27,6 @@ function About() {
             long-term business growth.
           </p>
 
-        </div>
-
-        <div
-          className="about-showcase"
-          id="recruiting-platforms"
-        >
-          <span className="section-tag">
-            RECRUITWITHED / WORK SHOWCASE
-          </span>
-
-          <div className="about-content">
-
-            <p>
-              Through RecruitWithEd, I deliver optimized, reliable hiring
-              ecosystems—combining responsible AI adoption with rigorous
-              candidate vetting to make your next major scale-up completely
-              seamless.
-            </p>
-
-            <p>
-              This platform showcases my hands-on portfolio, featuring the
-              Chhota Bheem Animation Portfolio alongside the exact modern
-              tech stack used to build it. Engineering these tools myself
-              gives me the deep technical literacy required to speak your
-              engineers' language and build flawless candidate pipelines.
-            </p>
-
-          </div>
         </div>
 
       </div>
