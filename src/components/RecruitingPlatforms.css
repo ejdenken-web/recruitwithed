@@ -1,361 +1,237 @@
+/* =========================================================
+   RECRUITING PLATFORMS
+   ========================================================= */
+
 .recruiting-platforms-section {
   position: relative;
+  padding: 85px 8%;
   overflow: hidden;
-
-  padding: 95px 8% 105px;
-
-  text-align: center;
 }
 
 .recruiting-platforms-container {
   width: 100%;
-  max-width: 1380px;
+  max-width: 1150px;
   margin: 0 auto;
+  text-align: center;
+}
 
-  position: relative;
-  z-index: 2;
+/* ---------------------------------------------------------
+   HEADER
+   --------------------------------------------------------- */
+
+.recruiting-platforms-section .section-tag {
+  margin: 0 auto;
 }
 
 .recruiting-platforms-title {
   margin: 22px 0 0;
 
-  font-size: clamp(2.3rem, 4vw, 3.5rem);
-  font-weight: 850;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  font-weight: 800;
   letter-spacing: -1.5px;
 
-  background:
-    linear-gradient(
-      90deg,
-      #ffffff,
-      #38bdf8,
-      #818cf8,
-      #a78bfa,
-      #34d399,
-      #ffffff
-    );
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #38bdf8,
+    #818cf8,
+    #a78bfa,
+    #ffffff
+  );
 
-  background-size: 300% auto;
+  background-size: 250% auto;
 
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 
-  animation: platformTitle 9s ease-in-out infinite;
+  animation: platformTitleGlow 7s ease-in-out infinite;
 }
 
 .recruiting-platforms-intro {
-  max-width: 760px;
-  margin: 20px auto 0;
+  max-width: 680px;
+  margin: 18px auto 0;
 
-  color: rgba(203, 213, 225, 0.74);
+  color: rgba(203, 213, 225, 0.72);
 
-  font-size: 17px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
-.recruiting-platforms-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+/* ---------------------------------------------------------
+   PLATFORM CLOUD
+   --------------------------------------------------------- */
 
-  gap: 16px;
+.recruiting-platforms-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
-  margin-top: 55px;
+  gap: 16px 18px;
+
+  max-width: 900px;
+
+  margin: 48px auto 0;
 }
 
-/* =========================================================
-   CARD
-   ========================================================= */
+/* ---------------------------------------------------------
+   SMALL PREMIUM PLATFORM CHIPS
+   --------------------------------------------------------- */
 
-.recruiting-platform-card {
-  --platform-color: #38bdf8;
-  --platform-secondary: #818cf8;
-
+.platform-chip {
   position: relative;
 
-  min-height: 155px;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 
-  padding: 28px 15px;
+  min-height: 48px;
 
-  overflow: hidden;
+  padding: 11px 20px;
 
-  border-radius: 22px;
+  border-radius: 999px;
+
+  color: rgba(248, 250, 252, 0.92);
+
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: 0.1px;
 
   background:
     linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.075),
-      rgba(255, 255, 255, 0.018)
+      135deg,
+      rgba(56, 189, 248, 0.10),
+      rgba(129, 140, 248, 0.07)
     );
 
   border: 1px solid rgba(255, 255, 255, 0.10);
 
   box-shadow:
-    0 18px 50px rgba(0, 0, 0, 0.25),
+    0 8px 25px rgba(0, 0, 0, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
-  transition:
-    transform 0.4s ease,
-    border-color 0.4s ease,
-    box-shadow 0.4s ease,
-    background 0.4s ease;
-}
+  cursor: default;
 
-.recruiting-platform-card:nth-child(1) {
-  --platform-color: #38bdf8;
-  --platform-secondary: #22d3ee;
-}
+  opacity: 0;
 
-.recruiting-platform-card:nth-child(2) {
-  --platform-color: #fb7185;
-  --platform-secondary: #f43f5e;
-}
-
-.recruiting-platform-card:nth-child(3) {
-  --platform-color: #60a5fa;
-  --platform-secondary: #38bdf8;
-}
-
-.recruiting-platform-card:nth-child(4) {
-  --platform-color: #818cf8;
-  --platform-secondary: #6366f1;
-}
-
-.recruiting-platform-card:nth-child(5) {
-  --platform-color: #a78bfa;
-  --platform-secondary: #c084fc;
-}
-
-.recruiting-platform-card:nth-child(6) {
-  --platform-color: #fbbf24;
-  --platform-secondary: #f59e0b;
-}
-
-.recruiting-platform-card::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background:
-    radial-gradient(
-      circle at 50% 110%,
-      color-mix(
-        in srgb,
-        var(--platform-color) 24%,
-        transparent
-      ),
-      transparent 62%
-    );
-
-  opacity: 0.55;
-
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
-}
-
-.recruiting-platform-card::after {
-  content: "";
-
-  position: absolute;
-  inset: 1px;
-
-  border-radius: 21px;
-
-  border: 1px solid
-    color-mix(
-      in srgb,
-      var(--platform-color) 12%,
-      transparent
-    );
-
-  pointer-events: none;
-
-  transition:
-    border-color 0.4s ease,
-    box-shadow 0.4s ease;
-}
-
-.recruiting-platform-card:hover {
-  transform: translateY(-12px) scale(1.025);
-
-  border-color:
-    color-mix(
-      in srgb,
-      var(--platform-color) 70%,
-      white 5%
-    );
-
-  background:
-    linear-gradient(
-      145deg,
-      color-mix(
-        in srgb,
-        var(--platform-color) 12%,
-        transparent
-      ),
-      rgba(255, 255, 255, 0.025)
-    );
-
-  box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.34),
-    0 0 28px
-      color-mix(
-        in srgb,
-        var(--platform-color) 22%,
-        transparent
-      ),
-    0 0 70px
-      color-mix(
-        in srgb,
-        var(--platform-secondary) 10%,
-        transparent
-      );
-}
-
-.recruiting-platform-card:hover::before {
-  opacity: 1;
-  transform: scale(1.2);
-}
-
-.recruiting-platform-card:hover::after {
-  border-color:
-    color-mix(
-      in srgb,
-      var(--platform-color) 40%,
-      transparent
-    );
-
-  box-shadow:
-    inset 0 0 25px
-      color-mix(
-        in srgb,
-        var(--platform-color) 7%,
-        transparent
-      );
-}
-
-/* =========================================================
-   CONTENT
-   ========================================================= */
-
-.platform-number {
-  position: absolute;
-
-  top: 15px;
-  left: 16px;
-
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-
-  color:
-    color-mix(
-      in srgb,
-      var(--platform-color) 60%,
-      #94a3b8
-    );
-
-  opacity: 0.55;
-}
-
-.platform-name {
-  position: relative;
-  z-index: 3;
-
-  color: #ffffff;
-
-  font-size: 15px;
-  font-weight: 750;
-
-  line-height: 1.35;
+  animation:
+    platformAppear 1.1s ease forwards,
+    platformFloat 5s ease-in-out infinite;
 
   transition:
     transform 0.35s ease,
-    color 0.35s ease,
-    text-shadow 0.35s ease;
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease,
+    color 0.35s ease;
 }
 
-.recruiting-platform-card:hover .platform-name {
-  transform: translateY(-3px);
+/* subtle glowing point */
+
+.platform-dot {
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 7px;
+
+  border-radius: 50%;
+
+  background: #38bdf8;
+
+  box-shadow:
+    0 0 7px rgba(56, 189, 248, 0.8),
+    0 0 16px rgba(56, 189, 248, 0.45);
+
+  animation: dotPulse 2.2s ease-in-out infinite;
+}
+
+/* ---------------------------------------------------------
+   HOVER
+   --------------------------------------------------------- */
+
+.platform-chip:hover {
+  transform: translateY(-7px) scale(1.045);
 
   color: #ffffff;
 
-  text-shadow:
-    0 0 8px
-      color-mix(
-        in srgb,
-        var(--platform-color) 85%,
-        transparent
-      ),
-    0 0 24px
-      color-mix(
-        in srgb,
-        var(--platform-secondary) 60%,
-        transparent
-      );
-}
-
-.platform-indicator {
-  position: absolute;
-
-  bottom: 17px;
-
-  width: 22px;
-  height: 2px;
-
-  border-radius: 999px;
+  border-color: rgba(56, 189, 248, 0.55);
 
   background:
     linear-gradient(
-      90deg,
-      var(--platform-color),
-      var(--platform-secondary)
+      135deg,
+      rgba(56, 189, 248, 0.20),
+      rgba(129, 140, 248, 0.16),
+      rgba(167, 139, 250, 0.13)
     );
 
-  opacity: 0.35;
-
   box-shadow:
-    0 0 8px
-      color-mix(
-        in srgb,
-        var(--platform-color) 55%,
-        transparent
-      );
-
-  transition:
-    width 0.35s ease,
-    opacity 0.35s ease,
-    box-shadow 0.35s ease;
+    0 12px 30px rgba(0, 0, 0, 0.28),
+    0 0 28px rgba(56, 189, 248, 0.16),
+    0 0 55px rgba(129, 140, 248, 0.08);
 }
 
-.recruiting-platform-card:hover .platform-indicator {
-  width: 65px;
-  opacity: 1;
+.platform-chip:hover .platform-dot {
+  background: #a78bfa;
 
   box-shadow:
-    0 0 12px
-      color-mix(
-        in srgb,
-        var(--platform-color) 80%,
-        transparent
-      ),
-    0 0 25px
-      color-mix(
-        in srgb,
-        var(--platform-secondary) 50%,
-        transparent
-      );
+    0 0 8px rgba(167, 139, 250, 0.95),
+    0 0 20px rgba(167, 139, 250, 0.55);
 }
 
-@keyframes platformTitle {
+/* ---------------------------------------------------------
+   ANIMATIONS
+   --------------------------------------------------------- */
+
+@keyframes platformAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.82);
+    filter: blur(8px);
+  }
+
+  60% {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes platformFloat {
+  0%,
+  100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -5px;
+  }
+}
+
+@keyframes dotPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes platformTitleGlow {
   0%,
   100% {
     background-position: 0% center;
@@ -366,44 +242,34 @@
   }
 }
 
-/* =========================================================
+/* ---------------------------------------------------------
    RESPONSIVE
-   ========================================================= */
+   --------------------------------------------------------- */
 
-@media (max-width: 1150px) {
-  .recruiting-platforms-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .recruiting-platforms-section {
-    padding: 75px 20px 85px;
+    padding: 70px 24px;
   }
 
-  .recruiting-platforms-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .recruiting-platforms-cloud {
     gap: 12px;
-    margin-top: 40px;
+    margin-top: 35px;
   }
 
-  .recruiting-platform-card {
-    min-height: 130px;
-  }
-
-  .platform-name {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 420px) {
-  .recruiting-platforms-grid {
-    grid-template-columns: 1fr;
+  .platform-chip {
+    min-height: 44px;
+    padding: 9px 16px;
+    font-size: 13px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .recruiting-platforms-card,
+  .platform-chip {
+    animation: none;
+    opacity: 1;
+  }
+
+  .platform-dot,
   .recruiting-platforms-title {
     animation: none;
   }

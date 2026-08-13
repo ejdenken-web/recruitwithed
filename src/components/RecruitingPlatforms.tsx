@@ -26,30 +26,21 @@ function RecruitingPlatforms() {
         </h2>
 
         <p className="recruiting-platforms-intro">
-          Trusted recruiting platforms used to source, connect with,
-          and identify exceptional technology professionals.
+          Platforms I use to discover, connect with, and engage
+          exceptional technology professionals.
         </p>
 
-        <div className="recruiting-platforms-grid">
+        <div className="recruiting-platforms-cloud">
           {platforms.map((platform, index) => (
             <div
-              className="recruiting-platform-card"
               key={platform}
+              className="platform-chip"
               style={{
-                animationDelay: `${index * 0.08}s`,
+                animationDelay: `${index * 0.45}s`,
               }}
             >
-              <div className="platform-glow" />
-
-              <span className="platform-number">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-
-              <span className="platform-name">
-                {platform}
-              </span>
-
-              <span className="platform-indicator" />
+              <span className="platform-dot" />
+              <span>{platform}</span>
             </div>
           ))}
         </div>
