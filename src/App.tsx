@@ -3,7 +3,6 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import CareerHighlights from "./components/CareerHighlights";
 import Clients from "./components/Clients";
 import RecruitingPlatforms from "./components/RecruitingPlatforms";
 import Certifications from "./components/Certifications";
@@ -25,7 +24,6 @@ function App() {
 
         <About />
 
-        <CareerHighlights />
 
         <Clients />
 

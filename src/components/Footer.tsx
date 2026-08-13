@@ -4,126 +4,133 @@ function Footer() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
 
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    if (!element) return;
+
+    const navbar = document.querySelector(".navbar");
+
+    const navbarHeight =
+      navbar instanceof HTMLElement
+        ? navbar.offsetHeight
+        : 80;
+
+    const elementTop =
+      element.getBoundingClientRect().top +
+      window.scrollY;
+
+    window.scrollTo({
+      top: Math.max(
+        0,
+        elementTop - navbarHeight - 12
+      ),
+      behavior: "smooth",
+    });
+
+    window.history.replaceState(
+      null,
+      "",
+      `#${id}`
+    );
   };
 
   return (
-    <footer id="lets-connect">
+    <footer
+      id="lets-connect"
+      className="footer"
+    >
       <div className="footer-container">
 
-        <div className="footer-brand">
-          <h3>RecruitWithEd</h3>
+        <div className="footer-main">
 
-          <div className="footer-social">
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
+          <div className="footer-brand">
+            <h2>Ed Johnson</h2>
 
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
+            <p>
+              Senior Information Technology Consultant
+            </p>
 
-            <a href="mailto:johnson@allknownservices.com">
-              Email
-            </a>
+            <span>
+              Building Careers. Building Teams.
+            </span>
           </div>
-        </div>
 
-        <div className="footer-links">
-          <h4>Quick Links</h4>
+          <div className="footer-links">
+            <h3>Quick Links</h3>
 
-          <nav>
-            <a
-              href="#about"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("about");
-              }}
+            <button
+              type="button"
+              onClick={() => scrollToSection("about")}
             >
               About
-            </a>
+            </button>
 
-            <a
-              href="#career-highlights"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("career-highlights");
-              }}
-            >
-              Career Highlights
-            </a>
-
-            <a
-              href="#recruiting-platforms"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("recruiting-platforms");
-              }}
-            >
-              Recruiting Platforms
-            </a>
-
-            <a
-              href="#clients"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("clients");
-              }}
+            <button
+              type="button"
+              onClick={() => scrollToSection("clients")}
             >
               Clients
-            </a>
+            </button>
 
-            <a
-              href="#certifications"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("certifications");
-              }}
+            <button
+              type="button"
+              onClick={() =>
+                scrollToSection("recruiting-platforms")
+              }
+            >
+              Recruiting Platforms
+            </button>
+
+            <button
+              type="button"
+              onClick={() =>
+                scrollToSection("certifications")
+              }
             >
               Certifications
-            </a>
+            </button>
 
-            <a
-              href="#projects"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("projects");
-              }}
+            <button
+              type="button"
+              onClick={() => scrollToSection("projects")}
             >
               Projects
-            </a>
+            </button>
 
-            <a
-              href="#lets-connect"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("lets-connect");
-              }}
+            <button
+              type="button"
+              onClick={() =>
+                scrollToSection("lets-connect")
+              }
             >
-              Let&apos;s Connect
+              Let's Connect
+            </button>
+          </div>
+
+          <div className="footer-contact">
+            <h3>Let's Connect</h3>
+
+            <p>
+              Interested in building exceptional
+              technology teams?
+            </p>
+
+            <a href="mailto:johnson@allknownservices.com">
+              johnson@allknownservices.com
             </a>
-          </nav>
+          </div>
+
         </div>
 
-      </div>
+        <div className="footer-bottom">
+          <p>
+            © {new Date().getFullYear()} RecruitWithEd.
+            All rights reserved.
+          </p>
 
-      <div className="footer-bottom">
-        <p>© 2026 RecruitWithEd</p>
+          <p>
+            Built by Ed Johnson
+          </p>
+        </div>
 
-        <p>Designed &amp; Developed by Ed Johnson</p>
       </div>
     </footer>
   );

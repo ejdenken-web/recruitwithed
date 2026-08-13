@@ -15,10 +15,6 @@ function Navbar() {
       label: "About",
     },
     {
-      id: "career-highlights",
-      label: "Career Highlights",
-    },
-    {
       id: "clients",
       label: "Clients",
     },
@@ -42,40 +38,40 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 180;
-
-      let currentSection = "about";
+      const marker = window.scrollY + 120;
+      let current = "about";
 
       for (const item of navItems) {
         const element = document.getElementById(item.id);
 
-        if (!element) {
-          continue;
-        }
+        if (!element) continue;
 
-        const top = element.offsetTop;
+        const top =
+          element.getBoundingClientRect().top +
+          window.scrollY;
+
         const bottom = top + element.offsetHeight;
 
-        if (
-          scrollPosition >= top &&
-          scrollPosition < bottom
-        ) {
-          currentSection = item.id;
+        if (marker >= top && marker < bottom) {
+          current = item.id;
           break;
         }
       }
 
-      setActive(currentSection);
+      setActive(current);
     };
 
     window.addEventListener("scroll", handleScroll, {
       passive: true,
     });
 
+    window.addEventListener("resize", handleScroll);
+
     handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
@@ -87,16 +83,26 @@ function Navbar() {
 
     const element = document.getElementById(id);
 
-    if (!element) {
-      console.warn(
-        `RecruitWithEd navigation target not found: #${id}`
-      );
-      return;
-    }
+    if (!element) return;
 
-    element.scrollIntoView({
+    const navbar =
+      document.querySelector(".navbar");
+
+    const navbarHeight =
+      navbar instanceof HTMLElement
+        ? navbar.offsetHeight
+        : 80;
+
+    const elementTop =
+      element.getBoundingClientRect().top +
+      window.scrollY;
+
+    window.scrollTo({
+      top: Math.max(
+        0,
+        elementTop - navbarHeight - 12
+      ),
       behavior: "smooth",
-      block: "start",
     });
 
     setActive(id);
@@ -108,6 +114,25 @@ function Navbar() {
     );
   };
 
+  const goHome = (
+    event: React.MouseEvent<HTMLAnchorElement>
+  ) => {
+    event.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
+    setActive("about");
+
+    window.history.replaceState(
+      null,
+      "",
+      "#about"
+    );
+  };
+
   return (
     <header className="navbar">
       <div className="nav-container">
@@ -115,9 +140,7 @@ function Navbar() {
         <a
           href="#about"
           className="logo"
-          onClick={(event) =>
-            handleNavigation(event, "about")
-          }
+          onClick={goHome}
         >
           RecruitWithEd
         </a>
@@ -136,7 +159,10 @@ function Navbar() {
                   : ""
               }
               onClick={(event) =>
-                handleNavigation(event, item.id)
+                handleNavigation(
+                  event,
+                  item.id
+                )
               }
             >
               {item.label}
