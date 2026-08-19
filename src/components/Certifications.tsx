@@ -64,56 +64,44 @@ function Certifications() {
 
   const activeGroup = certificationGroups[activeIndex];
 
-  const previousProvider = () => {
-    setActiveIndex((current) =>
-      current === 0
-        ? certificationGroups.length - 1
-        : current - 1
-    );
-  };
-
   const nextProvider = () => {
-    setActiveIndex((current) =>
-      current === certificationGroups.length - 1
-        ? 0
-        : current + 1
+    setActiveIndex(
+      (current) =>
+        (current + 1) % certificationGroups.length
     );
   };
 
-  const isNextInHR = activeGroup.provider === "NextInHR";
+  const previousProvider = () => {
+    setActiveIndex(
+      (current) =>
+        (current - 1 + certificationGroups.length) %
+        certificationGroups.length
+    );
+  };
 
   return (
     <section
-      className="certifications-section"
       id="certifications"
+      className="certifications-section"
     >
       <div className="certifications-container">
 
-        {/* Single section heading */}
-        <div className="certifications-heading">
-          <span className="section-tag">
-            CERTIFICATIONS
-          </span>
+        <span className="section-tag">
+          CERTIFICATIONS
+        </span>
 
-          </div>
+        <h2 className="certifications-title">
+          Continuous Learning.
+          <br />
+          <span>Modern Expertise.</span>
+        </h2>
 
-        {/* Certification providers */}
-        <div className="provider-selector">
-          {certificationGroups.map((group, index) => (
-            <button
-              key={group.provider}
-              type="button"
-              className={`provider-selector-item ${
-                activeIndex === index ? "selected" : ""
-              }`}
-              onClick={() => setActiveIndex(index)}
-            >
-              {group.provider}
-            </button>
-          ))}
-        </div>
+        <p className="certifications-intro">
+          Professional certifications across artificial intelligence,
+          recruiting, talent acquisition, and modern technology
+          platforms.
+        </p>
 
-        {/* Certification carousel */}
         <div className="certification-carousel">
 
           <button
@@ -122,36 +110,25 @@ function Certifications() {
             onClick={previousProvider}
             aria-label="Previous certification provider"
           >
-            ‹
+            ←
           </button>
 
           <div className="certification-showcase">
 
-            <div className="provider-visual">
-              <div className="provider-orbit orbit-one" />
-              <div className="provider-orbit orbit-two" />
-              <div className="provider-core" />
-            </div>
+            <span className="provider-label">
+              CERTIFICATION PROVIDER
+            </span>
 
             <h3 className="active-provider">
               {activeGroup.provider}
             </h3>
 
-            <div
-              className={`certification-pills ${
-                isNextInHR
-                  ? "nextinhr-certifications"
-                  : ""
-              }`}
-            >
+            <div className="certification-pills">
               {activeGroup.certifications.map(
-                (certification, index) => (
+                (certification) => (
                   <div
-                    key={certification}
                     className="interactive-cert"
-                    style={{
-                      animationDelay: `${index * -0.35}s`,
-                    }}
+                    key={certification}
                   >
                     {certification}
                   </div>
@@ -167,24 +144,46 @@ function Certifications() {
             onClick={nextProvider}
             aria-label="Next certification provider"
           >
-            ›
+            →
           </button>
 
         </div>
 
-        {/* Carousel progress */}
+        <div className="provider-selector">
+          {certificationGroups.map(
+            (group, index) => (
+              <button
+                type="button"
+                key={group.provider}
+                className={
+                  index === activeIndex
+                    ? "provider-selector-item selected"
+                    : "provider-selector-item"
+                }
+                onClick={() => setActiveIndex(index)}
+              >
+                {group.provider}
+              </button>
+            )
+          )}
+        </div>
+
         <div className="carousel-progress">
-          {certificationGroups.map((group, index) => (
-            <button
-              key={group.provider}
-              type="button"
-              className={`progress-dot ${
-                activeIndex === index ? "active" : ""
-              }`}
-              onClick={() => setActiveIndex(index)}
-              aria-label={`Show ${group.provider} certifications`}
-            />
-          ))}
+          {certificationGroups.map(
+            (group, index) => (
+              <button
+                type="button"
+                key={group.provider}
+                className={
+                  index === activeIndex
+                    ? "progress-dot active"
+                    : "progress-dot"
+                }
+                onClick={() => setActiveIndex(index)}
+                aria-label={`Show ${group.provider} certifications`}
+              />
+            )
+          )}
         </div>
 
       </div>

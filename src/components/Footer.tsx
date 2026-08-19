@@ -6,77 +6,30 @@ function Footer() {
 
     if (!element) return;
 
-    const navbarHeight = 90;
-
-    const targetPosition =
-      element.getBoundingClientRect().top +
-      window.scrollY -
-      navbarHeight;
-
-    window.scrollTo({
-      top: Math.max(0, targetPosition),
+    element.scrollIntoView({
       behavior: "smooth",
+      block: "start",
     });
   };
 
   return (
     <footer id="lets-connect" className="footer">
-
       <div className="footer-container">
 
-        <div className="footer-column">
-          <h3>Quick Links</h3>
-
-          <div className="footer-nav">
-
-            <button onClick={() => scrollToSection("home")}>
-              About
-            </button>
-
-            <button onClick={() => scrollToSection("clients")}>
-              Clients
-            </button>
-
-            <button
-              onClick={() =>
-                scrollToSection("recruiting-platforms")
-              }
-            >
-              Recruiting Platforms
-            </button>
-
-            <button
-              onClick={() =>
-                scrollToSection("certifications")
-              }
-            >
-              Certifications
-            </button>
-
-            <button onClick={() => scrollToSection("projects")}>
-              Projects
-            </button>
-
-            <button
-              onClick={() => scrollToSection("tech-stack")}
-            >
-              Technology & Tools
-            </button>
-
-            <button
-              onClick={() => scrollToSection("lets-connect")}
-            >
-              Let's Connect
-            </button>
-
+        {/* LEFT SIDE */}
+        <div className="footer-brand">
+          <div className="footer-logo">
+            RecruitWithEd
           </div>
-        </div>
-
-        <div className="footer-column footer-contact">
-
-          <h3>Let's Connect</h3>
 
           <div className="footer-socials">
+
+            <a
+              href="mailto:recruitwithed@gmail.com"
+              className="footer-social"
+            >
+              Email
+            </a>
 
             <a
               href="https://github.com/ejdenken-web/recruitwithed"
@@ -96,31 +49,89 @@ function Footer() {
               LinkedIn
             </a>
 
-            <a
-              href="mailto:johnson@allknownservices.com"
-              className="footer-social"
-            >
-              Email
-            </a>
-
           </div>
+        </div>
 
+        {/* RIGHT SIDE */}
+        <div className="footer-column footer-quick-links">
+          <h3>Quick Links</h3>
+
+          <nav className="footer-nav">
+
+            <button
+              onClick={() => scrollToSection("hero")}
+            >
+              <span>01</span>
+              About
+            </button>
+
+            <button
+              onClick={() => scrollToSection("clients")}
+            >
+              <span>02</span>
+              Clients
+            </button>
+
+            <button
+              onClick={() =>
+                scrollToSection("recruiting-platforms")
+              }
+            >
+              <span>03</span>
+              Recruiting Platforms
+            </button>
+
+            <button
+              onClick={() =>
+                scrollToSection("certifications")
+              }
+            >
+              <span>04</span>
+              Certifications
+            </button>
+
+            <button
+              onClick={() =>
+                scrollToSection("projects")
+              }
+            >
+              <span>05</span>
+              Featured Projects
+            </button>
+
+            <button
+              onClick={() =>
+                scrollToSection("tech-stack")
+              }
+            >
+              <span>06</span>
+              Technology & Tools
+            </button>
+
+            <button
+              onClick={() =>
+                scrollToSection("lets-connect")
+              }
+            >
+              <span>07</span>
+              Let's Connect
+            </button>
+
+          </nav>
         </div>
 
       </div>
 
       <div className="footer-bottom">
+        <div>
+          © {new Date().getFullYear()} RecruitWithEd
+        </div>
 
-        <p>
-          © {new Date().getFullYear()} RecruitWithEd. All rights reserved.
-        </p>
-
-        <p className="footer-credit">
-          Designed and Developed by <strong>Ed Johnson</strong>
-        </p>
-
+        <div>
+          Designed & Developed by{" "}
+          <strong>Ed Johnson</strong>
+        </div>
       </div>
-
     </footer>
   );
 }

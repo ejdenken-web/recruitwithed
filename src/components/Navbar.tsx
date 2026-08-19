@@ -7,65 +7,68 @@ type NavItem = {
   target: string;
 };
 
+const navItems: NavItem[] = [
+  {
+    id: "about",
+    label: "About",
+    target: "hero",
+  },
+  {
+    id: "clients",
+    label: "Clients",
+    target: "clients",
+  },
+  {
+    id: "recruiting-platforms",
+    label: "Recruiting Platforms",
+    target: "recruiting-platforms",
+  },
+  {
+    id: "certifications",
+    label: "Certifications",
+    target: "certifications",
+  },
+  {
+    id: "projects",
+    label: "Projects",
+    target: "projects",
+  },
+  {
+    id: "tech-stack",
+    label: "Technology & Tools",
+    target: "tech-stack",
+  },
+  {
+    id: "lets-connect",
+    label: "Let's Connect",
+    target: "lets-connect",
+  },
+];
+
 function Navbar() {
   const [active, setActive] = useState("about");
 
-  const navItems: NavItem[] = [
-    { id: "about", label: "About", target: "home" },
-    { id: "clients", label: "Clients", target: "clients" },
-    {
-      id: "recruiting-platforms",
-      label: "Recruiting Platforms",
-      target: "recruiting-platforms",
-    },
-    {
-      id: "certifications",
-      label: "Certifications",
-      target: "certifications",
-    },
-    { id: "projects", label: "Projects", target: "projects" },
-    {
-      id: "tech-stack",
-      label: "Technology & Tools",
-      target: "tech-stack",
-    },
-    {
-      id: "lets-connect",
-      label: "Let's Connect",
-      target: "lets-connect",
-    },
-  ];
-
   useEffect(() => {
     const handleScroll = () => {
-      const position = window.scrollY + 120;
-
-      const sections = [
-        "home",
-        "about",
-        "clients",
-        "recruiting-platforms",
-        "certifications",
-        "projects",
-        "tech-stack",
-        "lets-connect",
-      ];
+      const scrollPosition = window.scrollY + 140;
 
       let current = "about";
 
-      for (const id of sections) {
-        const element = document.getElementById(id);
+      for (const item of navItems) {
+        const element = document.getElementById(item.target);
 
-        if (!element) continue;
+        if (!element) {
+          continue;
+        }
 
         const top = element.offsetTop;
         const bottom = top + element.offsetHeight;
 
-        if (position >= top && position < bottom) {
-          current =
-            id === "home" || id === "about"
-              ? "about"
-              : id;
+        if (
+          scrollPosition >= top &&
+          scrollPosition < bottom
+        ) {
+          current = item.id;
           break;
         }
       }
@@ -93,9 +96,11 @@ function Navbar() {
 
     const element = document.getElementById(target);
 
-    if (!element) return;
+    if (!element) {
+      return;
+    }
 
-    const navbarHeight = 90;
+    const navbarHeight = 82;
 
     const targetPosition =
       element.getBoundingClientRect().top +
@@ -121,10 +126,10 @@ function Navbar() {
       <div className="nav-container">
 
         <a
-          href="#home"
+          href="#hero"
           className="logo"
           onClick={(event) =>
-            navigateTo(event, "home", "about")
+            navigateTo(event, "hero", "about")
           }
         >
           RecruitWithEd
@@ -139,7 +144,9 @@ function Navbar() {
               key={item.id}
               href={`#${item.target}`}
               className={
-                active === item.id ? "active" : ""
+                active === item.id
+                  ? "active"
+                  : ""
               }
               onClick={(event) =>
                 navigateTo(

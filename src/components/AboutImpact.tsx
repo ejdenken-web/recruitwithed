@@ -1,183 +1,59 @@
-import { useState } from "react";
-import "./Certifications.css";
+import "./AboutImpact.css";
 
-function Certifications() {
-  const certificationGroups = [
+function AboutImpact() {
+  const impactStats = [
     {
-      provider: "Anthropic",
-      certifications: [
-        "Claude 101",
-        "Claude Platform 101",
-        "Introduction to Agent Skills",
-        "Introduction to Claude Cowork",
-        "Introduction to Subagents",
-        "AI Capabilities and Limitations",
-        "AI Fluency Framework & Foundations",
-      ],
+      value: "10+",
+      label: "Years of Professional Experience",
     },
     {
-      provider: "LangChain",
-      certifications: [
-        "Introduction to LangGraph – Python",
-        "Introduction to LangSmith Deployment",
-        "Autonomous Agent Improvement with LangSmith Engine",
-      ],
+      value: "6–40",
+      label: "Recruiters Managed & Mentored",
     },
     {
-      provider: "Microsoft",
-      certifications: [
-        "Use AI for Everyday Tasks",
-        "Explore Internet Search and Beyond",
-      ],
+      value: "50+",
+      label: "Technology & Recruiting Skills",
     },
     {
-      provider: "LinkedIn",
-      certifications: [
-        "AI-Driven Excellence – LinkedIn Hiring Assistant Assessment",
-        "Recruiter Assessment",
-      ],
-    },
-    {
-      provider: "NextInHR",
-      certifications: [
-        "AI-Powered Recruiter Certification",
-        "Talent Acquisition Certification",
-        "Recruitment Analytics Professional Certification",
-        "Candidate Sourcing Certification",
-        "Recruitment Automation Certification",
-        "Executive Search Specialist Certification",
-        "ATS & Talent Acquisition Expert Certification",
-        "Recruiting CRM Specialist Certification",
-        "Multilingual Recruitment Specialist Certification",
-        "DEI Hiring Certification",
-      ],
-    },
-    {
-      provider: "SalaryBox",
-      certifications: [
-        "Advanced Recruitment Strategies",
-      ],
+      value: "100+",
+      label: "Professional Engagements",
     },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const activeGroup = certificationGroups[activeIndex];
-
-  const nextProvider = () => {
-    setActiveIndex(
-      (current) => (current + 1) % certificationGroups.length
-    );
-  };
-
-  const previousProvider = () => {
-    setActiveIndex(
-      (current) =>
-        (current - 1 + certificationGroups.length) %
-        certificationGroups.length
-    );
-  };
-
   return (
     <section
-      id="certifications"
-      className="certifications-section"
+      id="about"
+      className="about-impact"
     >
-      <div className="certifications-container">
+      <div className="about-impact__container">
 
         <span className="section-tag">
-          CERTIFICATIONS
+          ABOUT & IMPACT
         </span>
 
-        <h2 className="certifications-title">
-          Continuous Learning.
+        <h2>
+          Experience That
           <br />
-          <span>Modern Expertise.</span>
+          <span>Creates Impact.</span>
         </h2>
 
-        <p className="certifications-intro">
-          A growing collection of professional certifications across
-          artificial intelligence, recruiting, talent acquisition, and
-          modern technology platforms.
+        <p>
+          Experienced in technology recruiting, talent acquisition,
+          candidate engagement, and supporting organizations with
+          high-performing technology professionals.
         </p>
 
-        <div className="certification-carousel">
-
-          <button
-            className="carousel-arrow carousel-arrow-left"
-            onClick={previousProvider}
-            aria-label="Previous certification provider"
-          >
-            ←
-          </button>
-
-          <div className="certification-showcase">
-
-            <div className="provider-label">
-              CERTIFICATION PROVIDER
-            </div>
-
-            <h3 className="active-provider">
-              {activeGroup.provider}
-            </h3>
-
-            <div className="certification-pills">
-              {activeGroup.certifications.map(
-                (certification, index) => (
-                  <div
-                    key={certification}
-                    className="interactive-cert"
-                    style={{
-                      animationDelay: `${index * 0.06}s`,
-                    }}
-                  >
-                    {certification}
-                  </div>
-                )
-              )}
-            </div>
-
-          </div>
-
-          <button
-            className="carousel-arrow carousel-arrow-right"
-            onClick={nextProvider}
-            aria-label="Next certification provider"
-          >
-            →
-          </button>
-
-        </div>
-
-        <div className="provider-selector">
-
-          {certificationGroups.map((group, index) => (
-            <button
-              key={group.provider}
-              className={`provider-selector-item ${
-                index === activeIndex ? "selected" : ""
-              }`}
-              onClick={() => setActiveIndex(index)}
+        <div className="about-impact__grid">
+          {impactStats.map((stat) => (
+            <div
+              className="impact-card"
+              key={stat.label}
             >
-              {group.provider}
-            </button>
+              <h3>{stat.value}</h3>
+
+              <p>{stat.label}</p>
+            </div>
           ))}
-
-        </div>
-
-        <div className="carousel-progress">
-
-          {certificationGroups.map((group, index) => (
-            <button
-              key={group.provider}
-              className={`progress-dot ${
-                index === activeIndex ? "active" : ""
-              }`}
-              onClick={() => setActiveIndex(index)}
-              aria-label={`Show ${group.provider} certifications`}
-            />
-          ))}
-
         </div>
 
       </div>
@@ -185,4 +61,4 @@ function Certifications() {
   );
 }
 
-export default Certifications;
+export default AboutImpact;

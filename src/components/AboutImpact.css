@@ -1,72 +1,51 @@
 .about-impact {
   position: relative;
-
-  padding: 95px 8%;
-
-  background:
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(56, 189, 248, 0.055),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(129, 140, 248, 0.055),
-      transparent 35%
-    );
+  padding: 70px 6%;
+  background: transparent;
 }
 
 .about-impact__container {
-  position: relative;
-
-  max-width: 1320px;
-
+  width: 100%;
+  max-width: 1240px;
   margin: 0 auto;
-
   text-align: center;
-
-  z-index: 1;
 }
 
 .about-impact__grid {
-  margin-top: 45px;
+  margin-top: 32px;
 
   display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 24px;
+  gap: 18px;
 }
 
 .impact-card {
   position: relative;
-
   overflow: hidden;
+
+  padding: 30px 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(255, 255, 255, 0.065),
+      rgba(255, 255, 255, 0.055),
       rgba(255, 255, 255, 0.018)
     );
 
-  border: 1px solid rgba(255, 255, 255, 0.09);
-
-  border-radius: 22px;
-
-  padding: 36px 28px;
-
   box-shadow:
-    0 18px 50px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+    0 12px 35px rgba(0, 0, 0, 0.18);
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
   transition:
-    transform 0.35s ease,
-    border-color 0.35s ease,
-    box-shadow 0.35s ease;
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .impact-card::before {
@@ -74,53 +53,43 @@
 
   position: absolute;
 
-  width: 180px;
-  height: 180px;
+  width: 140px;
+  height: 140px;
 
-  top: -90px;
-  right: -70px;
+  top: -70px;
+  right: -60px;
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(56, 189, 248, 0.16),
+      rgba(56, 189, 248, 0.13),
       transparent 70%
     );
 
-  filter: blur(15px);
-
-  opacity: 0.65;
-
-  transition:
-    transform 0.4s ease,
-    opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .impact-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-6px);
 
-  border-color: rgba(56, 189, 248, 0.35);
+  border-color: rgba(56, 189, 248, 0.3);
 
   box-shadow:
-    0 25px 65px rgba(0, 0, 0, 0.32),
-    0 0 35px rgba(56, 189, 248, 0.10);
-}
-
-.impact-card:hover::before {
-  transform: scale(1.35);
-
-  opacity: 1;
+    0 18px 45px rgba(0, 0, 0, 0.25),
+    0 0 25px rgba(56, 189, 248, 0.07);
 }
 
 .impact-card h3 {
   position: relative;
   z-index: 1;
 
-  margin: 0 0 14px;
+  margin: 0 0 10px;
 
-  font-size: 52px;
+  font-size: 42px;
+  line-height: 1;
+
   font-weight: 850;
 
   background:
@@ -133,40 +102,56 @@
 
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
 
-  text-shadow:
-    0 0 30px rgba(56, 189, 248, 0.12);
+  color: transparent;
 }
 
 .impact-card p {
   position: relative;
   z-index: 1;
 
+  margin: 0;
+
   color: #cbd5e1;
 
-  font-size: 16px;
-  line-height: 1.75;
-
-  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-@media (max-width: 1100px) {
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .about-impact {
+    padding: 60px 5%;
+  }
+
   .about-impact__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 700px) {
+
+/* MOBILE */
+
+@media (max-width: 600px) {
   .about-impact {
-    padding: 75px 24px;
+    padding: 50px 24px;
   }
 
   .about-impact__grid {
     grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    margin-top: 26px;
+  }
+
+  .impact-card {
+    padding: 26px 22px;
   }
 
   .impact-card h3 {
-    font-size: 44px;
+    font-size: 38px;
   }
 }

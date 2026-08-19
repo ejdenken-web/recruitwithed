@@ -1,125 +1,299 @@
-.hero-section {
-  position: relative;
-  min-height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 85px 8% 65px;
-  overflow: hidden;
-}
+/* =========================================================
+   RECRUITWITHED — HERO
+   STACKBLITZ-INSPIRED DARK THEME
+   ========================================================= */
 
-.hero-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.hero-content {
-  max-width: 1050px;
-  margin: 0 auto;
-}
-
-.hero-name {
-  margin: 0;
-
-  font-size: clamp(48px, 7vw, 78px);
-  line-height: 1;
-  font-weight: 850;
-  letter-spacing: -2.5px;
-
-  color: #ffffff;
-
-  text-shadow:
-    0 0 25px rgba(56, 189, 248, 0.12),
-    0 0 60px rgba(56, 189, 248, 0.08);
-}
-
-.hero-title {
-  margin: 14px 0 0;
-
-  font-size: clamp(21px, 2.8vw, 32px);
-  line-height: 1.2;
-  font-weight: 650;
-  letter-spacing: -0.6px;
-
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.hero-mission {
-  margin: 20px 0 0;
-
-  font-size: clamp(25px, 3.5vw, 42px);
-  line-height: 1.15;
-  font-weight: 750;
-  letter-spacing: -1px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #38bdf8,
-      #818cf8,
-      #a78bfa,
-      #38bdf8
-    );
-
-  background-size: 250% auto;
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-
-  animation: missionGlow 7s ease-in-out infinite;
-}
-
-@keyframes missionGlow {
-  0%,
-  100% {
-    background-position: 0% center;
+   .hero-section {
+    position: relative;
+  
+    min-height: 78vh;
+  
+    padding: 100px 6% 80px;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    overflow: hidden;
+  
+    background: #0d1117;
   }
-
-  50% {
-    background-position: 100% center;
+  
+  /* =========================================================
+     BACKGROUND
+     ========================================================= */
+  
+  .hero-background {
+    position: absolute;
+  
+    inset: 0;
+  
+    overflow: hidden;
+  
+    pointer-events: none;
+  
+    background: #0d1117;
   }
-}
-
-.hero-tagline {
-  max-width: 760px;
-
-  margin: 18px auto 0;
-
-  font-size: clamp(16px, 1.8vw, 19px);
-  line-height: 1.65;
-
-  color: rgba(255, 255, 255, 0.68);
-}
-
-@media (max-width: 650px) {
-  .hero-section {
-    min-height: auto;
-    padding: 75px 5% 55px;
+  
+  .hero-glow,
+  .hero-glow-cyan,
+  .hero-glow-blue,
+  .hero-glow-purple {
+    display: none !important;
   }
-
-  .hero-name {
-    font-size: 44px;
-    letter-spacing: -1.5px;
+  
+  .hero-grid {
+    display: none;
   }
-
-  .hero-title {
-    font-size: 21px;
+  
+  /* =========================================================
+     HERO CONTAINER
+     ========================================================= */
+  
+  .hero-container {
+    position: relative;
+  
+    z-index: 2;
+  
+    width: 100%;
+  
+    max-width: 1100px;
+  
+    margin: 0 auto;
+  
+    display: flex;
+  
+    justify-content: center;
+  
+    text-align: center;
   }
-
-  .hero-mission {
-    font-size: 28px;
+  
+  /* =========================================================
+     HERO CONTENT
+     ========================================================= */
+  
+  .hero-content {
+    max-width: 850px;
+  
+    margin: 0 auto;
   }
-
+  
+  /* =========================================================
+     NAME
+     ========================================================= */
+  
+  .hero-content h1 {
+    margin: 0;
+  
+    color: #f8fafc;
+  
+    font-size: clamp(52px, 7vw, 82px);
+  
+    line-height: 0.98;
+  
+    font-weight: 800;
+  
+    letter-spacing: -3px;
+  }
+  
+  /* =========================================================
+     TITLE
+     ========================================================= */
+  
+  .hero-content h2 {
+    margin: 18px 0 0;
+  
+    color: #cbd5e1;
+  
+    font-size: clamp(19px, 2.5vw, 28px);
+  
+    line-height: 1.25;
+  
+    font-weight: 650;
+  
+    letter-spacing: -0.5px;
+  }
+  
+  /* =========================================================
+     TAGLINE
+     ========================================================= */
+  
   .hero-tagline {
-    font-size: 16px;
+    margin: 28px 0 0;
+  
+    color: #f8fafc;
+  
+    font-size: clamp(22px, 3vw, 34px);
+  
+    line-height: 1.2;
+  
+    font-weight: 700;
+  
+    letter-spacing: -1px;
   }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-mission {
-    animation: none;
+  
+  /* =========================================================
+     DESCRIPTION
+     ========================================================= */
+  
+  .hero-description {
+    display: none;
   }
-}
+  
+  /* =========================================================
+     BUTTONS
+     ========================================================= */
+  
+  .hero-actions {
+    margin-top: 34px;
+  
+    display: flex;
+  
+    justify-content: center;
+  
+    align-items: center;
+  
+    gap: 12px;
+  }
+  
+  .hero-actions a {
+    display: inline-flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    min-height: 44px;
+  
+    padding: 11px 20px;
+  
+    border: 1px solid #8b5cf6;
+  
+    border-radius: 999px;
+  
+    background: #8b5cf6;
+  
+    color: #ffffff;
+  
+    font-size: 13px;
+  
+    font-weight: 700;
+  
+    text-decoration: none;
+  
+    transition:
+      transform 0.25s ease,
+      background 0.25s ease,
+      color 0.25s ease,
+      border-color 0.25s ease;
+  }
+  
+  .hero-actions a:hover {
+    transform: translateY(-2px);
+  
+    background: #a78bfa;
+  
+    border-color: #a78bfa;
+  
+    color: #ffffff;
+  }
+  
+  .hero-actions .hero-secondary {
+    background: transparent;
+  
+    border-color: rgba(255, 255, 255, 0.15);
+  
+    color: #cbd5e1;
+  }
+  
+  .hero-actions .hero-secondary:hover {
+    background: rgba(139, 92, 246, 0.08);
+  
+    border-color: rgba(139, 92, 246, 0.4);
+  
+    color: #ffffff;
+  }
+  
+  /* =========================================================
+     TABLET
+     ========================================================= */
+  
+  @media (max-width: 800px) {
+    .hero-section {
+      min-height: 72vh;
+  
+      padding: 90px 5% 70px;
+    }
+  
+    .hero-content h1 {
+      font-size: clamp(48px, 9vw, 68px);
+  
+      letter-spacing: -2.5px;
+    }
+  
+    .hero-content h2 {
+      font-size: 21px;
+    }
+  
+    .hero-tagline {
+      font-size: 27px;
+    }
+  }
+  
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+  
+  @media (max-width: 600px) {
+    .hero-section {
+      min-height: 70vh;
+  
+      padding: 80px 24px 60px;
+    }
+  
+    .hero-content h1 {
+      font-size: 48px;
+  
+      letter-spacing: -2px;
+    }
+  
+    .hero-content h2 {
+      margin-top: 14px;
+  
+      font-size: 18px;
+    }
+  
+    .hero-tagline {
+      margin-top: 22px;
+  
+      font-size: 23px;
+  
+      letter-spacing: -0.5px;
+    }
+  
+    .hero-actions {
+      margin-top: 28px;
+  
+      flex-direction: column;
+  
+      width: 100%;
+    }
+  
+    .hero-actions a {
+      width: 100%;
+  
+      max-width: 220px;
+    }
+  }
+  
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .hero-actions a {
+      transition: none;
+    }
+  }

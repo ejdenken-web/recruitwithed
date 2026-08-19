@@ -2,12 +2,14 @@ import "./RecruitingPlatforms.css";
 
 function RecruitingPlatforms() {
   const platforms = [
-    "Dice",
-    "Monster",
     "LinkedIn Recruiter",
     "Indeed",
-    "TechFetch",
+    "Dice",
+    "ZipRecruiter",
+    "Monster",
     "CareerBuilder",
+    "Google Jobs",
+    "ATS & Recruiting CRM Platforms",
   ];
 
   return (
@@ -17,30 +19,27 @@ function RecruitingPlatforms() {
     >
       <div className="recruiting-platforms-container">
 
-        <span className="section-tag">
-          RECRUITING PLATFORMS
-        </span>
+        <div className="recruiting-platforms-header">
+          <span className="section-tag">
+            RECRUITING PLATFORMS
+          </span>
 
-        <h2 className="recruiting-platforms-title">
-          Recruiting Platforms
-        </h2>
+          <h2>
+            Recruiting Tools &
+            <br />
+            <span>Platforms.</span>
+          </h2>
+        </div>
 
-        <p className="recruiting-platforms-intro">
-          Platforms I use to discover, connect with, and engage
-          exceptional technology professionals.
-        </p>
-
-        <div className="recruiting-platforms-cloud">
-          {platforms.map((platform, index) => (
+        <div className="recruiting-platforms-grid">
+          {platforms.map((platform) => (
             <div
+              className="recruiting-platform-card"
               key={platform}
-              className="platform-chip"
-              style={{
-                animationDelay: `${index * 0.45}s`,
-              }}
             >
-              <span className="platform-dot" />
-              <span>{platform}</span>
+              <span className="platform-indicator" />
+
+              <h3>{platform}</h3>
             </div>
           ))}
         </div>

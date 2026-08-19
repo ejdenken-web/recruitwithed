@@ -3,40 +3,81 @@ import "./Projects.css";
 function Projects() {
   const projects = [
     {
+      number: "01",
       title: "RecruitWithEd",
-      type: "Professional Recruiting Portfolio",
-      status: "LIVE",
       description:
-        "Designed and developed a modern recruiting portfolio showcasing enterprise recruiting experience, AI certifications, client engagements, featured projects, and professional accomplishments.",
+        "A professional recruiting portfolio focused on technology recruiting, talent acquisition, candidate engagement, and modern recruiting practices.",
+      tags: [
+        "Recruiting",
+        "Talent Acquisition",
+        "Professional Portfolio",
+      ],
     },
     {
-      title: "Chhota Bheem Animation Portfolio",
-      type: "Creative Portfolio",
-      status: "AVAILABLE UPON REQUEST",
+      number: "02",
+      title: "Chhota Bheem",
       description:
-        "Designed and developed a modern portfolio for a professional 2D Animator and Background Artist showcasing production work, artwork, animation projects, and creative storytelling.",
+        "Animation and creative portfolio work connected to the Chhota Bheem project, showcasing artistic and production contributions.",
+      tags: [
+        "Animation",
+        "Creative Work",
+        "Portfolio",
+      ],
     },
   ];
 
   return (
-    <section className="projects-section" id="projects">
-      <div className="projects-header">
-        <span className="section-tag">FEATURED WORK</span>
-      </div>
+    <section
+      id="projects"
+      className="projects-section"
+    >
+      <div className="projects-container">
 
-      <div className="projects-grid">
-        {projects.map((project) => (
-          <div className="project-card" key={project.title}>
-            <div className="project-top">
-              <span className="project-category">{project.type}</span>
-              <span className="project-status">{project.status}</span>
-            </div>
+        <div className="projects-header">
+          <span className="section-tag">
+            PROJECTS
+          </span>
 
-            <h3>{project.title}</h3>
+          <h2>
+            Featured <span>Projects.</span>
+          </h2>
 
-            <p>{project.description}</p>
-          </div>
-        ))}
+          <p>
+            Selected professional and creative projects
+            representing recruiting, technology, and portfolio
+            development work.
+          </p>
+        </div>
+
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <article
+              className="project-card"
+              key={project.number}
+            >
+              <span className="project-number">
+                {project.number}
+              </span>
+
+              <h3>
+                {project.title}
+              </h3>
+
+              <p>
+                {project.description}
+              </p>
+
+              <div className="project-tags">
+                {project.tags.map((tag) => (
+                  <span key={tag}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+
       </div>
     </section>
   );

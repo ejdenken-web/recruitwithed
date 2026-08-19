@@ -1,120 +1,142 @@
-.clients-section {
-  padding: 120px 8%;
-  background: #08101F;
-  overflow: hidden;
-}
+/* =========================================================
+   RECRUITWITHED — CLIENTS
+   ========================================================= */
 
-.clients-header {
-  text-align: center;
-  margin-bottom: 55px;
-}
-
-.clients-header .section-tag {
-  display: inline-block;
-  padding: 8px 18px;
-  border-radius: 999px;
-  background: rgba(56, 189, 248, .12);
-  border: 1px solid rgba(56, 189, 248, .25);
-  color: #38BDF8;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.marquee {
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 22px;
-  cursor: default;
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  gap: 18px;
-  animation: clients-scroll 35s linear infinite;
-  will-change: transform;
-}
-
-/* Pause only while the cursor is over the client list */
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-
-.marquee.reverse .marquee-track {
-  animation-name: clients-scroll-reverse;
-  animation-duration: 38s;
-}
-
-.client-card {
-  flex: 0 0 auto;
-  padding: 15px 24px;
-  border-radius: 999px;
-  background: #101827;
-  border: 1px solid rgba(255, 255, 255, .08);
-  color: #E2E8F0;
-  font-size: 15px;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: .3s ease;
-}
-
-.client-card:hover {
-  border-color: #38BDF8;
-  color: #38BDF8;
-  background: rgba(56, 189, 248, .08);
-}
-
-@keyframes clients-scroll {
-
-  0% {
-    transform: translateX(0);
+   .clients-section {
+    padding: 70px 0;
+  
+    background: #111827;
+  
+    overflow: hidden;
   }
-
-  100% {
-    transform: translateX(calc(-50% - 9px));
+  
+  .clients-container {
+    width: 100%;
+    max-width: 1240px;
+  
+    margin: 0 auto;
   }
-
-}
-
-@keyframes clients-scroll-reverse {
-
-  0% {
-    transform: translateX(calc(-50% - 9px));
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-
-}
-
-@media (max-width: 768px) {
-
-  .clients-section {
-    padding: 90px 20px;
-  }
-
+  
   .clients-header {
-    margin-bottom: 40px;
+    text-align: center;
+  
+    margin-bottom: 30px;
   }
-
-  .marquee {
-    margin-bottom: 16px;
+  
+  .clients-marquee {
+    width: 100%;
+  
+    overflow: hidden;
+  
+    position: relative;
   }
-
-  .marquee-track {
-    gap: 12px;
-    animation-duration: 30s;
+  
+  .clients-track {
+    width: max-content;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    gap: 14px;
+  
+    animation: clients-scroll 45s linear infinite;
   }
-
-  .marquee.reverse .marquee-track {
-    animation-duration: 33s;
-  }
-
-  .client-card {
-    padding: 12px 18px;
+  
+  .client-item {
+    min-width: max-content;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    padding: 13px 18px;
+  
+    border: 1px solid #30363d;
+  
+    border-radius: 999px;
+  
+    background: #151b24;
+  
+    color: #cbd5e1;
+  
     font-size: 13px;
+  
+    font-weight: 600;
+  
+    white-space: nowrap;
+  
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease,
+      transform 0.2s ease;
   }
-
-}
+  
+  .client-item:hover {
+    color: #ffffff;
+  
+    border-color: rgba(139, 92, 246, 0.45);
+  
+    background: #181f2a;
+  
+    transform: translateY(-2px);
+  }
+  
+  .client-dot {
+    width: 6px;
+  
+    height: 6px;
+  
+    margin-right: 10px;
+  
+    flex-shrink: 0;
+  
+    border-radius: 50%;
+  
+    background: #8b5cf6;
+  
+    box-shadow: none;
+  }
+  
+  @keyframes clients-scroll {
+    from {
+      transform: translateX(0);
+    }
+  
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .clients-marquee:hover .clients-track {
+    animation-play-state: paused;
+  }
+  
+  @media (max-width: 650px) {
+    .clients-section {
+      padding: 55px 0;
+    }
+  
+    .clients-header {
+      margin-bottom: 24px;
+    }
+  
+    .clients-track {
+      gap: 10px;
+  
+      animation-duration: 35s;
+    }
+  
+    .client-item {
+      padding: 11px 15px;
+  
+      font-size: 12px;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .clients-track {
+      animation: none;
+    }
+  }

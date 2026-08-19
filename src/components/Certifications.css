@@ -1,295 +1,323 @@
-.certifications-section {
-  position: relative;
-  padding: 120px 8%;
-  overflow: hidden;
-}
+/* =========================================================
+   RECRUITWITHED — CERTIFICATIONS
+   ========================================================= */
 
-.certifications-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Certifications heading */
-
-.certifications-heading {
-  display: block;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 35px;
-  position: relative;
-  z-index: 10;
-}
-
-.certifications-heading .section-tag {
-  display: inline-block;
-  padding: 8px 18px;
-  border-radius: 999px;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  color: #38bdf8;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  visibility: visible;
-  opacity: 1;
-}
-
-/* Provider Navigation */
-
-.provider-selector {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 45px;
-}
-
-.provider-selector-item {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.7);
-  padding: 10px 18px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.provider-selector-item:hover {
-  color: #ffffff;
-  border-color: rgba(56, 189, 248, 0.45);
-  transform: translateY(-2px);
-}
-
-.provider-selector-item.selected {
-  color: #ffffff;
-  background: rgba(56, 189, 248, 0.14);
-  border-color: rgba(56, 189, 248, 0.55);
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
-}
-
-/* Main Certification Carousel */
-
-.certification-carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
-  width: 100%;
-}
-
-.carousel-arrow {
-  flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  background: rgba(56, 189, 248, 0.08);
-  color: #ffffff;
-  font-size: 32px;
-  line-height: 1;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.carousel-arrow:hover {
-  transform: scale(1.08);
-  border-color: rgba(56, 189, 248, 0.7);
-  background: rgba(56, 189, 248, 0.15);
-}
-
-.certification-showcase {
-  width: 100%;
-  max-width: 1050px;
-  min-width: 0;
-}
-
-/* Provider Visual */
-
-.provider-visual {
-  position: relative;
-  width: 90px;
-  height: 90px;
-  margin: 0 auto 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.provider-orbit {
-  position: absolute;
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  border-radius: 50%;
-}
-
-.orbit-one {
-  width: 90px;
-  height: 90px;
-}
-
-.orbit-two {
-  width: 65px;
-  height: 65px;
-}
-
-.provider-core {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: rgba(56, 189, 248, 0.8);
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
-}
-
-.active-provider {
-  margin: 0 0 30px;
-  font-size: 28px;
-  font-weight: 800;
-  color: #ffffff;
-}
-
-/* Certification Pills */
-
-.certification-pills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.interactive-cert {
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(56, 189, 248, 0.22);
-  background: rgba(255, 255, 255, 0.045);
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 14px;
-  line-height: 1.4;
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease,
-    box-shadow 0.3s ease;
-  animation: certificationFloat 5s ease-in-out infinite;
-}
-
-.interactive-cert:hover {
-  transform: translateY(-5px);
-  border-color: rgba(56, 189, 248, 0.65);
-  background: rgba(56, 189, 248, 0.1);
-  box-shadow: 0 8px 30px rgba(56, 189, 248, 0.12);
-}
-
-.nextinhr-certifications {
-  max-width: 900px;
-  gap: 16px;
-}
-
-.nextinhr-certifications .interactive-cert {
-  min-width: 190px;
-  text-align: center;
-}
-
-@keyframes certificationFloat {
-  0%,
-  100% {
-    transform: translateY(0);
+   .certifications-section {
+    padding: 70px 6%;
+  
+    background: #0d1117;
   }
-
-  50% {
-    transform: translateY(-5px);
+  
+  .certifications-container {
+    width: 100%;
+  
+    max-width: 1240px;
+  
+    margin: 0 auto;
+  
+    text-align: center;
   }
-}
-
-/* Progress */
-
-.carousel-progress {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-top: 40px;
-}
-
-.progress-dot {
-  width: 9px;
-  height: 9px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.progress-dot:hover {
-  background: rgba(56, 189, 248, 0.6);
-  transform: scale(1.15);
-}
-
-.progress-dot.active {
-  width: 24px;
-  border-radius: 999px;
-  background: #38bdf8;
-}
-
-/* Responsive */
-
-@media (max-width: 768px) {
-  .certifications-section {
-    padding: 90px 6%;
+  
+  .certifications-title {
+    margin: 20px 0 0;
+  
+    color: #f8fafc;
   }
-
+  
+  .certifications-title span {
+    background:
+      linear-gradient(
+        90deg,
+        #8b5cf6,
+        #a78bfa,
+        #ec4899
+      );
+  
+    -webkit-background-clip: text;
+  
+    background-clip: text;
+  
+    color: transparent;
+  }
+  
+  .certifications-intro {
+    max-width: 680px;
+  
+    margin: 18px auto 0;
+  
+    color: #8b95a5;
+  
+    font-size: 14px;
+  
+    line-height: 1.7;
+  }
+  
+  /* =========================================================
+     CAROUSEL
+     ========================================================= */
+  
   .certification-carousel {
-    gap: 10px;
+    margin-top: 35px;
+  
+    display: grid;
+  
+    grid-template-columns: 55px 1fr 55px;
+  
+    align-items: center;
+  
+    gap: 15px;
   }
-
-  .carousel-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 26px;
+  
+  .certification-showcase {
+    min-height: 280px;
+  
+    padding: 35px;
+  
+    display: flex;
+  
+    flex-direction: column;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  
+    border-radius: 18px;
+  
+    background: #151b24;
   }
-
+  
+  .provider-label {
+    color: #a78bfa;
+  
+    font-size: 10px;
+  
+    font-weight: 800;
+  
+    letter-spacing: 1.8px;
+  }
+  
   .active-provider {
-    font-size: 24px;
+    margin: 10px 0 25px;
+  
+    color: #f8fafc;
+  
+    font-size: 30px;
+  
+    font-weight: 800;
   }
-
-  .interactive-cert {
-    font-size: 13px;
-    padding: 10px 14px;
-  }
-
-  .nextinhr-certifications .interactive-cert {
-    min-width: 0;
-  }
-}
-
-@media (max-width: 520px) {
-  .certification-carousel {
-    gap: 5px;
-  }
-
-  .carousel-arrow {
-    width: 34px;
-    height: 34px;
-    font-size: 22px;
-  }
-
-  .provider-selector {
-    gap: 7px;
-  }
-
-  .provider-selector-item {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
+  
+  /* =========================================================
+     CERTIFICATION PILLS
+     ========================================================= */
+  
   .certification-pills {
+    display: flex;
+  
+    flex-wrap: wrap;
+  
+    justify-content: center;
+  
     gap: 9px;
   }
-}
+  
+  .interactive-cert {
+    padding: 9px 13px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  
+    border-radius: 999px;
+  
+    background: rgba(255, 255, 255, 0.035);
+  
+    color: #cbd5e1;
+  
+    font-size: 12px;
+  
+    line-height: 1.3;
+  
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease,
+      background 0.2s ease;
+  }
+  
+  .interactive-cert:hover {
+    transform: translateY(-2px);
+  
+    color: #ffffff;
+  
+    border-color: rgba(139, 92, 246, 0.35);
+  
+    background: rgba(139, 92, 246, 0.08);
+  }
+  
+  /* =========================================================
+     ARROWS
+     ========================================================= */
+  
+  .carousel-arrow {
+    width: 45px;
+  
+    height: 45px;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  
+    border-radius: 50%;
+  
+    background: rgba(255, 255, 255, 0.035);
+  
+    color: #cbd5e1;
+  
+    font-size: 18px;
+  
+    cursor: pointer;
+  
+    transition:
+      transform 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease;
+  }
+  
+  .carousel-arrow:hover {
+    transform: scale(1.06);
+  
+    color: #ffffff;
+  
+    border-color: rgba(139, 92, 246, 0.35);
+  
+    background: rgba(139, 92, 246, 0.07);
+  }
+  
+  /* =========================================================
+     PROVIDER SELECTOR
+     ========================================================= */
+  
+  .provider-selector {
+    margin-top: 25px;
+  
+    display: flex;
+  
+    justify-content: center;
+  
+    flex-wrap: wrap;
+  
+    gap: 8px;
+  }
+  
+  .provider-selector-item {
+    padding: 8px 14px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  
+    border-radius: 999px;
+  
+    background: transparent;
+  
+    color: #64748b;
+  
+    font-size: 11px;
+  
+    font-weight: 700;
+  
+    cursor: pointer;
+  
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease;
+  }
+  
+  .provider-selector-item:hover,
+  .provider-selector-item.selected {
+    color: #ffffff;
+  
+    border-color: rgba(139, 92, 246, 0.35);
+  
+    background: rgba(139, 92, 246, 0.08);
+  }
+  
+  /* =========================================================
+     PROGRESS
+     ========================================================= */
+  
+  .carousel-progress {
+    margin-top: 16px;
+  
+    display: flex;
+  
+    justify-content: center;
+  
+    gap: 6px;
+  }
+  
+  .progress-dot {
+    width: 6px;
+  
+    height: 6px;
+  
+    padding: 0;
+  
+    border: 0;
+  
+    border-radius: 50%;
+  
+    background: #334155;
+  
+    cursor: pointer;
+  
+    transition:
+      width 0.2s ease,
+      background 0.2s ease;
+  }
+  
+  .progress-dot.active {
+    width: 20px;
+  
+    border-radius: 999px;
+  
+    background: #8b5cf6;
+  }
+  
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+  
+  @media (max-width: 700px) {
+    .certifications-section {
+      padding: 55px 24px;
+    }
+  
+    .certification-carousel {
+      grid-template-columns: 1fr;
+    }
+  
+    .carousel-arrow {
+      display: none;
+    }
+  
+    .certification-showcase {
+      padding: 28px 20px;
+    }
+  
+    .active-provider {
+      font-size: 26px;
+    }
+  
+    .certification-pills {
+      gap: 7px;
+    }
+  
+    .interactive-cert {
+      font-size: 11px;
+    }
+  }

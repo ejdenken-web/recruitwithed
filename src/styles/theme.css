@@ -1,28 +1,363 @@
-:root{
+/* =========================================================
+   RECRUITWITHED — GLOBAL DESIGN SYSTEM
+   STACKBLITZ-INSPIRED THEME
+   ========================================================= */
 
---bg:#050816;
---bg2:#0B1022;
---card:#101827;
---card2:#131D31;
-
---primary:#38BDF8;
---secondary:#6366F1;
-
---white:#FFFFFF;
-
---text:#CBD5E1;
---muted:#94A3B8;
-
---border:rgba(255,255,255,.08);
-
---radius:24px;
-
---shadow:
-0 10px 30px rgba(0,0,0,.25),
-0 25px 80px rgba(56,189,248,.08);
-
---transition:.35s ease;
-
---max-width:1380px;
-
-}
+   :root {
+    /* =======================================================
+       CORE BACKGROUNDS
+       ======================================================= */
+  
+    --bg: #0d1117;
+    --bg2: #111827;
+  
+    --card: #151b24;
+    --card2: #181f2a;
+  
+    /* =======================================================
+       ACCENT PALETTE
+       ======================================================= */
+  
+    --primary: #8b5cf6;
+    --primary-bright: #a78bfa;
+  
+    --secondary: #ec4899;
+    --purple: #8b5cf6;
+  
+    --pink: #ec4899;
+  
+    /* =======================================================
+       TEXT
+       ======================================================= */
+  
+    --white: #f8fafc;
+  
+    --text: #cbd5e1;
+    --muted: #8b95a5;
+  
+    --text-bright: #f8fafc;
+  
+    /* =======================================================
+       BORDERS
+       ======================================================= */
+  
+    --border: rgba(255, 255, 255, 0.08);
+  
+    --border-bright: rgba(139, 92, 246, 0.35);
+  
+    /* =======================================================
+       GLASS
+       ======================================================= */
+  
+    --glass: rgba(255, 255, 255, 0.04);
+  
+    --glass-strong: rgba(255, 255, 255, 0.07);
+  
+    --glass-border: rgba(255, 255, 255, 0.08);
+  
+    /* =======================================================
+       GRADIENTS
+       ======================================================= */
+  
+    --gradient-primary: linear-gradient(
+      135deg,
+      #8b5cf6,
+      #a78bfa
+    );
+  
+    --gradient-tech: linear-gradient(
+      90deg,
+      #8b5cf6 0%,
+      #a78bfa 45%,
+      #ec4899 100%
+    );
+  
+    --gradient-purple: linear-gradient(
+      135deg,
+      #8b5cf6,
+      #ec4899
+    );
+  
+    /* =======================================================
+       GLOW COLORS
+       ======================================================= */
+  
+    --glow-cyan: rgba(139, 92, 246, 0.12);
+  
+    --glow-blue: rgba(139, 92, 246, 0.12);
+  
+    --glow-purple: rgba(139, 92, 246, 0.16);
+  
+    --glow-pink: rgba(236, 72, 153, 0.10);
+  
+    /* =======================================================
+       RADIUS
+       ======================================================= */
+  
+    --radius-sm: 10px;
+  
+    --radius-md: 16px;
+  
+    --radius: 24px;
+  
+    --radius-lg: 30px;
+  
+    --radius-pill: 999px;
+  
+    /* =======================================================
+       SHADOWS
+       ======================================================= */
+  
+    --shadow:
+      0 10px 30px rgba(0, 0, 0, 0.25),
+      0 25px 80px rgba(0, 0, 0, 0.18);
+  
+    --shadow-glow:
+      0 0 35px rgba(139, 92, 246, 0.12);
+  
+    --shadow-purple:
+      0 0 35px rgba(139, 92, 246, 0.12);
+  
+    /* =======================================================
+       TRANSITIONS
+       ======================================================= */
+  
+    --transition: 0.35s ease;
+  
+    --transition-fast: 0.2s ease;
+  
+    --transition-smooth:
+      0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  
+    /* =======================================================
+       LAYOUT
+       ======================================================= */
+  
+    --max-width: 1380px;
+  
+    --section-padding: 120px 8%;
+  
+    /* =======================================================
+       Z-INDEX SYSTEM
+       ======================================================= */
+  
+    --z-background: 0;
+  
+    --z-content: 2;
+  
+    --z-navigation: 50;
+  
+    --z-modal: 100;
+  }
+  
+  /* =========================================================
+     GLOBAL SCROLL REVEAL SYSTEM
+     ========================================================= */
+  
+  [data-reveal] {
+    opacity: 0;
+  
+    transform:
+      translateY(45px)
+      scale(0.98);
+  
+    filter: blur(6px);
+  
+    transition:
+      opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 0.9s ease;
+  
+    will-change:
+      opacity,
+      transform,
+      filter;
+  }
+  
+  [data-reveal].is-visible {
+    opacity: 1;
+  
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  
+    filter: blur(0);
+  }
+  
+  /* =========================================================
+     REVEAL DIRECTIONS
+     ========================================================= */
+  
+  [data-reveal="left"] {
+    transform:
+      translateX(-55px)
+      scale(0.98);
+  }
+  
+  [data-reveal="right"] {
+    transform:
+      translateX(55px)
+      scale(0.98);
+  }
+  
+  [data-reveal="scale"] {
+    transform:
+      scale(0.88);
+  
+    filter: blur(8px);
+  }
+  
+  /* =========================================================
+     STAGGERED REVEALS
+     ========================================================= */
+  
+  [data-reveal-stagger] > * {
+    opacity: 0;
+  
+    transform:
+      translateY(25px);
+  
+    filter: blur(4px);
+  
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 0.7s ease;
+  }
+  
+  [data-reveal-stagger].is-visible > * {
+    opacity: 1;
+  
+    transform:
+      translateY(0);
+  
+    filter: blur(0);
+  }
+  
+  [data-reveal-stagger].is-visible > *:nth-child(1) {
+    transition-delay: 0.05s;
+  }
+  
+  [data-reveal-stagger].is-visible > *:nth-child(2) {
+    transition-delay: 0.10s;
+  }
+  
+  [data-reveal-stagger].is-visible > *:nth-child(3) {
+    transition-delay: 0.15s;
+  }
+  
+  [data-reveal-stagger].is-visible > *:nth-child(4) {
+    transition-delay: 0.20s;
+  }
+  
+  [data-reveal-stagger].is-visible > *:nth-child(5) {
+    transition-delay: 0.25s;
+  }
+  
+  [data-reveal-stagger].is-visible > *:nth-child(6) {
+    transition-delay: 0.30s;
+  }
+  
+  [data-reveal-stagger].is-visible > *:nth-child(7) {
+    transition-delay: 0.35s;
+  }
+  
+  [data-reveal-stagger].is-visible > *:nth-child(8) {
+    transition-delay: 0.40s;
+  }
+  
+  /* =========================================================
+     GLOBAL GLASS UTILITY
+     ========================================================= */
+  
+  .glass-panel {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.055),
+        rgba(255, 255, 255, 0.018)
+      );
+  
+    border:
+      1px solid var(--glass-border);
+  
+    backdrop-filter:
+      blur(24px);
+  
+    -webkit-backdrop-filter:
+      blur(24px);
+  
+    box-shadow:
+      var(--shadow);
+  }
+  
+  /* =========================================================
+     GLOBAL GRADIENT TEXT
+     ========================================================= */
+  
+  .gradient-text {
+    background:
+      var(--gradient-tech);
+  
+    background-size:
+      220% auto;
+  
+    -webkit-background-clip: text;
+    background-clip: text;
+  
+    color: transparent;
+  
+    animation:
+      globalGradientFlow
+      7s
+      linear
+      infinite;
+  }
+  
+  @keyframes globalGradientFlow {
+    0% {
+      background-position: 0% center;
+    }
+  
+    50% {
+      background-position: 100% center;
+    }
+  
+    100% {
+      background-position: 0% center;
+    }
+  }
+  
+  /* =========================================================
+     GLOBAL GLOW
+     ========================================================= */
+  
+  .glow-primary {
+    box-shadow:
+      0 0 30px rgba(139, 92, 246, 0.12);
+  }
+  
+  .glow-purple {
+    box-shadow:
+      0 0 30px rgba(139, 92, 246, 0.12);
+  }
+  
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal],
+    [data-reveal-stagger] > *,
+    .gradient-text {
+      opacity: 1;
+  
+      transform: none;
+  
+      filter: none;
+  
+      animation: none;
+  
+      transition: none;
+    }
+  }

@@ -28,7 +28,6 @@ function Clients() {
     "Kaiser Permanente",
     "KPMG",
     "Lululemon Athletica",
-    "Microsoft",
     "Nomura Securities International",
     "Photon Infotech",
     "PwC",
@@ -39,52 +38,33 @@ function Clients() {
     "Wells Fargo",
   ];
 
-  const firstRow = clients.slice(0, 18);
-  const secondRow = clients.slice(18);
+  const scrollingClients = [...clients, ...clients];
 
   return (
     <section id="clients" className="clients-section">
+      <div className="clients-container">
 
-      <div className="clients-header">
-        <span className="section-tag">
-          CLIENTS
-        </span>
-      </div>
+        <div className="clients-header">
+          <span className="section-tag">
+            CLIENTS
+          </span>
+        </div>
 
-      <div className="marquee">
-
-        <div className="marquee-track">
-
-          {[...firstRow, ...firstRow].map((client, index) => (
-            <div
-              key={`${client}-${index}`}
-              className="client-card"
-            >
-              {client}
-            </div>
-          ))}
-
+        <div className="clients-marquee">
+          <div className="clients-track">
+            {scrollingClients.map((client, index) => (
+              <div
+                className="client-item"
+                key={`${client}-${index}`}
+              >
+                <span className="client-dot" />
+                <span>{client}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
-
-      <div className="marquee reverse">
-
-        <div className="marquee-track">
-
-          {[...secondRow, ...secondRow].map((client, index) => (
-            <div
-              key={`${client}-${index}`}
-              className="client-card"
-            >
-              {client}
-            </div>
-          ))}
-
-        </div>
-
-      </div>
-
     </section>
   );
 }
