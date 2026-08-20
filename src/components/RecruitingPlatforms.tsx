@@ -5,11 +5,9 @@ function RecruitingPlatforms() {
     "LinkedIn Recruiter",
     "Indeed",
     "Dice",
-    "ZipRecruiter",
     "Monster",
     "CareerBuilder",
-    "Google Jobs",
-    "ATS & Recruiting CRM Platforms",
+   
   ];
 
   return (
