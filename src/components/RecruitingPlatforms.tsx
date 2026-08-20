@@ -22,11 +22,7 @@ function RecruitingPlatforms() {
             RECRUITING PLATFORMS
           </span>
 
-          <h2>
-            Recruiting Tools &
-            <br />
-            <span>Platforms.</span>
-          </h2>
+          
         </div>
 
         <div className="recruiting-platforms-grid">
