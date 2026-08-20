@@ -37,7 +37,7 @@ function RecruitingPlatforms() {
               className="recruiting-platform-card"
               key={platform}
             >
-              <span className="platform-indicator" />
+              
 
               <h3>{platform}</h3>
             </div>
