@@ -116,7 +116,7 @@ function Certifications() {
           <div className="certification-showcase">
 
             <span className="provider-label">
-              CERTIFICATION PROVIDER
+              
             </span>
 
             <h3 className="active-provider">
