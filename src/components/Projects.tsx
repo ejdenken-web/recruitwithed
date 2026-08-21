@@ -7,22 +7,14 @@ function Projects() {
       title: "RecruitWithEd",
       description:
         "A professional recruiting portfolio focused on technology recruiting, talent acquisition, candidate engagement, and modern recruiting practices.",
-      tags: [
-        "Recruiting",
-        "Talent Acquisition",
-        "Professional Portfolio",
-      ],
+      
     },
     {
       number: "02",
       title: "Chhota Bheem",
       description:
         "Animation and creative portfolio work connected to the Chhota Bheem project, showcasing artistic and production contributions.",
-      tags: [
-        "Animation",
-        "Creative Work",
-        "Portfolio",
-      ],
+      
     },
   ];
 
@@ -67,13 +59,7 @@ function Projects() {
                 {project.description}
               </p>
 
-              <div className="project-tags">
-                {project.tags.map((tag) => (
-                  <span key={tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              
             </article>
           ))}
         </div>
