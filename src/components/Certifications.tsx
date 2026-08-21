@@ -91,9 +91,9 @@ function Certifications() {
         </span>
 
         <h2 className="certifications-title">
-          Continuous Learning.
+          
           <br />
-          <span>Modern Expertise.</span>
+          
         </h2>
 
         <p className="certifications-intro">
