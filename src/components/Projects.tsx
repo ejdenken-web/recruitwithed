@@ -3,14 +3,14 @@ import "./Projects.css";
 function Projects() {
   const projects = [
     {
-      number: "01",
+      
       title: "RecruitWithEd",
       description:
         "A professional recruiting portfolio focused on technology recruiting, talent acquisition, candidate engagement, and modern recruiting practices.",
       
     },
     {
-      number: "02",
+      
       title: "Chhota Bheem",
       description:
         "Animation and creative portfolio work connected to the Chhota Bheem project, showcasing artistic and production contributions.",
@@ -45,11 +45,9 @@ function Projects() {
           {projects.map((project) => (
             <article
               className="project-card"
-              key={project.number}
+              key={project.title}
             >
-              <span className="project-number">
-                {project.number}
-              </span>
+              
 
               <h3>
                 {project.title}
