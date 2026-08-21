@@ -61,14 +61,14 @@ function Footer() {
             <button
               onClick={() => scrollToSection("hero")}
             >
-              <span>01</span>
+             
               About
             </button>
 
             <button
               onClick={() => scrollToSection("clients")}
             >
-              <span>02</span>
+              
               Clients
             </button>
 
@@ -77,7 +77,7 @@ function Footer() {
                 scrollToSection("recruiting-platforms")
               }
             >
-              <span>03</span>
+              
               Recruiting Platforms
             </button>
 
@@ -86,7 +86,7 @@ function Footer() {
                 scrollToSection("certifications")
               }
             >
-              <span>04</span>
+              
               Certifications
             </button>
 
@@ -95,7 +95,7 @@ function Footer() {
                 scrollToSection("projects")
               }
             >
-              <span>05</span>
+              
               Featured Projects
             </button>
 
@@ -104,7 +104,7 @@ function Footer() {
                 scrollToSection("tech-stack")
               }
             >
-              <span>06</span>
+              
               Technology & Tools
             </button>
 
@@ -113,7 +113,7 @@ function Footer() {
                 scrollToSection("lets-connect")
               }
             >
-              <span>07</span>
+              
               Let's Connect
             </button>
 
