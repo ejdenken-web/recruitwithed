@@ -38,9 +38,9 @@ function Projects() {
             PROJECTS
           </span>
 
-          <h2>
-            Featured <span>Projects.</span>
-          </h2>
+          
+            
+          
 
           <p>
             Selected professional and creative projects
