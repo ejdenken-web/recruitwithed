@@ -2,12 +2,26 @@ import "./RecruitingPlatforms.css";
 
 function RecruitingPlatforms() {
   const platforms = [
-    "LinkedIn Recruiter",
-    "Indeed",
-    "Dice",
-    "Monster",
-    "CareerBuilder",
-   
+    {
+      name: "LinkedIn Recruiter",
+      url: "https://www.linkedin.com/talent/recruiter",
+    },
+    {
+      name: "Indeed",
+      url: "https://www.indeed.com",
+    },
+    {
+      name: "Dice",
+      url: "https://www.dice.com",
+    },
+    {
+      name: "Monster",
+      url: "https://www.monster.com",
+    },
+    {
+      name: "CareerBuilder",
+      url: "https://www.careerbuilder.com",
+    },
   ];
 
   return (
@@ -17,25 +31,22 @@ function RecruitingPlatforms() {
     >
       <div className="recruiting-platforms-container">
 
-        <div className="recruiting-platforms-header">
-          <span className="section-tag">
-            RECRUITING PLATFORMS
-          </span>
-
-          
-        </div>
-
-        <div className="recruiting-platforms-grid">
-          {platforms.map((platform) => (
-            <div
-              className="recruiting-platform-card"
-              key={platform}
-            >
-              
-
-              <h3>{platform}</h3>
-            </div>
-          ))}
+        <div className="recruiting-platforms-marquee">
+          <div className="recruiting-platforms-track">
+            {[...platforms, ...platforms].map(
+              (platform, index) => (
+                <a
+                  href={platform.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="recruiting-platform-card"
+                  key={`${platform.name}-${index}`}
+                >
+                  <h3>{platform.name}</h3>
+                </a>
+              )
+            )}
+          </div>
         </div>
 
       </div>
