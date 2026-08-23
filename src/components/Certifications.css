@@ -3,7 +3,7 @@
    ========================================================= */
 
    .certifications-section {
-    padding: 70px 6%;
+    padding: 45px 6%;
   
     background: #0d1117;
   }
@@ -294,7 +294,7 @@
   
   @media (max-width: 700px) {
     .certifications-section {
-      padding: 55px 24px;
+      padding: 40px 24px;
     }
   
     .certification-carousel {
