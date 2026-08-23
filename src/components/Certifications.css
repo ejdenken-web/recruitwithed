@@ -1,5 +1,5 @@
 /* =========================================================
-   RECRUITWITHED — CERTIFICATIONS
+   RECRUITWITHED — FLOATING CERTIFICATIONS
    ========================================================= */
 
    .certifications-section {
@@ -23,30 +23,8 @@
   }
   
   /* =========================================================
-     HEADER
+     INTRO
      ========================================================= */
-  
-  .certifications-title {
-    margin: 20px 0 0;
-  
-    color: #f8fafc;
-  }
-  
-  .certifications-title span {
-    background:
-      linear-gradient(
-        90deg,
-        #8b5cf6,
-        #a78bfa,
-        #ec4899
-      );
-  
-    -webkit-background-clip: text;
-  
-    background-clip: text;
-  
-    color: transparent;
-  }
   
   .certifications-intro {
     max-width: 680px;
@@ -61,155 +39,181 @@
   }
   
   /* =========================================================
-     OPEN AIR CERTIFICATION AREA
+     FLOATING STAGE
      ========================================================= */
   
-  .certification-carousel {
+  .floating-certification-stage {
     position: relative;
   
-    margin-top: 25px;
-  
     width: 100%;
   
-    min-height: 250px;
+    max-width: 1100px;
   
-    display: flex;
+    min-height: 470px;
   
-    align-items: center;
-  
-    justify-content: center;
-  }
-  
-  /* Completely remove the old showcase appearance */
-  
-  .certification-showcase {
-    width: 100%;
-  
-    padding: 10px 60px;
-  
-    display: flex;
-  
-    flex-direction: column;
-  
-    align-items: center;
-  
-    justify-content: center;
-  
-    background: transparent;
-  
-    border: 0;
-  
-    border-radius: 0;
-  
-    box-shadow: none;
+    margin: 20px auto 0;
   }
   
   /* =========================================================
-     ACTIVE PROVIDER
+     FLOATING PROVIDERS
      ========================================================= */
   
-  .provider-label {
-    display: none;
-  }
+  .floating-provider {
+    position: absolute;
   
-  .active-provider {
-    margin: 0 0 22px;
-  
-    color: #f8fafc;
-  
-    font-size: 25px;
-  
-    font-weight: 800;
-  }
-  
-  /* =========================================================
-     FLOATING CERTIFICATIONS
-     ========================================================= */
-  
-  .certification-pills {
-    width: 100%;
-  
-    display: flex;
-  
-    align-items: center;
-  
-    justify-content: center;
-  
-    flex-wrap: wrap;
-  
-    gap: 18px;
-  
-    perspective: 1000px;
-  }
-  
-  .interactive-cert {
-    position: relative;
-  
-    display: inline-flex;
-  
-    align-items: center;
-  
-    justify-content: center;
-  
-    padding: 11px 17px;
+    z-index: 4;
   
     border: 0;
   
-    border-radius: 999px;
-  
     background: transparent;
   
-    color: #cbd5e1;
+    color: #94a3b8;
   
-    font-size: 12px;
+    font-size: 14px;
   
-    font-weight: 600;
-  
-    line-height: 1.35;
+    font-weight: 700;
   
     cursor: pointer;
   
-    animation:
-      certification-float 5s ease-in-out infinite;
-  
     transition:
-      color 0.25s ease,
-      transform 0.25s ease;
+      color 0.3s ease,
+      transform 0.3s ease,
+      text-shadow 0.3s ease;
   }
   
-  /* Subtle individual movement */
-  
-  .interactive-cert:nth-child(2n) {
-    animation-delay: -1.1s;
-  }
-  
-  .interactive-cert:nth-child(3n) {
-    animation-delay: -2.2s;
-  }
-  
-  .interactive-cert:nth-child(4n) {
-    animation-delay: -3.3s;
-  }
-  
-  .interactive-cert:nth-child(5n) {
-    animation-delay: -4.1s;
-  }
-  
-  .interactive-cert:nth-child(6n) {
-    animation-delay: -1.7s;
-  }
-  
-  .interactive-cert:hover {
-    animation-play-state: paused;
-  
+  .floating-provider:hover {
     color: #ffffff;
   
     transform:
-      translateY(-7px)
-      scale(1.05);
+      translateY(-5px)
+      scale(1.06);
   }
   
-  @keyframes certification-float {
+  .floating-provider[data-active="true"] {
+    color: #a78bfa;
+  
+    text-shadow:
+      0 0 18px rgba(139, 92, 246, 0.45);
+  }
+  
+  /* =========================================================
+     PROVIDER POSITIONS
+     ========================================================= */
+  
+  .provider-one {
+    top: 35px;
+  
+    left: 18%;
+  
+    animation:
+      provider-float-one 5s ease-in-out infinite;
+  }
+  
+  .provider-two {
+    top: 105px;
+  
+    right: 18%;
+  
+    animation:
+      provider-float-two 5.5s ease-in-out infinite;
+  }
+  
+  .provider-three {
+    top: 225px;
+  
+    left: 7%;
+  
+    animation:
+      provider-float-three 6s ease-in-out infinite;
+  }
+  
+  .provider-four {
+    top: 220px;
+  
+    right: 7%;
+  
+    animation:
+      provider-float-four 5.2s ease-in-out infinite;
+  }
+  
+  .provider-five {
+    bottom: 55px;
+  
+    left: 22%;
+  
+    animation:
+      provider-float-five 5.8s ease-in-out infinite;
+  }
+  
+  .provider-six {
+    bottom: 45px;
+  
+    right: 21%;
+  
+    animation:
+      provider-float-six 5.3s ease-in-out infinite;
+  }
+  
+  /* =========================================================
+     FLOATING MOVEMENT
+     ========================================================= */
+  
+  @keyframes provider-float-one {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes provider-float-two {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(9px);
+    }
+  }
+  
+  @keyframes provider-float-three {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  
+  @keyframes provider-float-four {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(11px);
+    }
+  }
+  
+  @keyframes provider-float-five {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(8px);
+    }
+  }
+  
+  @keyframes provider-float-six {
     0%,
     100% {
       transform: translateY(0);
@@ -221,17 +225,111 @@
   }
   
   /* =========================================================
-     ARROWS
+     CENTER CONTENT
      ========================================================= */
   
-  .carousel-arrow {
+  .certification-center {
     position: absolute;
   
-    z-index: 5;
+    top: 50%;
   
-    width: 40px;
+    left: 50%;
   
-    height: 40px;
+    width: min(700px, 70%);
+  
+    transform: translate(-50%, -50%);
+  }
+  
+  .certification-center-provider {
+    margin-bottom: 20px;
+  
+    color: #f8fafc;
+  
+    font-size: 26px;
+  
+    font-weight: 800;
+  }
+  
+  /* =========================================================
+     CERTIFICATION ITEMS
+     ========================================================= */
+  
+  .certification-list {
+    display: flex;
+  
+    flex-wrap: wrap;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    gap: 12px 18px;
+  }
+  
+  .floating-certification {
+    color: #cbd5e1;
+  
+    font-size: 12px;
+  
+    line-height: 1.5;
+  
+    animation:
+      certification-item-float 4.5s ease-in-out infinite;
+  
+    transition:
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+  
+  .floating-certification:nth-child(2n) {
+    animation-delay: -1s;
+  }
+  
+  .floating-certification:nth-child(3n) {
+    animation-delay: -2s;
+  }
+  
+  .floating-certification:nth-child(4n) {
+    animation-delay: -3s;
+  }
+  
+  .floating-certification:hover {
+    color: #ffffff;
+  
+    transform: translateY(-4px);
+  }
+  
+  @keyframes certification-item-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  /* =========================================================
+     CONTROLS
+     ========================================================= */
+  
+  .certification-controls {
+    margin-top: 25px;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    gap: 18px;
+  }
+  
+  .certification-arrow {
+    width: 36px;
+  
+    height: 36px;
   
     display: flex;
   
@@ -243,113 +341,39 @@
   
     border-radius: 50%;
   
-    background: rgba(255, 255, 255, 0.025);
+    background: transparent;
   
     color: #94a3b8;
   
-    font-size: 16px;
-  
     cursor: pointer;
   
     transition:
-      transform 0.2s ease,
       color 0.2s ease,
       border-color 0.2s ease,
-      background 0.2s ease;
+      transform 0.2s ease;
   }
   
-  .certification-carousel
-  .carousel-arrow:first-child {
-    left: 0;
-  }
-  
-  .certification-carousel
-  .carousel-arrow:last-child {
-    right: 0;
-  }
-  
-  .carousel-arrow:hover {
-    transform: scale(1.08);
-  
+  .certification-arrow:hover {
     color: #ffffff;
   
     border-color:
-      rgba(139, 92, 246, 0.35);
+      rgba(139, 92, 246, 0.4);
   
-    background:
-      rgba(139, 92, 246, 0.06);
+    transform: scale(1.08);
   }
   
-  /* =========================================================
-     PROVIDER BUTTONS
-     ========================================================= */
-  
-  .provider-selector {
-    margin-top: 15px;
-  
+  .certification-dots {
     display: flex;
-  
-    justify-content: center;
   
     align-items: center;
-  
-    flex-wrap: wrap;
-  
-    gap: 8px;
-  }
-  
-  .provider-selector-item {
-    padding: 7px 13px;
-  
-    border: 1px solid rgba(255, 255, 255, 0.07);
-  
-    border-radius: 999px;
-  
-    background: transparent;
-  
-    color: #64748b;
-  
-    font-size: 11px;
-  
-    font-weight: 700;
-  
-    cursor: pointer;
-  
-    transition:
-      color 0.2s ease,
-      border-color 0.2s ease,
-      background 0.2s ease;
-  }
-  
-  .provider-selector-item:hover,
-  .provider-selector-item.selected {
-    color: #ffffff;
-  
-    border-color:
-      rgba(139, 92, 246, 0.35);
-  
-    background:
-      rgba(139, 92, 246, 0.07);
-  }
-  
-  /* =========================================================
-     PROGRESS
-     ========================================================= */
-  
-  .carousel-progress {
-    margin-top: 12px;
-  
-    display: flex;
-  
-    justify-content: center;
   
     gap: 6px;
   }
   
-  .progress-dot {
-    width: 5px;
+  .certification-dot {
+    width: 6px;
   
-    height: 5px;
+    height: 6px;
   
     padding: 0;
   
@@ -366,8 +390,8 @@
       background 0.2s ease;
   }
   
-  .progress-dot.active {
-    width: 18px;
+  .certification-dot.active {
+    width: 20px;
   
     border-radius: 999px;
   
@@ -380,37 +404,51 @@
   
   @media (max-width: 700px) {
     .certifications-section {
-      padding: 40px 24px;
+      padding: 40px 20px;
     }
   
-    .certification-carousel {
-      min-height: 330px;
+    .floating-certification-stage {
+      min-height: 540px;
     }
   
-    .certification-showcase {
-      padding: 10px 35px;
+    .certification-center {
+      width: 80%;
     }
   
-    .active-provider {
+    .certification-center-provider {
       font-size: 23px;
-  
-      margin-bottom: 18px;
     }
   
-    .certification-pills {
-      gap: 12px;
+    .provider-one {
+      left: 5%;
     }
   
-    .interactive-cert {
-      padding: 8px 11px;
+    .provider-two {
+      right: 5%;
+    }
   
+    .provider-three {
+      left: 2%;
+    }
+  
+    .provider-four {
+      right: 2%;
+    }
+  
+    .provider-five {
+      left: 8%;
+    }
+  
+    .provider-six {
+      right: 8%;
+    }
+  
+    .floating-provider {
+      font-size: 12px;
+    }
+  
+    .floating-certification {
       font-size: 11px;
-    }
-  
-    .carousel-arrow {
-      width: 36px;
-  
-      height: 36px;
     }
   }
   
@@ -419,7 +457,8 @@
      ========================================================= */
   
   @media (prefers-reduced-motion: reduce) {
-    .interactive-cert {
+    .floating-provider,
+    .floating-certification {
       animation: none;
     }
   }
