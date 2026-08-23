@@ -4,9 +4,7 @@
 
    .clients-section {
     position: relative;
-  
     padding: 95px 6% 100px;
-  
     overflow: hidden;
   
     background:
@@ -90,7 +88,6 @@
     z-index: 2;
   
     width: 100%;
-  
     max-width: 1050px;
   
     margin: 0 auto;
@@ -149,7 +146,6 @@
   
   .client-slide {
     width: 100%;
-  
     max-width: 620px;
   
     text-align: center;
@@ -206,27 +202,6 @@
   }
   
   /* =========================================================
-     CLIENT NAME
-     ========================================================= */
-  
-  .client-name {
-    margin: 0 0 24px;
-  
-    color: #ffffff;
-  
-    font-size: clamp(28px, 4vw, 48px);
-  
-    line-height: 1.1;
-  
-    font-weight: 800;
-  
-    letter-spacing: -0.035em;
-  
-    text-shadow:
-      0 0 30px rgba(167, 139, 250, 0.15);
-  }
-  
-  /* =========================================================
      FEATURE CARD
      ========================================================= */
   
@@ -234,13 +209,11 @@
     position: relative;
   
     width: 100%;
-  
-    height: 230px;
+    height: 300px;
   
     display: flex;
   
     align-items: center;
-  
     justify-content: center;
   
     overflow: hidden;
@@ -267,14 +240,14 @@
   }
   
   /* =========================================================
-     CARD LIGHT
+     CARD GLOW
      ========================================================= */
   
   .client-feature-glow {
     position: absolute;
   
-    width: 300px;
-    height: 300px;
+    width: 330px;
+    height: 330px;
   
     border-radius: 50%;
   
@@ -298,16 +271,20 @@
   
   @keyframes featureGlow {
     from {
-      transform: translate(-70px, 10px) scale(0.9);
+      transform:
+        translate(-70px, 10px)
+        scale(0.9);
     }
   
     to {
-      transform: translate(70px, -10px) scale(1.1);
+      transform:
+        translate(70px, -10px)
+        scale(1.1);
     }
   }
   
   /* =========================================================
-     CARD CONTENT
+     CENTER CONTENT
      ========================================================= */
   
   .client-feature-content {
@@ -315,11 +292,21 @@
   
     z-index: 2;
   
+    width: 100%;
+    height: 100%;
+  
     display: flex;
   
     flex-direction: column;
   
     align-items: center;
+    justify-content: center;
+  
+    text-align: center;
+  
+    padding: 30px;
+  
+    box-sizing: border-box;
   }
   
   /* =========================================================
@@ -330,13 +317,12 @@
     display: flex;
   
     align-items: center;
-  
     justify-content: center;
   
     width: 58px;
     height: 58px;
   
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   
     border-radius: 18px;
   
@@ -359,7 +345,28 @@
   }
   
   /* =========================================================
-     LINE
+     CLIENT NAME
+     ========================================================= */
+  
+  .client-name {
+    margin: 0 0 18px;
+  
+    color: #ffffff;
+  
+    font-size: clamp(28px, 4vw, 48px);
+  
+    line-height: 1.1;
+  
+    font-weight: 800;
+  
+    letter-spacing: -0.035em;
+  
+    text-shadow:
+      0 0 30px rgba(167, 139, 250, 0.2);
+  }
+  
+  /* =========================================================
+     CENTER LINE
      ========================================================= */
   
   .client-feature-line {
@@ -403,7 +410,6 @@
     display: flex;
   
     align-items: center;
-  
     justify-content: center;
   
     border-radius: 50%;
@@ -458,70 +464,6 @@
   }
   
   /* =========================================================
-     PROGRESS
-     ========================================================= */
-  
-  .client-progress {
-    display: flex;
-  
-    align-items: center;
-  
-    justify-content: center;
-  
-    gap: 12px;
-  
-    margin-top: 35px;
-  }
-  
-  .client-progress-current,
-  .client-progress-total {
-    color: #64748b;
-  
-    font-size: 10px;
-  
-    font-weight: 700;
-  
-    letter-spacing: 0.08em;
-  }
-  
-  .client-progress-current {
-    color: #a78bfa;
-  }
-  
-  .client-progress-bar {
-    position: relative;
-  
-    width: 180px;
-  
-    height: 2px;
-  
-    overflow: hidden;
-  
-    border-radius: 999px;
-  
-    background:
-      rgba(255, 255, 255, 0.08);
-  }
-  
-  .client-progress-fill {
-    height: 100%;
-  
-    border-radius: inherit;
-  
-    background:
-      linear-gradient(
-        90deg,
-        #38bdf8,
-        #8b5cf6,
-        #ec4899
-      );
-  
-    transition:
-      width 0.5s
-      cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  
-  /* =========================================================
      TABLET
      ========================================================= */
   
@@ -547,7 +489,7 @@
     }
   
     .client-feature-card {
-      height: 210px;
+      height: 270px;
     }
   }
   
@@ -574,17 +516,11 @@
     }
   
     .client-slide-area {
-      min-height: 300px;
-    }
-  
-    .client-name {
-      font-size: 25px;
-  
-      margin-bottom: 18px;
+      min-height: 270px;
     }
   
     .client-feature-card {
-      height: 190px;
+      height: 240px;
   
       border-radius: 22px;
     }
@@ -603,12 +539,8 @@
       font-size: 21px;
     }
   
-    .client-progress {
-      margin-top: 25px;
-    }
-  
-    .client-progress-bar {
-      width: 120px;
+    .client-name {
+      font-size: 25px;
     }
   }
   
@@ -621,9 +553,5 @@
     .client-feature-glow,
     .client-slide {
       animation: none;
-    }
-  
-    .client-progress-fill {
-      transition: none;
     }
   }

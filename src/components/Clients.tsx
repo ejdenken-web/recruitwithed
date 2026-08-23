@@ -61,7 +61,11 @@ function Clients() {
 
   useEffect(() => {
     const interval = window.setInterval(() => {
-      nextClient();
+      setDirection("right");
+
+      setActiveClient((current) =>
+        current === clients.length - 1 ? 0 : current + 1
+      );
     }, 4000);
 
     return () => window.clearInterval(interval);
@@ -83,8 +87,6 @@ function Clients() {
 
         <div className="client-carousel">
 
-          {/* LEFT ARROW */}
-
           <button
             className="client-arrow client-arrow-left"
             onClick={previousClient}
@@ -93,18 +95,12 @@ function Clients() {
             ←
           </button>
 
-          {/* MAIN CLIENT */}
-
           <div className="client-slide-area">
 
             <div
               key={`${activeClient}-${direction}`}
               className={`client-slide client-slide-${direction}`}
             >
-
-              <h2 className="client-name">
-                {clients[activeClient]}
-              </h2>
 
               <div className="client-feature-card">
 
@@ -115,6 +111,10 @@ function Clients() {
                   <div className="client-feature-icon">
                     ✦
                   </div>
+
+                  <h2 className="client-name">
+                    {clients[activeClient]}
+                  </h2>
 
                   <div className="client-feature-line" />
 
@@ -130,8 +130,6 @@ function Clients() {
 
           </div>
 
-          {/* RIGHT ARROW */}
-
           <button
             className="client-arrow client-arrow-right"
             onClick={nextClient}
@@ -139,29 +137,6 @@ function Clients() {
           >
             →
           </button>
-
-        </div>
-
-        {/* PROGRESS */}
-
-        <div className="client-progress">
-
-          <span className="client-progress-current">
-            {String(activeClient + 1).padStart(2, "0")}
-          </span>
-
-          <div className="client-progress-bar">
-            <div
-              className="client-progress-fill"
-              style={{
-                width: `${((activeClient + 1) / clients.length) * 100}%`,
-              }}
-            />
-          </div>
-
-          <span className="client-progress-total">
-            {String(clients.length).padStart(2, "0")}
-          </span>
 
         </div>
 
