@@ -42,10 +42,7 @@ function TechStack() {
             TECHNOLOGY & TOOLS
           </span>
 
-          <h2>
-            Built With <span>Modern Technology.</span>
-          </h2>
-
+          
           <p>
             Explore the technologies and development tools
             behind RecruitWithEd.
