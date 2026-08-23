@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./RecruitingPlatforms.css";
 
 function RecruitingPlatforms() {
@@ -9,6 +10,18 @@ function RecruitingPlatforms() {
     "CareerBuilder",
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveIndex(
+        (current) => (current + 1) % platforms.length
+      );
+    }, 3500);
+
+    return () => window.clearInterval(timer);
+  }, [platforms.length]);
+
   return (
     <section
       id="recruiting-platforms"
@@ -17,19 +30,83 @@ function RecruitingPlatforms() {
       <div className="recruiting-platforms-container">
 
         <div className="recruiting-platforms-header">
+          <span className="section-tag">
+            RECRUITING PLATFORMS
+          </span>
+
           <h2>
-            Recruiting <span>Platforms.</span>
+            Where Talent <span>Gets Found.</span>
           </h2>
+
+          <p>
+            Recruiting platforms used to source, identify,
+            connect with, and engage qualified talent.
+          </p>
         </div>
 
-        <div className="recruiting-platforms-track">
-          {platforms.map((platform) => (
-            <div
-              className="recruiting-platform-card"
-              key={platform}
-            >
-              <span>{platform}</span>
+        <div className="platform-radar">
+
+          <div className="radar-ring radar-ring-one" />
+          <div className="radar-ring radar-ring-two" />
+          <div className="radar-ring radar-ring-three" />
+
+          <div className="radar-sweep" />
+
+          <div className="radar-center">
+            <div className="radar-core">
+              <span />
             </div>
+
+            <div className="radar-center-label">
+              ACTIVE
+            </div>
+
+            <strong>
+              {platforms[activeIndex]}
+            </strong>
+          </div>
+
+          {platforms.map((platform, index) => {
+            const isActive = index === activeIndex;
+
+            return (
+              <button
+                type="button"
+                key={platform}
+                className={`platform-orbit platform-orbit-${index + 1} ${
+                  isActive ? "active" : ""
+                }`}
+                onClick={() => setActiveIndex(index)}
+                aria-label={`Select ${platform}`}
+              >
+                <span className="platform-pulse" />
+
+                <span className="platform-number">
+                  0{index + 1}
+                </span>
+
+                <span className="platform-name">
+                  {platform}
+                </span>
+              </button>
+            );
+          })}
+
+        </div>
+
+        <div className="platform-indicators">
+          {platforms.map((platform, index) => (
+            <button
+              type="button"
+              key={platform}
+              className={
+                index === activeIndex
+                  ? "platform-indicator active"
+                  : "platform-indicator"
+              }
+              onClick={() => setActiveIndex(index)}
+              aria-label={`Show ${platform}`}
+            />
           ))}
         </div>
 
