@@ -2,22 +2,51 @@ import "./Hero.css";
 
 function Hero() {
   return (
-    <section id="hero" className="hero">
-      <div className="hero-color hero-color-one" />
-      <div className="hero-color hero-color-two" />
-      <div className="hero-color hero-color-three" />
-      <div className="hero-color hero-color-four" />
+    <section className="hero" id="home">
+      <div className="hero-background hero-background-one" />
+      <div className="hero-background hero-background-two" />
 
-      <div className="hero-content">
-        <h1>Ed Johnson</h1>
+      <div className="hero-container">
+        <div className="hero-content">
 
-        <h2>Senior Information Technology Consultant</h2>
+          <div className="hero-experience">
+            OVER A DECADE OF EXPERIENCE
+          </div>
 
-        <div className="hero-divider" />
+          <h1 className="hero-name">
+            Ed Johnson
+          </h1>
 
-        <p className="hero-tagline">
-          Building Careers. Building Teams.
-        </p>
+          <h2 className="hero-title">
+            Senior Information Technology Consultant
+          </h2>
+
+          <h3 className="hero-tagline">
+            Building Careers. Building Teams.
+          </h3>
+
+          <p className="hero-description">
+            Connecting exceptional technology professionals with
+            organizations building and scaling high-performing teams.
+          </p>
+
+          <div className="hero-actions">
+            <a
+              href="#clients"
+              className="hero-button hero-button-primary"
+            >
+              Explore My Work
+            </a>
+
+            <a
+              href="#lets-connect"
+              className="hero-button hero-button-secondary"
+            >
+              Let&apos;s Connect
+            </a>
+          </div>
+
+        </div>
       </div>
     </section>
   );
