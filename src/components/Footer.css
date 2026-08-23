@@ -4,21 +4,15 @@
 
    .footer {
     position: relative;
-  
     padding: 70px 6% 25px;
-  
     overflow: hidden;
-  
     background: #0a0f16;
-  
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
   
   .footer::before {
     content: "";
-  
     position: absolute;
-  
     left: 50%;
     top: -180px;
   
@@ -26,13 +20,12 @@
     height: 500px;
   
     transform: translateX(-50%);
-  
     border-radius: 50%;
   
     background:
       radial-gradient(
         circle,
-        rgba(139, 92, 246, 0.08),
+        rgba(139, 92, 246, 0.06),
         transparent 68%
       );
   
@@ -40,21 +33,19 @@
   }
   
   /* =========================================================
-     CONTAINER
+     MAIN FOOTER
      ========================================================= */
   
   .footer-container {
     position: relative;
-  
     z-index: 2;
   
     display: grid;
+    grid-template-columns: 1fr 280px;
   
-    grid-template-columns:
-      1fr 1fr;
+    gap: 80px;
   
-    gap: 60px;
-  
+    width: 100%;
     max-width: 1100px;
   
     margin: 0 auto;
@@ -68,18 +59,12 @@
     color: #f8fafc;
   
     font-size: 24px;
-  
     font-weight: 800;
-  
     letter-spacing: -0.03em;
-  
-    text-shadow:
-      0 0 20px rgba(167, 139, 250, 0.15);
   }
   
   .footer-socials {
     display: flex;
-  
     flex-wrap: wrap;
   
     gap: 9px;
@@ -91,21 +76,19 @@
     padding: 8px 14px;
   
     border: 1px solid rgba(255, 255, 255, 0.07);
-  
     border-radius: 999px;
+  
+    background: rgba(255, 255, 255, 0.018);
   
     color: #8b95a5;
   
     font-size: 11px;
-  
     text-decoration: none;
   
-    background: rgba(255, 255, 255, 0.018);
-  
     transition:
-      color 0.3s ease,
-      border-color 0.3s ease,
-      transform 0.3s ease;
+      color 0.25s ease,
+      border-color 0.25s ease,
+      transform 0.25s ease;
   }
   
   .footer-social:hover {
@@ -114,37 +97,44 @@
     border-color:
       rgba(167, 139, 250, 0.35);
   
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
   
   /* =========================================================
-     QUICK LINKS
+     QUICK LINKS — RIGHT SIDE
      ========================================================= */
   
+  .footer-quick-links {
+    justify-self: end;
+  
+    width: 100%;
+  }
+  
   .footer-column h3 {
-    margin: 0 0 18px;
+    margin: 0 0 16px;
   
     color: #f8fafc;
   
     font-size: 13px;
-  
     font-weight: 750;
   }
   
   .footer-nav {
     display: flex;
   
-    flex-wrap: wrap;
+    flex-direction: column;
   
-    gap: 8px;
+    align-items: flex-start;
+  
+    gap: 3px;
   }
   
   .footer-nav button {
+    width: 100%;
+  
+    padding: 7px 0;
+  
     border: 0;
-  
-    padding: 7px 11px;
-  
-    border-radius: 8px;
   
     background: transparent;
   
@@ -154,18 +144,19 @@
   
     font-size: 11px;
   
+    text-align: left;
+  
     cursor: pointer;
   
     transition:
       color 0.25s ease,
-      background 0.25s ease;
+      padding-left 0.25s ease;
   }
   
   .footer-nav button:hover {
-    color: #ffffff;
+    padding-left: 5px;
   
-    background:
-      rgba(139, 92, 246, 0.08);
+    color: #ffffff;
   }
   
   /* =========================================================
@@ -182,8 +173,6 @@
     flex-direction: column;
   
     align-items: center;
-  
-    justify-content: center;
   
     gap: 8px;
   
@@ -204,11 +193,7 @@
     border-radius: 50%;
   
     background:
-      linear-gradient(
-        145deg,
-        rgba(139, 92, 246, 0.1),
-        rgba(236, 72, 153, 0.05)
-      );
+      rgba(139, 92, 246, 0.06);
   
     color: #a78bfa;
   
@@ -216,26 +201,19 @@
   
     cursor: pointer;
   
-    box-shadow:
-      0 0 25px rgba(139, 92, 246, 0.08);
-  
     transition:
-      transform 0.3s ease,
-      color 0.3s ease,
-      border-color 0.3s ease,
-      box-shadow 0.3s ease;
+      transform 0.25s ease,
+      color 0.25s ease,
+      border-color 0.25s ease;
   }
   
   .footer-top-arrow:hover {
     color: #ffffff;
   
     border-color:
-      rgba(236, 72, 153, 0.55);
+      rgba(236, 72, 153, 0.5);
   
-    transform: translateY(-6px);
-  
-    box-shadow:
-      0 0 35px rgba(236, 72, 153, 0.18);
+    transform: translateY(-4px);
   }
   
   .footer-back-top span {
@@ -260,18 +238,19 @@
     display: flex;
   
     align-items: center;
-  
     justify-content: space-between;
   
     gap: 20px;
   
+    width: 100%;
     max-width: 1100px;
   
     margin: 0 auto;
   
     padding-top: 22px;
   
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top:
+      1px solid rgba(255, 255, 255, 0.05);
   
     color: #475569;
   
@@ -297,8 +276,12 @@
       gap: 35px;
     }
   
+    .footer-quick-links {
+      justify-self: start;
+    }
+  
     .footer-nav {
-      gap: 5px;
+      gap: 2px;
     }
   
     .footer-bottom {

@@ -12,19 +12,19 @@
     background:
       radial-gradient(
         circle at 15% 30%,
-        rgba(139, 92, 246, 0.08),
+        rgba(139, 92, 246, 0.06),
         transparent 28%
       ),
       radial-gradient(
         circle at 85% 70%,
-        rgba(236, 72, 153, 0.06),
+        rgba(236, 72, 153, 0.045),
         transparent 30%
       ),
       #111827;
   }
   
   /* =========================================================
-     GLOW
+     STATIC BACKGROUND GLOW
      ========================================================= */
   
   .clients-glow {
@@ -32,11 +32,11 @@
   
     border-radius: 50%;
   
+    filter: blur(100px);
+  
     pointer-events: none;
   
-    filter: blur(90px);
-  
-    opacity: 0.12;
+    opacity: 0.08;
   }
   
   .clients-glow-one {
@@ -47,8 +47,6 @@
     top: 20%;
   
     background: #8b5cf6;
-  
-    animation: clientGlowOne 10s ease-in-out infinite;
   }
   
   .clients-glow-two {
@@ -59,30 +57,6 @@
     bottom: 10%;
   
     background: #ec4899;
-  
-    animation: clientGlowTwo 12s ease-in-out infinite;
-  }
-  
-  @keyframes clientGlowOne {
-    0%,
-    100% {
-      transform: translate(0, 0);
-    }
-  
-    50% {
-      transform: translate(160px, 80px);
-    }
-  }
-  
-  @keyframes clientGlowTwo {
-    0%,
-    100% {
-      transform: translate(0, 0);
-    }
-  
-    50% {
-      transform: translate(-130px, -90px);
-    }
   }
   
   /* =========================================================
@@ -95,7 +69,6 @@
     z-index: 2;
   
     width: 100%;
-  
     max-width: 1240px;
   
     margin: 0 auto;
@@ -143,15 +116,15 @@
   
     color: transparent;
   
-    animation: clientHeadingFlow 5s linear infinite;
+    animation: clientHeadingFlow 7s linear infinite;
   }
   
   @keyframes clientHeadingFlow {
-    0% {
+    from {
       background-position: 0% 50%;
     }
   
-    100% {
+    to {
       background-position: 200% 50%;
     }
   }
@@ -193,8 +166,6 @@
      ========================================================= */
   
   .client-pill {
-    position: relative;
-  
     display: inline-flex;
   
     align-items: center;
@@ -223,69 +194,42 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   
-    box-shadow:
-      0 8px 25px rgba(0, 0, 0, 0.12);
-  
     opacity: 0;
   
     animation:
-      clientEnter 0.6s ease forwards,
-      clientFloat 6s ease-in-out infinite;
+      clientEnter 0.45s ease forwards;
   
-    animation-delay:
-      var(--delay),
-      calc(var(--delay) + 1s);
+    animation-delay: var(--delay);
   
     transition:
-      transform 0.3s ease,
-      color 0.3s ease,
-      border-color 0.3s ease,
-      background 0.3s ease,
-      box-shadow 0.3s ease;
+      transform 0.25s ease,
+      color 0.25s ease,
+      border-color 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease;
   }
   
   @keyframes clientEnter {
     from {
       opacity: 0;
   
-      transform:
-        translateY(15px)
-        scale(0.94);
+      transform: translateY(8px);
     }
   
     to {
       opacity: 1;
   
-      transform:
-        translateY(0)
-        scale(1);
-    }
-  }
-  
-  @keyframes clientFloat {
-    0%,
-    100% {
-      margin-top: 0;
-    }
-  
-    50% {
-      margin-top: -3px;
+      transform: translateY(0);
     }
   }
   
   /* =========================================================
-     VARIATION
+     SLIGHT VARIATION
      ========================================================= */
   
   .client-pill-2,
   .client-pill-5 {
     border-radius: 14px;
-  }
-  
-  .client-pill-3,
-  .client-pill-7 {
-    padding-left: 19px;
-    padding-right: 19px;
   }
   
   .client-pill-4,
@@ -309,13 +253,12 @@
     background: #64748b;
   
     transition:
-      background 0.3s ease,
-      box-shadow 0.3s ease,
-      transform 0.3s ease;
+      background 0.25s ease,
+      box-shadow 0.25s ease;
   }
   
   /* =========================================================
-     HOVER
+     HOVER ONLY
      ========================================================= */
   
   .client-pill:hover {
@@ -327,30 +270,25 @@
     background:
       linear-gradient(
         135deg,
-        rgba(139, 92, 246, 0.13),
-        rgba(236, 72, 153, 0.07)
+        rgba(139, 92, 246, 0.12),
+        rgba(236, 72, 153, 0.06)
       );
   
     box-shadow:
-      0 12px 35px rgba(0, 0, 0, 0.25),
-      0 0 25px rgba(139, 92, 246, 0.1);
+      0 12px 30px rgba(0, 0, 0, 0.2);
   
-    transform:
-      translateY(-6px)
-      scale(1.04);
+    transform: translateY(-4px);
   }
   
   .client-pill:hover .client-dot {
     background: #a78bfa;
   
     box-shadow:
-      0 0 8px rgba(167, 139, 250, 0.9);
-  
-    transform: scale(1.35);
+      0 0 8px rgba(167, 139, 250, 0.8);
   }
   
   /* =========================================================
-     BOTTOM LINE
+     BOTTOM
      ========================================================= */
   
   .clients-bottom-line {
@@ -373,7 +311,7 @@
       linear-gradient(
         90deg,
         transparent,
-        rgba(167, 139, 250, 0.35)
+        rgba(167, 139, 250, 0.3)
       );
   }
   
@@ -381,7 +319,7 @@
     background:
       linear-gradient(
         90deg,
-        rgba(236, 72, 153, 0.35),
+        rgba(236, 72, 153, 0.3),
         transparent
       );
   }
@@ -389,7 +327,7 @@
   .clients-bottom-line p {
     margin: 0;
   
-    color: #64748b;
+    color: #475569;
   
     font-size: 10px;
   
@@ -445,7 +383,6 @@
      ========================================================= */
   
   @media (prefers-reduced-motion: reduce) {
-    .clients-glow,
     .clients-header h2 span,
     .client-pill {
       animation: none;
