@@ -41,114 +41,132 @@ function Clients() {
   ];
 
   const [activeClient, setActiveClient] = useState(0);
+  const [direction, setDirection] = useState<"left" | "right">("right");
+
+  const nextClient = () => {
+    setDirection("right");
+
+    setActiveClient((current) =>
+      current === clients.length - 1 ? 0 : current + 1
+    );
+  };
+
+  const previousClient = () => {
+    setDirection("left");
+
+    setActiveClient((current) =>
+      current === 0 ? clients.length - 1 : current - 1
+    );
+  };
 
   useEffect(() => {
     const interval = window.setInterval(() => {
-      setActiveClient((current) => (current + 1) % clients.length);
-    }, 3500);
+      nextClient();
+    }, 4000);
 
     return () => window.clearInterval(interval);
-  }, [clients.length]);
-
-  const surroundingClients = clients.filter(
-    (_, index) => index !== activeClient
-  );
-
-  const leftClients = surroundingClients.slice(0, 8);
-  const rightClients = surroundingClients.slice(8, 16);
-  const bottomClients = surroundingClients.slice(16, 24);
+  }, []);
 
   return (
     <section id="clients" className="clients-section">
+
       <div className="clients-light clients-light-one" />
       <div className="clients-light clients-light-two" />
 
       <div className="clients-container">
 
         <div className="clients-header">
-          <span className="section-tag">CLIENTS</span>
+          <span className="section-tag">
+            CLIENTS
+          </span>
         </div>
 
-        <div className="clients-showcase">
+        <div className="client-carousel">
 
-          {/* LEFT CLIENTS */}
+          {/* LEFT ARROW */}
 
-          <div className="clients-column clients-column-left">
-            {leftClients.map((client) => (
-              <button
-                className="client-tile"
-                key={client}
-                onMouseEnter={() =>
-                  setActiveClient(clients.indexOf(client))
-                }
-              >
-                <span className="client-tile-dot" />
-                <span>{client}</span>
-              </button>
-            ))}
-          </div>
+          <button
+            className="client-arrow client-arrow-left"
+            onClick={previousClient}
+            aria-label="Previous client"
+          >
+            ←
+          </button>
 
-          {/* CENTER SPOTLIGHT */}
+          {/* MAIN CLIENT */}
 
-          <div className="client-spotlight">
+          <div className="client-slide-area">
 
-            <div className="spotlight-ring spotlight-ring-one" />
-            <div className="spotlight-ring spotlight-ring-two" />
+            <div
+              key={`${activeClient}-${direction}`}
+              className={`client-slide client-slide-${direction}`}
+            >
 
-            <div className="spotlight-content">
-
-
-              <div className="spotlight-icon">
-                ✦
-              </div>
-
-              <h2 key={clients[activeClient]}>
+              <h2 className="client-name">
                 {clients[activeClient]}
               </h2>
 
-              
+              <div className="client-feature-card">
+
+                <div className="client-feature-glow" />
+
+                <div className="client-feature-content">
+
+                  <div className="client-feature-icon">
+                    ✦
+                  </div>
+
+                  <div className="client-feature-line" />
+
+                  <p>
+                    Professional recruiting engagement
+                  </p>
+
+                </div>
+
+              </div>
 
             </div>
 
           </div>
 
-          {/* RIGHT CLIENTS */}
+          {/* RIGHT ARROW */}
 
-          <div className="clients-column clients-column-right">
-            {rightClients.map((client) => (
-              <button
-                className="client-tile"
-                key={client}
-                onMouseEnter={() =>
-                  setActiveClient(clients.indexOf(client))
-                }
-              >
-                <span className="client-tile-dot" />
-                <span>{client}</span>
-              </button>
-            ))}
-          </div>
+          <button
+            className="client-arrow client-arrow-right"
+            onClick={nextClient}
+            aria-label="Next client"
+          >
+            →
+          </button>
 
         </div>
 
-        {/* BOTTOM CLIENTS */}
+        {/* PROGRESS */}
 
-        <div className="clients-bottom-grid">
-          {bottomClients.map((client) => (
-            <button
-              className="client-tile"
-              key={client}
-              onMouseEnter={() =>
-                setActiveClient(clients.indexOf(client))
-              }
-            >
-              <span className="client-tile-dot" />
-              <span>{client}</span>
-            </button>
-          ))}
+        <div className="client-progress">
+
+          <span className="client-progress-current">
+            {String(activeClient + 1).padStart(2, "0")}
+          </span>
+
+          <div className="client-progress-bar">
+            <div
+              className="client-progress-fill"
+              style={{
+                width: `${((activeClient + 1) / clients.length) * 100}%`,
+              }}
+            />
+          </div>
+
+          <span className="client-progress-total">
+            {String(clients.length).padStart(2, "0")}
+          </span>
+
         </div>
 
       </div>
+
     </section>
   );
 }

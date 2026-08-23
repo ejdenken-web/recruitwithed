@@ -1,25 +1,27 @@
 /* =========================================================
-   RECRUITWITHED — CLIENT SPOTLIGHT
+   RECRUITWITHED — CLIENT CAROUSEL
    ========================================================= */
 
    .clients-section {
     position: relative;
-    padding: 90px 6% 85px;
+  
+    padding: 95px 6% 100px;
+  
     overflow: hidden;
   
     background:
       radial-gradient(
         circle at 50% 45%,
-        rgba(139, 92, 246, 0.13),
+        rgba(139, 92, 246, 0.14),
         transparent 30%
       ),
       radial-gradient(
-        circle at 15% 30%,
+        circle at 10% 50%,
         rgba(56, 189, 248, 0.08),
         transparent 28%
       ),
       radial-gradient(
-        circle at 85% 70%,
+        circle at 90% 50%,
         rgba(236, 72, 153, 0.08),
         transparent 28%
       ),
@@ -27,45 +29,45 @@
   }
   
   /* =========================================================
-     MOVING LIGHT
+     BACKGROUND LIGHTS
      ========================================================= */
   
   .clients-light {
     position: absolute;
   
-    width: 420px;
-    height: 420px;
+    width: 450px;
+    height: 450px;
   
     border-radius: 50%;
   
-    filter: blur(90px);
+    filter: blur(110px);
+  
+    opacity: 0.12;
   
     pointer-events: none;
   
-    opacity: 0.16;
-  
     animation:
       clientLightMove
-      12s
+      14s
       ease-in-out
       infinite
       alternate;
   }
   
   .clients-light-one {
-    top: 10%;
-    left: -180px;
+    left: -220px;
+    top: 20%;
   
     background: #38bdf8;
   }
   
   .clients-light-two {
-    right: -180px;
-    bottom: 0;
+    right: -220px;
+    bottom: 5%;
   
     background: #ec4899;
   
-    animation-delay: -5s;
+    animation-delay: -6s;
   }
   
   @keyframes clientLightMove {
@@ -74,7 +76,7 @@
     }
   
     to {
-      transform: translate3d(120px, -40px, 0);
+      transform: translate3d(130px, -50px, 0);
     }
   }
   
@@ -88,7 +90,8 @@
     z-index: 2;
   
     width: 100%;
-    max-width: 1250px;
+  
+    max-width: 1050px;
   
     margin: 0 auto;
   }
@@ -102,52 +105,34 @@
   
     justify-content: center;
   
-    margin-bottom: 45px;
+    margin-bottom: 55px;
   }
   
   /* =========================================================
-     SHOWCASE
+     CAROUSEL
      ========================================================= */
   
-  .clients-showcase {
+  .client-carousel {
     display: grid;
   
     grid-template-columns:
-      minmax(180px, 1fr)
-      minmax(320px, 430px)
-      minmax(180px, 1fr);
+      70px
+      minmax(0, 1fr)
+      70px;
   
     align-items: center;
   
-    gap: 30px;
+    gap: 20px;
   }
   
   /* =========================================================
-     CLIENT COLUMNS
+     SLIDE AREA
      ========================================================= */
   
-  .clients-column {
-    display: flex;
-  
-    flex-direction: column;
-  
-    gap: 10px;
-  }
-  
-  .clients-column-left {
-    align-items: flex-end;
-  }
-  
-  .clients-column-right {
-    align-items: flex-start;
-  }
-  
-  /* =========================================================
-     CLIENT TILE
-     ========================================================= */
-  
-  .client-tile {
+  .client-slide-area {
     position: relative;
+  
+    min-height: 350px;
   
     display: flex;
   
@@ -155,98 +140,300 @@
   
     justify-content: center;
   
-    gap: 9px;
+    overflow: hidden;
+  }
   
-    width: 175px;
-    min-width: 175px;
+  /* =========================================================
+     SLIDE
+     ========================================================= */
   
-    height: 42px;
+  .client-slide {
+    width: 100%;
   
-    padding: 0 14px;
+    max-width: 620px;
   
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+  }
   
-    border-radius: 12px;
+  .client-slide-right {
+    animation:
+      clientSlideRight
+      0.55s
+      cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .client-slide-left {
+    animation:
+      clientSlideLeft
+      0.55s
+      cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  @keyframes clientSlideRight {
+    from {
+      opacity: 0;
+  
+      transform:
+        translateX(80px)
+        scale(0.96);
+    }
+  
+    to {
+      opacity: 1;
+  
+      transform:
+        translateX(0)
+        scale(1);
+    }
+  }
+  
+  @keyframes clientSlideLeft {
+    from {
+      opacity: 0;
+  
+      transform:
+        translateX(-80px)
+        scale(0.96);
+    }
+  
+    to {
+      opacity: 1;
+  
+      transform:
+        translateX(0)
+        scale(1);
+    }
+  }
+  
+  /* =========================================================
+     CLIENT NAME
+     ========================================================= */
+  
+  .client-name {
+    margin: 0 0 24px;
+  
+    color: #ffffff;
+  
+    font-size: clamp(28px, 4vw, 48px);
+  
+    line-height: 1.1;
+  
+    font-weight: 800;
+  
+    letter-spacing: -0.035em;
+  
+    text-shadow:
+      0 0 30px rgba(167, 139, 250, 0.15);
+  }
+  
+  /* =========================================================
+     FEATURE CARD
+     ========================================================= */
+  
+  .client-feature-card {
+    position: relative;
+  
+    width: 100%;
+  
+    height: 230px;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    overflow: hidden;
+  
+    border-radius: 28px;
+  
+    border: 1px solid rgba(167, 139, 250, 0.18);
+  
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.075),
+        rgba(255, 255, 255, 0.018)
+      );
+  
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 25px 65px rgba(0, 0, 0, 0.25),
+      0 0 50px rgba(139, 92, 246, 0.08);
+  
+    backdrop-filter: blur(18px);
+  
+    -webkit-backdrop-filter: blur(18px);
+  }
+  
+  /* =========================================================
+     CARD LIGHT
+     ========================================================= */
+  
+  .client-feature-glow {
+    position: absolute;
+  
+    width: 300px;
+    height: 300px;
+  
+    border-radius: 50%;
+  
+    background:
+      radial-gradient(
+        circle,
+        rgba(139, 92, 246, 0.18),
+        rgba(236, 72, 153, 0.07),
+        transparent 70%
+      );
+  
+    filter: blur(10px);
+  
+    animation:
+      featureGlow
+      5s
+      ease-in-out
+      infinite
+      alternate;
+  }
+  
+  @keyframes featureGlow {
+    from {
+      transform: translate(-70px, 10px) scale(0.9);
+    }
+  
+    to {
+      transform: translate(70px, -10px) scale(1.1);
+    }
+  }
+  
+  /* =========================================================
+     CARD CONTENT
+     ========================================================= */
+  
+  .client-feature-content {
+    position: relative;
+  
+    z-index: 2;
+  
+    display: flex;
+  
+    flex-direction: column;
+  
+    align-items: center;
+  }
+  
+  /* =========================================================
+     ICON
+     ========================================================= */
+  
+  .client-feature-icon {
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    width: 58px;
+    height: 58px;
+  
+    margin-bottom: 18px;
+  
+    border-radius: 18px;
+  
+    color: #ffffff;
+  
+    font-size: 24px;
   
     background:
       linear-gradient(
         135deg,
-        rgba(255, 255, 255, 0.055),
-        rgba(255, 255, 255, 0.018)
+        rgba(56, 189, 248, 0.18),
+        rgba(139, 92, 246, 0.22),
+        rgba(236, 72, 153, 0.18)
       );
   
-    color: #aeb8c7;
+    border: 1px solid rgba(167, 139, 250, 0.25);
   
-    font-family: inherit;
+    box-shadow:
+      0 0 30px rgba(139, 92, 246, 0.15);
+  }
+  
+  /* =========================================================
+     LINE
+     ========================================================= */
+  
+  .client-feature-line {
+    width: 80px;
+  
+    height: 1px;
+  
+    margin-bottom: 15px;
+  
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(167, 139, 250, 0.65),
+        transparent
+      );
+  }
+  
+  /* =========================================================
+     DESCRIPTION
+     ========================================================= */
+  
+  .client-feature-content p {
+    margin: 0;
+  
+    color: #94a3b8;
   
     font-size: 11px;
   
-    font-weight: 650;
+    letter-spacing: 0.04em;
+  }
   
-    line-height: 1;
+  /* =========================================================
+     ARROWS
+     ========================================================= */
   
-    white-space: nowrap;
+  .client-arrow {
+    width: 58px;
+    height: 58px;
   
-    overflow: hidden;
+    display: flex;
   
-    text-overflow: ellipsis;
+    align-items: center;
+  
+    justify-content: center;
+  
+    border-radius: 50%;
+  
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  
+    background:
+      rgba(255, 255, 255, 0.035);
+  
+    color: #cbd5e1;
+  
+    font-family: inherit;
+  
+    font-size: 25px;
   
     cursor: pointer;
-  
-    box-sizing: border-box;
-  
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.035),
-      0 8px 22px rgba(0, 0, 0, 0.12);
   
     backdrop-filter: blur(12px);
   
     -webkit-backdrop-filter: blur(12px);
   
     transition:
+      transform 0.3s ease,
       color 0.3s ease,
       border-color 0.3s ease,
       background 0.3s ease,
-      box-shadow 0.3s ease,
-      transform 0.3s ease;
+      box-shadow 0.3s ease;
   }
   
-  /* =========================================================
-     CONTROLLED SIZE VARIATION
-     ========================================================= */
-  
-  .clients-column .client-tile:nth-child(3n + 1) {
-    width: 155px;
-    min-width: 155px;
-  }
-  
-  .clients-column .client-tile:nth-child(3n + 2) {
-    width: 175px;
-    min-width: 175px;
-  }
-  
-  .clients-column .client-tile:nth-child(3n) {
-    width: 205px;
-    min-width: 205px;
-  }
-  
-  /* =========================================================
-     LEFT / RIGHT ALIGNMENT
-     ========================================================= */
-  
-  .clients-column-left .client-tile {
-    transform-origin: right center;
-  }
-  
-  .clients-column-right .client-tile {
-    transform-origin: left center;
-  }
-  
-  /* =========================================================
-     HOVER
-     ========================================================= */
-  
-  .client-tile:hover {
+  .client-arrow:hover {
     color: #ffffff;
   
     border-color:
@@ -256,341 +443,172 @@
       linear-gradient(
         135deg,
         rgba(56, 189, 248, 0.1),
-        rgba(139, 92, 246, 0.14),
-        rgba(236, 72, 153, 0.07)
+        rgba(139, 92, 246, 0.15),
+        rgba(236, 72, 153, 0.08)
       );
   
     box-shadow:
-      0 12px 30px rgba(0, 0, 0, 0.22),
-      0 0 24px rgba(139, 92, 246, 0.1);
+      0 0 25px rgba(139, 92, 246, 0.15);
   
-    transform: scale(1.04);
+    transform: scale(1.1);
+  }
+  
+  .client-arrow:active {
+    transform: scale(0.95);
   }
   
   /* =========================================================
-     DOT
+     PROGRESS
      ========================================================= */
   
-  .client-tile-dot {
-    width: 5px;
-    height: 5px;
-  
-    flex-shrink: 0;
-  
-    border-radius: 50%;
-  
-    background: #64748b;
-  
-    transition:
-      background 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-  
-  .client-tile:hover .client-tile-dot {
-    background: #a78bfa;
-  
-    box-shadow:
-      0 0 9px rgba(167, 139, 250, 0.9);
-  }
-  
-  /* =========================================================
-     CENTER SPOTLIGHT
-     ========================================================= */
-  
-  .client-spotlight {
-    position: relative;
-  
+  .client-progress {
     display: flex;
   
     align-items: center;
   
     justify-content: center;
   
-    min-height: 310px;
+    gap: 12px;
   
-    border-radius: 32px;
+    margin-top: 35px;
+  }
   
-    background:
-      linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.075),
-        rgba(255, 255, 255, 0.018)
-      );
+  .client-progress-current,
+  .client-progress-total {
+    color: #64748b;
   
-    border: 1px solid rgba(167, 139, 250, 0.18);
+    font-size: 10px;
   
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.05),
-      0 25px 70px rgba(0, 0, 0, 0.25),
-      0 0 55px rgba(139, 92, 246, 0.09);
+    font-weight: 700;
   
-    backdrop-filter: blur(18px);
+    letter-spacing: 0.08em;
+  }
   
-    -webkit-backdrop-filter: blur(18px);
+  .client-progress-current {
+    color: #a78bfa;
+  }
+  
+  .client-progress-bar {
+    position: relative;
+  
+    width: 180px;
+  
+    height: 2px;
   
     overflow: hidden;
-  }
   
-  /* =========================================================
-     SPOTLIGHT GLOW
-     ========================================================= */
-  
-  .client-spotlight::before {
-    content: "";
-  
-    position: absolute;
-  
-    inset: -50%;
+    border-radius: 999px;
   
     background:
-      conic-gradient(
-        from 0deg,
-        transparent,
-        rgba(56, 189, 248, 0.12),
-        transparent,
-        rgba(236, 72, 153, 0.1),
-        transparent
-      );
-  
-    animation:
-      spotlightRotate
-      12s
-      linear
-      infinite;
+      rgba(255, 255, 255, 0.08);
   }
   
-  @keyframes spotlightRotate {
-    to {
-      transform: rotate(360deg);
-    }
-  }
+  .client-progress-fill {
+    height: 100%;
   
-  /* =========================================================
-     RINGS
-     ========================================================= */
-  
-  .spotlight-ring {
-    position: absolute;
-  
-    border-radius: 50%;
-  
-    border: 1px solid rgba(167, 139, 250, 0.08);
-  
-    pointer-events: none;
-  }
-  
-  .spotlight-ring-one {
-    width: 250px;
-    height: 250px;
-  }
-  
-  .spotlight-ring-two {
-    width: 340px;
-    height: 340px;
-  
-    border-color:
-      rgba(56, 189, 248, 0.05);
-  }
-  
-  /* =========================================================
-     SPOTLIGHT CONTENT
-     ========================================================= */
-  
-  .spotlight-content {
-    position: relative;
-  
-    z-index: 2;
-  
-    text-align: center;
-  
-    padding: 30px;
-  }
-  
-  .spotlight-icon {
-    display: flex;
-  
-    align-items: center;
-  
-    justify-content: center;
-  
-    width: 52px;
-    height: 52px;
-  
-    margin: 0 auto 18px;
-  
-    border-radius: 16px;
-  
-    color: #ffffff;
-  
-    font-size: 22px;
+    border-radius: inherit;
   
     background:
       linear-gradient(
-        135deg,
-        rgba(56, 189, 248, 0.2),
-        rgba(139, 92, 246, 0.22),
-        rgba(236, 72, 153, 0.16)
+        90deg,
+        #38bdf8,
+        #8b5cf6,
+        #ec4899
       );
   
-    border: 1px solid rgba(167, 139, 250, 0.25);
-  
-    box-shadow:
-      0 0 30px rgba(139, 92, 246, 0.15);
-  }
-  
-  .spotlight-content h2 {
-    margin: 0;
-  
-    color: #ffffff;
-  
-    font-size: clamp(22px, 3vw, 32px);
-  
-    line-height: 1.15;
-  
-    font-weight: 800;
-  
-    letter-spacing: -0.025em;
-  
-    animation:
-      spotlightText
-      0.6s
-      ease;
-  }
-  
-  @keyframes spotlightText {
-    from {
-      opacity: 0;
-  
-      transform:
-        translateY(8px)
-        scale(0.97);
-    }
-  
-    to {
-      opacity: 1;
-  
-      transform:
-        translateY(0)
-        scale(1);
-    }
+    transition:
+      width 0.5s
+      cubic-bezier(0.22, 1, 0.36, 1);
   }
   
   /* =========================================================
-     BOTTOM CLIENTS
+     TABLET
      ========================================================= */
   
-  .clients-bottom-grid {
-    display: flex;
+  @media (max-width: 800px) {
+    .clients-section {
+      padding: 75px 24px 80px;
+    }
   
-    justify-content: center;
+    .client-carousel {
+      grid-template-columns:
+        55px
+        minmax(0, 1fr)
+        55px;
   
-    flex-wrap: wrap;
+      gap: 12px;
+    }
   
-    gap: 10px;
+    .client-arrow {
+      width: 48px;
+      height: 48px;
   
-    margin-top: 25px;
-  }
+      font-size: 21px;
+    }
   
-  .clients-bottom-grid .client-tile {
-    width: 175px;
-    min-width: 175px;
-  }
-  
-  .clients-bottom-grid .client-tile:nth-child(3n + 1) {
-    width: 155px;
-    min-width: 155px;
-  }
-  
-  .clients-bottom-grid .client-tile:nth-child(3n) {
-    width: 205px;
-    min-width: 205px;
+    .client-feature-card {
+      height: 210px;
+    }
   }
   
   /* =========================================================
      MOBILE
      ========================================================= */
   
-  @media (max-width: 900px) {
-    .clients-section {
-      padding: 70px 20px;
-    }
-  
-    .clients-showcase {
-      grid-template-columns: 1fr;
-  
-      gap: 25px;
-    }
-  
-    .client-spotlight {
-      order: -1;
-  
-      min-height: 260px;
-    }
-  
-    .clients-column-left,
-    .clients-column-right {
-      align-items: center;
-  
-      display: grid;
-  
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-  
-      justify-items: center;
-    }
-  
-    .clients-column .client-tile,
-    .clients-bottom-grid .client-tile {
-      width: 100%;
-      min-width: 0;
-    }
-  
-    .client-tile {
-      max-width: 100%;
-    }
-  }
-  
-  /* =========================================================
-     SMALL MOBILE
-     ========================================================= */
-  
   @media (max-width: 550px) {
     .clients-section {
-      padding: 60px 16px;
+      padding: 65px 16px 70px;
     }
   
     .clients-header {
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
   
-    .client-spotlight {
-      min-height: 230px;
+    .client-carousel {
+      grid-template-columns:
+        42px
+        minmax(0, 1fr)
+        42px;
   
-      border-radius: 25px;
+      gap: 7px;
     }
   
-    .clients-column-left,
-    .clients-column-right {
-      grid-template-columns: 1fr;
+    .client-slide-area {
+      min-height: 300px;
     }
   
-    .spotlight-content {
-      padding: 22px;
+    .client-name {
+      font-size: 25px;
+  
+      margin-bottom: 18px;
     }
   
-    .spotlight-content h2 {
-      font-size: 23px;
+    .client-feature-card {
+      height: 190px;
+  
+      border-radius: 22px;
     }
   
-    .clients-bottom-grid {
-      display: grid;
+    .client-arrow {
+      width: 40px;
+      height: 40px;
   
-      grid-template-columns: 1fr 1fr;
+      font-size: 18px;
     }
   
-    .clients-bottom-grid .client-tile {
-      width: 100%;
-      min-width: 0;
+    .client-feature-icon {
+      width: 50px;
+      height: 50px;
+  
+      font-size: 21px;
+    }
+  
+    .client-progress {
+      margin-top: 25px;
+    }
+  
+    .client-progress-bar {
+      width: 120px;
     }
   }
   
@@ -600,8 +618,12 @@
   
   @media (prefers-reduced-motion: reduce) {
     .clients-light,
-    .client-spotlight::before,
-    .spotlight-content h2 {
+    .client-feature-glow,
+    .client-slide {
       animation: none;
+    }
+  
+    .client-progress-fill {
+      transition: none;
     }
   }
