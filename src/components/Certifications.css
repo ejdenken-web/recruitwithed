@@ -1,5 +1,5 @@
 /* =========================================================
-   RECRUITWITHED — FLOATING CERTIFICATIONS
+   RECRUITWITHED — CERTIFICATIONS
    ========================================================= */
 
    .certifications-section {
@@ -16,10 +16,6 @@
     text-align: center;
   }
   
-  /* =========================================================
-     HEADER
-     ========================================================= */
-  
   .certifications-intro {
     max-width: 680px;
     margin: 18px auto 0;
@@ -34,44 +30,36 @@
   
   .floating-certification-stage {
     position: relative;
-  
     width: 100%;
     max-width: 1100px;
-  
     min-height: 470px;
-  
     margin: 20px auto 0;
   }
   
   /* =========================================================
-     PROVIDER BUTTONS
+     PROVIDERS
      ========================================================= */
   
   .floating-provider {
     position: absolute;
-  
     z-index: 10;
   
     margin: 0;
     padding: 8px 4px;
   
     border: 0;
-  
     background: transparent;
   
     color: #94a3b8;
   
     font-family: inherit;
-  
     font-size: 14px;
     font-weight: 700;
   
     line-height: 1;
-  
     white-space: nowrap;
   
     cursor: pointer;
-  
     opacity: 0.8;
   
     transition:
@@ -81,29 +69,9 @@
       transform 0.25s ease;
   }
   
-  /* =========================================================
-     HOVER — STRONG VISUAL RESPONSE
-     ========================================================= */
-  
-  .floating-provider:hover {
-    color: #ffffff !important;
-  
-    opacity: 1;
-  
-    text-shadow:
-      0 0 8px rgba(167, 139, 250, 0.95),
-      0 0 18px rgba(139, 92, 246, 0.75);
-  
-    transform: scale(1.15) !important;
-  }
-  
-  /* =========================================================
-     KEYBOARD FOCUS
-     ========================================================= */
-  
+  .floating-provider:hover,
   .floating-provider:focus-visible {
     color: #ffffff !important;
-  
     opacity: 1;
   
     text-shadow:
@@ -115,13 +83,8 @@
     outline: none;
   }
   
-  /* =========================================================
-     ACTIVE PROVIDER
-     ========================================================= */
-  
   .floating-provider[data-active="true"] {
     color: #a78bfa;
-  
     opacity: 1;
   
     text-shadow:
@@ -139,66 +102,48 @@
   }
   
   /* =========================================================
-     PROVIDER POSITIONS
+     BALANCED PROVIDER POSITIONS
      ========================================================= */
   
   .provider-one {
-    top: 35px;
-    left: 18%;
-  }
-  
-  .provider-two {
-    top: 105px;
-    right: 18%;
-  }
-  
-  .provider-three {
-    top: 225px;
-    left: 7%;
-  }
-  
-  .provider-four {
-    top: 220px;
-    right: 7%;
-  }
-  
-  .provider-five {
-    bottom: 55px;
-    left: 22%;
-  }
-  
-  .provider-six {
-    bottom: 45px;
-    right: 21%;
-  }
-  
-  /* =========================================================
-     SUBTLE FLOATING EFFECT
-     ========================================================= */
-  
-  .provider-one {
+    top: 70px;
+    left: 16%;
     animation: float-one 5s ease-in-out infinite;
   }
   
   .provider-two {
+    top: 105px;
+    right: 17%;
     animation: float-two 5.5s ease-in-out infinite;
   }
   
   .provider-three {
+    top: 235px;
+    left: 9%;
     animation: float-three 6s ease-in-out infinite;
   }
   
   .provider-four {
+    top: 230px;
+    right: 9%;
     animation: float-four 5.2s ease-in-out infinite;
   }
   
   .provider-five {
+    bottom: 95px;
+    left: 18%;
     animation: float-five 5.8s ease-in-out infinite;
   }
   
   .provider-six {
+    bottom: 85px;
+    right: 18%;
     animation: float-six 5.3s ease-in-out infinite;
   }
+  
+  /* =========================================================
+     FLOATING MOTION
+     ========================================================= */
   
   @keyframes float-one {
     0%,
@@ -207,7 +152,7 @@
     }
   
     50% {
-      margin-top: -8px;
+      margin-top: -10px;
     }
   }
   
@@ -218,7 +163,7 @@
     }
   
     50% {
-      margin-top: 9px;
+      margin-top: 10px;
     }
   }
   
@@ -229,7 +174,7 @@
     }
   
     50% {
-      margin-top: -7px;
+      margin-top: -9px;
     }
   }
   
@@ -251,7 +196,7 @@
     }
   
     50% {
-      margin-top: 8px;
+      margin-top: -8px;
     }
   }
   
@@ -262,17 +207,16 @@
     }
   
     50% {
-      margin-top: -8px;
+      margin-top: 8px;
     }
   }
   
   /* =========================================================
-     CENTER CERTIFICATION CONTENT
+     CENTER
      ========================================================= */
   
   .certification-center {
     position: absolute;
-  
     z-index: 3;
   
     top: 50%;
@@ -290,8 +234,6 @@
   
     font-size: 26px;
     font-weight: 800;
-  
-    letter-spacing: -0.4px;
   }
   
   /* =========================================================
@@ -300,7 +242,6 @@
   
   .certification-list {
     display: flex;
-  
     flex-wrap: wrap;
   
     align-items: center;
@@ -313,7 +254,6 @@
     color: #cbd5e1;
   
     font-size: 12px;
-  
     line-height: 1.5;
   
     transition:
@@ -323,7 +263,6 @@
   
   .floating-certification:hover {
     color: #ffffff;
-  
     transform: translateY(-3px);
   }
   
@@ -335,7 +274,6 @@
     margin-top: 25px;
   
     display: flex;
-  
     align-items: center;
     justify-content: center;
   
@@ -347,14 +285,12 @@
     height: 36px;
   
     display: flex;
-  
     align-items: center;
     justify-content: center;
   
     padding: 0;
   
     border: 1px solid rgba(255, 255, 255, 0.08);
-  
     border-radius: 50%;
   
     background: transparent;
@@ -375,11 +311,9 @@
   .certification-arrow:hover {
     color: #ffffff;
   
-    border-color:
-      rgba(139, 92, 246, 0.45);
+    border-color: rgba(139, 92, 246, 0.45);
   
-    background:
-      rgba(139, 92, 246, 0.08);
+    background: rgba(139, 92, 246, 0.08);
   
     transform: scale(1.08);
   }
@@ -390,9 +324,7 @@
   
   .certification-dots {
     display: flex;
-  
     align-items: center;
-  
     gap: 6px;
   }
   
@@ -403,7 +335,6 @@
     padding: 0;
   
     border: 0;
-  
     border-radius: 50%;
   
     background: #334155;
@@ -421,9 +352,7 @@
   
   .certification-dot.active {
     width: 20px;
-  
     border-radius: 999px;
-  
     background: #8b5cf6;
   }
   
