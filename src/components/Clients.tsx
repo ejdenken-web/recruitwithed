@@ -51,7 +51,8 @@ function Clients() {
           </span>
 
           <h2>
-            Organizations I've <span>Supported.</span>
+            Organizations I've{" "}
+            <span>Supported.</span>
           </h2>
 
           <p>
@@ -61,65 +62,32 @@ function Clients() {
           </p>
         </div>
 
-        <div className="clients-wall">
-
-          <div className="clients-wall-line line-one" />
-          <div className="clients-wall-line line-two" />
-          <div className="clients-wall-line line-three" />
-
-          {clients.map((client, index) => {
-            const isActive = activeClient === client;
-
-            return (
-              <button
-                type="button"
-                key={client}
-                className={`client-tile client-tile-${index + 1}${
-                  isActive ? " selected" : ""
-                }`}
-                onClick={() =>
-                  setActiveClient(
-                    isActive ? null : client
-                  )
-                }
-              >
-                <span className="client-index">
-                  {(index + 1)
-                    .toString()
-                    .padStart(2, "0")}
-                </span>
-
-                <span className="client-tile-name">
-                  {client}
-                </span>
-
-                <span className="client-arrow">
-                  ↗
-                </span>
-              </button>
-            );
-          })}
-
+        <div className="clients-cloud">
+          {clients.map((client, index) => (
+            <button
+              type="button"
+              key={client}
+              className={`client-orbit client-orbit-${index + 1}${
+                activeClient === client ? " selected" : ""
+              }`}
+              onClick={() =>
+                setActiveClient(
+                  activeClient === client ? null : client
+                )
+              }
+            >
+              <span className="client-orbit-dot" />
+              <span>{client}</span>
+            </button>
+          ))}
         </div>
 
-        <div
-          className={`client-focus ${
-            activeClient ? "visible" : ""
-          }`}
-        >
-          <span>SELECTED ORGANIZATION</span>
-
-          <strong>
-            {activeClient || "Explore the organizations"}
-          </strong>
-
-          <button
-            type="button"
-            onClick={() => setActiveClient(null)}
-            aria-label="Clear selected organization"
-          >
-            ×
-          </button>
+        <div className="clients-footer">
+          <span>
+            {activeClient
+              ? `Selected: ${activeClient}`
+              : "Select an organization"}
+          </span>
         </div>
 
       </div>

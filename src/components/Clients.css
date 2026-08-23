@@ -4,45 +4,48 @@
 
    .clients-section {
     position: relative;
-    padding: 75px 0 55px;
+    padding: 70px 6% 75px;
     background: #111827;
     overflow: hidden;
   }
   
   /* =========================================================
-     BACKGROUND GLOW
+     BACKGROUND
      ========================================================= */
   
   .clients-section::before {
     content: "";
     position: absolute;
-    top: 48%;
+    width: 520px;
+    height: 520px;
     left: 50%;
-    width: 680px;
-    height: 680px;
+    top: 52%;
     transform: translate(-50%, -50%);
+  
     border-radius: 50%;
   
     background: radial-gradient(
       circle,
-      rgba(139, 92, 246, 0.09),
+      rgba(139, 92, 246, 0.1),
       transparent 68%
     );
   
+    filter: blur(10px);
+  
     pointer-events: none;
   
-    animation: clientsGlow 7s ease-in-out infinite;
+    animation: clientsPulse 6s ease-in-out infinite;
   }
   
-  @keyframes clientsGlow {
+  @keyframes clientsPulse {
     0%,
     100% {
-      transform: translate(-50%, -50%) scale(0.92);
-      opacity: 0.55;
+      transform: translate(-50%, -50%) scale(0.85);
+      opacity: 0.5;
     }
   
     50% {
-      transform: translate(-50%, -50%) scale(1.08);
+      transform: translate(-50%, -50%) scale(1.12);
       opacity: 1;
     }
   }
@@ -67,15 +70,15 @@
   
   .clients-header {
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 35px;
   }
   
   .clients-header h2 {
-    margin: 18px 0 12px;
+    margin: 18px 0 14px;
   
     color: #f8fafc;
   
-    font-size: clamp(32px, 4vw, 50px);
+    font-size: clamp(34px, 4.5vw, 52px);
     line-height: 1.05;
     font-weight: 800;
   }
@@ -88,17 +91,17 @@
       #ec4899
     );
   
+    background-size: 200% auto;
+  
     -webkit-background-clip: text;
     background-clip: text;
   
     color: transparent;
   
-    background-size: 200% auto;
-  
-    animation: clientsTitleGradient 5s ease-in-out infinite;
+    animation: clientsGradient 5s ease-in-out infinite;
   }
   
-  @keyframes clientsTitleGradient {
+  @keyframes clientsGradient {
     0%,
     100% {
       background-position: 0% 50%;
@@ -110,7 +113,7 @@
   }
   
   .clients-header p {
-    max-width: 680px;
+    max-width: 650px;
   
     margin: 0 auto;
   
@@ -121,79 +124,134 @@
   }
   
   /* =========================================================
-     CLIENT FIELD
+     CLIENT CLOUD
      ========================================================= */
   
-  .clients-marquee {
+  .clients-cloud {
     position: relative;
   
-    width: 100%;
-    height: 405px;
+    display: grid;
   
-    overflow: hidden;
-  }
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
   
-  .clients-track {
-    position: relative;
+    gap: 18px;
   
-    width: 100%;
-    height: 100%;
+    max-width: 1050px;
   
-    display: block;
+    margin: 0 auto;
   }
   
   /* =========================================================
-     CLIENT ITEMS
+     CLIENT BUTTON
      ========================================================= */
   
-  .client-item {
-    position: absolute;
+  .client-orbit {
+    position: relative;
+  
+    min-height: 58px;
   
     display: flex;
+  
     align-items: center;
+    justify-content: center;
   
-    gap: 7px;
+    gap: 9px;
   
-    width: max-content;
-    min-width: 0;
-  
-    padding: 8px 13px;
+    padding: 14px 16px;
   
     border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 999px;
   
-    background: rgba(21, 27, 36, 0.48);
+    border-radius: 14px;
   
-    color: #64748b;
+    background: rgba(255, 255, 255, 0.025);
+  
+    color: #94a3b8;
+  
+    font-family: inherit;
   
     font-size: 12px;
+  
     font-weight: 700;
   
-    white-space: nowrap;
+    line-height: 1.3;
+  
+    text-align: center;
   
     cursor: pointer;
+  
+    overflow: hidden;
   
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   
     transition:
-      color 0.3s ease,
-      border-color 0.3s ease,
-      background 0.3s ease,
-      box-shadow 0.3s ease,
-      transform 0.3s ease;
-  
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
+      transform 0.35s ease,
+      color 0.35s ease,
+      border-color 0.35s ease,
+      background 0.35s ease,
+      box-shadow 0.35s ease;
   }
   
   /* =========================================================
-     CLIENT DOT
+     MOVING LIGHT
      ========================================================= */
   
-  .client-dot {
-    width: 5px;
-    height: 5px;
+  .client-orbit::before {
+    content: "";
+  
+    position: absolute;
+  
+    width: 100px;
+    height: 100px;
+  
+    left: -120px;
+    top: -60px;
+  
+    border-radius: 50%;
+  
+    background: radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.22),
+      transparent 70%
+    );
+  
+    transition:
+      left 0.8s ease,
+      top 0.8s ease;
+  }
+  
+  .client-orbit::after {
+    content: "";
+  
+    position: absolute;
+  
+    inset: 0;
+  
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.055),
+      transparent 70%
+    );
+  
+    transform: translateX(-120%);
+  
+    transition: transform 0.8s ease;
+  
+    pointer-events: none;
+  }
+  
+  /* =========================================================
+     DOT
+     ========================================================= */
+  
+  .client-orbit-dot {
+    position: relative;
+    z-index: 2;
+  
+    width: 6px;
+    height: 6px;
   
     flex-shrink: 0;
   
@@ -207,450 +265,179 @@
       transform 0.3s ease;
   }
   
-  .client-item:hover .client-dot {
-    background: #a78bfa;
+  /* =========================================================
+     TEXT
+     ========================================================= */
   
-    box-shadow:
-      0 0 10px rgba(139, 92, 246, 0.9);
-  
-    transform: scale(1.5);
+  .client-orbit span:last-child {
+    position: relative;
+    z-index: 2;
   }
   
   /* =========================================================
      HOVER
      ========================================================= */
   
-  .client-item:hover {
-    z-index: 20;
-  
+  .client-orbit:hover {
     color: #ffffff;
   
-    border-color: rgba(167, 139, 250, 0.5);
+    border-color: rgba(167, 139, 250, 0.4);
   
-    background: rgba(139, 92, 246, 0.12);
-  
-    box-shadow:
-      0 0 20px rgba(139, 92, 246, 0.12),
-      0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(139, 92, 246, 0.07);
   
     transform:
-      scale(1.12)
-      translateY(-4px);
+      translateY(-6px)
+      scale(1.025);
+  
+    box-shadow:
+      0 14px 35px rgba(0, 0, 0, 0.22),
+      0 0 25px rgba(139, 92, 246, 0.08);
   }
   
-  /* =========================================================
-     CLIENT POSITIONS
-     ========================================================= */
-  
-  .client-item:nth-child(1) {
-    top: 6%;
-    left: 10%;
-    animation: clientFloat1 5s infinite;
-  }
-  
-  .client-item:nth-child(2) {
-    top: 4%;
-    left: 39%;
-    animation: clientFloat2 5.8s infinite;
-  }
-  
-  .client-item:nth-child(3) {
-    top: 9%;
-    left: 72%;
-    animation: clientFloat3 4.8s infinite;
-  }
-  
-  .client-item:nth-child(4) {
-    top: 17%;
-    left: 23%;
-    animation: clientFloat4 6.1s infinite;
-  }
-  
-  .client-item:nth-child(5) {
-    top: 18%;
-    left: 57%;
-    animation: clientFloat5 5.2s infinite;
-  }
-  
-  .client-item:nth-child(6) {
-    top: 26%;
-    left: 82%;
-    animation: clientFloat6 6.3s infinite;
-  }
-  
-  .client-item:nth-child(7) {
-    top: 29%;
-    left: 5%;
-    animation: clientFloat7 5.5s infinite;
-  }
-  
-  .client-item:nth-child(8) {
-    top: 30%;
-    left: 39%;
-    animation: clientFloat8 6s infinite;
-  }
-  
-  .client-item:nth-child(9) {
-    top: 36%;
-    left: 66%;
-    animation: clientFloat9 5.1s infinite;
-  }
-  
-  .client-item:nth-child(10) {
-    top: 41%;
-    left: 16%;
-    animation: clientFloat10 6.4s infinite;
-  }
-  
-  .client-item:nth-child(11) {
-    top: 43%;
-    left: 51%;
-    animation: clientFloat11 5.4s infinite;
-  }
-  
-  .client-item:nth-child(12) {
-    top: 46%;
-    left: 82%;
-    animation: clientFloat12 6.2s infinite;
-  }
-  
-  .client-item:nth-child(13) {
-    top: 52%;
-    left: 4%;
-    animation: clientFloat13 5.7s infinite;
-  }
-  
-  .client-item:nth-child(14) {
-    top: 53%;
-    left: 30%;
-    animation: clientFloat14 6.3s infinite;
-  }
-  
-  .client-item:nth-child(15) {
-    top: 55%;
-    left: 63%;
-    animation: clientFloat15 5.2s infinite;
-  }
-  
-  .client-item:nth-child(16) {
-    top: 61%;
-    left: 85%;
-    animation: clientFloat16 6.1s infinite;
-  }
-  
-  .client-item:nth-child(17) {
-    top: 64%;
-    left: 9%;
-    animation: clientFloat17 5.5s infinite;
-  }
-  
-  .client-item:nth-child(18) {
-    top: 65%;
-    left: 42%;
-    animation: clientFloat18 6.4s infinite;
-  }
-  
-  .client-item:nth-child(19) {
-    top: 68%;
+  .client-orbit:hover::before {
     left: 70%;
-    animation: clientFloat19 5.1s infinite;
+    top: 30%;
   }
   
-  .client-item:nth-child(20) {
-    top: 73%;
-    left: 20%;
-    animation: clientFloat20 6.2s infinite;
+  .client-orbit:hover::after {
+    transform: translateX(120%);
   }
   
-  .client-item:nth-child(21) {
-    top: 73%;
-    left: 53%;
-    animation: clientFloat21 5.6s infinite;
-  }
+  .client-orbit:hover .client-orbit-dot {
+    background: #a78bfa;
   
-  .client-item:nth-child(22) {
-    top: 77%;
-    left: 82%;
-    animation: clientFloat22 6.5s infinite;
-  }
+    box-shadow:
+      0 0 10px rgba(167, 139, 250, 0.9);
   
-  .client-item:nth-child(23) {
-    top: 81%;
-    left: 5%;
-    animation: clientFloat23 5.3s infinite;
-  }
-  
-  .client-item:nth-child(24) {
-    top: 82%;
-    left: 36%;
-    animation: clientFloat24 6.1s infinite;
-  }
-  
-  .client-item:nth-child(25) {
-    top: 84%;
-    left: 64%;
-    animation: clientFloat25 5.5s infinite;
-  }
-  
-  .client-item:nth-child(26) {
-    top: 11%;
-    left: 54%;
-    animation: clientFloat26 6.3s infinite;
-  }
-  
-  .client-item:nth-child(27) {
-    top: 24%;
-    left: 43%;
-    animation: clientFloat27 5.4s infinite;
-  }
-  
-  .client-item:nth-child(28) {
-    top: 35%;
-    left: 27%;
-    animation: clientFloat28 6.2s infinite;
-  }
-  
-  .client-item:nth-child(29) {
-    top: 47%;
-    left: 40%;
-    animation: clientFloat29 5.7s infinite;
-  }
-  
-  .client-item:nth-child(30) {
-    top: 58%;
-    left: 52%;
-    animation: clientFloat30 6.4s infinite;
-  }
-  
-  .client-item:nth-child(31) {
-    top: 70%;
-    left: 32%;
-    animation: clientFloat31 5.3s infinite;
-  }
-  
-  .client-item:nth-child(32) {
-    top: 15%;
-    left: 87%;
-    animation: clientFloat32 6.1s infinite;
-  }
-  
-  .client-item:nth-child(33) {
-    top: 72%;
-    left: 4%;
-    animation: clientFloat33 5.8s infinite;
-  }
-  
-  .client-item:nth-child(34) {
-    top: 82%;
-    left: 76%;
-    animation: clientFloat34 6.5s infinite;
+    transform: scale(1.4);
   }
   
   /* =========================================================
-     FLOATING MOTION
+     SELECTED
      ========================================================= */
   
-  @keyframes clientFloat1 {
+  .client-orbit.selected {
+    color: #ffffff;
+  
+    border-color: rgba(139, 92, 246, 0.6);
+  
+    background:
+      linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.14),
+        rgba(236, 72, 153, 0.06)
+      );
+  
+    box-shadow:
+      0 0 25px rgba(139, 92, 246, 0.12),
+      inset 0 0 25px rgba(139, 92, 246, 0.04);
+  
+    transform: translateY(-4px);
+  }
+  
+  .client-orbit.selected .client-orbit-dot {
+    background: #a78bfa;
+  
+    box-shadow:
+      0 0 12px rgba(167, 139, 250, 1);
+  }
+  
+  /* =========================================================
+     INDIVIDUAL FLOATING MOTION
+     ========================================================= */
+  
+  .client-orbit:nth-child(3n + 1) {
+    animation: clientFloatA 5.5s ease-in-out infinite;
+  }
+  
+  .client-orbit:nth-child(3n + 2) {
+    animation: clientFloatB 6.2s ease-in-out infinite;
+  }
+  
+  .client-orbit:nth-child(3n) {
+    animation: clientFloatC 5.8s ease-in-out infinite;
+  }
+  
+  @keyframes clientFloatA {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
     50% {
-      transform: translate(8px, -8px);
+      transform: translateY(-5px);
     }
   }
   
-  @keyframes clientFloat2 {
+  @keyframes clientFloatB {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
     50% {
-      transform: translate(-7px, 9px);
+      transform: translateY(6px);
     }
   }
   
-  @keyframes clientFloat3 {
+  @keyframes clientFloatC {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
     50% {
-      transform: translate(9px, -6px);
+      transform: translateY(-4px);
     }
   }
   
-  @keyframes clientFloat4 {
-    50% {
-      transform: translate(-8px, 8px);
-    }
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+  
+  .clients-footer {
+    display: flex;
+  
+    justify-content: center;
+  
+    margin-top: 30px;
   }
   
-  @keyframes clientFloat5 {
-    50% {
-      transform: translate(7px, -10px);
-    }
+  .clients-footer span {
+    padding: 8px 16px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  
+    border-radius: 999px;
+  
+    background: rgba(255, 255, 255, 0.025);
+  
+    color: #64748b;
+  
+    font-size: 11px;
+  
+    transition:
+      color 0.3s ease,
+      border-color 0.3s ease,
+      background 0.3s ease;
   }
   
-  @keyframes clientFloat6 {
-    50% {
-      transform: translate(-9px, 7px);
-    }
+  .clients-footer span:hover {
+    color: #cbd5e1;
+  
+    border-color: rgba(139, 92, 246, 0.25);
+  
+    background: rgba(139, 92, 246, 0.05);
   }
   
-  @keyframes clientFloat7 {
-    50% {
-      transform: translate(8px, 9px);
-    }
-  }
+  /* =========================================================
+     TABLET
+     ========================================================= */
   
-  @keyframes clientFloat8 {
-    50% {
-      transform: translate(-7px, -8px);
-    }
-  }
-  
-  @keyframes clientFloat9 {
-    50% {
-      transform: translate(10px, 6px);
-    }
-  }
-  
-  @keyframes clientFloat10 {
-    50% {
-      transform: translate(-8px, 9px);
-    }
-  }
-  
-  @keyframes clientFloat11 {
-    50% {
-      transform: translate(7px, -7px);
-    }
-  }
-  
-  @keyframes clientFloat12 {
-    50% {
-      transform: translate(-10px, 8px);
-    }
-  }
-  
-  @keyframes clientFloat13 {
-    50% {
-      transform: translate(8px, -9px);
-    }
-  }
-  
-  @keyframes clientFloat14 {
-    50% {
-      transform: translate(-7px, 7px);
-    }
-  }
-  
-  @keyframes clientFloat15 {
-    50% {
-      transform: translate(9px, 8px);
-    }
-  }
-  
-  @keyframes clientFloat16 {
-    50% {
-      transform: translate(-8px, -8px);
-    }
-  }
-  
-  @keyframes clientFloat17 {
-    50% {
-      transform: translate(7px, 10px);
-    }
-  }
-  
-  @keyframes clientFloat18 {
-    50% {
-      transform: translate(-9px, -7px);
-    }
-  }
-  
-  @keyframes clientFloat19 {
-    50% {
-      transform: translate(8px, 8px);
-    }
-  }
-  
-  @keyframes clientFloat20 {
-    50% {
-      transform: translate(-7px, -9px);
-    }
-  }
-  
-  @keyframes clientFloat21 {
-    50% {
-      transform: translate(10px, 7px);
-    }
-  }
-  
-  @keyframes clientFloat22 {
-    50% {
-      transform: translate(-8px, 8px);
-    }
-  }
-  
-  @keyframes clientFloat23 {
-    50% {
-      transform: translate(7px, -8px);
-    }
-  }
-  
-  @keyframes clientFloat24 {
-    50% {
-      transform: translate(-9px, 9px);
-    }
-  }
-  
-  @keyframes clientFloat25 {
-    50% {
-      transform: translate(8px, -7px);
-    }
-  }
-  
-  @keyframes clientFloat26 {
-    50% {
-      transform: translate(-7px, 10px);
-    }
-  }
-  
-  @keyframes clientFloat27 {
-    50% {
-      transform: translate(9px, -8px);
-    }
-  }
-  
-  @keyframes clientFloat28 {
-    50% {
-      transform: translate(-8px, 7px);
-    }
-  }
-  
-  @keyframes clientFloat29 {
-    50% {
-      transform: translate(7px, -9px);
-    }
-  }
-  
-  @keyframes clientFloat30 {
-    50% {
-      transform: translate(-10px, 8px);
-    }
-  }
-  
-  @keyframes clientFloat31 {
-    50% {
-      transform: translate(8px, 7px);
-    }
-  }
-  
-  @keyframes clientFloat32 {
-    50% {
-      transform: translate(-7px, -8px);
-    }
-  }
-  
-  @keyframes clientFloat33 {
-    50% {
-      transform: translate(9px, 8px);
-    }
-  }
-  
-  @keyframes clientFloat34 {
-    50% {
-      transform: translate(-8px, -7px);
+  @media (max-width: 1000px) {
+    .clients-cloud {
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
     }
   }
   
@@ -658,13 +445,13 @@
      MOBILE
      ========================================================= */
   
-  @media (max-width: 700px) {
+  @media (max-width: 650px) {
     .clients-section {
-      padding: 55px 0 45px;
+      padding: 55px 20px 60px;
     }
   
     .clients-header {
-      padding: 0 20px;
+      margin-bottom: 28px;
     }
   
     .clients-header h2 {
@@ -675,30 +462,28 @@
       font-size: 13px;
     }
   
-    .clients-marquee {
-      height: 560px;
+    .clients-cloud {
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+  
+      gap: 11px;
     }
   
-    .client-item {
+    .client-orbit {
+      min-height: 52px;
+  
+      padding: 10px 8px;
+  
       font-size: 10px;
-      padding: 6px 9px;
     }
   
-    .client-item:nth-child(odd) {
-      left: 5%;
+    .client-orbit-dot {
+      width: 5px;
+      height: 5px;
     }
   
-    .client-item:nth-child(even) {
-      left: auto;
-      right: 5%;
-    }
-  
-    .client-item:nth-child(23),
-    .client-item:nth-child(24),
-    .client-item:nth-child(25),
-    .client-item:nth-child(34) {
-      top: auto;
-      bottom: 5%;
+    .clients-footer {
+      margin-top: 24px;
     }
   }
   
@@ -707,15 +492,15 @@
      ========================================================= */
   
   @media (prefers-reduced-motion: reduce) {
-    .clients-section::before {
+    .clients-section::before,
+    .clients-header h2 span,
+    .client-orbit {
       animation: none;
     }
   
-    .client-item {
-      animation: none;
-    }
-  
-    .clients-header h2 span {
-      animation: none;
+    .client-orbit,
+    .client-orbit::before,
+    .client-orbit::after {
+      transition: none;
     }
   }
