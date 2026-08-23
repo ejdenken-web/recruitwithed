@@ -5,7 +5,7 @@ function TechStack() {
   const categories = [
     {
       title: "Languages & Core Technologies",
-      icon: "</>",
+      short: "CORE",
       skills: [
         "TypeScript",
         "JavaScript",
@@ -16,7 +16,7 @@ function TechStack() {
     },
     {
       title: "Frontend & Development",
-      icon: "⚡",
+      short: "FRONTEND",
       skills: [
         "React",
         "Vite",
@@ -26,7 +26,7 @@ function TechStack() {
     },
     {
       title: "AI-Assisted Development",
-      icon: "✦",
+      short: "AI",
       skills: [
         "ChatGPT",
         "Claude AI",
@@ -34,7 +34,7 @@ function TechStack() {
     },
     {
       title: "Development & Deployment",
-      icon: "⌘",
+      short: "DEVOPS",
       skills: [
         "Git",
         "GitHub",
@@ -46,11 +46,10 @@ function TechStack() {
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const toggleCategory = (index: number) => {
-    setActiveIndex((current) =>
-      current === index ? null : index
-    );
-  };
+  const activeCategory =
+    activeIndex === null
+      ? null
+      : categories[activeIndex];
 
   return (
     <section
@@ -65,93 +64,108 @@ function TechStack() {
           </span>
 
           <h2>
-            Technology & <br />
+            Technology &{" "}
             <span>Tools.</span>
           </h2>
 
           <p>
-            Click any category to reveal the technologies
-            and tools used to build, maintain, and deploy
-            modern digital experiences.
+            Click a technology area to explore the tools
+            behind RecruitWithEd.
           </p>
         </div>
 
-        <div className="tech-stack-orbit">
+        <div className="tech-interactive-stage">
 
-          <div className="tech-orbit-ring ring-one" />
-          <div className="tech-orbit-ring ring-two" />
+          <div className="tech-particle particle-one" />
+          <div className="tech-particle particle-two" />
+          <div className="tech-particle particle-three" />
+          <div className="tech-particle particle-four" />
+          <div className="tech-particle particle-five" />
+
+          <div className="tech-center">
+            <div className="tech-center-orbit" />
+
+            <div className="tech-center-content">
+              <span className="tech-center-label">
+                {activeCategory
+                  ? activeCategory.short
+                  : "TECH STACK"}
+              </span>
+
+              <strong>
+                {activeCategory
+                  ? activeCategory.title
+                  : "Explore"}
+              </strong>
+
+              <small>
+                {activeCategory
+                  ? "Technologies in use"
+                  : "Select a category"}
+              </small>
+            </div>
+          </div>
 
           {categories.map((category, index) => {
             const isActive = activeIndex === index;
 
             return (
-              <div
-                className={`tech-stack-card ${
+              <button
+                type="button"
+                key={category.title}
+                className={`tech-category tech-category-${index + 1} ${
                   isActive ? "active" : ""
                 }`}
-                key={category.title}
-                data-index={index}
+                onClick={() =>
+                  setActiveIndex(
+                    isActive ? null : index
+                  )
+                }
+                aria-pressed={isActive}
               >
-                <button
-                  type="button"
-                  className="tech-stack-trigger"
-                  onClick={() => toggleCategory(index)}
-                  aria-expanded={isActive}
-                >
-                  <span className="tech-card-icon">
-                    {category.icon}
-                  </span>
+                <span className="tech-category-dot" />
 
-                  <span className="tech-card-title">
-                    {category.title}
-                  </span>
+                <span className="tech-category-name">
+                  {category.title}
+                </span>
 
-                  <span
-                    className={`tech-card-arrow ${
-                      isActive ? "open" : ""
-                    }`}
-                  >
-                    +
-                  </span>
-                </button>
-
-                <div
-                  className={`tech-stack-reveal ${
-                    isActive ? "visible" : ""
-                  }`}
-                >
-                  <div className="tech-stack-list">
-                    {category.skills.map(
-                      (skill, skillIndex) => (
-                        <span
-                          className="tech-stack-item"
-                          key={skill}
-                          style={
-                            {
-                              "--item-delay": `${
-                                skillIndex * 70
-                              }ms`,
-                            } as React.CSSProperties
-                          }
-                        >
-                          <span className="tech-item-dot" />
-                          {skill}
-                        </span>
-                      )
-                    )}
-                  </div>
-                </div>
-              </div>
+                <span className="tech-category-short">
+                  {category.short}
+                </span>
+              </button>
             );
           })}
+
+          {activeCategory && (
+            <div className="tech-floating-skills">
+              {activeCategory.skills.map(
+                (skill, index) => (
+                  <span
+                    key={skill}
+                    className="tech-floating-skill"
+                    style={
+                      {
+                        "--skill-delay": `${
+                          index * 90
+                        }ms`,
+                      } as React.CSSProperties
+                    }
+                  >
+                    <span className="skill-dot" />
+                    {skill}
+                  </span>
+                )
+              )}
+            </div>
+          )}
+
         </div>
 
-        <div className="tech-stack-status">
-          <span className="status-pulse" />
-
-          {activeIndex === null
-            ? "SELECT A CATEGORY"
-            : `${categories[activeIndex].title.toUpperCase()} SELECTED`}
+        <div className="tech-interaction-hint">
+          <span className="hint-dot" />
+          {activeCategory
+            ? `Viewing ${activeCategory.title}`
+            : "Select any category"}
         </div>
 
       </div>

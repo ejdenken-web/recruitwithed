@@ -1,442 +1,666 @@
-.tech-stack-section {
-  position: relative;
-  padding: 90px 6%;
-  background: #0d1117;
-  overflow: hidden;
-}
-
-.tech-stack-section::before {
-  content: "";
-  position: absolute;
-  inset: -30%;
-  background:
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(139, 92, 246, 0.08),
-      transparent 32%
-    );
-  animation: techAtmosphere 9s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes techAtmosphere {
-  0%,
-  100% {
-    transform: scale(1) rotate(0deg);
-    opacity: 0.7;
-  }
-
-  50% {
-    transform: scale(1.2) rotate(8deg);
-    opacity: 1;
-  }
-}
-
-.tech-stack-container {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-}
-
-.tech-stack-header {
-  max-width: 720px;
-  margin: 0 auto 60px;
-  text-align: center;
-}
-
-.tech-stack-header h2 {
-  margin: 18px 0;
-  color: #f8fafc;
-  font-size: clamp(38px, 5vw, 58px);
-  line-height: 1;
-  font-weight: 900;
-}
-
-.tech-stack-header h2 span {
-  background:
-    linear-gradient(
-      90deg,
-      #8b5cf6,
-      #a78bfa,
-      #ec4899,
-      #8b5cf6
-    );
-  background-size: 300% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: techTitleFlow 5s linear infinite;
-}
-
-@keyframes techTitleFlow {
-  to {
-    background-position: 300% center;
-  }
-}
-
-.tech-stack-header p {
-  max-width: 620px;
-  margin: 0 auto;
-  color: #8b95a5;
-  font-size: 14px;
-  line-height: 1.8;
-}
-
 /* =========================================================
-   INTERACTIVE STAGE
+   RECRUITWITHED — TECHNOLOGY & TOOLS
+   FLOATING INTERACTIVE DESIGN
    ========================================================= */
 
-.tech-stack-orbit {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-  padding: 25px;
-}
-
-.tech-orbit-ring {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  border: 1px solid rgba(139, 92, 246, 0.08);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.ring-one {
-  width: 700px;
-  height: 700px;
-  transform: translate(-50%, -50%);
-  animation: ringRotate 24s linear infinite;
-}
-
-.ring-two {
-  width: 480px;
-  height: 480px;
-  transform: translate(-50%, -50%);
-  border-color: rgba(236, 72, 153, 0.06);
-  animation: ringRotateReverse 18s linear infinite;
-}
-
-@keyframes ringRotate {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
+   .tech-stack-section {
+    position: relative;
+    padding: 85px 6%;
+    background: #0d1117;
+    overflow: hidden;
   }
-
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
+  
+  /* =========================================================
+     ATMOSPHERE
+     ========================================================= */
+  
+  .tech-stack-section::before {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background:
+      radial-gradient(
+        circle,
+        rgba(139, 92, 246, 0.08),
+        transparent 65%
+      );
+    pointer-events: none;
+    animation: techAtmosphere 8s ease-in-out infinite;
   }
-}
-
-@keyframes ringRotateReverse {
-  from {
-    transform: translate(-50%, -50%) rotate(360deg);
+  
+  @keyframes techAtmosphere {
+    0%,
+    100% {
+      transform:
+        translate(-50%, -50%)
+        scale(0.9);
+      opacity: 0.55;
+    }
+  
+    50% {
+      transform:
+        translate(-50%, -50%)
+        scale(1.15);
+      opacity: 1;
+    }
   }
-
-  to {
-    transform: translate(-50%, -50%) rotate(0deg);
+  
+  /* =========================================================
+     CONTAINER
+     ========================================================= */
+  
+  .tech-stack-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
   }
-}
-
-/* =========================================================
-   CATEGORY CARD
-   ========================================================= */
-
-.tech-stack-card {
-  position: relative;
-  z-index: 3;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.055),
-      rgba(255, 255, 255, 0.018)
-    );
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  transition:
-    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
-    border-color 0.35s ease,
-    box-shadow 0.45s ease,
-    background 0.35s ease;
-}
-
-.tech-stack-card:hover {
-  transform: translateY(-7px) scale(1.015);
-  border-color: rgba(139, 92, 246, 0.3);
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.3),
-    0 0 35px rgba(139, 92, 246, 0.08);
-}
-
-.tech-stack-card.active {
-  transform: translateY(-9px) scale(1.025);
-  border-color: rgba(167, 139, 250, 0.55);
-  background:
-    linear-gradient(
-      145deg,
-      rgba(139, 92, 246, 0.13),
-      rgba(236, 72, 153, 0.045)
-    );
-  box-shadow:
-    0 25px 65px rgba(0, 0, 0, 0.4),
-    0 0 45px rgba(139, 92, 246, 0.14);
-}
-
-/* =========================================================
-   CLICKABLE HEADER
-   ========================================================= */
-
-.tech-stack-trigger {
-  position: relative;
-  width: 100%;
-  min-height: 105px;
-  display: grid;
-  grid-template-columns: 52px 1fr 35px;
-  align-items: center;
-  gap: 14px;
-  padding: 20px;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  text-align: left;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.tech-card-icon {
-  width: 46px;
-  height: 46px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(167, 139, 250, 0.2);
-  border-radius: 14px;
-  background: rgba(139, 92, 246, 0.08);
-  color: #a78bfa;
-  font-size: 17px;
-  font-weight: 900;
-  transition:
-    transform 0.45s ease,
-    background 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-.tech-stack-card:hover .tech-card-icon {
-  transform: rotate(8deg) scale(1.1);
-  background: rgba(139, 92, 246, 0.15);
-  box-shadow:
-    0 0 25px rgba(139, 92, 246, 0.18);
-}
-
-.tech-stack-card.active .tech-card-icon {
-  transform: rotate(-8deg) scale(1.12);
-  background: rgba(139, 92, 246, 0.2);
-  box-shadow:
-    0 0 30px rgba(139, 92, 246, 0.25);
-}
-
-.tech-card-title {
-  color: #f8fafc;
-  font-size: 15px;
-  line-height: 1.4;
-  font-weight: 800;
-}
-
-.tech-card-arrow {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  color: #94a3b8;
-  font-size: 20px;
-  transition:
-    transform 0.4s ease,
-    color 0.3s ease,
-    background 0.3s ease;
-}
-
-.tech-card-arrow.open {
-  transform: rotate(135deg);
-  color: #ffffff;
-  background: rgba(139, 92, 246, 0.18);
-}
-
-/* =========================================================
-   REVEAL AREA
-   ========================================================= */
-
-.tech-stack-reveal {
-  display: grid;
-  grid-template-rows: 0fr;
-  opacity: 0;
-  transition:
-    grid-template-rows 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
-    opacity 0.35s ease;
-}
-
-.tech-stack-reveal.visible {
-  grid-template-rows: 1fr;
-  opacity: 1;
-}
-
-.tech-stack-reveal > .tech-stack-list {
-  overflow: hidden;
-}
-
-/* =========================================================
-   TECHNOLOGY ITEMS
-   ========================================================= */
-
-.tech-stack-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  padding: 0 20px 22px;
-}
-
-.tech-stack-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 11px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.035);
-  color: #cbd5e1;
-  font-size: 11px;
-  font-weight: 600;
-  opacity: 0;
-  transform: translateY(14px) scale(0.92);
-}
-
-.tech-stack-reveal.visible .tech-stack-item {
-  animation: techItemAppear 0.45s ease forwards;
-  animation-delay: var(--item-delay);
-}
-
-@keyframes techItemAppear {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.tech-stack-item:hover {
-  transform: translateY(-4px) scale(1.06) !important;
-  color: #ffffff;
-  border-color: rgba(167, 139, 250, 0.5);
-  background: rgba(139, 92, 246, 0.12);
-  box-shadow:
-    0 8px 22px rgba(139, 92, 246, 0.14);
-}
-
-.tech-item-dot {
-  width: 5px;
-  height: 5px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: #a78bfa;
-  box-shadow:
-    0 0 8px rgba(167, 139, 250, 0.8);
-}
-
-/* =========================================================
-   STATUS
-   ========================================================= */
-
-.tech-stack-status {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  margin-top: 30px;
-  color: #64748b;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-}
-
-.status-pulse {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #8b5cf6;
-  box-shadow:
-    0 0 0 0 rgba(139, 92, 246, 0.5);
-  animation: statusPulse 1.8s infinite;
-}
-
-@keyframes statusPulse {
-  0% {
-    box-shadow:
-      0 0 0 0 rgba(139, 92, 246, 0.5);
-  }
-
-  70% {
-    box-shadow:
-      0 0 0 9px rgba(139, 92, 246, 0);
-  }
-
-  100% {
-    box-shadow:
-      0 0 0 0 rgba(139, 92, 246, 0);
-  }
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 800px) {
-  .tech-stack-section {
-    padding: 65px 20px;
-  }
-
-  .tech-stack-orbit {
-    grid-template-columns: 1fr;
-    padding: 10px;
-  }
-
-  .tech-orbit-ring {
-    display: none;
-  }
-
+  
+  /* =========================================================
+     HEADER
+     ========================================================= */
+  
   .tech-stack-header {
-    margin-bottom: 35px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
   }
-
+  
   .tech-stack-header h2 {
-    font-size: 36px;
+    margin: 18px 0 14px;
+    color: #f8fafc;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1;
+    font-weight: 900;
   }
-
-  .tech-stack-card.active {
-    transform: translateY(-5px) scale(1.01);
+  
+  .tech-stack-header h2 span {
+    background:
+      linear-gradient(
+        90deg,
+        #8b5cf6,
+        #a78bfa,
+        #ec4899,
+        #8b5cf6
+      );
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: techGradient 5s linear infinite;
   }
-}
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .tech-stack-section::before,
-  .tech-stack-header h2 span,
-  .tech-orbit-ring,
-  .status-pulse {
-    animation: none;
+  
+  @keyframes techGradient {
+    to {
+      background-position: 300% center;
+    }
   }
-
-  .tech-stack-card,
-  .tech-stack-item,
-  .tech-stack-reveal {
-    transition: none;
+  
+  .tech-stack-header p {
+    margin: 0;
+    color: #8b95a5;
+    font-size: 14px;
+    line-height: 1.7;
   }
-}
+  
+  /* =========================================================
+     INTERACTIVE STAGE
+     ========================================================= */
+  
+  .tech-interactive-stage {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+  }
+  
+  /* =========================================================
+     CENTRAL ORBIT
+     ========================================================= */
+  
+  .tech-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 220px;
+    height: 220px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .tech-center-orbit {
+    position: absolute;
+    inset: 0;
+    border:
+      1px solid
+      rgba(139, 92, 246, 0.22);
+    border-radius: 50%;
+    animation: centerOrbit 12s linear infinite;
+  }
+  
+  .tech-center-orbit::before,
+  .tech-center-orbit::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .tech-center-orbit::before {
+    inset: 20px;
+    border:
+      1px dashed
+      rgba(167, 139, 250, 0.13);
+    animation: centerOrbitReverse 8s linear infinite;
+  }
+  
+  .tech-center-orbit::after {
+    width: 7px;
+    height: 7px;
+    top: 12px;
+    left: 50%;
+    background: #a78bfa;
+    box-shadow:
+      0 0 12px #8b5cf6,
+      0 0 25px rgba(139, 92, 246, 0.7);
+  }
+  
+  @keyframes centerOrbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes centerOrbitReverse {
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  
+  .tech-center-content {
+    position: absolute;
+    inset: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+    background:
+      radial-gradient(
+        circle,
+        rgba(139, 92, 246, 0.13),
+        rgba(13, 17, 23, 0.94) 70%
+      );
+    box-shadow:
+      0 0 45px rgba(139, 92, 246, 0.08);
+    transition:
+      transform 0.45s ease,
+      box-shadow 0.45s ease;
+  }
+  
+  .tech-center-content:hover {
+    transform: scale(1.05);
+    box-shadow:
+      0 0 55px rgba(139, 92, 246, 0.17);
+  }
+  
+  .tech-center-label {
+    color: #a78bfa;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+  }
+  
+  .tech-center-content strong {
+    max-width: 115px;
+    margin-top: 8px;
+    color: #f8fafc;
+    font-size: 14px;
+    line-height: 1.25;
+  }
+  
+  .tech-center-content small {
+    margin-top: 7px;
+    color: #64748b;
+    font-size: 9px;
+  }
+  
+  /* =========================================================
+     CATEGORY BUTTONS
+     ========================================================= */
+  
+  .tech-category {
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 17px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    background:
+      rgba(13, 17, 23, 0.68);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #94a3b8;
+    font-family: inherit;
+    cursor: pointer;
+    transition:
+      transform 0.4s ease,
+      color 0.3s ease,
+      border-color 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.4s ease;
+  }
+  
+  .tech-category:hover {
+    color: #ffffff;
+    border-color:
+      rgba(167, 139, 250, 0.45);
+    background:
+      rgba(139, 92, 246, 0.09);
+    box-shadow:
+      0 0 30px
+      rgba(139, 92, 246, 0.13);
+  }
+  
+  .tech-category.active {
+    color: #ffffff;
+    border-color:
+      rgba(167, 139, 250, 0.65);
+    background:
+      rgba(139, 92, 246, 0.14);
+    box-shadow:
+      0 0 35px
+      rgba(139, 92, 246, 0.2);
+    transform: scale(1.08);
+  }
+  
+  .tech-category-dot {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #64748b;
+    transition:
+      background 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+  
+  .tech-category:hover .tech-category-dot,
+  .tech-category.active .tech-category-dot {
+    background: #a78bfa;
+    box-shadow:
+      0 0 10px #8b5cf6;
+    transform: scale(1.35);
+  }
+  
+  .tech-category-name {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  .tech-category-short {
+    color: #64748b;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+  
+  .tech-category.active
+    .tech-category-short {
+    color: #c4b5fd;
+  }
+  
+  /* =========================================================
+     CATEGORY POSITIONS
+     ========================================================= */
+  
+  .tech-category-1 {
+    left: 6%;
+    top: 17%;
+    animation:
+      categoryFloatOne
+      5.2s
+      ease-in-out
+      infinite;
+  }
+  
+  .tech-category-2 {
+    right: 5%;
+    top: 23%;
+    animation:
+      categoryFloatTwo
+      5.8s
+      ease-in-out
+      infinite;
+  }
+  
+  .tech-category-3 {
+    left: 10%;
+    bottom: 18%;
+    animation:
+      categoryFloatThree
+      5.5s
+      ease-in-out
+      infinite;
+  }
+  
+  .tech-category-4 {
+    right: 8%;
+    bottom: 14%;
+    animation:
+      categoryFloatFour
+      6s
+      ease-in-out
+      infinite;
+  }
+  
+  @keyframes categoryFloatOne {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-13px);
+    }
+  }
+  
+  @keyframes categoryFloatTwo {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(12px);
+    }
+  }
+  
+  @keyframes categoryFloatThree {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(10px);
+    }
+  }
+  
+  @keyframes categoryFloatFour {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-11px);
+    }
+  }
+  
+  /* =========================================================
+     FLOATING TECHNOLOGIES
+     ========================================================= */
+  
+  .tech-floating-skills {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+    width: 600px;
+    max-width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  
+  .tech-floating-skill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 12px;
+    border:
+      1px solid
+      rgba(167, 139, 250, 0.28);
+    border-radius: 999px;
+    background:
+      rgba(13, 17, 23, 0.86);
+    color: #e2e8f0;
+    font-size: 10px;
+    font-weight: 700;
+    box-shadow:
+      0 8px 25px
+      rgba(0, 0, 0, 0.25),
+      0 0 18px
+      rgba(139, 92, 246, 0.08);
+    opacity: 0;
+    transform:
+      translateY(20px)
+      scale(0.65);
+    animation:
+      skillAppear
+      0.55s
+      cubic-bezier(0.2, 0.8, 0.2, 1)
+      forwards;
+    animation-delay: var(--skill-delay);
+  }
+  
+  @keyframes skillAppear {
+    to {
+      opacity: 1;
+      transform:
+        translateY(0)
+        scale(1);
+    }
+  }
+  
+  .skill-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #a78bfa;
+    box-shadow:
+      0 0 8px #8b5cf6;
+  }
+  
+  /* =========================================================
+     PARTICLES
+     ========================================================= */
+  
+  .tech-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #a78bfa;
+    box-shadow:
+      0 0 10px
+      rgba(167, 139, 250, 0.8);
+    opacity: 0.6;
+  }
+  
+  .particle-one {
+    left: 28%;
+    top: 12%;
+    animation: particleMoveOne 6s infinite ease-in-out;
+  }
+  
+  .particle-two {
+    right: 25%;
+    top: 10%;
+    animation: particleMoveTwo 7s infinite ease-in-out;
+  }
+  
+  .particle-three {
+    left: 32%;
+    bottom: 9%;
+    animation: particleMoveThree 5s infinite ease-in-out;
+  }
+  
+  .particle-four {
+    right: 30%;
+    bottom: 15%;
+    animation: particleMoveFour 6.5s infinite ease-in-out;
+  }
+  
+  .particle-five {
+    left: 50%;
+    top: 8%;
+    animation: particleMoveFive 5.5s infinite ease-in-out;
+  }
+  
+  @keyframes particleMoveOne {
+    50% {
+      transform:
+        translate(20px, -25px)
+        scale(1.8);
+    }
+  }
+  
+  @keyframes particleMoveTwo {
+    50% {
+      transform:
+        translate(-25px, 20px)
+        scale(1.5);
+    }
+  }
+  
+  @keyframes particleMoveThree {
+    50% {
+      transform:
+        translate(30px, 15px)
+        scale(1.7);
+    }
+  }
+  
+  @keyframes particleMoveFour {
+    50% {
+      transform:
+        translate(-20px, -20px)
+        scale(1.5);
+    }
+  }
+  
+  @keyframes particleMoveFive {
+    50% {
+      transform:
+        translate(0, 30px)
+        scale(2);
+    }
+  }
+  
+  /* =========================================================
+     INTERACTION HINT
+     ========================================================= */
+  
+  .tech-interaction-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+    color: #64748b;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+  }
+  
+  .hint-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #8b5cf6;
+    animation: hintPulse 1.6s infinite;
+  }
+  
+  @keyframes hintPulse {
+    50% {
+      opacity: 0.35;
+      transform: scale(1.6);
+    }
+  }
+  
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+  
+  @media (max-width: 750px) {
+    .tech-stack-section {
+      padding: 65px 20px;
+    }
+  
+    .tech-interactive-stage {
+      height: 570px;
+    }
+  
+    .tech-center {
+      width: 190px;
+      height: 190px;
+    }
+  
+    .tech-category-name {
+      font-size: 10px;
+    }
+  
+    .tech-category-short {
+      display: none;
+    }
+  
+    .tech-category-1 {
+      left: 2%;
+      top: 10%;
+    }
+  
+    .tech-category-2 {
+      right: 2%;
+      top: 24%;
+    }
+  
+    .tech-category-3 {
+      left: 2%;
+      bottom: 24%;
+    }
+  
+    .tech-category-4 {
+      right: 2%;
+      bottom: 10%;
+    }
+  
+    .tech-floating-skills {
+      width: 90%;
+    }
+  }
+  
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .tech-stack-section::before,
+    .tech-stack-header h2 span,
+    .tech-center-orbit,
+    .tech-category,
+    .tech-particle,
+    .hint-dot {
+      animation: none;
+    }
+  
+    .tech-floating-skill {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
