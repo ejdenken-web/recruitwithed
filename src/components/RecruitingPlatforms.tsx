@@ -34,9 +34,7 @@ function RecruitingPlatforms() {
             RECRUITING PLATFORMS
           </span>
 
-          <h2>
-            Where Talent <span>Gets Found.</span>
-          </h2>
+          
 
           <p>
             Recruiting platforms used to source, identify,
