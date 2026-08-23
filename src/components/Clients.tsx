@@ -14,6 +14,7 @@ function Clients() {
     "Caterpillar",
     "Citigroup",
     "Cognizant",
+    "Cleartelligence" ,
     "CVS Health",
     "Deloitte",
     "EY",
@@ -37,6 +38,7 @@ function Clients() {
     "Tata Consultancy Services",
     "UnitedHealth Group",
     "Wells Fargo",
+    "Cleartelligence",
   ];
 
   const [activeClient, setActiveClient] = useState<string | null>(null);
@@ -62,31 +64,57 @@ function Clients() {
           </p>
         </div>
 
-        <div className="clients-cloud">
-          {clients.map((client, index) => (
-            <button
-              type="button"
-              key={client}
-              className={`client-orbit client-orbit-${index + 1}${
-                activeClient === client ? " selected" : ""
-              }`}
-              onClick={() =>
-                setActiveClient(
-                  activeClient === client ? null : client
-                )
-              }
-            >
-              <span className="client-orbit-dot" />
-              <span>{client}</span>
-            </button>
-          ))}
+        <div className="clients-network">
+
+          <div className="network-energy energy-one" />
+          <div className="network-energy energy-two" />
+          <div className="network-energy energy-three" />
+
+          <div className="network-line line-one" />
+          <div className="network-line line-two" />
+          <div className="network-line line-three" />
+          <div className="network-line line-four" />
+          <div className="network-line line-five" />
+          <div className="network-line line-six" />
+
+          {clients.map((client, index) => {
+            const isActive = activeClient === client;
+
+            return (
+              <button
+                type="button"
+                key={client}
+                className={`client-node node-${index + 1}${
+                  isActive ? " client-node-active" : ""
+                }`}
+                onClick={() =>
+                  setActiveClient(
+                    isActive ? null : client
+                  )
+                }
+                aria-label={`Select ${client}`}
+              >
+                <span className="node-orb">
+                  <span className="node-core" />
+                  <span className="node-ring" />
+                </span>
+
+                <span className="node-label">
+                  {client}
+                </span>
+              </button>
+            );
+          })}
+
         </div>
 
-        <div className="clients-footer">
+        <div className="clients-interaction">
+          <span className="interaction-dot" />
+
           <span>
             {activeClient
-              ? `Selected: ${activeClient}`
-              : "Select an organization"}
+              ? activeClient
+              : "Hover or select an organization"}
           </span>
         </div>
 

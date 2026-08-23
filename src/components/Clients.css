@@ -1,51 +1,90 @@
 /* =========================================================
    RECRUITWITHED — CLIENTS
+   LIVING NETWORK
    ========================================================= */
 
    .clients-section {
     position: relative;
-    padding: 70px 6% 75px;
+  
+    padding: 70px 6% 65px;
+  
     background: #111827;
+  
     overflow: hidden;
   }
   
   /* =========================================================
-     BACKGROUND
+     ATMOSPHERE
      ========================================================= */
   
   .clients-section::before {
     content: "";
+  
     position: absolute;
-    width: 520px;
-    height: 520px;
+  
+    width: 620px;
+    height: 620px;
+  
     left: 50%;
-    top: 52%;
+    top: 54%;
+  
     transform: translate(-50%, -50%);
   
     border-radius: 50%;
   
-    background: radial-gradient(
-      circle,
-      rgba(139, 92, 246, 0.1),
-      transparent 68%
-    );
+    background:
+      radial-gradient(
+        circle,
+        rgba(139, 92, 246, 0.12),
+        rgba(139, 92, 246, 0.035) 35%,
+        transparent 70%
+      );
   
-    filter: blur(10px);
+    filter: blur(5px);
+  
+    animation:
+      networkAtmosphere 8s ease-in-out infinite;
   
     pointer-events: none;
-  
-    animation: clientsPulse 6s ease-in-out infinite;
   }
   
-  @keyframes clientsPulse {
+  .clients-section::after {
+    content: "";
+  
+    position: absolute;
+  
+    inset: 0;
+  
+    background:
+      radial-gradient(
+        circle at 20% 20%,
+        rgba(56, 189, 248, 0.035),
+        transparent 25%
+      ),
+      radial-gradient(
+        circle at 80% 75%,
+        rgba(236, 72, 153, 0.035),
+        transparent 25%
+      );
+  
+    pointer-events: none;
+  }
+  
+  @keyframes networkAtmosphere {
     0%,
     100% {
-      transform: translate(-50%, -50%) scale(0.85);
+      transform:
+        translate(-50%, -50%)
+        scale(0.85);
+  
       opacity: 0.5;
     }
   
     50% {
-      transform: translate(-50%, -50%) scale(1.12);
+      transform:
+        translate(-50%, -50%)
+        scale(1.15);
+  
       opacity: 1;
     }
   }
@@ -56,9 +95,11 @@
   
   .clients-container {
     position: relative;
+  
     z-index: 2;
   
     width: 100%;
+  
     max-width: 1240px;
   
     margin: 0 auto;
@@ -70,7 +111,8 @@
   
   .clients-header {
     text-align: center;
-    margin-bottom: 35px;
+  
+    margin-bottom: 25px;
   }
   
   .clients-header h2 {
@@ -79,36 +121,40 @@
     color: #f8fafc;
   
     font-size: clamp(34px, 4.5vw, 52px);
+  
     line-height: 1.05;
+  
     font-weight: 800;
   }
   
   .clients-header h2 span {
-    background: linear-gradient(
-      90deg,
-      #8b5cf6,
-      #a78bfa,
-      #ec4899
-    );
+    background:
+      linear-gradient(
+        90deg,
+        #8b5cf6,
+        #a78bfa,
+        #ec4899,
+        #8b5cf6
+      );
   
-    background-size: 200% auto;
+    background-size: 300% auto;
   
     -webkit-background-clip: text;
     background-clip: text;
   
     color: transparent;
   
-    animation: clientsGradient 5s ease-in-out infinite;
+    animation:
+      clientTitleFlow 6s linear infinite;
   }
   
-  @keyframes clientsGradient {
-    0%,
-    100% {
+  @keyframes clientTitleFlow {
+    from {
       background-position: 0% 50%;
     }
   
-    50% {
-      background-position: 100% 50%;
+    to {
+      background-position: 300% 50%;
     }
   }
   
@@ -120,324 +166,715 @@
     color: #8b95a5;
   
     font-size: 14px;
+  
     line-height: 1.7;
   }
   
   /* =========================================================
-     CLIENT CLOUD
+     NETWORK FIELD
      ========================================================= */
   
-  .clients-cloud {
+  .clients-network {
     position: relative;
   
-    display: grid;
+    width: 100%;
   
-    grid-template-columns:
-      repeat(4, minmax(0, 1fr));
+    max-width: 1150px;
   
-    gap: 18px;
-  
-    max-width: 1050px;
+    height: 520px;
   
     margin: 0 auto;
+  
+    overflow: hidden;
   }
   
   /* =========================================================
-     CLIENT BUTTON
+     NETWORK LINES
      ========================================================= */
   
-  .client-orbit {
+  .network-line {
+    position: absolute;
+  
+    height: 1px;
+  
+    transform-origin: left center;
+  
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(139, 92, 246, 0.28),
+        transparent
+      );
+  
+    opacity: 0.35;
+  
+    animation:
+      linePulse 4s ease-in-out infinite;
+  }
+  
+  .line-one {
+    width: 34%;
+    left: 10%;
+    top: 28%;
+    transform: rotate(17deg);
+  }
+  
+  .line-two {
+    width: 32%;
+    left: 47%;
+    top: 25%;
+    transform: rotate(-15deg);
+  }
+  
+  .line-three {
+    width: 38%;
+    left: 17%;
+    top: 57%;
+    transform: rotate(-8deg);
+  }
+  
+  .line-four {
+    width: 34%;
+    left: 48%;
+    top: 58%;
+    transform: rotate(12deg);
+  }
+  
+  .line-five {
+    width: 27%;
+    left: 35%;
+    top: 17%;
+    transform: rotate(82deg);
+  }
+  
+  .line-six {
+    width: 30%;
+    left: 65%;
+    top: 34%;
+    transform: rotate(102deg);
+  }
+  
+  @keyframes linePulse {
+    0%,
+    100% {
+      opacity: 0.18;
+    }
+  
+    50% {
+      opacity: 0.6;
+    }
+  }
+  
+  /* =========================================================
+     ENERGY PARTICLES
+     ========================================================= */
+  
+  .network-energy {
+    position: absolute;
+  
+    width: 5px;
+    height: 5px;
+  
+    border-radius: 50%;
+  
+    background: #a78bfa;
+  
+    box-shadow:
+      0 0 10px rgba(167, 139, 250, 0.9),
+      0 0 25px rgba(139, 92, 246, 0.55);
+  
+    pointer-events: none;
+  }
+  
+  .energy-one {
+    left: 18%;
+    top: 30%;
+  
+    animation:
+      energyTravelOne 6s linear infinite;
+  }
+  
+  .energy-two {
+    left: 55%;
+    top: 58%;
+  
+    animation:
+      energyTravelTwo 7s linear infinite;
+  }
+  
+  .energy-three {
+    left: 75%;
+    top: 24%;
+  
+    animation:
+      energyTravelThree 5s linear infinite;
+  }
+  
+  @keyframes energyTravelOne {
+    0% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  
+    15% {
+      opacity: 1;
+    }
+  
+    85% {
+      opacity: 1;
+    }
+  
+    100% {
+      transform: translate(300px, 120px);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes energyTravelTwo {
+    0% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  
+    15% {
+      opacity: 1;
+    }
+  
+    85% {
+      opacity: 1;
+    }
+  
+    100% {
+      transform: translate(-280px, -100px);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes energyTravelThree {
+    0% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  
+    15% {
+      opacity: 1;
+    }
+  
+    85% {
+      opacity: 1;
+    }
+  
+    100% {
+      transform: translate(-260px, 180px);
+      opacity: 0;
+    }
+  }
+  
+  /* =========================================================
+     CLIENT NODE
+     ========================================================= */
+  
+  .client-node {
+    position: absolute;
+  
+    z-index: 5;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    gap: 8px;
+  
+    padding: 0;
+  
+    border: 0;
+  
+    background: transparent;
+  
+    color: #64748b;
+  
+    font-family: inherit;
+  
+    font-size: 11px;
+  
+    font-weight: 700;
+  
+    white-space: nowrap;
+  
+    cursor: pointer;
+  
+    transition:
+      color 0.35s ease,
+      transform 0.35s ease;
+  }
+  
+  /* =========================================================
+     ORB
+     ========================================================= */
+  
+  .node-orb {
     position: relative;
   
-    min-height: 58px;
+    width: 15px;
+    height: 15px;
+  
+    flex-shrink: 0;
   
     display: flex;
   
     align-items: center;
     justify-content: center;
-  
-    gap: 9px;
-  
-    padding: 14px 16px;
-  
-    border: 1px solid rgba(255, 255, 255, 0.07);
-  
-    border-radius: 14px;
-  
-    background: rgba(255, 255, 255, 0.025);
-  
-    color: #94a3b8;
-  
-    font-family: inherit;
-  
-    font-size: 12px;
-  
-    font-weight: 700;
-  
-    line-height: 1.3;
-  
-    text-align: center;
-  
-    cursor: pointer;
-  
-    overflow: hidden;
-  
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  
-    transition:
-      transform 0.35s ease,
-      color 0.35s ease,
-      border-color 0.35s ease,
-      background 0.35s ease,
-      box-shadow 0.35s ease;
   }
   
-  /* =========================================================
-     MOVING LIGHT
-     ========================================================= */
-  
-  .client-orbit::before {
-    content: "";
-  
-    position: absolute;
-  
-    width: 100px;
-    height: 100px;
-  
-    left: -120px;
-    top: -60px;
-  
-    border-radius: 50%;
-  
-    background: radial-gradient(
-      circle,
-      rgba(139, 92, 246, 0.22),
-      transparent 70%
-    );
-  
-    transition:
-      left 0.8s ease,
-      top 0.8s ease;
-  }
-  
-  .client-orbit::after {
-    content: "";
-  
-    position: absolute;
-  
-    inset: 0;
-  
-    background: linear-gradient(
-      120deg,
-      transparent 30%,
-      rgba(255, 255, 255, 0.055),
-      transparent 70%
-    );
-  
-    transform: translateX(-120%);
-  
-    transition: transform 0.8s ease;
-  
-    pointer-events: none;
-  }
-  
-  /* =========================================================
-     DOT
-     ========================================================= */
-  
-  .client-orbit-dot {
-    position: relative;
-    z-index: 2;
-  
-    width: 6px;
-    height: 6px;
-  
-    flex-shrink: 0;
+  .node-core {
+    width: 5px;
+    height: 5px;
   
     border-radius: 50%;
   
     background: #475569;
   
+    box-shadow:
+      0 0 0 rgba(139, 92, 246, 0);
+  
     transition:
-      background 0.3s ease,
-      box-shadow 0.3s ease,
-      transform 0.3s ease;
+      background 0.35s ease,
+      box-shadow 0.35s ease,
+      transform 0.35s ease;
+  }
+  
+  .node-ring {
+    position: absolute;
+  
+    inset: 1px;
+  
+    border: 1px solid rgba(139, 92, 246, 0.18);
+  
+    border-radius: 50%;
+  
+    opacity: 0;
+  
+    transform: scale(0.5);
+  
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
   }
   
   /* =========================================================
-     TEXT
+     LABEL
      ========================================================= */
   
-  .client-orbit span:last-child {
-    position: relative;
-    z-index: 2;
+  .node-label {
+    transition:
+      letter-spacing 0.35s ease,
+      text-shadow 0.35s ease;
   }
   
   /* =========================================================
      HOVER
      ========================================================= */
   
-  .client-orbit:hover {
+  .client-node:hover {
+    z-index: 20;
+  
     color: #ffffff;
-  
-    border-color: rgba(167, 139, 250, 0.4);
-  
-    background: rgba(139, 92, 246, 0.07);
   
     transform:
-      translateY(-6px)
-      scale(1.025);
-  
-    box-shadow:
-      0 14px 35px rgba(0, 0, 0, 0.22),
-      0 0 25px rgba(139, 92, 246, 0.08);
+      scale(1.12)
+      translateY(-4px);
   }
   
-  .client-orbit:hover::before {
-    left: 70%;
-    top: 30%;
-  }
-  
-  .client-orbit:hover::after {
-    transform: translateX(120%);
-  }
-  
-  .client-orbit:hover .client-orbit-dot {
+  .client-node:hover .node-core {
     background: #a78bfa;
   
     box-shadow:
-      0 0 10px rgba(167, 139, 250, 0.9);
+      0 0 8px rgba(167, 139, 250, 1),
+      0 0 20px rgba(139, 92, 246, 0.7);
+  
+    transform: scale(1.5);
+  }
+  
+  .client-node:hover .node-ring {
+    opacity: 1;
   
     transform: scale(1.4);
+  
+    animation:
+      nodeRing 1.2s ease-out infinite;
+  }
+  
+  .client-node:hover .node-label {
+    letter-spacing: 0.2px;
+  
+    text-shadow:
+      0 0 12px rgba(167, 139, 250, 0.6);
+  }
+  
+  @keyframes nodeRing {
+    0% {
+      transform: scale(0.7);
+      opacity: 0.8;
+    }
+  
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
   }
   
   /* =========================================================
-     SELECTED
+     ACTIVE
      ========================================================= */
   
-  .client-orbit.selected {
+  .client-node-active {
     color: #ffffff;
   
-    border-color: rgba(139, 92, 246, 0.6);
+    transform: scale(1.1);
+  }
   
-    background:
-      linear-gradient(
-        135deg,
-        rgba(139, 92, 246, 0.14),
-        rgba(236, 72, 153, 0.06)
-      );
+  .client-node-active .node-core {
+    background: #ec4899;
   
     box-shadow:
-      0 0 25px rgba(139, 92, 246, 0.12),
-      inset 0 0 25px rgba(139, 92, 246, 0.04);
+      0 0 10px rgba(236, 72, 153, 1),
+      0 0 25px rgba(139, 92, 246, 0.75);
   
-    transform: translateY(-4px);
+    animation:
+      activeNodePulse 1.4s ease-in-out infinite;
   }
   
-  .client-orbit.selected .client-orbit-dot {
-    background: #a78bfa;
+  .client-node-active .node-ring {
+    opacity: 1;
   
-    box-shadow:
-      0 0 12px rgba(167, 139, 250, 1);
+    transform: scale(1.5);
+  
+    border-color: rgba(236, 72, 153, 0.55);
+  
+    animation:
+      nodeRing 1.4s ease-out infinite;
   }
   
-  /* =========================================================
-     INDIVIDUAL FLOATING MOTION
-     ========================================================= */
-  
-  .client-orbit:nth-child(3n + 1) {
-    animation: clientFloatA 5.5s ease-in-out infinite;
-  }
-  
-  .client-orbit:nth-child(3n + 2) {
-    animation: clientFloatB 6.2s ease-in-out infinite;
-  }
-  
-  .client-orbit:nth-child(3n) {
-    animation: clientFloatC 5.8s ease-in-out infinite;
-  }
-  
-  @keyframes clientFloatA {
+  @keyframes activeNodePulse {
     0%,
     100% {
-      transform: translateY(0);
+      transform: scale(0.85);
     }
   
     50% {
-      transform: translateY(-5px);
-    }
-  }
-  
-  @keyframes clientFloatB {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(6px);
-    }
-  }
-  
-  @keyframes clientFloatC {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(-4px);
+      transform: scale(1.35);
     }
   }
   
   /* =========================================================
-     FOOTER
+     NODE POSITIONS
      ========================================================= */
   
-  .clients-footer {
+  .node-1 {
+    left: 4%;
+    top: 12%;
+  }
+  
+  .node-2 {
+    left: 25%;
+    top: 7%;
+  }
+  
+  .node-3 {
+    left: 50%;
+    top: 10%;
+  }
+  
+  .node-4 {
+    right: 6%;
+    top: 13%;
+  }
+  
+  .node-5 {
+    left: 13%;
+    top: 25%;
+  }
+  
+  .node-6 {
+    left: 38%;
+    top: 23%;
+  }
+  
+  .node-7 {
+    left: 66%;
+    top: 25%;
+  }
+  
+  .node-8 {
+    right: 2%;
+    top: 31%;
+  }
+  
+  .node-9 {
+    left: 2%;
+    top: 43%;
+  }
+  
+  .node-10 {
+    left: 27%;
+    top: 39%;
+  }
+  
+  .node-11 {
+    left: 52%;
+    top: 43%;
+  }
+  
+  .node-12 {
+    right: 9%;
+    top: 45%;
+  }
+  
+  .node-13 {
+    left: 10%;
+    top: 58%;
+  }
+  
+  .node-14 {
+    left: 38%;
+    top: 56%;
+  }
+  
+  .node-15 {
+    left: 67%;
+    top: 58%;
+  }
+  
+  .node-16 {
+    right: 1%;
+    top: 64%;
+  }
+  
+  .node-17 {
+    left: 2%;
+    top: 74%;
+  }
+  
+  .node-18 {
+    left: 24%;
+    top: 70%;
+  }
+  
+  .node-19 {
+    left: 50%;
+    top: 73%;
+  }
+  
+  .node-20 {
+    left: 76%;
+    top: 76%;
+  }
+  
+  .node-21 {
+    left: 12%;
+    top: 88%;
+  }
+  
+  .node-22 {
+    left: 38%;
+    top: 87%;
+  }
+  
+  .node-23 {
+    left: 64%;
+    top: 88%;
+  }
+  
+  .node-24 {
+    right: 3%;
+    top: 84%;
+  }
+  
+  .node-25 {
+    left: 18%;
+    top: 47%;
+  }
+  
+  .node-26 {
+    left: 44%;
+    top: 34%;
+  }
+  
+  .node-27 {
+    left: 73%;
+    top: 40%;
+  }
+  
+  .node-28 {
+    left: 32%;
+    top: 49%;
+  }
+  
+  .node-29 {
+    left: 57%;
+    top: 68%;
+  }
+  
+  .node-30 {
+    left: 6%;
+    top: 34%;
+  }
+  
+  .node-31 {
+    left: 84%;
+    top: 53%;
+  }
+  
+  .node-32 {
+    left: 31%;
+    top: 82%;
+  }
+  
+  .node-33 {
+    left: 55%;
+    top: 82%;
+  }
+  
+  .node-34 {
+    left: 81%;
+    top: 20%;
+  }
+  
+  .node-35 {
+    left: 47%;
+    top: 91%;
+  }
+  
+  /* =========================================================
+     ORGANIC MOTION
+     ========================================================= */
+  
+  .client-node:nth-of-type(4n) {
+    animation:
+      nodeFloatOne 5.5s ease-in-out infinite;
+  }
+  
+  .client-node:nth-of-type(4n + 1) {
+    animation:
+      nodeFloatTwo 6.4s ease-in-out infinite;
+  }
+  
+  .client-node:nth-of-type(4n + 2) {
+    animation:
+      nodeFloatThree 5.8s ease-in-out infinite;
+  }
+  
+  .client-node:nth-of-type(4n + 3) {
+    animation:
+      nodeFloatFour 6.8s ease-in-out infinite;
+  }
+  
+  @keyframes nodeFloatOne {
+    0%,
+    100% {
+      margin-top: 0;
+    }
+  
+    50% {
+      margin-top: -6px;
+    }
+  }
+  
+  @keyframes nodeFloatTwo {
+    0%,
+    100% {
+      margin-top: 0;
+    }
+  
+    50% {
+      margin-top: 7px;
+    }
+  }
+  
+  @keyframes nodeFloatThree {
+    0%,
+    100% {
+      margin-left: 0;
+    }
+  
+    50% {
+      margin-left: 6px;
+    }
+  }
+  
+  @keyframes nodeFloatFour {
+    0%,
+    100% {
+      margin-left: 0;
+    }
+  
+    50% {
+      margin-left: -6px;
+    }
+  }
+  
+  /* =========================================================
+     INTERACTION STATUS
+     ========================================================= */
+  
+  .clients-interaction {
     display: flex;
   
+    align-items: center;
     justify-content: center;
   
-    margin-top: 30px;
-  }
+    gap: 8px;
   
-  .clients-footer span {
-    padding: 8px 16px;
-  
-    border: 1px solid rgba(255, 255, 255, 0.06);
-  
-    border-radius: 999px;
-  
-    background: rgba(255, 255, 255, 0.025);
+    margin-top: 8px;
   
     color: #64748b;
   
     font-size: 11px;
   
     transition:
-      color 0.3s ease,
-      border-color 0.3s ease,
-      background 0.3s ease;
+      color 0.3s ease;
   }
   
-  .clients-footer span:hover {
-    color: #cbd5e1;
+  .interaction-dot {
+    width: 5px;
+    height: 5px;
   
-    border-color: rgba(139, 92, 246, 0.25);
+    border-radius: 50%;
   
-    background: rgba(139, 92, 246, 0.05);
+    background: #8b5cf6;
+  
+    box-shadow:
+      0 0 8px rgba(139, 92, 246, 0.8);
+  
+    animation:
+      interactionPulse 1.8s ease-in-out infinite;
+  }
+  
+  @keyframes interactionPulse {
+    0%,
+    100% {
+      opacity: 0.45;
+      transform: scale(0.8);
+    }
+  
+    50% {
+      opacity: 1;
+      transform: scale(1.25);
+    }
   }
   
   /* =========================================================
      TABLET
      ========================================================= */
   
-  @media (max-width: 1000px) {
-    .clients-cloud {
-      grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+  @media (max-width: 900px) {
+    .clients-network {
+      height: 560px;
+    }
+  
+    .client-node {
+      font-size: 10px;
     }
   }
   
@@ -451,7 +888,7 @@
     }
   
     .clients-header {
-      margin-bottom: 28px;
+      margin-bottom: 10px;
     }
   
     .clients-header h2 {
@@ -462,28 +899,203 @@
       font-size: 13px;
     }
   
-    .clients-cloud {
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-  
-      gap: 11px;
+    .clients-network {
+      height: 650px;
     }
   
-    .client-orbit {
-      min-height: 52px;
+    .client-node {
+      font-size: 9px;
   
-      padding: 10px 8px;
-  
-      font-size: 10px;
+      gap: 5px;
     }
   
-    .client-orbit-dot {
-      width: 5px;
-      height: 5px;
+    .node-orb {
+      width: 11px;
+      height: 11px;
     }
   
-    .clients-footer {
-      margin-top: 24px;
+    .node-core {
+      width: 4px;
+      height: 4px;
+    }
+  
+    .node-1 {
+      left: 3%;
+      top: 7%;
+    }
+  
+    .node-2 {
+      left: 43%;
+      top: 5%;
+    }
+  
+    .node-3 {
+      left: 70%;
+      top: 10%;
+    }
+  
+    .node-4 {
+      right: 2%;
+      top: 22%;
+    }
+  
+    .node-5 {
+      left: 5%;
+      top: 19%;
+    }
+  
+    .node-6 {
+      left: 38%;
+      top: 17%;
+    }
+  
+    .node-7 {
+      left: 63%;
+      top: 28%;
+    }
+  
+    .node-8 {
+      right: 0;
+      top: 35%;
+    }
+  
+    .node-9 {
+      left: 2%;
+      top: 37%;
+    }
+  
+    .node-10 {
+      left: 30%;
+      top: 34%;
+    }
+  
+    .node-11 {
+      left: 55%;
+      top: 43%;
+    }
+  
+    .node-12 {
+      right: 3%;
+      top: 48%;
+    }
+  
+    .node-13 {
+      left: 5%;
+      top: 52%;
+    }
+  
+    .node-14 {
+      left: 35%;
+      top: 54%;
+    }
+  
+    .node-15 {
+      left: 66%;
+      top: 60%;
+    }
+  
+    .node-16 {
+      right: 0;
+      top: 67%;
+    }
+  
+    .node-17 {
+      left: 3%;
+      top: 70%;
+    }
+  
+    .node-18 {
+      left: 28%;
+      top: 68%;
+    }
+  
+    .node-19 {
+      left: 52%;
+      top: 74%;
+    }
+  
+    .node-20 {
+      left: 75%;
+      top: 78%;
+    }
+  
+    .node-21 {
+      left: 5%;
+      top: 83%;
+    }
+  
+    .node-22 {
+      left: 32%;
+      top: 86%;
+    }
+  
+    .node-23 {
+      left: 60%;
+      top: 88%;
+    }
+  
+    .node-24 {
+      right: 0;
+      top: 91%;
+    }
+  
+    .node-25 {
+      left: 17%;
+      top: 45%;
+    }
+  
+    .node-26 {
+      left: 45%;
+      top: 29%;
+    }
+  
+    .node-27 {
+      left: 72%;
+      top: 38%;
+    }
+  
+    .node-28 {
+      left: 24%;
+      top: 47%;
+    }
+  
+    .node-29 {
+      left: 53%;
+      top: 64%;
+    }
+  
+    .node-30 {
+      left: 5%;
+      top: 30%;
+    }
+  
+    .node-31 {
+      left: 78%;
+      top: 57%;
+    }
+  
+    .node-32 {
+      left: 27%;
+      top: 80%;
+    }
+  
+    .node-33 {
+      left: 55%;
+      top: 82%;
+    }
+  
+    .node-34 {
+      left: 80%;
+      top: 16%;
+    }
+  
+    .node-35 {
+      left: 45%;
+      top: 94%;
+    }
+  
+    .clients-interaction {
+      margin-top: 14px;
     }
   }
   
@@ -494,13 +1106,10 @@
   @media (prefers-reduced-motion: reduce) {
     .clients-section::before,
     .clients-header h2 span,
-    .client-orbit {
+    .network-line,
+    .network-energy,
+    .client-node,
+    .interaction-dot {
       animation: none;
-    }
-  
-    .client-orbit,
-    .client-orbit::before,
-    .client-orbit::after {
-      transition: none;
     }
   }
