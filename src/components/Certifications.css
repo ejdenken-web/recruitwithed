@@ -16,47 +16,41 @@
     text-align: center;
   }
   
-  /* =========================================================
-     INTRO
-     ========================================================= */
-  
   .certifications-intro {
     max-width: 680px;
     margin: 18px auto 0;
-  
     color: #8b95a5;
-  
     font-size: 14px;
     line-height: 1.7;
   }
   
   /* =========================================================
-     FLOATING CERTIFICATION STAGE
+     FLOATING AREA
      ========================================================= */
   
   .floating-certification-stage {
     position: relative;
   
     width: 100%;
-    max-width: 1100px;
+    max-width: 1000px;
   
-    height: 430px;
+    height: 400px;
   
-    margin: 10px auto 0;
+    margin: 15px auto 0;
   }
   
   /* =========================================================
-     FLOATING PROVIDERS
+     PROVIDER BUTTONS
      ========================================================= */
   
   .floating-provider {
     position: absolute;
   
-    z-index: 10;
+    z-index: 5;
   
-    padding: 8px 5px;
+    padding: 8px 6px;
   
-    border: 0;
+    border: none;
   
     background: transparent;
   
@@ -78,8 +72,7 @@
     transition:
       color 0.25s ease,
       opacity 0.25s ease,
-      text-shadow 0.25s ease,
-      transform 0.25s ease;
+      text-shadow 0.25s ease;
   }
   
   /* =========================================================
@@ -92,14 +85,12 @@
     opacity: 1;
   
     text-shadow:
-      0 0 8px rgba(167, 139, 250, 0.95),
-      0 0 18px rgba(139, 92, 246, 0.7);
-  
-    transform: scale(1.12);
+      0 0 8px rgba(167, 139, 250, 1),
+      0 0 18px rgba(139, 92, 246, 0.85);
   }
   
   /* =========================================================
-     ACTIVE PROVIDER
+     ACTIVE
      ========================================================= */
   
   .floating-provider[data-active="true"] {
@@ -108,7 +99,7 @@
     opacity: 1;
   
     text-shadow:
-      0 0 10px rgba(139, 92, 246, 0.55);
+      0 0 12px rgba(139, 92, 246, 0.6);
   }
   
   .floating-provider[data-active="true"]:hover {
@@ -116,141 +107,139 @@
   
     text-shadow:
       0 0 8px rgba(167, 139, 250, 1),
-      0 0 20px rgba(139, 92, 246, 0.8);
-  
-    transform: scale(1.12);
+      0 0 22px rgba(139, 92, 246, 0.9);
   }
   
   /* =========================================================
-     PROVIDER POSITIONS
+     FLOATING POSITIONS
      ========================================================= */
   
   .provider-one {
-    top: 75px;
-    left: 18%;
+    top: 45px;
+    left: 22%;
   }
   
   .provider-two {
-    top: 125px;
-    right: 18%;
+    top: 85px;
+    right: 22%;
   }
   
   .provider-three {
-    top: 215px;
+    top: 190px;
     left: 8%;
   }
   
   .provider-four {
-    top: 215px;
+    top: 185px;
     right: 8%;
   }
   
   .provider-five {
-    top: 325px;
-    left: 25%;
+    top: 310px;
+    left: 28%;
   }
   
   .provider-six {
-    top: 325px;
-    right: 25%;
+    top: 300px;
+    right: 28%;
   }
   
   /* =========================================================
-     INDIVIDUAL FLOATING MOTION
+     FLOATING MOTION
      ========================================================= */
   
   .provider-one {
-    animation: certification-float-one 4.8s ease-in-out infinite;
+    animation: float-one 4.5s ease-in-out infinite;
   }
   
   .provider-two {
-    animation: certification-float-two 5.2s ease-in-out infinite;
+    animation: float-two 5s ease-in-out infinite;
   }
   
   .provider-three {
-    animation: certification-float-three 5.5s ease-in-out infinite;
+    animation: float-three 5.5s ease-in-out infinite;
   }
   
   .provider-four {
-    animation: certification-float-four 4.9s ease-in-out infinite;
+    animation: float-four 4.8s ease-in-out infinite;
   }
   
   .provider-five {
-    animation: certification-float-five 5.3s ease-in-out infinite;
+    animation: float-five 5.2s ease-in-out infinite;
   }
   
   .provider-six {
-    animation: certification-float-six 5s ease-in-out infinite;
+    animation: float-six 4.7s ease-in-out infinite;
   }
   
-  @keyframes certification-float-one {
+  @keyframes float-one {
     0%,
     100% {
-      transform: translateY(0);
+      margin-top: 0;
     }
   
     50% {
-      transform: translateY(-8px);
+      margin-top: -12px;
     }
   }
   
-  @keyframes certification-float-two {
+  @keyframes float-two {
     0%,
     100% {
-      transform: translateY(0);
+      margin-top: 0;
     }
   
     50% {
-      transform: translateY(8px);
+      margin-top: 12px;
     }
   }
   
-  @keyframes certification-float-three {
+  @keyframes float-three {
     0%,
     100% {
-      transform: translateY(0);
+      margin-top: 0;
     }
   
     50% {
-      transform: translateY(-7px);
+      margin-top: -10px;
     }
   }
   
-  @keyframes certification-float-four {
+  @keyframes float-four {
     0%,
     100% {
-      transform: translateY(0);
+      margin-top: 0;
     }
   
     50% {
-      transform: translateY(7px);
+      margin-top: 10px;
     }
   }
   
-  @keyframes certification-float-five {
+  @keyframes float-five {
     0%,
     100% {
-      transform: translateY(0);
+      margin-top: 0;
     }
   
     50% {
-      transform: translateY(-9px);
+      margin-top: -12px;
     }
   }
   
-  @keyframes certification-float-six {
+  @keyframes float-six {
     0%,
     100% {
-      transform: translateY(0);
+      margin-top: 0;
     }
   
     50% {
-      transform: translateY(9px);
+      margin-top: 12px;
     }
   }
   
   /* =========================================================
-     CENTER CONTENT
+     CENTER
      ========================================================= */
   
   .certification-center {
@@ -259,9 +248,7 @@
     top: 50%;
     left: 50%;
   
-    z-index: 2;
-  
-    width: min(620px, 62%);
+    width: 55%;
   
     transform: translate(-50%, -50%);
   }
@@ -273,21 +260,13 @@
   
     font-size: 26px;
     font-weight: 800;
-  
-    text-shadow:
-      0 0 20px rgba(139, 92, 246, 0.2);
   }
-  
-  /* =========================================================
-     CERTIFICATION LIST
-     ========================================================= */
   
   .certification-list {
     display: flex;
   
     flex-wrap: wrap;
   
-    align-items: center;
     justify-content: center;
   
     gap: 10px 18px;
@@ -316,7 +295,7 @@
      ========================================================= */
   
   .certification-controls {
-    margin-top: 24px;
+    margin-top: 25px;
   
     display: flex;
   
@@ -345,15 +324,12 @@
   
     color: #94a3b8;
   
-    font-size: 15px;
-  
     cursor: pointer;
   
     transition:
       color 0.2s ease,
       border-color 0.2s ease,
-      background 0.2s ease,
-      transform 0.2s ease;
+      background 0.2s ease;
   }
   
   .certification-arrow:hover {
@@ -362,8 +338,6 @@
     border-color: rgba(139, 92, 246, 0.45);
   
     background: rgba(139, 92, 246, 0.08);
-  
-    transform: scale(1.08);
   }
   
   /* =========================================================
@@ -391,10 +365,6 @@
     background: #334155;
   
     cursor: pointer;
-  
-    transition:
-      width 0.2s ease,
-      background 0.2s ease;
   }
   
   .certification-dot:hover {
@@ -419,11 +389,11 @@
     }
   
     .floating-certification-stage {
-      height: 520px;
+      height: 500px;
     }
   
     .certification-center {
-      width: 70%;
+      width: 65%;
     }
   
     .certification-center-provider {
@@ -435,39 +405,35 @@
     }
   
     .provider-one {
-      top: 45px;
-      left: 8%;
+      top: 35px;
+      left: 5%;
     }
   
     .provider-two {
-      top: 80px;
-      right: 8%;
+      top: 65px;
+      right: 5%;
     }
   
     .provider-three {
-      top: 190px;
-      left: 3%;
+      top: 175px;
+      left: 0;
     }
   
     .provider-four {
-      top: 190px;
-      right: 3%;
+      top: 175px;
+      right: 0;
     }
   
     .provider-five {
       top: 360px;
-      left: 10%;
+      left: 8%;
     }
   
     .provider-six {
-      top: 360px;
-      right: 10%;
+      top: 350px;
+      right: 8%;
     }
   }
-  
-  /* =========================================================
-     REDUCED MOTION
-     ========================================================= */
   
   @media (prefers-reduced-motion: reduce) {
     .floating-provider {
