@@ -4,11 +4,8 @@
 
    .clients-section {
     position: relative;
-  
     padding: 90px 6% 80px;
-  
     overflow: hidden;
-  
     background:
       radial-gradient(
         circle at 15% 30%,
@@ -24,39 +21,48 @@
   }
   
   /* =========================================================
-     STATIC BACKGROUND GLOW
+     BACKGROUND GLOW
      ========================================================= */
   
-  .clients-glow {
+  .clients-section::before {
+    content: "";
     position: absolute;
+    inset: 0;
+  
+    background:
+      linear-gradient(
+        110deg,
+        transparent 20%,
+        rgba(139, 92, 246, 0.035) 50%,
+        transparent 80%
+      );
+  
+    pointer-events: none;
+  }
+  
+  .clients-section::after {
+    content: "";
+  
+    position: absolute;
+  
+    width: 420px;
+    height: 420px;
+  
+    right: -180px;
+    bottom: -180px;
   
     border-radius: 50%;
   
-    filter: blur(100px);
+    background:
+      radial-gradient(
+        circle,
+        rgba(236, 72, 153, 0.07),
+        transparent 70%
+      );
+  
+    filter: blur(30px);
   
     pointer-events: none;
-  
-    opacity: 0.08;
-  }
-  
-  .clients-glow-one {
-    width: 280px;
-    height: 280px;
-  
-    left: -120px;
-    top: 20%;
-  
-    background: #8b5cf6;
-  }
-  
-  .clients-glow-two {
-    width: 320px;
-    height: 320px;
-  
-    right: -150px;
-    bottom: 10%;
-  
-    background: #ec4899;
   }
   
   /* =========================================================
@@ -116,10 +122,10 @@
   
     color: transparent;
   
-    animation: clientHeadingFlow 7s linear infinite;
+    animation: clientsHeadingGradient 7s linear infinite;
   }
   
-  @keyframes clientHeadingFlow {
+  @keyframes clientsHeadingGradient {
     from {
       background-position: 0% 50%;
     }
@@ -127,18 +133,6 @@
     to {
       background-position: 200% 50%;
     }
-  }
-  
-  .clients-header p {
-    max-width: 650px;
-  
-    margin: 0 auto;
-  
-    color: #8b95a5;
-  
-    font-size: 14px;
-  
-    line-height: 1.7;
   }
   
   /* =========================================================
@@ -162,7 +156,7 @@
   }
   
   /* =========================================================
-     CLIENT PILL
+     CLIENT PILLS
      ========================================================= */
   
   .client-pill {
@@ -194,48 +188,73 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   
+    /*
+     * Initial state.
+     * Each pill starts slightly off-screen.
+     */
     opacity: 0;
   
+    transform:
+      translateX(
+        calc(
+          var(--direction, 1) * 90px
+        )
+      )
+      scale(0.94);
+  
     animation:
-      clientEnter 0.45s ease forwards;
+      clientSlideIn 0.8s
+      cubic-bezier(0.22, 1, 0.36, 1)
+      forwards;
   
     animation-delay: var(--delay);
   
     transition:
-      transform 0.25s ease,
-      color 0.25s ease,
-      border-color 0.25s ease,
-      background 0.25s ease,
-      box-shadow 0.25s ease;
+      transform 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease;
   }
   
-  @keyframes clientEnter {
-    from {
+  /*
+   * Alternating directions.
+   * Odd pills come from the left.
+   * Even pills come from the right.
+   */
+  
+  .client-pill:nth-child(odd) {
+    --direction: -1;
+  }
+  
+  .client-pill:nth-child(even) {
+    --direction: 1;
+  }
+  
+  @keyframes clientSlideIn {
+    0% {
       opacity: 0;
   
-      transform: translateY(8px);
+      transform:
+        translateX(
+          calc(
+            var(--direction, 1) * 90px
+          )
+        )
+        scale(0.94);
     }
   
-    to {
+    65% {
+      opacity: 1;
+    }
+  
+    100% {
       opacity: 1;
   
-      transform: translateY(0);
+      transform:
+        translateX(0)
+        scale(1);
     }
-  }
-  
-  /* =========================================================
-     SLIGHT VARIATION
-     ========================================================= */
-  
-  .client-pill-2,
-  .client-pill-5 {
-    border-radius: 14px;
-  }
-  
-  .client-pill-4,
-  .client-pill-8 {
-    background:
-      rgba(139, 92, 246, 0.035);
   }
   
   /* =========================================================
@@ -253,12 +272,13 @@
     background: #64748b;
   
     transition:
-      background 0.25s ease,
-      box-shadow 0.25s ease;
+      background 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
   }
   
   /* =========================================================
-     HOVER ONLY
+     HOVER
      ========================================================= */
   
   .client-pill:hover {
@@ -270,25 +290,50 @@
     background:
       linear-gradient(
         135deg,
-        rgba(139, 92, 246, 0.12),
-        rgba(236, 72, 153, 0.06)
+        rgba(139, 92, 246, 0.13),
+        rgba(236, 72, 153, 0.07)
       );
   
     box-shadow:
-      0 12px 30px rgba(0, 0, 0, 0.2);
+      0 12px 30px rgba(0, 0, 0, 0.25),
+      0 0 22px rgba(139, 92, 246, 0.08);
   
-    transform: translateY(-4px);
+    transform:
+      translateY(-5px)
+      scale(1.025);
   }
   
   .client-pill:hover .client-dot {
     background: #a78bfa;
   
     box-shadow:
-      0 0 8px rgba(167, 139, 250, 0.8);
+      0 0 9px rgba(167, 139, 250, 0.9);
+  
+    transform: scale(1.25);
   }
   
   /* =========================================================
-     BOTTOM
+     DIFFERENT PILL SHAPES
+     ========================================================= */
+  
+  .client-pill:nth-child(4n + 1) {
+    border-radius: 999px;
+  }
+  
+  .client-pill:nth-child(4n + 2) {
+    border-radius: 14px;
+  }
+  
+  .client-pill:nth-child(4n + 3) {
+    border-radius: 18px;
+  }
+  
+  .client-pill:nth-child(4n) {
+    border-radius: 11px;
+  }
+  
+  /* =========================================================
+     BOTTOM DETAIL
      ========================================================= */
   
   .clients-bottom-line {
@@ -353,10 +398,6 @@
       font-size: 31px;
     }
   
-    .clients-header p {
-      font-size: 13px;
-    }
-  
     .clients-cloud {
       gap: 9px;
     }
@@ -367,6 +408,38 @@
       padding: 8px 12px;
   
       font-size: 10px;
+    }
+  
+    .client-pill {
+      transform:
+        translateX(
+          calc(
+            var(--direction, 1) * 50px
+          )
+        )
+        scale(0.96);
+    }
+  
+    @keyframes clientSlideIn {
+      0% {
+        opacity: 0;
+  
+        transform:
+          translateX(
+            calc(
+              var(--direction, 1) * 50px
+            )
+          )
+          scale(0.96);
+      }
+  
+      100% {
+        opacity: 1;
+  
+        transform:
+          translateX(0)
+          scale(1);
+      }
     }
   
     .clients-bottom-line {
@@ -383,9 +456,15 @@
      ========================================================= */
   
   @media (prefers-reduced-motion: reduce) {
-    .clients-header h2 span,
     .client-pill {
-      animation: none;
       opacity: 1;
+  
+      transform: none;
+  
+      animation: none;
+    }
+  
+    .clients-header h2 span {
+      animation: none;
     }
   }
