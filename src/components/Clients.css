@@ -3,127 +3,630 @@
    ========================================================= */
 
    .clients-section {
-    padding: 70px 0;
-  
+    position: relative;
+    padding: 75px 0 85px;
     background: #111827;
-  
     overflow: hidden;
   }
   
+  .clients-section::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 700px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.09),
+      transparent 68%
+    );
+    pointer-events: none;
+    animation: clientsGlow 7s ease-in-out infinite;
+  }
+  
+  @keyframes clientsGlow {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(0.9);
+      opacity: 0.55;
+    }
+  
+    50% {
+      transform: translate(-50%, -50%) scale(1.1);
+      opacity: 1;
+    }
+  }
+  
+  /* =========================================================
+     CONTAINER
+     ========================================================= */
+  
   .clients-container {
+    position: relative;
+    z-index: 2;
     width: 100%;
     max-width: 1240px;
-  
     margin: 0 auto;
   }
   
+  /* =========================================================
+     HEADER
+     ========================================================= */
+  
   .clients-header {
     text-align: center;
-  
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
   
+  /* =========================================================
+     FLOATING CLIENT FIELD
+     ========================================================= */
+  
   .clients-marquee {
-    width: 100%;
-  
-    overflow: hidden;
-  
     position: relative;
+    width: 100%;
+    height: 470px;
+    overflow: hidden;
   }
   
   .clients-track {
-    width: max-content;
-  
-    display: flex;
-  
-    align-items: center;
-  
-    gap: 14px;
-  
-    animation: clients-scroll 45s linear infinite;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    animation: none;
   }
   
+  /* =========================================================
+     CLIENT ITEMS
+     ========================================================= */
+  
   .client-item {
-    min-width: max-content;
+    position: absolute;
   
     display: flex;
-  
     align-items: center;
+    gap: 7px;
   
-    padding: 13px 18px;
+    width: max-content;
+    min-width: 0;
   
-    border: 1px solid #30363d;
+    padding: 8px 13px;
   
+    border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 999px;
   
-    background: #151b24;
+    background: rgba(21, 27, 36, 0.5);
   
-    color: #cbd5e1;
+    color: #64748b;
   
-    font-size: 13px;
-  
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 700;
   
     white-space: nowrap;
   
+    cursor: pointer;
+  
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  
     transition:
-      color 0.2s ease,
-      border-color 0.2s ease,
-      background 0.2s ease,
-      transform 0.2s ease;
+      color 0.3s ease,
+      border-color 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
+  
+  /* =========================================================
+     CLIENT DOT
+     ========================================================= */
+  
+  .client-dot {
+    width: 5px;
+    height: 5px;
+  
+    flex-shrink: 0;
+  
+    border-radius: 50%;
+  
+    background: #475569;
+  
+    transition:
+      background 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+  
+  .client-item:hover .client-dot {
+    background: #a78bfa;
+  
+    box-shadow:
+      0 0 10px rgba(139, 92, 246, 0.9);
+  
+    transform: scale(1.5);
+  }
+  
+  /* =========================================================
+     HOVER
+     ========================================================= */
   
   .client-item:hover {
+    z-index: 20;
+  
     color: #ffffff;
   
-    border-color: rgba(139, 92, 246, 0.45);
+    border-color: rgba(167, 139, 250, 0.45);
   
-    background: #181f2a;
+    background: rgba(139, 92, 246, 0.12);
   
-    transform: translateY(-2px);
+    box-shadow:
+      0 0 20px rgba(139, 92, 246, 0.12),
+      0 10px 30px rgba(0, 0, 0, 0.2);
+  
+    transform: scale(1.12) translateY(-4px);
   }
   
+  /* =========================================================
+     CLIENT POSITIONS
+     ========================================================= */
   
+  .client-item:nth-child(1) {
+    top: 7%;
+    left: 10%;
+    animation: clientFloat1 5s infinite;
+  }
   
+  .client-item:nth-child(2) {
+    top: 5%;
+    left: 39%;
+    animation: clientFloat2 5.8s infinite;
+  }
   
-  @keyframes clients-scroll {
-    from {
-      transform: translateX(0);
+  .client-item:nth-child(3) {
+    top: 10%;
+    left: 72%;
+    animation: clientFloat3 4.8s infinite;
+  }
+  
+  .client-item:nth-child(4) {
+    top: 18%;
+    left: 23%;
+    animation: clientFloat4 6.1s infinite;
+  }
+  
+  .client-item:nth-child(5) {
+    top: 19%;
+    left: 57%;
+    animation: clientFloat5 5.2s infinite;
+  }
+  
+  .client-item:nth-child(6) {
+    top: 27%;
+    left: 82%;
+    animation: clientFloat6 6.3s infinite;
+  }
+  
+  .client-item:nth-child(7) {
+    top: 30%;
+    left: 5%;
+    animation: clientFloat7 5.5s infinite;
+  }
+  
+  .client-item:nth-child(8) {
+    top: 31%;
+    left: 39%;
+    animation: clientFloat8 6s infinite;
+  }
+  
+  .client-item:nth-child(9) {
+    top: 37%;
+    left: 66%;
+    animation: clientFloat9 5.1s infinite;
+  }
+  
+  .client-item:nth-child(10) {
+    top: 42%;
+    left: 16%;
+    animation: clientFloat10 6.4s infinite;
+  }
+  
+  .client-item:nth-child(11) {
+    top: 44%;
+    left: 51%;
+    animation: clientFloat11 5.4s infinite;
+  }
+  
+  .client-item:nth-child(12) {
+    top: 47%;
+    left: 82%;
+    animation: clientFloat12 6.2s infinite;
+  }
+  
+  .client-item:nth-child(13) {
+    top: 53%;
+    left: 4%;
+    animation: clientFloat13 5.7s infinite;
+  }
+  
+  .client-item:nth-child(14) {
+    top: 54%;
+    left: 30%;
+    animation: clientFloat14 6.3s infinite;
+  }
+  
+  .client-item:nth-child(15) {
+    top: 56%;
+    left: 63%;
+    animation: clientFloat15 5.2s infinite;
+  }
+  
+  .client-item:nth-child(16) {
+    top: 62%;
+    left: 85%;
+    animation: clientFloat16 6.1s infinite;
+  }
+  
+  .client-item:nth-child(17) {
+    top: 65%;
+    left: 9%;
+    animation: clientFloat17 5.5s infinite;
+  }
+  
+  .client-item:nth-child(18) {
+    top: 66%;
+    left: 42%;
+    animation: clientFloat18 6.4s infinite;
+  }
+  
+  .client-item:nth-child(19) {
+    top: 69%;
+    left: 70%;
+    animation: clientFloat19 5.1s infinite;
+  }
+  
+  .client-item:nth-child(20) {
+    top: 75%;
+    left: 20%;
+    animation: clientFloat20 6.2s infinite;
+  }
+  
+  .client-item:nth-child(21) {
+    top: 75%;
+    left: 53%;
+    animation: clientFloat21 5.6s infinite;
+  }
+  
+  .client-item:nth-child(22) {
+    top: 80%;
+    left: 82%;
+    animation: clientFloat22 6.5s infinite;
+  }
+  
+  .client-item:nth-child(23) {
+    top: 84%;
+    left: 5%;
+    animation: clientFloat23 5.3s infinite;
+  }
+  
+  .client-item:nth-child(24) {
+    top: 86%;
+    left: 36%;
+    animation: clientFloat24 6.1s infinite;
+  }
+  
+  .client-item:nth-child(25) {
+    top: 88%;
+    left: 64%;
+    animation: clientFloat25 5.5s infinite;
+  }
+  
+  .client-item:nth-child(26) {
+    top: 12%;
+    left: 54%;
+    animation: clientFloat26 6.3s infinite;
+  }
+  
+  .client-item:nth-child(27) {
+    top: 25%;
+    left: 43%;
+    animation: clientFloat27 5.4s infinite;
+  }
+  
+  .client-item:nth-child(28) {
+    top: 36%;
+    left: 27%;
+    animation: clientFloat28 6.2s infinite;
+  }
+  
+  .client-item:nth-child(29) {
+    top: 48%;
+    left: 40%;
+    animation: clientFloat29 5.7s infinite;
+  }
+  
+  .client-item:nth-child(30) {
+    top: 59%;
+    left: 52%;
+    animation: clientFloat30 6.4s infinite;
+  }
+  
+  .client-item:nth-child(31) {
+    top: 71%;
+    left: 32%;
+    animation: clientFloat31 5.3s infinite;
+  }
+  
+  .client-item:nth-child(32) {
+    top: 16%;
+    left: 87%;
+    animation: clientFloat32 6.1s infinite;
+  }
+  
+  .client-item:nth-child(33) {
+    top: 73%;
+    left: 4%;
+    animation: clientFloat33 5.8s infinite;
+  }
+  
+  .client-item:nth-child(34) {
+    top: 91%;
+    left: 76%;
+    animation: clientFloat34 6.5s infinite;
+  }
+  
+  /* =========================================================
+     FLOATING MOTION
+     ========================================================= */
+  
+  @keyframes clientFloat1 {
+    50% {
+      transform: translate(8px, -8px);
     }
+  }
   
-    to {
-      transform: translateX(-50%);
+  @keyframes clientFloat2 {
+    50% {
+      transform: translate(-7px, 9px);
     }
   }
   
-  .clients-marquee:hover .clients-track {
-    animation-play-state: paused;
+  @keyframes clientFloat3 {
+    50% {
+      transform: translate(9px, -6px);
+    }
   }
   
-  @media (max-width: 650px) {
+  @keyframes clientFloat4 {
+    50% {
+      transform: translate(-8px, 8px);
+    }
+  }
+  
+  @keyframes clientFloat5 {
+    50% {
+      transform: translate(7px, -10px);
+    }
+  }
+  
+  @keyframes clientFloat6 {
+    50% {
+      transform: translate(-9px, 7px);
+    }
+  }
+  
+  @keyframes clientFloat7 {
+    50% {
+      transform: translate(8px, 9px);
+    }
+  }
+  
+  @keyframes clientFloat8 {
+    50% {
+      transform: translate(-7px, -8px);
+    }
+  }
+  
+  @keyframes clientFloat9 {
+    50% {
+      transform: translate(10px, 6px);
+    }
+  }
+  
+  @keyframes clientFloat10 {
+    50% {
+      transform: translate(-8px, 9px);
+    }
+  }
+  
+  @keyframes clientFloat11 {
+    50% {
+      transform: translate(7px, -7px);
+    }
+  }
+  
+  @keyframes clientFloat12 {
+    50% {
+      transform: translate(-10px, 8px);
+    }
+  }
+  
+  @keyframes clientFloat13 {
+    50% {
+      transform: translate(8px, -9px);
+    }
+  }
+  
+  @keyframes clientFloat14 {
+    50% {
+      transform: translate(-7px, 7px);
+    }
+  }
+  
+  @keyframes clientFloat15 {
+    50% {
+      transform: translate(9px, 8px);
+    }
+  }
+  
+  @keyframes clientFloat16 {
+    50% {
+      transform: translate(-8px, -8px);
+    }
+  }
+  
+  @keyframes clientFloat17 {
+    50% {
+      transform: translate(7px, 10px);
+    }
+  }
+  
+  @keyframes clientFloat18 {
+    50% {
+      transform: translate(-9px, -7px);
+    }
+  }
+  
+  @keyframes clientFloat19 {
+    50% {
+      transform: translate(8px, 8px);
+    }
+  }
+  
+  @keyframes clientFloat20 {
+    50% {
+      transform: translate(-7px, -9px);
+    }
+  }
+  
+  @keyframes clientFloat21 {
+    50% {
+      transform: translate(10px, 7px);
+    }
+  }
+  
+  @keyframes clientFloat22 {
+    50% {
+      transform: translate(-8px, 8px);
+    }
+  }
+  
+  @keyframes clientFloat23 {
+    50% {
+      transform: translate(7px, -8px);
+    }
+  }
+  
+  @keyframes clientFloat24 {
+    50% {
+      transform: translate(-9px, 9px);
+    }
+  }
+  
+  @keyframes clientFloat25 {
+    50% {
+      transform: translate(8px, -7px);
+    }
+  }
+  
+  @keyframes clientFloat26 {
+    50% {
+      transform: translate(-7px, 10px);
+    }
+  }
+  
+  @keyframes clientFloat27 {
+    50% {
+      transform: translate(9px, -8px);
+    }
+  }
+  
+  @keyframes clientFloat28 {
+    50% {
+      transform: translate(-8px, 7px);
+    }
+  }
+  
+  @keyframes clientFloat29 {
+    50% {
+      transform: translate(7px, -9px);
+    }
+  }
+  
+  @keyframes clientFloat30 {
+    50% {
+      transform: translate(-10px, 8px);
+    }
+  }
+  
+  @keyframes clientFloat31 {
+    50% {
+      transform: translate(8px, 7px);
+    }
+  }
+  
+  @keyframes clientFloat32 {
+    50% {
+      transform: translate(-7px, -8px);
+    }
+  }
+  
+  @keyframes clientFloat33 {
+    50% {
+      transform: translate(9px, 8px);
+    }
+  }
+  
+  @keyframes clientFloat34 {
+    50% {
+      transform: translate(-8px, -7px);
+    }
+  }
+  
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+  
+  @media (max-width: 700px) {
     .clients-section {
-      padding: 55px 0;
+      padding: 55px 0 65px;
     }
   
-    .clients-header {
-      margin-bottom: 24px;
-    }
-  
-    .clients-track {
-      gap: 10px;
-  
-      animation-duration: 35s;
+    .clients-marquee {
+      height: 620px;
     }
   
     .client-item {
-      padding: 11px 15px;
+      font-size: 10px;
+      padding: 6px 9px;
+    }
   
-      font-size: 12px;
+    .client-item:nth-child(odd) {
+      left: 5%;
+    }
+  
+    .client-item:nth-child(even) {
+      left: auto;
+      right: 5%;
     }
   }
   
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
+  
   @media (prefers-reduced-motion: reduce) {
-    .clients-track {
+    .clients-section::before {
+      animation: none;
+    }
+  
+    .client-item {
       animation: none;
     }
   }

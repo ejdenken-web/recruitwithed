@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Clients.css";
 
 function Clients() {
@@ -38,7 +39,7 @@ function Clients() {
     "Wells Fargo",
   ];
 
-  const scrollingClients = [...clients, ...clients];
+  const [activeClient, setActiveClient] = useState("Abercrombie & Fitch");
 
   return (
     <section id="clients" className="clients-section">
@@ -48,20 +49,74 @@ function Clients() {
           <span className="section-tag">
             CLIENTS
           </span>
+
+          <h2>
+            Organizations I've <span>Supported.</span>
+          </h2>
+
+          <p>
+            A selection of organizations supported through
+            recruiting, talent acquisition, and professional
+            staffing engagements.
+          </p>
         </div>
 
-        <div className="clients-marquee">
-          <div className="clients-track">
-            {scrollingClients.map((client, index) => (
-              <div
-                className="client-item"
-                key={`${client}-${index}`}
-              >
-                <span className="client-dot" />
-                <span>{client}</span>
-              </div>
-            ))}
+        <div className="client-constellation">
+
+          <div className="constellation-glow" />
+          <div className="constellation-orbit orbit-one" />
+          <div className="constellation-orbit orbit-two" />
+          <div className="constellation-orbit orbit-three" />
+
+          <div className="constellation-center">
+            <span className="center-pulse" />
+
+            <small>
+              CLIENT
+            </small>
+
+            <strong>
+              {activeClient}
+            </strong>
           </div>
+
+          {clients.map((client, index) => {
+            const isActive = client === activeClient;
+
+            return (
+              <button
+                type="button"
+                key={client}
+                className={`floating-client floating-client-${index + 1}${
+                  isActive ? " active" : ""
+                }`}
+                onClick={() => setActiveClient(client)}
+              >
+                <span className="client-node" />
+
+                <span className="client-name">
+                  {client}
+                </span>
+              </button>
+            );
+          })}
+
+        </div>
+
+        <div className="client-selector">
+          {clients.map((client) => (
+            <button
+              type="button"
+              key={client}
+              className={
+                client === activeClient
+                  ? "client-selector-dot active"
+                  : "client-selector-dot"
+              }
+              onClick={() => setActiveClient(client)}
+              aria-label={`Select ${client}`}
+            />
+          ))}
         </div>
 
       </div>
