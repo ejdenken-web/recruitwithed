@@ -1,12 +1,15 @@
 /* =========================================================
    RECRUITWITHED — CLIENTS
-   INTERACTIVE CONSTELLATION
+   INTERACTIVE CLIENT WALL
    ========================================================= */
 
    .clients-section {
     position: relative;
-    padding: 85px 6% 90px;
+  
+    padding: 90px 6% 100px;
+  
     background: #111827;
+  
     overflow: hidden;
   }
   
@@ -16,24 +19,21 @@
   
   .clients-section::before {
     content: "";
+  
     position: absolute;
+  
     inset: 0;
   
     background:
       radial-gradient(
-        circle at 50% 48%,
-        rgba(139, 92, 246, 0.12),
-        transparent 28%
-      ),
-      radial-gradient(
-        circle at 20% 20%,
+        circle at 15% 20%,
         rgba(56, 189, 248, 0.045),
-        transparent 30%
+        transparent 25%
       ),
       radial-gradient(
-        circle at 80% 80%,
-        rgba(236, 72, 153, 0.04),
-        transparent 30%
+        circle at 85% 75%,
+        rgba(236, 72, 153, 0.045),
+        transparent 25%
       );
   
     pointer-events: none;
@@ -41,32 +41,41 @@
   
   .clients-section::after {
     content: "";
-    position: absolute;
-    inset: 0;
   
-    background-image:
+    position: absolute;
+  
+    width: 600px;
+    height: 600px;
+  
+    top: 50%;
+    left: 50%;
+  
+    transform: translate(-50%, -50%);
+  
+    border-radius: 50%;
+  
+    background:
       radial-gradient(
         circle,
-        rgba(255, 255, 255, 0.055) 1px,
-        transparent 1px
+        rgba(139, 92, 246, 0.045),
+        transparent 70%
       );
   
-    background-size: 45px 45px;
-  
-    opacity: 0.25;
-  
-    animation: clientStars 18s linear infinite;
-  
     pointer-events: none;
+  
+    animation: wallGlow 8s ease-in-out infinite;
   }
   
-  @keyframes clientStars {
-    from {
-      transform: translate(0, 0);
+  @keyframes wallGlow {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0.4;
     }
   
-    to {
-      transform: translate(45px, 45px);
+    50% {
+      transform: translate(-50%, -50%) scale(1.15);
+      opacity: 1;
     }
   }
   
@@ -76,10 +85,12 @@
   
   .clients-container {
     position: relative;
+  
     z-index: 2;
   
     width: 100%;
-    max-width: 1240px;
+  
+    max-width: 1250px;
   
     margin: 0 auto;
   }
@@ -89,15 +100,11 @@
      ========================================================= */
   
   .clients-header {
-    position: relative;
-  
     max-width: 760px;
   
-    margin: 0 auto 20px;
+    margin: 0 auto 55px;
   
     text-align: center;
-  
-    z-index: 5;
   }
   
   .clients-header h2 {
@@ -105,7 +112,7 @@
   
     color: #f8fafc;
   
-    font-size: clamp(34px, 4.5vw, 54px);
+    font-size: clamp(35px, 4.5vw, 55px);
   
     line-height: 1.05;
   
@@ -116,23 +123,22 @@
     background:
       linear-gradient(
         90deg,
+        #38bdf8,
         #8b5cf6,
-        #a78bfa,
-        #ec4899,
-        #38bdf8
+        #ec4899
       );
   
-    background-size: 300% auto;
+    background-size: 220% auto;
   
     -webkit-background-clip: text;
     background-clip: text;
   
     color: transparent;
   
-    animation: clientTitleGradient 6s ease-in-out infinite;
+    animation: clientGradient 6s ease-in-out infinite;
   }
   
-  @keyframes clientTitleGradient {
+  @keyframes clientGradient {
     0% {
       background-position: 0% 50%;
     }
@@ -159,865 +165,446 @@
   }
   
   /* =========================================================
-     CONSTELLATION
+     CLIENT WALL
      ========================================================= */
   
-  .client-constellation {
+  .clients-wall {
     position: relative;
   
+    display: grid;
+  
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  
+    gap: 1px;
+  
     width: 100%;
-    max-width: 1120px;
   
-    height: 570px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
   
-    margin: 0 auto;
+    border-left: 1px solid rgba(255, 255, 255, 0.07);
+  
+    background: rgba(255, 255, 255, 0.035);
+  
+    overflow: hidden;
+  
+    box-shadow:
+      0 25px 80px rgba(0, 0, 0, 0.22);
   }
   
   /* =========================================================
-     CENTRAL ENERGY
+     GRID LINES
      ========================================================= */
   
-  .constellation-glow {
+  .clients-wall-line {
     position: absolute;
   
-    top: 50%;
-    left: 50%;
+    z-index: 5;
   
-    width: 270px;
-    height: 270px;
+    pointer-events: none;
   
-    transform: translate(-50%, -50%);
+    opacity: 0.22;
+  }
   
-    border-radius: 50%;
+  .line-one {
+    top: 0;
+    bottom: 0;
+    left: 25%;
+  
+    width: 1px;
   
     background:
-      radial-gradient(
-        circle,
-        rgba(139, 92, 246, 0.24),
-        rgba(139, 92, 246, 0.07) 38%,
-        transparent 72%
+      linear-gradient(
+        to bottom,
+        transparent,
+        rgba(139, 92, 246, 0.3),
+        transparent
       );
-  
-    filter: blur(5px);
-  
-    animation:
-      constellationPulse 4s ease-in-out infinite;
-  
-    pointer-events: none;
   }
   
-  @keyframes constellationPulse {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) scale(0.85);
-      opacity: 0.55;
-    }
+  .line-two {
+    top: 0;
+    bottom: 0;
+    left: 50%;
   
-    50% {
-      transform: translate(-50%, -50%) scale(1.18);
-      opacity: 1;
-    }
+    width: 1px;
+  
+    background:
+      linear-gradient(
+        to bottom,
+        transparent,
+        rgba(56, 189, 248, 0.25),
+        transparent
+      );
+  }
+  
+  .line-three {
+    top: 0;
+    bottom: 0;
+    left: 75%;
+  
+    width: 1px;
+  
+    background:
+      linear-gradient(
+        to bottom,
+        transparent,
+        rgba(236, 72, 153, 0.25),
+        transparent
+      );
   }
   
   /* =========================================================
-     ORBITS
+     CLIENT TILE
      ========================================================= */
   
-  .constellation-orbit {
-    position: absolute;
+  .client-tile {
+    position: relative;
   
-    top: 50%;
-    left: 50%;
-  
-    border: 1px solid rgba(139, 92, 246, 0.13);
-  
-    border-radius: 50%;
-  
-    transform: translate(-50%, -50%);
-  
-    pointer-events: none;
-  }
-  
-  .orbit-one {
-    width: 330px;
-    height: 170px;
-  
-    animation: orbitRotateOne 15s linear infinite;
-  }
-  
-  .orbit-two {
-    width: 570px;
-    height: 300px;
-  
-    border-color: rgba(167, 139, 250, 0.09);
-  
-    animation: orbitRotateTwo 22s linear infinite reverse;
-  }
-  
-  .orbit-three {
-    width: 810px;
-    height: 440px;
-  
-    border-color: rgba(56, 189, 248, 0.055);
-  
-    animation: orbitRotateThree 30s linear infinite;
-  }
-  
-  @keyframes orbitRotateOne {
-    from {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-  
-    to {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-  }
-  
-  @keyframes orbitRotateTwo {
-    from {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-  
-    to {
-      transform: translate(-50%, -50%) rotate(-360deg);
-    }
-  }
-  
-  @keyframes orbitRotateThree {
-    from {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-  
-    to {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-  }
-  
-  /* =========================================================
-     CENTER
-     ========================================================= */
-  
-  .constellation-center {
-    position: absolute;
-  
-    top: 50%;
-    left: 50%;
-  
-    z-index: 20;
-  
-    width: 245px;
-    min-height: 145px;
-  
-    transform: translate(-50%, -50%);
+    min-height: 88px;
   
     display: flex;
   
-    flex-direction: column;
-  
     align-items: center;
   
-    justify-content: center;
+    gap: 13px;
   
-    text-align: center;
+    padding: 20px 18px;
   
-    border-radius: 50%;
+    border: 0;
+  
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+  
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   
     background:
-      radial-gradient(
-        circle at 50% 45%,
-        rgba(139, 92, 246, 0.16),
-        rgba(13, 17, 23, 0.92) 65%
+      rgba(13, 17, 23, 0.72);
+  
+    color: #718096;
+  
+    font-family: inherit;
+  
+    text-align: left;
+  
+    cursor: pointer;
+  
+    overflow: hidden;
+  
+    transition:
+      color 0.35s ease,
+      background 0.35s ease,
+      transform 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+  
+  /* =========================================================
+     MOVING LIGHT
+     ========================================================= */
+  
+  .client-tile::before {
+    content: "";
+  
+    position: absolute;
+  
+    top: -100%;
+  
+    left: -60%;
+  
+    width: 45%;
+  
+    height: 300%;
+  
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(139, 92, 246, 0.12),
+        transparent
       );
   
-    box-shadow:
-      0 0 40px rgba(139, 92, 246, 0.08),
-      inset 0 0 35px rgba(139, 92, 246, 0.04);
+    transform: rotate(20deg);
   
-    animation: centerFloat 5s ease-in-out infinite;
-  
-    pointer-events: none;
+    transition:
+      left 0.7s ease;
   }
   
-  @keyframes centerFloat {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) translateY(0);
-    }
-  
-    50% {
-      transform: translate(-50%, -50%) translateY(-7px);
-    }
+  .client-tile:hover::before,
+  .client-tile.selected::before {
+    left: 130%;
   }
   
-  .constellation-center small {
+  /* =========================================================
+     CLIENT NUMBER
+     ========================================================= */
+  
+  .client-index {
     position: relative;
+  
     z-index: 2;
   
-    margin-bottom: 9px;
+    min-width: 24px;
   
-    color: #64748b;
+    color: #334155;
   
     font-size: 9px;
   
     font-weight: 800;
   
-    letter-spacing: 0.25em;
+    letter-spacing: 0.08em;
+  
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
   }
   
-  .constellation-center strong {
+  /* =========================================================
+     CLIENT NAME
+     ========================================================= */
+  
+  .client-tile-name {
     position: relative;
+  
     z-index: 2;
   
-    max-width: 190px;
+    color: inherit;
   
-    color: #f8fafc;
-  
-    font-size: 17px;
-  
-    line-height: 1.25;
-  
-    font-weight: 800;
-  
-    text-shadow:
-      0 0 18px rgba(167, 139, 250, 0.25);
-  
-    animation: selectedClientIn 0.35s ease;
-  }
-  
-  @keyframes selectedClientIn {
-    from {
-      opacity: 0;
-      transform: scale(0.88);
-    }
-  
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  
-  /* =========================================================
-     CENTER PULSE
-     ========================================================= */
-  
-  .center-pulse {
-    position: absolute;
-  
-    width: 13px;
-    height: 13px;
-  
-    top: 25px;
-  
-    border-radius: 50%;
-  
-    background: #8b5cf6;
-  
-    box-shadow:
-      0 0 10px rgba(139, 92, 246, 1),
-      0 0 28px rgba(139, 92, 246, 0.7);
-  
-    animation: centerDotPulse 2s ease-in-out infinite;
-  }
-  
-  @keyframes centerDotPulse {
-    0%,
-    100% {
-      transform: scale(0.75);
-      opacity: 0.65;
-    }
-  
-    50% {
-      transform: scale(1.3);
-      opacity: 1;
-    }
-  }
-  
-  /* =========================================================
-     FLOATING CLIENTS
-     ========================================================= */
-  
-  .floating-client {
-    position: absolute;
-  
-    z-index: 15;
-  
-    display: flex;
-  
-    align-items: center;
-  
-    gap: 8px;
-  
-    padding: 8px 12px;
-  
-    border: 1px solid rgba(255, 255, 255, 0.07);
-  
-    border-radius: 999px;
-  
-    background:
-      rgba(13, 17, 23, 0.58);
-  
-    color: #64748b;
-  
-    font-family: inherit;
-  
-    font-size: 11px;
+    font-size: 12px;
   
     font-weight: 700;
   
-    white-space: nowrap;
-  
-    cursor: pointer;
-  
-    backdrop-filter: blur(10px);
-  
-    -webkit-backdrop-filter: blur(10px);
-  
-    box-shadow:
-      0 8px 25px rgba(0, 0, 0, 0.12);
+    line-height: 1.35;
   
     transition:
-      color 0.25s ease,
-      border-color 0.25s ease,
-      background 0.25s ease,
-      box-shadow 0.25s ease,
-      transform 0.25s ease;
-  
-    animation-timing-function: ease-in-out;
-  
-    animation-iteration-count: infinite;
+      color 0.3s ease,
+      transform 0.3s ease;
   }
   
   /* =========================================================
-     CLIENT NODE
+     ARROW
      ========================================================= */
   
-  .client-node {
-    width: 6px;
-    height: 6px;
+  .client-arrow {
+    position: absolute;
   
-    flex-shrink: 0;
+    right: 14px;
   
-    border-radius: 50%;
+    top: 50%;
   
-    background: #475569;
+    z-index: 2;
   
-    box-shadow: 0 0 0 rgba(139, 92, 246, 0);
+    transform:
+      translateY(-50%)
+      translateX(8px);
+  
+    color: #334155;
+  
+    font-size: 13px;
+  
+    opacity: 0;
   
     transition:
-      background 0.25s ease,
-      box-shadow 0.25s ease,
-      transform 0.25s ease;
-  }
-  
-  .client-name {
-    transition:
-      color 0.25s ease,
-      letter-spacing 0.25s ease;
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      color 0.3s ease;
   }
   
   /* =========================================================
      HOVER
      ========================================================= */
   
-  .floating-client:hover {
-    z-index: 50;
+  .client-tile:hover {
+    z-index: 10;
   
     color: #ffffff;
   
-    border-color: rgba(167, 139, 250, 0.55);
-  
     background:
-      rgba(139, 92, 246, 0.13);
+      linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.13),
+        rgba(13, 17, 23, 0.9)
+      );
+  
+    transform: scale(1.025);
   
     box-shadow:
-      0 0 25px rgba(139, 92, 246, 0.16),
-      0 15px 35px rgba(0, 0, 0, 0.25);
-  
-    transform: scale(1.16) translateY(-6px) !important;
+      0 0 35px rgba(139, 92, 246, 0.09);
   }
   
-  .floating-client:hover .client-node {
-    background: #a78bfa;
+  .client-tile:hover .client-index {
+    color: #8b5cf6;
   
-    box-shadow:
-      0 0 8px rgba(139, 92, 246, 1),
-      0 0 18px rgba(139, 92, 246, 0.7);
-  
-    transform: scale(1.5);
+    transform: translateX(3px);
   }
   
-  .floating-client:hover .client-name {
-    letter-spacing: 0.02em;
+  .client-tile:hover .client-tile-name {
+    color: #ffffff;
+  
+    transform: translateX(4px);
+  }
+  
+  .client-tile:hover .client-arrow {
+    opacity: 1;
+  
+    color: #a78bfa;
+  
+    transform:
+      translateY(-50%)
+      translateX(0);
   }
   
   /* =========================================================
-     ACTIVE CLIENT
+     SELECTED
      ========================================================= */
   
-  .floating-client.active {
-    z-index: 40;
+  .client-tile.selected {
+    z-index: 20;
   
     color: #ffffff;
   
-    border-color: rgba(167, 139, 250, 0.7);
-  
     background:
-      rgba(139, 92, 246, 0.16);
+      linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.2),
+        rgba(56, 189, 248, 0.055)
+      );
   
     box-shadow:
-      0 0 24px rgba(139, 92, 246, 0.18),
-      0 0 55px rgba(139, 92, 246, 0.06);
+      inset 0 0 0 1px rgba(167, 139, 250, 0.25),
+      0 0 40px rgba(139, 92, 246, 0.12);
+  
+    transform: scale(1.025);
   }
   
-  .floating-client.active .client-node {
-    background: #a78bfa;
-  
-    box-shadow:
-      0 0 8px rgba(139, 92, 246, 1),
-      0 0 18px rgba(139, 92, 246, 0.75);
+  .client-tile.selected .client-index {
+    color: #a78bfa;
   }
   
-  /* =========================================================
-     CLIENT POSITIONS
-     ========================================================= */
+  .client-tile.selected .client-tile-name {
+    color: #ffffff;
   
-  .floating-client-1 {
-    top: 7%;
-    left: 8%;
-    animation: clientFloat1 5s ease-in-out infinite;
+    transform: translateX(5px);
   }
   
-  .floating-client-2 {
-    top: 4%;
-    left: 38%;
-    animation: clientFloat2 5.8s ease-in-out infinite;
-  }
+  .client-tile.selected .client-arrow {
+    opacity: 1;
   
-  .floating-client-3 {
-    top: 8%;
-    right: 8%;
-    animation: clientFloat3 4.8s ease-in-out infinite;
-  }
+    color: #38bdf8;
   
-  .floating-client-4 {
-    top: 17%;
-    left: 21%;
-    animation: clientFloat4 6.1s ease-in-out infinite;
-  }
-  
-  .floating-client-5 {
-    top: 18%;
-    right: 28%;
-    animation: clientFloat5 5.2s ease-in-out infinite;
-  }
-  
-  .floating-client-6 {
-    top: 24%;
-    right: 4%;
-    animation: clientFloat6 6.3s ease-in-out infinite;
-  }
-  
-  .floating-client-7 {
-    top: 29%;
-    left: 2%;
-    animation: clientFloat7 5.5s ease-in-out infinite;
-  }
-  
-  .floating-client-8 {
-    top: 30%;
-    left: 34%;
-    animation: clientFloat8 6s ease-in-out infinite;
-  }
-  
-  .floating-client-9 {
-    top: 34%;
-    right: 7%;
-    animation: clientFloat9 5.1s ease-in-out infinite;
-  }
-  
-  .floating-client-10 {
-    top: 41%;
-    left: 12%;
-    animation: clientFloat10 6.4s ease-in-out infinite;
-  }
-  
-  .floating-client-11 {
-    top: 43%;
-    left: 53%;
-    animation: clientFloat11 5.4s ease-in-out infinite;
-  }
-  
-  .floating-client-12 {
-    top: 47%;
-    right: 1%;
-    animation: clientFloat12 6.2s ease-in-out infinite;
-  }
-  
-  .floating-client-13 {
-    top: 52%;
-    left: 3%;
-    animation: clientFloat13 5.7s ease-in-out infinite;
-  }
-  
-  .floating-client-14 {
-    top: 54%;
-    left: 27%;
-    animation: clientFloat14 6.3s ease-in-out infinite;
-  }
-  
-  .floating-client-15 {
-    top: 56%;
-    right: 23%;
-    animation: clientFloat15 5.2s ease-in-out infinite;
-  }
-  
-  .floating-client-16 {
-    top: 61%;
-    right: 4%;
-    animation: clientFloat16 6.1s ease-in-out infinite;
-  }
-  
-  .floating-client-17 {
-    top: 65%;
-    left: 8%;
-    animation: clientFloat17 5.5s ease-in-out infinite;
-  }
-  
-  .floating-client-18 {
-    top: 66%;
-    left: 38%;
-    animation: clientFloat18 6.4s ease-in-out infinite;
-  }
-  
-  .floating-client-19 {
-    top: 69%;
-    right: 8%;
-    animation: clientFloat19 5.1s ease-in-out infinite;
-  }
-  
-  .floating-client-20 {
-    top: 75%;
-    left: 18%;
-    animation: clientFloat20 6.2s ease-in-out infinite;
-  }
-  
-  .floating-client-21 {
-    top: 75%;
-    left: 52%;
-    animation: clientFloat21 5.6s ease-in-out infinite;
-  }
-  
-  .floating-client-22 {
-    top: 80%;
-    right: 4%;
-    animation: clientFloat22 6.5s ease-in-out infinite;
-  }
-  
-  .floating-client-23 {
-    top: 84%;
-    left: 3%;
-    animation: clientFloat23 5.3s ease-in-out infinite;
-  }
-  
-  .floating-client-24 {
-    top: 86%;
-    left: 35%;
-    animation: clientFloat24 6.1s ease-in-out infinite;
-  }
-  
-  .floating-client-25 {
-    top: 88%;
-    right: 27%;
-    animation: clientFloat25 5.5s ease-in-out infinite;
-  }
-  
-  .floating-client-26 {
-    top: 12%;
-    left: 56%;
-    animation: clientFloat26 6.3s ease-in-out infinite;
-  }
-  
-  .floating-client-27 {
-    top: 25%;
-    left: 44%;
-    animation: clientFloat27 5.4s ease-in-out infinite;
-  }
-  
-  .floating-client-28 {
-    top: 36%;
-    left: 25%;
-    animation: clientFloat28 6.2s ease-in-out infinite;
-  }
-  
-  .floating-client-29 {
-    top: 48%;
-    left: 41%;
-    animation: clientFloat29 5.7s ease-in-out infinite;
-  }
-  
-  .floating-client-30 {
-    top: 59%;
-    left: 50%;
-    animation: clientFloat30 6.4s ease-in-out infinite;
-  }
-  
-  .floating-client-31 {
-    top: 71%;
-    left: 31%;
-    animation: clientFloat31 5.3s ease-in-out infinite;
-  }
-  
-  .floating-client-32 {
-    top: 16%;
-    right: 1%;
-    animation: clientFloat32 6.1s ease-in-out infinite;
-  }
-  
-  .floating-client-33 {
-    top: 73%;
-    left: 3%;
-    animation: clientFloat33 5.8s ease-in-out infinite;
-  }
-  
-  .floating-client-34 {
-    top: 91%;
-    right: 8%;
-    animation: clientFloat34 6.5s ease-in-out infinite;
+    transform:
+      translateY(-50%)
+      translateX(0)
+      rotate(45deg);
   }
   
   /* =========================================================
-     FLOATING ANIMATIONS
+     INDIVIDUAL TILE MOTION
      ========================================================= */
   
-  @keyframes clientFloat1 {
-    50% {
-      transform: translate(9px, -9px);
-    }
+  .client-tile:nth-child(5n) {
+    animation: tilePulse 5s ease-in-out infinite;
   }
   
-  @keyframes clientFloat2 {
-    50% {
-      transform: translate(-8px, 10px);
-    }
+  .client-tile:nth-child(7n) {
+    animation-delay: 1s;
   }
   
-  @keyframes clientFloat3 {
-    50% {
-      transform: translate(10px, -7px);
-    }
+  .client-tile:nth-child(11n) {
+    animation-delay: 2s;
   }
   
-  @keyframes clientFloat4 {
-    50% {
-      transform: translate(-9px, 8px);
-    }
+  .client-tile:nth-child(13n) {
+    animation-delay: 0.5s;
   }
   
-  @keyframes clientFloat5 {
-    50% {
-      transform: translate(8px, -10px);
+  @keyframes tilePulse {
+    0%,
+    100% {
+      background-color: rgba(13, 17, 23, 0.72);
     }
-  }
   
-  @keyframes clientFloat6 {
     50% {
-      transform: translate(-10px, 8px);
-    }
-  }
-  
-  @keyframes clientFloat7 {
-    50% {
-      transform: translate(9px, 10px);
-    }
-  }
-  
-  @keyframes clientFloat8 {
-    50% {
-      transform: translate(-8px, -9px);
-    }
-  }
-  
-  @keyframes clientFloat9 {
-    50% {
-      transform: translate(11px, 7px);
-    }
-  }
-  
-  @keyframes clientFloat10 {
-    50% {
-      transform: translate(-9px, 10px);
-    }
-  }
-  
-  @keyframes clientFloat11 {
-    50% {
-      transform: translate(8px, -8px);
-    }
-  }
-  
-  @keyframes clientFloat12 {
-    50% {
-      transform: translate(-11px, 9px);
-    }
-  }
-  
-  @keyframes clientFloat13 {
-    50% {
-      transform: translate(9px, -10px);
-    }
-  }
-  
-  @keyframes clientFloat14 {
-    50% {
-      transform: translate(-8px, 8px);
-    }
-  }
-  
-  @keyframes clientFloat15 {
-    50% {
-      transform: translate(10px, 9px);
-    }
-  }
-  
-  @keyframes clientFloat16 {
-    50% {
-      transform: translate(-9px, -9px);
-    }
-  }
-  
-  @keyframes clientFloat17 {
-    50% {
-      transform: translate(8px, 11px);
-    }
-  }
-  
-  @keyframes clientFloat18 {
-    50% {
-      transform: translate(-10px, -8px);
-    }
-  }
-  
-  @keyframes clientFloat19 {
-    50% {
-      transform: translate(9px, 9px);
-    }
-  }
-  
-  @keyframes clientFloat20 {
-    50% {
-      transform: translate(-8px, -10px);
-    }
-  }
-  
-  @keyframes clientFloat21 {
-    50% {
-      transform: translate(11px, 8px);
-    }
-  }
-  
-  @keyframes clientFloat22 {
-    50% {
-      transform: translate(-9px, 9px);
-    }
-  }
-  
-  @keyframes clientFloat23 {
-    50% {
-      transform: translate(8px, -9px);
-    }
-  }
-  
-  @keyframes clientFloat24 {
-    50% {
-      transform: translate(-10px, 10px);
-    }
-  }
-  
-  @keyframes clientFloat25 {
-    50% {
-      transform: translate(9px, -8px);
-    }
-  }
-  
-  @keyframes clientFloat26 {
-    50% {
-      transform: translate(-8px, 11px);
-    }
-  }
-  
-  @keyframes clientFloat27 {
-    50% {
-      transform: translate(10px, -9px);
-    }
-  }
-  
-  @keyframes clientFloat28 {
-    50% {
-      transform: translate(-9px, 8px);
-    }
-  }
-  
-  @keyframes clientFloat29 {
-    50% {
-      transform: translate(8px, -10px);
-    }
-  }
-  
-  @keyframes clientFloat30 {
-    50% {
-      transform: translate(-11px, 9px);
-    }
-  }
-  
-  @keyframes clientFloat31 {
-    50% {
-      transform: translate(9px, 8px);
-    }
-  }
-  
-  @keyframes clientFloat32 {
-    50% {
-      transform: translate(-8px, -9px);
-    }
-  }
-  
-  @keyframes clientFloat33 {
-    50% {
-      transform: translate(10px, 9px);
-    }
-  }
-  
-  @keyframes clientFloat34 {
-    50% {
-      transform: translate(-9px, -8px);
+      background-color: rgba(25, 30, 42, 0.82);
     }
   }
   
   /* =========================================================
-     SELECTOR
+     SELECTED ORGANIZATION
      ========================================================= */
   
-  .client-selector {
+  .client-focus {
     position: relative;
-  
-    z-index: 30;
   
     display: flex;
   
-    flex-wrap: wrap;
+    align-items: center;
   
     justify-content: center;
   
-    gap: 6px;
+    gap: 16px;
   
-    max-width: 650px;
+    min-height: 0;
   
     margin: 0 auto;
+  
+    padding: 0;
+  
+    opacity: 0;
+  
+    transform:
+      translateY(-10px)
+      scale(0.96);
+  
+    pointer-events: none;
+  
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease,
+      padding 0.35s ease,
+      min-height 0.35s ease;
   }
   
-  .client-selector-dot {
-    width: 5px;
-    height: 5px;
+  .client-focus.visible {
+    min-height: 58px;
+  
+    margin-top: 18px;
+  
+    padding: 14px 20px;
+  
+    opacity: 1;
+  
+    transform:
+      translateY(0)
+      scale(1);
+  
+    border: 1px solid rgba(139, 92, 246, 0.15);
+  
+    background:
+      rgba(139, 92, 246, 0.055);
+  
+    pointer-events: auto;
+  }
+  
+  .client-focus span {
+    color: #64748b;
+  
+    font-size: 8px;
+  
+    font-weight: 800;
+  
+    letter-spacing: 0.18em;
+  }
+  
+  .client-focus strong {
+    color: #f8fafc;
+  
+    font-size: 13px;
+  
+    font-weight: 800;
+  }
+  
+  .client-focus button {
+    width: 24px;
+    height: 24px;
   
     padding: 0;
   
@@ -1025,41 +612,64 @@
   
     border-radius: 50%;
   
-    background: #334155;
+    background: transparent;
+  
+    color: #64748b;
+  
+    font-size: 18px;
+  
+    line-height: 1;
   
     cursor: pointer;
   
     transition:
-      width 0.25s ease,
+      color 0.25s ease,
       background 0.25s ease,
-      box-shadow 0.25s ease,
       transform 0.25s ease;
   }
   
-  .client-selector-dot:hover {
-    background: #a78bfa;
+  .client-focus button:hover {
+    color: #ffffff;
   
-    transform: scale(1.5);
+    background: rgba(255, 255, 255, 0.06);
+  
+    transform: rotate(90deg);
   }
   
-  .client-selector-dot.active {
-    width: 20px;
+  /* =========================================================
+     TABLET
+     ========================================================= */
   
-    border-radius: 999px;
+  @media (max-width: 950px) {
+    .clients-wall {
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    }
   
-    background: #8b5cf6;
+    .line-one {
+      left: 33.333%;
+    }
   
-    box-shadow:
-      0 0 12px rgba(139, 92, 246, 0.7);
+    .line-two {
+      left: 66.666%;
+    }
+  
+    .line-three {
+      display: none;
+    }
   }
   
   /* =========================================================
      MOBILE
      ========================================================= */
   
-  @media (max-width: 700px) {
+  @media (max-width: 650px) {
     .clients-section {
-      padding: 60px 20px 70px;
+      padding: 65px 20px 75px;
+    }
+  
+    .clients-header {
+      margin-bottom: 35px;
     }
   
     .clients-header h2 {
@@ -1070,59 +680,49 @@
       font-size: 13px;
     }
   
-    .client-constellation {
-      height: 620px;
+    .clients-wall {
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
     }
   
-    .constellation-center {
-      width: 190px;
-      min-height: 120px;
+    .client-tile {
+      min-height: 72px;
+  
+      padding: 15px 12px;
+  
+      gap: 8px;
     }
   
-    .constellation-center strong {
-      max-width: 150px;
-      font-size: 14px;
+    .client-index {
+      min-width: 18px;
+  
+      font-size: 8px;
     }
   
-    .orbit-one {
-      width: 260px;
-      height: 160px;
+    .client-tile-name {
+      font-size: 10px;
     }
   
-    .orbit-two {
-      width: 420px;
-      height: 290px;
+    .client-arrow {
+      display: none;
     }
   
-    .orbit-three {
-      width: 560px;
-      height: 440px;
+    .line-one {
+      left: 50%;
     }
   
-    .floating-client {
-      font-size: 9px;
-      padding: 6px 8px;
+    .line-two {
+      display: none;
     }
   
-    .floating-client-1,
-    .floating-client-7,
-    .floating-client-13,
-    .floating-client-17,
-    .floating-client-23,
-    .floating-client-33 {
-      left: 1%;
+    .client-focus {
+      flex-wrap: wrap;
+  
+      gap: 8px;
     }
   
-    .floating-client-3,
-    .floating-client-6,
-    .floating-client-9,
-    .floating-client-12,
-    .floating-client-16,
-    .floating-client-19,
-    .floating-client-22,
-    .floating-client-32,
-    .floating-client-34 {
-      right: 1%;
+    .client-focus span {
+      width: 100%;
     }
   }
   
@@ -1133,10 +733,12 @@
   @media (prefers-reduced-motion: reduce) {
     .clients-section::after,
     .clients-header h2 span,
-    .constellation-glow,
-    .constellation-orbit,
-    .constellation-center,
-    .floating-client {
+    .client-tile {
       animation: none;
+    }
+  
+    .client-tile,
+    .client-focus {
+      transition: none;
     }
   }

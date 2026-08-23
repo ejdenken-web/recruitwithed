@@ -39,7 +39,7 @@ function Clients() {
     "Wells Fargo",
   ];
 
-  const [activeClient, setActiveClient] = useState("Abercrombie & Fitch");
+  const [activeClient, setActiveClient] = useState<string | null>(null);
 
   return (
     <section id="clients" className="clients-section">
@@ -61,41 +61,40 @@ function Clients() {
           </p>
         </div>
 
-        <div className="client-constellation">
+        <div className="clients-wall">
 
-          <div className="constellation-glow" />
-
-          <div className="constellation-orbit orbit-one" />
-          <div className="constellation-orbit orbit-two" />
-          <div className="constellation-orbit orbit-three" />
-
-          <div className="constellation-center">
-            <span className="center-pulse" />
-
-            <small>CLIENT</small>
-
-            <strong>
-              {activeClient}
-            </strong>
-          </div>
+          <div className="clients-wall-line line-one" />
+          <div className="clients-wall-line line-two" />
+          <div className="clients-wall-line line-three" />
 
           {clients.map((client, index) => {
-            const isActive = client === activeClient;
+            const isActive = activeClient === client;
 
             return (
               <button
                 type="button"
                 key={client}
-                className={`floating-client floating-client-${index + 1}${
-                  isActive ? " active" : ""
+                className={`client-tile client-tile-${index + 1}${
+                  isActive ? " selected" : ""
                 }`}
-                onClick={() => setActiveClient(client)}
-                aria-label={`Select ${client}`}
+                onClick={() =>
+                  setActiveClient(
+                    isActive ? null : client
+                  )
+                }
               >
-                <span className="client-node" />
+                <span className="client-index">
+                  {(index + 1)
+                    .toString()
+                    .padStart(2, "0")}
+                </span>
 
-                <span className="client-name">
+                <span className="client-tile-name">
                   {client}
+                </span>
+
+                <span className="client-arrow">
+                  ↗
                 </span>
               </button>
             );
@@ -103,20 +102,24 @@ function Clients() {
 
         </div>
 
-        <div className="client-selector">
-          {clients.map((client) => (
-            <button
-              type="button"
-              key={client}
-              className={
-                client === activeClient
-                  ? "client-selector-dot active"
-                  : "client-selector-dot"
-              }
-              onClick={() => setActiveClient(client)}
-              aria-label={`Select ${client}`}
-            />
-          ))}
+        <div
+          className={`client-focus ${
+            activeClient ? "visible" : ""
+          }`}
+        >
+          <span>SELECTED ORGANIZATION</span>
+
+          <strong>
+            {activeClient || "Explore the organizations"}
+          </strong>
+
+          <button
+            type="button"
+            onClick={() => setActiveClient(null)}
+            aria-label="Clear selected organization"
+          >
+            ×
+          </button>
         </div>
 
       </div>
