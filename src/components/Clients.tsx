@@ -116,11 +116,6 @@ function Clients() {
                     {clients[activeClient]}
                   </h2>
 
-                  <div className="client-feature-line" />
-
-                  <p>
-                    Professional recruiting engagement
-                  </p>
 
                 </div>
 
