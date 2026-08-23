@@ -1,1 +1,265 @@
-/* ========================================================= RECRUITWITHED — ABOUT & IMPACT ANIMATED COLOR FLOW ========================================================= */ .about-impact { position: relative; padding: 85px 6% 90px; background: #111827; overflow: hidden; isolation: isolate; } /* ========================================================= MOVING COLOR BANDS ========================================================= */ .about-color-layer { position: absolute; width: 85%; height: 180px; border-radius: 999px; filter: blur(55px); opacity: 0.24; pointer-events: none; z-index: -2; } /* LEFT → RIGHT */ .about-color-layer-one { top: 8%; left: -65%; background: linear-gradient( 90deg, transparent, rgba(139, 92, 246, 0.65), rgba(167, 139, 250, 0.35), transparent ); transform: rotate(-5deg); animation: colorSlideRight 12s ease-in-out infinite; } /* RIGHT → LEFT */ .about-color-layer-two { top: 42%; right: -65%; background: linear-gradient( 90deg, transparent, rgba(236, 72, 153, 0.55), rgba(139, 92, 246, 0.4), transparent ); transform: rotate(5deg); animation: colorSlideLeft 15s ease-in-out infinite; } /* LEFT → RIGHT */ .about-color-layer-three { bottom: 3%; left: -70%; background: linear-gradient( 90deg, transparent, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.5), transparent ); transform: rotate(-4deg); animation: colorSlideRight 17s ease-in-out infinite; } @keyframes colorSlideRight { 0% { transform: translateX(0) rotate(-5deg); } 50% { transform: translateX(150%) rotate(5deg); } 100% { transform: translateX(0) rotate(-5deg); } } @keyframes colorSlideLeft { 0% { transform: translateX(0) rotate(5deg); } 50% { transform: translateX(-150%) rotate(-5deg); } 100% { transform: translateX(0) rotate(5deg); } } /* ========================================================= LARGE BACKGROUND LIGHTS ========================================================= */ .about-light { position: absolute; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: -3; } .about-light-one { width: 400px; height: 400px; left: -180px; top: -180px; background: rgba(139, 92, 246, 0.09); animation: lightMoveOne 10s ease-in-out infinite; } .about-light-two { width: 380px; height: 380px; right: -180px; bottom: -180px; background: rgba(236, 72, 153, 0.07); animation: lightMoveTwo 12s ease-in-out infinite; } @keyframes lightMoveOne { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(180px, 130px); } } @keyframes lightMoveTwo { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-160px, -110px); } } /* ========================================================= CONTAINER ========================================================= */ .about-impact__container { position: relative; z-index: 2; width: 100%; max-width: 1240px; margin: 0 auto; text-align: center; } /* ========================================================= TITLE ========================================================= */ .about-title { position: relative; margin: 18px 0 0; color: #f8fafc; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; text-shadow: 0 0 30px rgba(139, 92, 246, 0.12); } .about-title span { display: inline-block; background: linear-gradient( 90deg, #8b5cf6, #ec4899, #a78bfa, #8b5cf6 ); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: titleColorFlow 5s linear infinite; filter: drop-shadow( 0 0 12px rgba(139, 92, 246, 0.35) ); } @keyframes titleColorFlow { 0% { background-position: 0% 50%; } 100% { background-position: 300% 50%; } } /* ========================================================= DESCRIPTION ========================================================= */ .about-description { max-width: 680px; margin: 20px auto 0; color: #a8b1bf; font-size: 14px; line-height: 1.75; } /* ========================================================= STATS ========================================================= */ .about-impact__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 15px; margin-top: 42px; } /* ========================================================= CARDS ========================================================= */ .impact-card { position: relative; min-height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px 18px; border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 16px; background: rgba(15, 23, 42, 0.58); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); overflow: hidden; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; } .impact-card::before { content: ""; position: absolute; width: 180px; height: 100px; left: -70px; top: -60px; border-radius: 50%; background: radial-gradient( circle, rgba(139, 92, 246, 0.16), transparent 70% ); filter: blur(15px); animation: cardLightMove 8s ease-in-out infinite; } @keyframes cardLightMove { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(100px, 35px); } } .impact-card:hover { transform: translateY(-6px); border-color: rgba(167, 139, 250, 0.3); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25), 0 0 25px rgba(139, 92, 246, 0.08); } /* ========================================================= NUMBERS ========================================================= */ .impact-card h3 { position: relative; z-index: 2; margin: 0 0 10px; font-size: 38px; line-height: 1; font-weight: 800; background: linear-gradient( 90deg, #a78bfa, #ec4899, #8b5cf6, #a78bfa ); background-size: 300% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: numberFlow 5s linear infinite; filter: drop-shadow( 0 0 10px rgba(139, 92, 246, 0.25) ); } @keyframes numberFlow { from { background-position: 0% 50%; } to { background-position: 300% 50%; } } /* ========================================================= LABELS ========================================================= */ .impact-card p { position: relative; z-index: 2; max-width: 190px; margin: 0; color: #a8b1bf; font-size: 12px; line-height: 1.5; font-weight: 600; } /* ========================================================= TABLET ========================================================= */ @media (max-width: 1000px) { .about-impact { padding: 70px 5% 75px; } .about-impact__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } } /* ========================================================= MOBILE ========================================================= */ @media (max-width: 600px) { .about-impact { padding: 60px 20px 65px; } .about-title { font-size: 30px; } .about-description { font-size: 13px; } .about-impact__grid { grid-template-columns: 1fr; gap: 12px; margin-top: 32px; } .impact-card { min-height: 120px; } .impact-card h3 { font-size: 34px; } .about-color-layer { width: 120%; filter: blur(45px); opacity: 0.2; } } /* ========================================================= REDUCED MOTION ========================================================= */ @media (prefers-reduced-motion: reduce) { .about-color-layer, .about-light, .about-title span, .impact-card::before, .impact-card h3 { animation: none; } }
+/* =========================================================
+   RECRUITWITHED — ABOUT & IMPACT
+   CLEAN BLACK DESIGN
+   ========================================================= */
+
+   .about-impact {
+    position: relative;
+  
+    padding: 90px 6% 100px;
+  
+    overflow: hidden;
+  
+    background: #000000 !important;
+  
+    isolation: isolate;
+  }
+  
+  /* =========================================================
+     REMOVE OLD COLOR EFFECTS
+     ========================================================= */
+  
+  .about-color-layer {
+    display: none;
+  }
+  
+  .about-light {
+    display: none;
+  }
+  
+  /* =========================================================
+     CONTAINER
+     ========================================================= */
+  
+  .about-impact__container {
+    position: relative;
+  
+    z-index: 2;
+  
+    width: 100%;
+  
+    max-width: 1100px;
+  
+    margin: 0 auto;
+  
+    text-align: center;
+  }
+  
+  /* =========================================================
+     TITLE
+     ========================================================= */
+  
+  .about-title {
+    margin: 18px 0 0;
+  
+    color: #ffffff;
+  
+    font-size: clamp(30px, 3.8vw, 44px);
+  
+    line-height: 1.08;
+  
+    font-weight: 800;
+  
+    letter-spacing: -0.025em;
+  }
+  
+  .about-title span {
+    display: inline-block;
+  
+    color: #ffffff;
+  }
+  
+  /* =========================================================
+     DESCRIPTION
+     ========================================================= */
+  
+  .about-description {
+    max-width: 700px;
+  
+    margin: 22px auto 0;
+  
+    color: #9ca3af;
+  
+    font-size: 14px;
+  
+    line-height: 1.75;
+  }
+  
+  /* =========================================================
+     STATS
+     ========================================================= */
+  
+  .about-impact__grid {
+    display: grid;
+  
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  
+    gap: 16px;
+  
+    margin-top: 45px;
+  }
+  
+  /* =========================================================
+     IMPACT CARDS
+     ========================================================= */
+  
+  .impact-card {
+    position: relative;
+  
+    min-height: 145px;
+  
+    display: flex;
+  
+    flex-direction: column;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    padding: 24px 18px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.09);
+  
+    border-radius: 18px;
+  
+    background: #080808;
+  
+    overflow: hidden;
+  
+    transition:
+      transform 0.3s ease,
+      border-color 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  
+  /* =========================================================
+     SUBTLE CARD HIGHLIGHT
+     ========================================================= */
+  
+  .impact-card::before {
+    content: "";
+  
+    position: absolute;
+  
+    inset: 0;
+  
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.025),
+        transparent 45%
+      );
+  
+    pointer-events: none;
+  }
+  
+  /* =========================================================
+     HOVER
+     ========================================================= */
+  
+  .impact-card:hover {
+    transform: translateY(-4px);
+  
+    border-color:
+      rgba(255, 255, 255, 0.18);
+  
+    background: #0b0b0b;
+  
+    box-shadow:
+      0 18px 40px rgba(0, 0, 0, 0.55);
+  }
+  
+  /* =========================================================
+     NUMBERS
+     ========================================================= */
+  
+  .impact-card h3 {
+    position: relative;
+  
+    z-index: 2;
+  
+    margin: 0 0 10px;
+  
+    color: #ffffff;
+  
+    font-size: 34px;
+  
+    line-height: 1;
+  
+    font-weight: 800;
+  
+    letter-spacing: -0.02em;
+  }
+  
+  /* =========================================================
+     LABELS
+     ========================================================= */
+  
+  .impact-card p {
+    position: relative;
+  
+    z-index: 2;
+  
+    max-width: 190px;
+  
+    margin: 0;
+  
+    color: #8f96a3;
+  
+    font-size: 12px;
+  
+    line-height: 1.5;
+  
+    font-weight: 600;
+  }
+  
+  /* =========================================================
+     TABLET
+     ========================================================= */
+  
+  @media (max-width: 1000px) {
+    .about-impact {
+      padding: 75px 5% 80px;
+    }
+  
+    .about-impact__grid {
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+  
+  @media (max-width: 600px) {
+    .about-impact {
+      padding: 60px 20px 70px;
+    }
+  
+    .about-title {
+      font-size: 30px;
+    }
+  
+    .about-description {
+      font-size: 13px;
+    }
+  
+    .about-impact__grid {
+      grid-template-columns: 1fr;
+  
+      gap: 12px;
+  
+      margin-top: 32px;
+    }
+  
+    .impact-card {
+      min-height: 120px;
+    }
+  
+    .impact-card h3 {
+      font-size: 32px;
+    }
+  }
