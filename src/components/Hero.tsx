@@ -39,13 +39,7 @@ function Hero() {
             sustainable technical innovation.
           </p>
 
-          <a
-            href="#home"
-            className="hero-top-arrow"
-            aria-label="Back to top"
-          >
-            ↑
-          </a>
+          
 
         </div>
       </div>
