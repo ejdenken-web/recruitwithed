@@ -13,6 +13,7 @@ function Clients() {
     "Capgemini",
     "Caterpillar",
     "Citigroup",
+    "Cleartelligence" ,
     "Cognizant",
     "CVS Health",
     "Deloitte",
@@ -37,7 +38,7 @@ function Clients() {
     "Tata Consultancy Services",
     "UnitedHealth Group",
     "Wells Fargo",
-    "Cleartelligence",
+    
   ];
 
   const [selectedClient, setSelectedClient] = useState<string | null>(null);
