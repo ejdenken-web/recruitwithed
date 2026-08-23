@@ -1,42 +1,72 @@
 /* =========================================================
    RECRUITWITHED — CLIENTS
+   INTERACTIVE CONSTELLATION
    ========================================================= */
 
    .clients-section {
     position: relative;
-    padding: 75px 0 85px;
+    padding: 85px 6% 90px;
     background: #111827;
     overflow: hidden;
   }
   
+  /* =========================================================
+     BACKGROUND
+     ========================================================= */
+  
   .clients-section::before {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 700px;
-    height: 700px;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(139, 92, 246, 0.09),
-      transparent 68%
-    );
+    inset: 0;
+  
+    background:
+      radial-gradient(
+        circle at 50% 48%,
+        rgba(139, 92, 246, 0.12),
+        transparent 28%
+      ),
+      radial-gradient(
+        circle at 20% 20%,
+        rgba(56, 189, 248, 0.045),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(236, 72, 153, 0.04),
+        transparent 30%
+      );
+  
     pointer-events: none;
-    animation: clientsGlow 7s ease-in-out infinite;
   }
   
-  @keyframes clientsGlow {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) scale(0.9);
-      opacity: 0.55;
+  .clients-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  
+    background-image:
+      radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.055) 1px,
+        transparent 1px
+      );
+  
+    background-size: 45px 45px;
+  
+    opacity: 0.25;
+  
+    animation: clientStars 18s linear infinite;
+  
+    pointer-events: none;
+  }
+  
+  @keyframes clientStars {
+    from {
+      transform: translate(0, 0);
     }
   
-    50% {
-      transform: translate(-50%, -50%) scale(1.1);
-      opacity: 1;
+    to {
+      transform: translate(45px, 45px);
     }
   }
   
@@ -47,8 +77,10 @@
   .clients-container {
     position: relative;
     z-index: 2;
+  
     width: 100%;
     max-width: 1240px;
+  
     margin: 0 auto;
   }
   
@@ -57,80 +89,411 @@
      ========================================================= */
   
   .clients-header {
+    position: relative;
+  
+    max-width: 760px;
+  
+    margin: 0 auto 20px;
+  
     text-align: center;
-    margin-bottom: 15px;
+  
+    z-index: 5;
+  }
+  
+  .clients-header h2 {
+    margin: 18px 0 14px;
+  
+    color: #f8fafc;
+  
+    font-size: clamp(34px, 4.5vw, 54px);
+  
+    line-height: 1.05;
+  
+    font-weight: 800;
+  }
+  
+  .clients-header h2 span {
+    background:
+      linear-gradient(
+        90deg,
+        #8b5cf6,
+        #a78bfa,
+        #ec4899,
+        #38bdf8
+      );
+  
+    background-size: 300% auto;
+  
+    -webkit-background-clip: text;
+    background-clip: text;
+  
+    color: transparent;
+  
+    animation: clientTitleGradient 6s ease-in-out infinite;
+  }
+  
+  @keyframes clientTitleGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .clients-header p {
+    max-width: 650px;
+  
+    margin: 0 auto;
+  
+    color: #8b95a5;
+  
+    font-size: 14px;
+  
+    line-height: 1.7;
   }
   
   /* =========================================================
-     FLOATING CLIENT FIELD
+     CONSTELLATION
      ========================================================= */
   
-  .clients-marquee {
+  .client-constellation {
     position: relative;
-    width: 100%;
-    height: 470px;
-    overflow: hidden;
-  }
   
-  .clients-track {
-    position: relative;
     width: 100%;
-    height: 100%;
-    display: block;
-    animation: none;
+    max-width: 1120px;
+  
+    height: 570px;
+  
+    margin: 0 auto;
   }
   
   /* =========================================================
-     CLIENT ITEMS
+     CENTRAL ENERGY
      ========================================================= */
   
-  .client-item {
+  .constellation-glow {
     position: absolute;
   
+    top: 50%;
+    left: 50%;
+  
+    width: 270px;
+    height: 270px;
+  
+    transform: translate(-50%, -50%);
+  
+    border-radius: 50%;
+  
+    background:
+      radial-gradient(
+        circle,
+        rgba(139, 92, 246, 0.24),
+        rgba(139, 92, 246, 0.07) 38%,
+        transparent 72%
+      );
+  
+    filter: blur(5px);
+  
+    animation:
+      constellationPulse 4s ease-in-out infinite;
+  
+    pointer-events: none;
+  }
+  
+  @keyframes constellationPulse {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(0.85);
+      opacity: 0.55;
+    }
+  
+    50% {
+      transform: translate(-50%, -50%) scale(1.18);
+      opacity: 1;
+    }
+  }
+  
+  /* =========================================================
+     ORBITS
+     ========================================================= */
+  
+  .constellation-orbit {
+    position: absolute;
+  
+    top: 50%;
+    left: 50%;
+  
+    border: 1px solid rgba(139, 92, 246, 0.13);
+  
+    border-radius: 50%;
+  
+    transform: translate(-50%, -50%);
+  
+    pointer-events: none;
+  }
+  
+  .orbit-one {
+    width: 330px;
+    height: 170px;
+  
+    animation: orbitRotateOne 15s linear infinite;
+  }
+  
+  .orbit-two {
+    width: 570px;
+    height: 300px;
+  
+    border-color: rgba(167, 139, 250, 0.09);
+  
+    animation: orbitRotateTwo 22s linear infinite reverse;
+  }
+  
+  .orbit-three {
+    width: 810px;
+    height: 440px;
+  
+    border-color: rgba(56, 189, 248, 0.055);
+  
+    animation: orbitRotateThree 30s linear infinite;
+  }
+  
+  @keyframes orbitRotateOne {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
+  @keyframes orbitRotateTwo {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  
+    to {
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
+  }
+  
+  @keyframes orbitRotateThree {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
+  /* =========================================================
+     CENTER
+     ========================================================= */
+  
+  .constellation-center {
+    position: absolute;
+  
+    top: 50%;
+    left: 50%;
+  
+    z-index: 20;
+  
+    width: 245px;
+    min-height: 145px;
+  
+    transform: translate(-50%, -50%);
+  
     display: flex;
+  
+    flex-direction: column;
+  
     align-items: center;
-    gap: 7px;
   
-    width: max-content;
-    min-width: 0;
+    justify-content: center;
   
-    padding: 8px 13px;
+    text-align: center;
   
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 999px;
+    border-radius: 50%;
   
-    background: rgba(21, 27, 36, 0.5);
+    background:
+      radial-gradient(
+        circle at 50% 45%,
+        rgba(139, 92, 246, 0.16),
+        rgba(13, 17, 23, 0.92) 65%
+      );
+  
+    box-shadow:
+      0 0 40px rgba(139, 92, 246, 0.08),
+      inset 0 0 35px rgba(139, 92, 246, 0.04);
+  
+    animation: centerFloat 5s ease-in-out infinite;
+  
+    pointer-events: none;
+  }
+  
+  @keyframes centerFloat {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) translateY(0);
+    }
+  
+    50% {
+      transform: translate(-50%, -50%) translateY(-7px);
+    }
+  }
+  
+  .constellation-center small {
+    position: relative;
+    z-index: 2;
+  
+    margin-bottom: 9px;
   
     color: #64748b;
   
-    font-size: 12px;
+    font-size: 9px;
+  
+    font-weight: 800;
+  
+    letter-spacing: 0.25em;
+  }
+  
+  .constellation-center strong {
+    position: relative;
+    z-index: 2;
+  
+    max-width: 190px;
+  
+    color: #f8fafc;
+  
+    font-size: 17px;
+  
+    line-height: 1.25;
+  
+    font-weight: 800;
+  
+    text-shadow:
+      0 0 18px rgba(167, 139, 250, 0.25);
+  
+    animation: selectedClientIn 0.35s ease;
+  }
+  
+  @keyframes selectedClientIn {
+    from {
+      opacity: 0;
+      transform: scale(0.88);
+    }
+  
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* =========================================================
+     CENTER PULSE
+     ========================================================= */
+  
+  .center-pulse {
+    position: absolute;
+  
+    width: 13px;
+    height: 13px;
+  
+    top: 25px;
+  
+    border-radius: 50%;
+  
+    background: #8b5cf6;
+  
+    box-shadow:
+      0 0 10px rgba(139, 92, 246, 1),
+      0 0 28px rgba(139, 92, 246, 0.7);
+  
+    animation: centerDotPulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes centerDotPulse {
+    0%,
+    100% {
+      transform: scale(0.75);
+      opacity: 0.65;
+    }
+  
+    50% {
+      transform: scale(1.3);
+      opacity: 1;
+    }
+  }
+  
+  /* =========================================================
+     FLOATING CLIENTS
+     ========================================================= */
+  
+  .floating-client {
+    position: absolute;
+  
+    z-index: 15;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    gap: 8px;
+  
+    padding: 8px 12px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  
+    border-radius: 999px;
+  
+    background:
+      rgba(13, 17, 23, 0.58);
+  
+    color: #64748b;
+  
+    font-family: inherit;
+  
+    font-size: 11px;
+  
     font-weight: 700;
   
     white-space: nowrap;
   
     cursor: pointer;
   
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
+  
+    -webkit-backdrop-filter: blur(10px);
+  
+    box-shadow:
+      0 8px 25px rgba(0, 0, 0, 0.12);
   
     transition:
-      color 0.3s ease,
-      border-color 0.3s ease,
-      background 0.3s ease,
-      box-shadow 0.3s ease,
-      transform 0.3s ease;
+      color 0.25s ease,
+      border-color 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
   
     animation-timing-function: ease-in-out;
+  
     animation-iteration-count: infinite;
   }
   
   /* =========================================================
-     CLIENT DOT
+     CLIENT NODE
      ========================================================= */
   
-  .client-dot {
-    width: 5px;
-    height: 5px;
+  .client-node {
+    width: 6px;
+    height: 6px;
   
     flex-shrink: 0;
   
@@ -138,455 +501,556 @@
   
     background: #475569;
   
+    box-shadow: 0 0 0 rgba(139, 92, 246, 0);
+  
     transition:
-      background 0.3s ease,
-      box-shadow 0.3s ease,
-      transform 0.3s ease;
+      background 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
   }
   
-  .client-item:hover .client-dot {
-    background: #a78bfa;
-  
-    box-shadow:
-      0 0 10px rgba(139, 92, 246, 0.9);
-  
-    transform: scale(1.5);
+  .client-name {
+    transition:
+      color 0.25s ease,
+      letter-spacing 0.25s ease;
   }
   
   /* =========================================================
      HOVER
      ========================================================= */
   
-  .client-item:hover {
-    z-index: 20;
+  .floating-client:hover {
+    z-index: 50;
   
     color: #ffffff;
   
-    border-color: rgba(167, 139, 250, 0.45);
+    border-color: rgba(167, 139, 250, 0.55);
   
-    background: rgba(139, 92, 246, 0.12);
+    background:
+      rgba(139, 92, 246, 0.13);
   
     box-shadow:
-      0 0 20px rgba(139, 92, 246, 0.12),
-      0 10px 30px rgba(0, 0, 0, 0.2);
+      0 0 25px rgba(139, 92, 246, 0.16),
+      0 15px 35px rgba(0, 0, 0, 0.25);
   
-    transform: scale(1.12) translateY(-4px);
+    transform: scale(1.16) translateY(-6px) !important;
+  }
+  
+  .floating-client:hover .client-node {
+    background: #a78bfa;
+  
+    box-shadow:
+      0 0 8px rgba(139, 92, 246, 1),
+      0 0 18px rgba(139, 92, 246, 0.7);
+  
+    transform: scale(1.5);
+  }
+  
+  .floating-client:hover .client-name {
+    letter-spacing: 0.02em;
+  }
+  
+  /* =========================================================
+     ACTIVE CLIENT
+     ========================================================= */
+  
+  .floating-client.active {
+    z-index: 40;
+  
+    color: #ffffff;
+  
+    border-color: rgba(167, 139, 250, 0.7);
+  
+    background:
+      rgba(139, 92, 246, 0.16);
+  
+    box-shadow:
+      0 0 24px rgba(139, 92, 246, 0.18),
+      0 0 55px rgba(139, 92, 246, 0.06);
+  }
+  
+  .floating-client.active .client-node {
+    background: #a78bfa;
+  
+    box-shadow:
+      0 0 8px rgba(139, 92, 246, 1),
+      0 0 18px rgba(139, 92, 246, 0.75);
   }
   
   /* =========================================================
      CLIENT POSITIONS
      ========================================================= */
   
-  .client-item:nth-child(1) {
+  .floating-client-1 {
     top: 7%;
-    left: 10%;
-    animation: clientFloat1 5s infinite;
+    left: 8%;
+    animation: clientFloat1 5s ease-in-out infinite;
   }
   
-  .client-item:nth-child(2) {
-    top: 5%;
-    left: 39%;
-    animation: clientFloat2 5.8s infinite;
+  .floating-client-2 {
+    top: 4%;
+    left: 38%;
+    animation: clientFloat2 5.8s ease-in-out infinite;
   }
   
-  .client-item:nth-child(3) {
-    top: 10%;
-    left: 72%;
-    animation: clientFloat3 4.8s infinite;
+  .floating-client-3 {
+    top: 8%;
+    right: 8%;
+    animation: clientFloat3 4.8s ease-in-out infinite;
   }
   
-  .client-item:nth-child(4) {
+  .floating-client-4 {
+    top: 17%;
+    left: 21%;
+    animation: clientFloat4 6.1s ease-in-out infinite;
+  }
+  
+  .floating-client-5 {
     top: 18%;
-    left: 23%;
-    animation: clientFloat4 6.1s infinite;
+    right: 28%;
+    animation: clientFloat5 5.2s ease-in-out infinite;
   }
   
-  .client-item:nth-child(5) {
-    top: 19%;
-    left: 57%;
-    animation: clientFloat5 5.2s infinite;
+  .floating-client-6 {
+    top: 24%;
+    right: 4%;
+    animation: clientFloat6 6.3s ease-in-out infinite;
   }
   
-  .client-item:nth-child(6) {
-    top: 27%;
-    left: 82%;
-    animation: clientFloat6 6.3s infinite;
+  .floating-client-7 {
+    top: 29%;
+    left: 2%;
+    animation: clientFloat7 5.5s ease-in-out infinite;
   }
   
-  .client-item:nth-child(7) {
+  .floating-client-8 {
     top: 30%;
-    left: 5%;
-    animation: clientFloat7 5.5s infinite;
+    left: 34%;
+    animation: clientFloat8 6s ease-in-out infinite;
   }
   
-  .client-item:nth-child(8) {
-    top: 31%;
-    left: 39%;
-    animation: clientFloat8 6s infinite;
+  .floating-client-9 {
+    top: 34%;
+    right: 7%;
+    animation: clientFloat9 5.1s ease-in-out infinite;
   }
   
-  .client-item:nth-child(9) {
-    top: 37%;
-    left: 66%;
-    animation: clientFloat9 5.1s infinite;
+  .floating-client-10 {
+    top: 41%;
+    left: 12%;
+    animation: clientFloat10 6.4s ease-in-out infinite;
   }
   
-  .client-item:nth-child(10) {
-    top: 42%;
-    left: 16%;
-    animation: clientFloat10 6.4s infinite;
-  }
-  
-  .client-item:nth-child(11) {
-    top: 44%;
-    left: 51%;
-    animation: clientFloat11 5.4s infinite;
-  }
-  
-  .client-item:nth-child(12) {
-    top: 47%;
-    left: 82%;
-    animation: clientFloat12 6.2s infinite;
-  }
-  
-  .client-item:nth-child(13) {
-    top: 53%;
-    left: 4%;
-    animation: clientFloat13 5.7s infinite;
-  }
-  
-  .client-item:nth-child(14) {
-    top: 54%;
-    left: 30%;
-    animation: clientFloat14 6.3s infinite;
-  }
-  
-  .client-item:nth-child(15) {
-    top: 56%;
-    left: 63%;
-    animation: clientFloat15 5.2s infinite;
-  }
-  
-  .client-item:nth-child(16) {
-    top: 62%;
-    left: 85%;
-    animation: clientFloat16 6.1s infinite;
-  }
-  
-  .client-item:nth-child(17) {
-    top: 65%;
-    left: 9%;
-    animation: clientFloat17 5.5s infinite;
-  }
-  
-  .client-item:nth-child(18) {
-    top: 66%;
-    left: 42%;
-    animation: clientFloat18 6.4s infinite;
-  }
-  
-  .client-item:nth-child(19) {
-    top: 69%;
-    left: 70%;
-    animation: clientFloat19 5.1s infinite;
-  }
-  
-  .client-item:nth-child(20) {
-    top: 75%;
-    left: 20%;
-    animation: clientFloat20 6.2s infinite;
-  }
-  
-  .client-item:nth-child(21) {
-    top: 75%;
+  .floating-client-11 {
+    top: 43%;
     left: 53%;
-    animation: clientFloat21 5.6s infinite;
+    animation: clientFloat11 5.4s ease-in-out infinite;
   }
   
-  .client-item:nth-child(22) {
-    top: 80%;
-    left: 82%;
-    animation: clientFloat22 6.5s infinite;
+  .floating-client-12 {
+    top: 47%;
+    right: 1%;
+    animation: clientFloat12 6.2s ease-in-out infinite;
   }
   
-  .client-item:nth-child(23) {
-    top: 84%;
-    left: 5%;
-    animation: clientFloat23 5.3s infinite;
+  .floating-client-13 {
+    top: 52%;
+    left: 3%;
+    animation: clientFloat13 5.7s ease-in-out infinite;
   }
   
-  .client-item:nth-child(24) {
-    top: 86%;
-    left: 36%;
-    animation: clientFloat24 6.1s infinite;
-  }
-  
-  .client-item:nth-child(25) {
-    top: 88%;
-    left: 64%;
-    animation: clientFloat25 5.5s infinite;
-  }
-  
-  .client-item:nth-child(26) {
-    top: 12%;
-    left: 54%;
-    animation: clientFloat26 6.3s infinite;
-  }
-  
-  .client-item:nth-child(27) {
-    top: 25%;
-    left: 43%;
-    animation: clientFloat27 5.4s infinite;
-  }
-  
-  .client-item:nth-child(28) {
-    top: 36%;
+  .floating-client-14 {
+    top: 54%;
     left: 27%;
-    animation: clientFloat28 6.2s infinite;
+    animation: clientFloat14 6.3s ease-in-out infinite;
   }
   
-  .client-item:nth-child(29) {
-    top: 48%;
-    left: 40%;
-    animation: clientFloat29 5.7s infinite;
+  .floating-client-15 {
+    top: 56%;
+    right: 23%;
+    animation: clientFloat15 5.2s ease-in-out infinite;
   }
   
-  .client-item:nth-child(30) {
-    top: 59%;
+  .floating-client-16 {
+    top: 61%;
+    right: 4%;
+    animation: clientFloat16 6.1s ease-in-out infinite;
+  }
+  
+  .floating-client-17 {
+    top: 65%;
+    left: 8%;
+    animation: clientFloat17 5.5s ease-in-out infinite;
+  }
+  
+  .floating-client-18 {
+    top: 66%;
+    left: 38%;
+    animation: clientFloat18 6.4s ease-in-out infinite;
+  }
+  
+  .floating-client-19 {
+    top: 69%;
+    right: 8%;
+    animation: clientFloat19 5.1s ease-in-out infinite;
+  }
+  
+  .floating-client-20 {
+    top: 75%;
+    left: 18%;
+    animation: clientFloat20 6.2s ease-in-out infinite;
+  }
+  
+  .floating-client-21 {
+    top: 75%;
     left: 52%;
-    animation: clientFloat30 6.4s infinite;
+    animation: clientFloat21 5.6s ease-in-out infinite;
   }
   
-  .client-item:nth-child(31) {
+  .floating-client-22 {
+    top: 80%;
+    right: 4%;
+    animation: clientFloat22 6.5s ease-in-out infinite;
+  }
+  
+  .floating-client-23 {
+    top: 84%;
+    left: 3%;
+    animation: clientFloat23 5.3s ease-in-out infinite;
+  }
+  
+  .floating-client-24 {
+    top: 86%;
+    left: 35%;
+    animation: clientFloat24 6.1s ease-in-out infinite;
+  }
+  
+  .floating-client-25 {
+    top: 88%;
+    right: 27%;
+    animation: clientFloat25 5.5s ease-in-out infinite;
+  }
+  
+  .floating-client-26 {
+    top: 12%;
+    left: 56%;
+    animation: clientFloat26 6.3s ease-in-out infinite;
+  }
+  
+  .floating-client-27 {
+    top: 25%;
+    left: 44%;
+    animation: clientFloat27 5.4s ease-in-out infinite;
+  }
+  
+  .floating-client-28 {
+    top: 36%;
+    left: 25%;
+    animation: clientFloat28 6.2s ease-in-out infinite;
+  }
+  
+  .floating-client-29 {
+    top: 48%;
+    left: 41%;
+    animation: clientFloat29 5.7s ease-in-out infinite;
+  }
+  
+  .floating-client-30 {
+    top: 59%;
+    left: 50%;
+    animation: clientFloat30 6.4s ease-in-out infinite;
+  }
+  
+  .floating-client-31 {
     top: 71%;
-    left: 32%;
-    animation: clientFloat31 5.3s infinite;
+    left: 31%;
+    animation: clientFloat31 5.3s ease-in-out infinite;
   }
   
-  .client-item:nth-child(32) {
+  .floating-client-32 {
     top: 16%;
-    left: 87%;
-    animation: clientFloat32 6.1s infinite;
+    right: 1%;
+    animation: clientFloat32 6.1s ease-in-out infinite;
   }
   
-  .client-item:nth-child(33) {
+  .floating-client-33 {
     top: 73%;
-    left: 4%;
-    animation: clientFloat33 5.8s infinite;
+    left: 3%;
+    animation: clientFloat33 5.8s ease-in-out infinite;
   }
   
-  .client-item:nth-child(34) {
+  .floating-client-34 {
     top: 91%;
-    left: 76%;
-    animation: clientFloat34 6.5s infinite;
+    right: 8%;
+    animation: clientFloat34 6.5s ease-in-out infinite;
   }
   
   /* =========================================================
-     FLOATING MOTION
+     FLOATING ANIMATIONS
      ========================================================= */
   
   @keyframes clientFloat1 {
     50% {
-      transform: translate(8px, -8px);
+      transform: translate(9px, -9px);
     }
   }
   
   @keyframes clientFloat2 {
     50% {
-      transform: translate(-7px, 9px);
+      transform: translate(-8px, 10px);
     }
   }
   
   @keyframes clientFloat3 {
     50% {
-      transform: translate(9px, -6px);
+      transform: translate(10px, -7px);
     }
   }
   
   @keyframes clientFloat4 {
     50% {
-      transform: translate(-8px, 8px);
+      transform: translate(-9px, 8px);
     }
   }
   
   @keyframes clientFloat5 {
     50% {
-      transform: translate(7px, -10px);
+      transform: translate(8px, -10px);
     }
   }
   
   @keyframes clientFloat6 {
     50% {
-      transform: translate(-9px, 7px);
+      transform: translate(-10px, 8px);
     }
   }
   
   @keyframes clientFloat7 {
     50% {
-      transform: translate(8px, 9px);
+      transform: translate(9px, 10px);
     }
   }
   
   @keyframes clientFloat8 {
     50% {
-      transform: translate(-7px, -8px);
+      transform: translate(-8px, -9px);
     }
   }
   
   @keyframes clientFloat9 {
     50% {
-      transform: translate(10px, 6px);
+      transform: translate(11px, 7px);
     }
   }
   
   @keyframes clientFloat10 {
     50% {
-      transform: translate(-8px, 9px);
+      transform: translate(-9px, 10px);
     }
   }
   
   @keyframes clientFloat11 {
     50% {
-      transform: translate(7px, -7px);
+      transform: translate(8px, -8px);
     }
   }
   
   @keyframes clientFloat12 {
     50% {
-      transform: translate(-10px, 8px);
+      transform: translate(-11px, 9px);
     }
   }
   
   @keyframes clientFloat13 {
     50% {
-      transform: translate(8px, -9px);
+      transform: translate(9px, -10px);
     }
   }
   
   @keyframes clientFloat14 {
     50% {
-      transform: translate(-7px, 7px);
+      transform: translate(-8px, 8px);
     }
   }
   
   @keyframes clientFloat15 {
     50% {
-      transform: translate(9px, 8px);
+      transform: translate(10px, 9px);
     }
   }
   
   @keyframes clientFloat16 {
     50% {
-      transform: translate(-8px, -8px);
+      transform: translate(-9px, -9px);
     }
   }
   
   @keyframes clientFloat17 {
     50% {
-      transform: translate(7px, 10px);
+      transform: translate(8px, 11px);
     }
   }
   
   @keyframes clientFloat18 {
     50% {
-      transform: translate(-9px, -7px);
+      transform: translate(-10px, -8px);
     }
   }
   
   @keyframes clientFloat19 {
     50% {
-      transform: translate(8px, 8px);
+      transform: translate(9px, 9px);
     }
   }
   
   @keyframes clientFloat20 {
     50% {
-      transform: translate(-7px, -9px);
+      transform: translate(-8px, -10px);
     }
   }
   
   @keyframes clientFloat21 {
     50% {
-      transform: translate(10px, 7px);
+      transform: translate(11px, 8px);
     }
   }
   
   @keyframes clientFloat22 {
     50% {
-      transform: translate(-8px, 8px);
+      transform: translate(-9px, 9px);
     }
   }
   
   @keyframes clientFloat23 {
     50% {
-      transform: translate(7px, -8px);
+      transform: translate(8px, -9px);
     }
   }
   
   @keyframes clientFloat24 {
     50% {
-      transform: translate(-9px, 9px);
+      transform: translate(-10px, 10px);
     }
   }
   
   @keyframes clientFloat25 {
     50% {
-      transform: translate(8px, -7px);
+      transform: translate(9px, -8px);
     }
   }
   
   @keyframes clientFloat26 {
     50% {
-      transform: translate(-7px, 10px);
+      transform: translate(-8px, 11px);
     }
   }
   
   @keyframes clientFloat27 {
     50% {
-      transform: translate(9px, -8px);
+      transform: translate(10px, -9px);
     }
   }
   
   @keyframes clientFloat28 {
     50% {
-      transform: translate(-8px, 7px);
+      transform: translate(-9px, 8px);
     }
   }
   
   @keyframes clientFloat29 {
     50% {
-      transform: translate(7px, -9px);
+      transform: translate(8px, -10px);
     }
   }
   
   @keyframes clientFloat30 {
     50% {
-      transform: translate(-10px, 8px);
+      transform: translate(-11px, 9px);
     }
   }
   
   @keyframes clientFloat31 {
     50% {
-      transform: translate(8px, 7px);
+      transform: translate(9px, 8px);
     }
   }
   
   @keyframes clientFloat32 {
     50% {
-      transform: translate(-7px, -8px);
+      transform: translate(-8px, -9px);
     }
   }
   
   @keyframes clientFloat33 {
     50% {
-      transform: translate(9px, 8px);
+      transform: translate(10px, 9px);
     }
   }
   
   @keyframes clientFloat34 {
     50% {
-      transform: translate(-8px, -7px);
+      transform: translate(-9px, -8px);
     }
+  }
+  
+  /* =========================================================
+     SELECTOR
+     ========================================================= */
+  
+  .client-selector {
+    position: relative;
+  
+    z-index: 30;
+  
+    display: flex;
+  
+    flex-wrap: wrap;
+  
+    justify-content: center;
+  
+    gap: 6px;
+  
+    max-width: 650px;
+  
+    margin: 0 auto;
+  }
+  
+  .client-selector-dot {
+    width: 5px;
+    height: 5px;
+  
+    padding: 0;
+  
+    border: 0;
+  
+    border-radius: 50%;
+  
+    background: #334155;
+  
+    cursor: pointer;
+  
+    transition:
+      width 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+  }
+  
+  .client-selector-dot:hover {
+    background: #a78bfa;
+  
+    transform: scale(1.5);
+  }
+  
+  .client-selector-dot.active {
+    width: 20px;
+  
+    border-radius: 999px;
+  
+    background: #8b5cf6;
+  
+    box-shadow:
+      0 0 12px rgba(139, 92, 246, 0.7);
   }
   
   /* =========================================================
@@ -595,25 +1059,70 @@
   
   @media (max-width: 700px) {
     .clients-section {
-      padding: 55px 0 65px;
+      padding: 60px 20px 70px;
     }
   
-    .clients-marquee {
+    .clients-header h2 {
+      font-size: 31px;
+    }
+  
+    .clients-header p {
+      font-size: 13px;
+    }
+  
+    .client-constellation {
       height: 620px;
     }
   
-    .client-item {
-      font-size: 10px;
-      padding: 6px 9px;
+    .constellation-center {
+      width: 190px;
+      min-height: 120px;
     }
   
-    .client-item:nth-child(odd) {
-      left: 5%;
+    .constellation-center strong {
+      max-width: 150px;
+      font-size: 14px;
     }
   
-    .client-item:nth-child(even) {
-      left: auto;
-      right: 5%;
+    .orbit-one {
+      width: 260px;
+      height: 160px;
+    }
+  
+    .orbit-two {
+      width: 420px;
+      height: 290px;
+    }
+  
+    .orbit-three {
+      width: 560px;
+      height: 440px;
+    }
+  
+    .floating-client {
+      font-size: 9px;
+      padding: 6px 8px;
+    }
+  
+    .floating-client-1,
+    .floating-client-7,
+    .floating-client-13,
+    .floating-client-17,
+    .floating-client-23,
+    .floating-client-33 {
+      left: 1%;
+    }
+  
+    .floating-client-3,
+    .floating-client-6,
+    .floating-client-9,
+    .floating-client-12,
+    .floating-client-16,
+    .floating-client-19,
+    .floating-client-22,
+    .floating-client-32,
+    .floating-client-34 {
+      right: 1%;
     }
   }
   
@@ -622,11 +1131,12 @@
      ========================================================= */
   
   @media (prefers-reduced-motion: reduce) {
-    .clients-section::before {
-      animation: none;
-    }
-  
-    .client-item {
+    .clients-section::after,
+    .clients-header h2 span,
+    .constellation-glow,
+    .constellation-orbit,
+    .constellation-center,
+    .floating-client {
       animation: none;
     }
   }

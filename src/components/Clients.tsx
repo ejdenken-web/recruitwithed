@@ -64,6 +64,7 @@ function Clients() {
         <div className="client-constellation">
 
           <div className="constellation-glow" />
+
           <div className="constellation-orbit orbit-one" />
           <div className="constellation-orbit orbit-two" />
           <div className="constellation-orbit orbit-three" />
@@ -71,9 +72,7 @@ function Clients() {
           <div className="constellation-center">
             <span className="center-pulse" />
 
-            <small>
-              CLIENT
-            </small>
+            <small>CLIENT</small>
 
             <strong>
               {activeClient}
@@ -91,6 +90,7 @@ function Clients() {
                   isActive ? " active" : ""
                 }`}
                 onClick={() => setActiveClient(client)}
+                aria-label={`Select ${client}`}
               >
                 <span className="client-node" />
 
