@@ -4,21 +4,15 @@
 
    .certifications-section {
     position: relative;
-  
     padding: 45px 6%;
-  
     background: #0d1117;
-  
     overflow: hidden;
   }
   
   .certifications-container {
     width: 100%;
-  
     max-width: 1240px;
-  
     margin: 0 auto;
-  
     text-align: center;
   }
   
@@ -28,13 +22,9 @@
   
   .certifications-intro {
     max-width: 680px;
-  
     margin: 18px auto 0;
-  
     color: #8b95a5;
-  
     font-size: 14px;
-  
     line-height: 1.7;
   }
   
@@ -44,13 +34,9 @@
   
   .floating-certification-stage {
     position: relative;
-  
     width: 100%;
-  
     max-width: 1100px;
-  
     min-height: 470px;
-  
     margin: 20px auto 0;
   }
   
@@ -60,34 +46,38 @@
   
   .floating-provider {
     position: absolute;
-  
     z-index: 4;
   
     border: 0;
+    padding: 0;
   
     background: transparent;
   
     color: #94a3b8;
   
     font-size: 14px;
-  
     font-weight: 700;
   
     cursor: pointer;
   
     transition:
-      color 0.3s ease,
-      transform 0.3s ease,
-      text-shadow 0.3s ease;
+      color 0.25s ease,
+      text-shadow 0.25s ease,
+      opacity 0.25s ease;
   }
+  
+  /* Hover ALWAYS wins */
   
   .floating-provider:hover {
-    color: #ffffff;
+    color: #ffffff !important;
   
-    transform:
-      translateY(-5px)
-      scale(1.06);
+    text-shadow:
+      0 0 16px rgba(167, 139, 250, 0.65);
+  
+    opacity: 1;
   }
+  
+  /* Active provider */
   
   .floating-provider[data-active="true"] {
     color: #a78bfa;
@@ -96,13 +86,21 @@
       0 0 18px rgba(139, 92, 246, 0.45);
   }
   
+  /* Active + hover */
+  
+  .floating-provider[data-active="true"]:hover {
+    color: #ffffff !important;
+  
+    text-shadow:
+      0 0 22px rgba(167, 139, 250, 0.8);
+  }
+  
   /* =========================================================
      PROVIDER POSITIONS
      ========================================================= */
   
   .provider-one {
     top: 35px;
-  
     left: 18%;
   
     animation:
@@ -111,7 +109,6 @@
   
   .provider-two {
     top: 105px;
-  
     right: 18%;
   
     animation:
@@ -120,7 +117,6 @@
   
   .provider-three {
     top: 225px;
-  
     left: 7%;
   
     animation:
@@ -129,7 +125,6 @@
   
   .provider-four {
     top: 220px;
-  
     right: 7%;
   
     animation:
@@ -138,7 +133,6 @@
   
   .provider-five {
     bottom: 55px;
-  
     left: 22%;
   
     animation:
@@ -147,11 +141,18 @@
   
   .provider-six {
     bottom: 45px;
-  
     right: 21%;
   
     animation:
       provider-float-six 5.3s ease-in-out infinite;
+  }
+  
+  /* =========================================================
+     PAUSE MOVEMENT ON HOVER
+     ========================================================= */
+  
+  .floating-provider:hover {
+    animation-play-state: paused;
   }
   
   /* =========================================================
@@ -232,7 +233,6 @@
     position: absolute;
   
     top: 50%;
-  
     left: 50%;
   
     width: min(700px, 70%);
@@ -246,7 +246,6 @@
     color: #f8fafc;
   
     font-size: 26px;
-  
     font-weight: 800;
   }
   
@@ -260,7 +259,6 @@
     flex-wrap: wrap;
   
     align-items: center;
-  
     justify-content: center;
   
     gap: 12px 18px;
@@ -296,6 +294,8 @@
   .floating-certification:hover {
     color: #ffffff;
   
+    animation-play-state: paused;
+  
     transform: translateY(-4px);
   }
   
@@ -320,7 +320,6 @@
     display: flex;
   
     align-items: center;
-  
     justify-content: center;
   
     gap: 18px;
@@ -328,13 +327,11 @@
   
   .certification-arrow {
     width: 36px;
-  
     height: 36px;
   
     display: flex;
   
     align-items: center;
-  
     justify-content: center;
   
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -372,7 +369,6 @@
   
   .certification-dot {
     width: 6px;
-  
     height: 6px;
   
     padding: 0;
@@ -396,6 +392,10 @@
     border-radius: 999px;
   
     background: #8b5cf6;
+  }
+  
+  .certification-dot:hover {
+    background: #a78bfa;
   }
   
   /* =========================================================
