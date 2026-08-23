@@ -5,14 +5,10 @@
 
    .clients-section {
     position: relative;
-  
     width: 100%;
-  
-    padding: 90px 6% 100px;
-  
+    padding: 90px 0 100px;
     overflow: hidden;
-  
-    background: #000000 !important;
+    background: #0d1117 !important;
   }
   
   /* =========================================================

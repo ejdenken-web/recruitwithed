@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "./Clients.css";
 
 function Clients() {
@@ -40,103 +39,48 @@ function Clients() {
     "Wells Fargo",
   ];
 
-  const [activeClient, setActiveClient] = useState(0);
-  const [direction, setDirection] = useState<"left" | "right">("right");
-
-  const nextClient = () => {
-    setDirection("right");
-
-    setActiveClient((current) =>
-      current === clients.length - 1 ? 0 : current + 1
-    );
-  };
-
-  const previousClient = () => {
-    setDirection("left");
-
-    setActiveClient((current) =>
-      current === 0 ? clients.length - 1 : current - 1
-    );
-  };
-
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setDirection("right");
-
-      setActiveClient((current) =>
-        current === clients.length - 1 ? 0 : current + 1
-      );
-    }, 4000);
-
-    return () => window.clearInterval(interval);
-  }, []);
+  const firstRow = clients.slice(0, 18);
+  const secondRow = clients.slice(18);
 
   return (
     <section id="clients" className="clients-section">
-
-      <div className="clients-light clients-light-one" />
-      <div className="clients-light clients-light-two" />
-
       <div className="clients-container">
 
         <div className="clients-header">
-          <span className="section-tag">
-            CLIENTS
-          </span>
+          <span className="section-tag">CLIENTS</span>
         </div>
 
-        <div className="client-carousel">
+        <div className="clients-moving-wall">
 
-          <button
-            className="client-arrow client-arrow-left"
-            onClick={previousClient}
-            aria-label="Previous client"
-          >
-            ←
-          </button>
-
-          <div className="client-slide-area">
-
-            <div
-              key={`${activeClient}-${direction}`}
-              className={`client-slide client-slide-${direction}`}
-            >
-
-              <div className="client-feature-card">
-
-                <div className="client-feature-glow" />
-
-                <div className="client-feature-content">
-
-                  <div className="client-feature-icon">
-                    ✦
-                  </div>
-
-                  <h2 className="client-name">
-                    {clients[activeClient]}
-                  </h2>
-
-
+          <div className="client-track">
+            <div className="client-row client-row-left">
+              {[...firstRow, ...firstRow].map((client, index) => (
+                <div
+                  className="client-pill"
+                  key={`top-${client}-${index}`}
+                >
+                  <span>{client}</span>
                 </div>
-
-              </div>
-
+              ))}
             </div>
-
           </div>
 
-          <button
-            className="client-arrow client-arrow-right"
-            onClick={nextClient}
-            aria-label="Next client"
-          >
-            →
-          </button>
+          <div className="client-track">
+            <div className="client-row client-row-right">
+              {[...secondRow, ...secondRow].map((client, index) => (
+                <div
+                  className="client-pill"
+                  key={`bottom-${client}-${index}`}
+                >
+                  <span>{client}</span>
+                </div>
+              ))}
+            </div>
+          </div>
 
         </div>
 
       </div>
-
     </section>
   );
 }

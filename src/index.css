@@ -4,8 +4,7 @@
 
    html {
     scroll-behavior: smooth;
-  
-    background: #000000;
+    background: #0d1117;
   }
   
   body {
@@ -13,7 +12,7 @@
   
     min-width: 320px;
   
-    background: #000000;
+    background: #0d1117;
   
     color: #ffffff;
   
@@ -31,7 +30,7 @@
   #root {
     min-height: 100vh;
   
-    background: #000000;
+    background: #0d1117;
   }
   
   * {
@@ -44,7 +43,6 @@
   
   a {
     color: inherit;
-  
     text-decoration: none;
   }
   
@@ -61,33 +59,20 @@
      ========================================================= */
   
   ::selection {
-    background: rgba(255, 255, 255, 0.18);
-  
+    background: rgba(139, 92, 246, 0.35);
     color: #ffffff;
   }
   
   /* =========================================================
-     GLOBAL BLACK SECTION BACKGROUND
+     GLOBAL PAGE BACKGROUND
      ========================================================= */
   
   main {
-    background: #000000;
+    background: #0d1117;
   }
   
   section {
-    background-color: #000000;
-  }
-  
-  /* =========================================================
-     REMOVE DEFAULT LIGHT BACKGROUND
-     ========================================================= */
-  
-  html,
-  body,
-  #root,
-  main,
-  section {
-    background-color: #000000;
+    background-color: #0d1117;
   }
   
   /* =========================================================
@@ -99,15 +84,15 @@
   }
   
   ::-webkit-scrollbar-track {
-    background: #000000;
+    background: #0d1117;
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #222222;
+    background: #30363d;
   
     border-radius: 999px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #333333;
+    background: #8b5cf6;
   }
