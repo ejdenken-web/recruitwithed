@@ -3,31 +3,43 @@
    ========================================================= */
 
    .recruiting-platforms-section {
-    padding: 60px 6%;
+    position: relative;
+  
+    padding: 70px 6%;
   
     background: #0d1117;
+  
+    overflow: hidden;
   }
   
   .recruiting-platforms-container {
     width: 100%;
   
-    max-width: 1100px;
+    max-width: 1240px;
   
     margin: 0 auto;
   }
   
-  .recruiting-platforms-header {
-    max-width: 650px;
+  /* =========================================================
+     HEADING
+     ========================================================= */
   
-    margin: 0 auto;
+  .recruiting-platforms-header {
+    margin: 0 auto 28px;
   
     text-align: center;
   }
   
   .recruiting-platforms-header h2 {
-    margin: 18px 0 0;
+    margin: 0;
   
     color: #f8fafc;
+  
+    font-size: 34px;
+  
+    line-height: 1.2;
+  
+    font-weight: 800;
   }
   
   .recruiting-platforms-header h2 span {
@@ -46,110 +58,114 @@
     color: transparent;
   }
   
-  .recruiting-platforms-grid {
-    margin-top: 28px;
+  /* =========================================================
+     PLATFORM ROW
+     ========================================================= */
+  
+  .recruiting-platforms-track {
+    width: 100%;
   
     display: flex;
   
-    flex-wrap: wrap;
+    align-items: center;
   
     justify-content: center;
   
-    align-items: center;
+    flex-wrap: wrap;
   
     gap: 12px;
   }
   
+  /* =========================================================
+     PLATFORM PILL
+     ========================================================= */
+  
   .recruiting-platform-card {
-    position: relative;
-  
-    min-height: 64px;
-  
-    padding: 15px 19px;
-  
     display: inline-flex;
   
     align-items: center;
   
     justify-content: center;
   
+    min-height: 48px;
+  
+    padding: 10px 18px;
+  
     border: 1px solid rgba(255, 255, 255, 0.08);
   
     border-radius: 999px;
   
     background:
-      linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.055),
-        rgba(255, 255, 255, 0.018)
-      );
+      rgba(255, 255, 255, 0.035);
+  
+    color: #cbd5e1;
+  
+    white-space: nowrap;
   
     box-shadow:
-      0 8px 24px rgba(0, 0, 0, 0.22);
+      0 6px 18px rgba(0, 0, 0, 0.12);
   
     transition:
-      transform 0.25s ease,
-      border-color 0.25s ease,
-      background 0.25s ease,
-      box-shadow 0.25s ease;
+      transform 0.3s ease,
+      border-color 0.3s ease,
+      background 0.3s ease,
+      color 0.3s ease;
+  }
+  
+  .recruiting-platform-card span {
+    font-size: 13px;
+  
+    line-height: 1.2;
+  
+    font-weight: 700;
   }
   
   .recruiting-platform-card:hover {
     transform: translateY(-3px);
   
-    border-color: rgba(139, 92, 246, 0.35);
+    color: #ffffff;
+  
+    border-color:
+      rgba(139, 92, 246, 0.35);
   
     background:
       rgba(139, 92, 246, 0.08);
-  
-    box-shadow:
-      0 12px 30px rgba(0, 0, 0, 0.3);
-  }
-  
-  
-  
-  .recruiting-platform-card h3 {
-    margin: 0;
-  
-    color: #cbd5e1;
-  
-    font-size: 13px;
-  
-    font-weight: 650;
-  
-    line-height: 1.3;
-  
-    white-space: nowrap;
-  }
-  
-  .recruiting-platform-card:hover h3 {
-    color: #ffffff;
   }
   
   /* =========================================================
      MOBILE
      ========================================================= */
   
-  @media (max-width: 700px) {
+  @media (max-width: 600px) {
     .recruiting-platforms-section {
-      padding: 50px 24px;
+      padding: 55px 24px;
     }
   
-    .recruiting-platforms-grid {
+    .recruiting-platforms-header h2 {
+      font-size: 28px;
+    }
+  
+    .recruiting-platforms-track {
       gap: 9px;
     }
   
     .recruiting-platform-card {
-      min-height: 54px;
+      min-height: 44px;
   
-      padding: 12px 15px;
+      padding: 9px 15px;
     }
   
-    .recruiting-platform-card h3 {
+    .recruiting-platform-card span {
       font-size: 12px;
+    }
+  }
   
-      white-space: normal;
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
   
-      text-align: center;
+  @media (prefers-reduced-motion: reduce) {
+    .recruiting-platform-card {
+      transition: none;
     }
   }
