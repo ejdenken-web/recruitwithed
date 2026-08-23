@@ -17,7 +17,7 @@
   }
   
   /* =========================================================
-     INTRO
+     HEADER
      ========================================================= */
   
   .certifications-intro {
@@ -29,70 +29,113 @@
   }
   
   /* =========================================================
-     FLOATING STAGE
+     FLOATING AREA
      ========================================================= */
   
   .floating-certification-stage {
     position: relative;
+  
     width: 100%;
     max-width: 1100px;
+  
     min-height: 470px;
+  
     margin: 20px auto 0;
   }
   
   /* =========================================================
-     FLOATING PROVIDERS
+     PROVIDER BUTTONS
      ========================================================= */
   
   .floating-provider {
     position: absolute;
-    z-index: 4;
+  
+    z-index: 10;
+  
+    margin: 0;
+    padding: 8px 4px;
   
     border: 0;
-    padding: 0;
   
     background: transparent;
   
     color: #94a3b8;
   
+    font-family: inherit;
+  
     font-size: 14px;
     font-weight: 700;
   
+    line-height: 1;
+  
+    white-space: nowrap;
+  
     cursor: pointer;
+  
+    opacity: 0.8;
   
     transition:
       color 0.25s ease,
+      opacity 0.25s ease,
       text-shadow 0.25s ease,
-      opacity 0.25s ease;
+      transform 0.25s ease;
   }
   
-  /* Hover ALWAYS wins */
+  /* =========================================================
+     HOVER — STRONG VISUAL RESPONSE
+     ========================================================= */
   
   .floating-provider:hover {
     color: #ffffff !important;
   
-    text-shadow:
-      0 0 16px rgba(167, 139, 250, 0.65);
-  
     opacity: 1;
+  
+    text-shadow:
+      0 0 8px rgba(167, 139, 250, 0.95),
+      0 0 18px rgba(139, 92, 246, 0.75);
+  
+    transform: scale(1.15) !important;
   }
   
-  /* Active provider */
+  /* =========================================================
+     KEYBOARD FOCUS
+     ========================================================= */
+  
+  .floating-provider:focus-visible {
+    color: #ffffff !important;
+  
+    opacity: 1;
+  
+    text-shadow:
+      0 0 8px rgba(167, 139, 250, 0.95),
+      0 0 18px rgba(139, 92, 246, 0.75);
+  
+    transform: scale(1.15) !important;
+  
+    outline: none;
+  }
+  
+  /* =========================================================
+     ACTIVE PROVIDER
+     ========================================================= */
   
   .floating-provider[data-active="true"] {
     color: #a78bfa;
   
-    text-shadow:
-      0 0 18px rgba(139, 92, 246, 0.45);
-  }
+    opacity: 1;
   
-  /* Active + hover */
+    text-shadow:
+      0 0 12px rgba(139, 92, 246, 0.55);
+  }
   
   .floating-provider[data-active="true"]:hover {
     color: #ffffff !important;
   
     text-shadow:
-      0 0 22px rgba(167, 139, 250, 0.8);
+      0 0 8px rgba(167, 139, 250, 1),
+      0 0 22px rgba(139, 92, 246, 0.85);
+  
+    transform: scale(1.15) !important;
   }
   
   /* =========================================================
@@ -102,135 +145,135 @@
   .provider-one {
     top: 35px;
     left: 18%;
-  
-    animation:
-      provider-float-one 5s ease-in-out infinite;
   }
   
   .provider-two {
     top: 105px;
     right: 18%;
-  
-    animation:
-      provider-float-two 5.5s ease-in-out infinite;
   }
   
   .provider-three {
     top: 225px;
     left: 7%;
-  
-    animation:
-      provider-float-three 6s ease-in-out infinite;
   }
   
   .provider-four {
     top: 220px;
     right: 7%;
-  
-    animation:
-      provider-float-four 5.2s ease-in-out infinite;
   }
   
   .provider-five {
     bottom: 55px;
     left: 22%;
-  
-    animation:
-      provider-float-five 5.8s ease-in-out infinite;
   }
   
   .provider-six {
     bottom: 45px;
     right: 21%;
-  
-    animation:
-      provider-float-six 5.3s ease-in-out infinite;
   }
   
   /* =========================================================
-     PAUSE MOVEMENT ON HOVER
+     SUBTLE FLOATING EFFECT
      ========================================================= */
   
-  .floating-provider:hover {
-    animation-play-state: paused;
+  .provider-one {
+    animation: float-one 5s ease-in-out infinite;
+  }
+  
+  .provider-two {
+    animation: float-two 5.5s ease-in-out infinite;
+  }
+  
+  .provider-three {
+    animation: float-three 6s ease-in-out infinite;
+  }
+  
+  .provider-four {
+    animation: float-four 5.2s ease-in-out infinite;
+  }
+  
+  .provider-five {
+    animation: float-five 5.8s ease-in-out infinite;
+  }
+  
+  .provider-six {
+    animation: float-six 5.3s ease-in-out infinite;
+  }
+  
+  @keyframes float-one {
+    0%,
+    100% {
+      margin-top: 0;
+    }
+  
+    50% {
+      margin-top: -8px;
+    }
+  }
+  
+  @keyframes float-two {
+    0%,
+    100% {
+      margin-top: 0;
+    }
+  
+    50% {
+      margin-top: 9px;
+    }
+  }
+  
+  @keyframes float-three {
+    0%,
+    100% {
+      margin-top: 0;
+    }
+  
+    50% {
+      margin-top: -7px;
+    }
+  }
+  
+  @keyframes float-four {
+    0%,
+    100% {
+      margin-top: 0;
+    }
+  
+    50% {
+      margin-top: 9px;
+    }
+  }
+  
+  @keyframes float-five {
+    0%,
+    100% {
+      margin-top: 0;
+    }
+  
+    50% {
+      margin-top: 8px;
+    }
+  }
+  
+  @keyframes float-six {
+    0%,
+    100% {
+      margin-top: 0;
+    }
+  
+    50% {
+      margin-top: -8px;
+    }
   }
   
   /* =========================================================
-     FLOATING MOVEMENT
-     ========================================================= */
-  
-  @keyframes provider-float-one {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  
-  @keyframes provider-float-two {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(9px);
-    }
-  }
-  
-  @keyframes provider-float-three {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(-8px);
-    }
-  }
-  
-  @keyframes provider-float-four {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(11px);
-    }
-  }
-  
-  @keyframes provider-float-five {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(8px);
-    }
-  }
-  
-  @keyframes provider-float-six {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(-9px);
-    }
-  }
-  
-  /* =========================================================
-     CENTER CONTENT
+     CENTER CERTIFICATION CONTENT
      ========================================================= */
   
   .certification-center {
     position: absolute;
+  
+    z-index: 3;
   
     top: 50%;
     left: 50%;
@@ -247,10 +290,12 @@
   
     font-size: 26px;
     font-weight: 800;
+  
+    letter-spacing: -0.4px;
   }
   
   /* =========================================================
-     CERTIFICATION ITEMS
+     CERTIFICATION NAMES
      ========================================================= */
   
   .certification-list {
@@ -261,7 +306,7 @@
     align-items: center;
     justify-content: center;
   
-    gap: 12px 18px;
+    gap: 12px 20px;
   }
   
   .floating-certification {
@@ -271,43 +316,15 @@
   
     line-height: 1.5;
   
-    animation:
-      certification-item-float 4.5s ease-in-out infinite;
-  
     transition:
-      color 0.25s ease,
-      transform 0.25s ease;
-  }
-  
-  .floating-certification:nth-child(2n) {
-    animation-delay: -1s;
-  }
-  
-  .floating-certification:nth-child(3n) {
-    animation-delay: -2s;
-  }
-  
-  .floating-certification:nth-child(4n) {
-    animation-delay: -3s;
+      color 0.2s ease,
+      transform 0.2s ease;
   }
   
   .floating-certification:hover {
     color: #ffffff;
   
-    animation-play-state: paused;
-  
-    transform: translateY(-4px);
-  }
-  
-  @keyframes certification-item-float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(-5px);
-    }
+    transform: translateY(-3px);
   }
   
   /* =========================================================
@@ -334,6 +351,8 @@
     align-items: center;
     justify-content: center;
   
+    padding: 0;
+  
     border: 1px solid rgba(255, 255, 255, 0.08);
   
     border-radius: 50%;
@@ -342,11 +361,14 @@
   
     color: #94a3b8;
   
+    font-size: 15px;
+  
     cursor: pointer;
   
     transition:
       color 0.2s ease,
       border-color 0.2s ease,
+      background 0.2s ease,
       transform 0.2s ease;
   }
   
@@ -354,10 +376,17 @@
     color: #ffffff;
   
     border-color:
-      rgba(139, 92, 246, 0.4);
+      rgba(139, 92, 246, 0.45);
+  
+    background:
+      rgba(139, 92, 246, 0.08);
   
     transform: scale(1.08);
   }
+  
+  /* =========================================================
+     DOTS
+     ========================================================= */
   
   .certification-dots {
     display: flex;
@@ -386,16 +415,16 @@
       background 0.2s ease;
   }
   
+  .certification-dot:hover {
+    background: #a78bfa;
+  }
+  
   .certification-dot.active {
     width: 20px;
   
     border-radius: 999px;
   
     background: #8b5cf6;
-  }
-  
-  .certification-dot:hover {
-    background: #a78bfa;
   }
   
   /* =========================================================
@@ -412,39 +441,45 @@
     }
   
     .certification-center {
-      width: 80%;
+      width: 78%;
     }
   
     .certification-center-provider {
       font-size: 23px;
     }
   
+    .floating-provider {
+      font-size: 12px;
+    }
+  
     .provider-one {
+      top: 30px;
       left: 5%;
     }
   
     .provider-two {
+      top: 80px;
       right: 5%;
     }
   
     .provider-three {
+      top: 200px;
       left: 2%;
     }
   
     .provider-four {
+      top: 195px;
       right: 2%;
     }
   
     .provider-five {
+      bottom: 65px;
       left: 8%;
     }
   
     .provider-six {
+      bottom: 55px;
       right: 8%;
-    }
-  
-    .floating-provider {
-      font-size: 12px;
     }
   
     .floating-certification {
@@ -457,8 +492,7 @@
      ========================================================= */
   
   @media (prefers-reduced-motion: reduce) {
-    .floating-provider,
-    .floating-certification {
+    .floating-provider {
       animation: none;
     }
   }
