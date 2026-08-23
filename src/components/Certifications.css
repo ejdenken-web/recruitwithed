@@ -16,50 +16,63 @@
     text-align: center;
   }
   
+  /* =========================================================
+     INTRO
+     ========================================================= */
+  
   .certifications-intro {
     max-width: 680px;
     margin: 18px auto 0;
+  
     color: #8b95a5;
+  
     font-size: 14px;
     line-height: 1.7;
   }
   
   /* =========================================================
-     FLOATING AREA
+     FLOATING CERTIFICATION STAGE
      ========================================================= */
   
   .floating-certification-stage {
     position: relative;
+  
     width: 100%;
     max-width: 1100px;
-    min-height: 470px;
-    margin: 20px auto 0;
+  
+    height: 430px;
+  
+    margin: 10px auto 0;
   }
   
   /* =========================================================
-     PROVIDERS
+     FLOATING PROVIDERS
      ========================================================= */
   
   .floating-provider {
     position: absolute;
+  
     z-index: 10;
   
-    margin: 0;
-    padding: 8px 4px;
+    padding: 8px 5px;
   
     border: 0;
+  
     background: transparent;
   
     color: #94a3b8;
   
     font-family: inherit;
+  
     font-size: 14px;
     font-weight: 700;
   
     line-height: 1;
+  
     white-space: nowrap;
   
     cursor: pointer;
+  
     opacity: 0.8;
   
     transition:
@@ -69,160 +82,186 @@
       transform 0.25s ease;
   }
   
-  .floating-provider:hover,
-  .floating-provider:focus-visible {
-    color: #ffffff !important;
+  /* =========================================================
+     HOVER
+     ========================================================= */
+  
+  .floating-provider:hover {
+    color: #ffffff;
+  
     opacity: 1;
   
     text-shadow:
       0 0 8px rgba(167, 139, 250, 0.95),
-      0 0 18px rgba(139, 92, 246, 0.75);
+      0 0 18px rgba(139, 92, 246, 0.7);
   
-    transform: scale(1.15) !important;
-  
-    outline: none;
+    transform: scale(1.12);
   }
+  
+  /* =========================================================
+     ACTIVE PROVIDER
+     ========================================================= */
   
   .floating-provider[data-active="true"] {
     color: #a78bfa;
+  
     opacity: 1;
   
     text-shadow:
-      0 0 12px rgba(139, 92, 246, 0.55);
+      0 0 10px rgba(139, 92, 246, 0.55);
   }
   
   .floating-provider[data-active="true"]:hover {
-    color: #ffffff !important;
+    color: #ffffff;
   
     text-shadow:
       0 0 8px rgba(167, 139, 250, 1),
-      0 0 22px rgba(139, 92, 246, 0.85);
+      0 0 20px rgba(139, 92, 246, 0.8);
   
-    transform: scale(1.15) !important;
+    transform: scale(1.12);
   }
   
   /* =========================================================
-     BALANCED PROVIDER POSITIONS
+     PROVIDER POSITIONS
      ========================================================= */
   
   .provider-one {
-    top: 70px;
-    left: 16%;
-    animation: float-one 5s ease-in-out infinite;
+    top: 75px;
+    left: 18%;
   }
   
   .provider-two {
-    top: 105px;
-    right: 17%;
-    animation: float-two 5.5s ease-in-out infinite;
+    top: 125px;
+    right: 18%;
   }
   
   .provider-three {
-    top: 235px;
-    left: 9%;
-    animation: float-three 6s ease-in-out infinite;
+    top: 215px;
+    left: 8%;
   }
   
   .provider-four {
-    top: 230px;
-    right: 9%;
-    animation: float-four 5.2s ease-in-out infinite;
+    top: 215px;
+    right: 8%;
   }
   
   .provider-five {
-    bottom: 95px;
-    left: 18%;
-    animation: float-five 5.8s ease-in-out infinite;
+    top: 325px;
+    left: 25%;
   }
   
   .provider-six {
-    bottom: 85px;
-    right: 18%;
-    animation: float-six 5.3s ease-in-out infinite;
+    top: 325px;
+    right: 25%;
   }
   
   /* =========================================================
-     FLOATING MOTION
+     INDIVIDUAL FLOATING MOTION
      ========================================================= */
   
-  @keyframes float-one {
+  .provider-one {
+    animation: certification-float-one 4.8s ease-in-out infinite;
+  }
+  
+  .provider-two {
+    animation: certification-float-two 5.2s ease-in-out infinite;
+  }
+  
+  .provider-three {
+    animation: certification-float-three 5.5s ease-in-out infinite;
+  }
+  
+  .provider-four {
+    animation: certification-float-four 4.9s ease-in-out infinite;
+  }
+  
+  .provider-five {
+    animation: certification-float-five 5.3s ease-in-out infinite;
+  }
+  
+  .provider-six {
+    animation: certification-float-six 5s ease-in-out infinite;
+  }
+  
+  @keyframes certification-float-one {
     0%,
     100% {
-      margin-top: 0;
+      transform: translateY(0);
     }
   
     50% {
-      margin-top: -10px;
+      transform: translateY(-8px);
     }
   }
   
-  @keyframes float-two {
+  @keyframes certification-float-two {
     0%,
     100% {
-      margin-top: 0;
+      transform: translateY(0);
     }
   
     50% {
-      margin-top: 10px;
+      transform: translateY(8px);
     }
   }
   
-  @keyframes float-three {
+  @keyframes certification-float-three {
     0%,
     100% {
-      margin-top: 0;
+      transform: translateY(0);
     }
   
     50% {
-      margin-top: -9px;
+      transform: translateY(-7px);
     }
   }
   
-  @keyframes float-four {
+  @keyframes certification-float-four {
     0%,
     100% {
-      margin-top: 0;
+      transform: translateY(0);
     }
   
     50% {
-      margin-top: 9px;
+      transform: translateY(7px);
     }
   }
   
-  @keyframes float-five {
+  @keyframes certification-float-five {
     0%,
     100% {
-      margin-top: 0;
+      transform: translateY(0);
     }
   
     50% {
-      margin-top: -8px;
+      transform: translateY(-9px);
     }
   }
   
-  @keyframes float-six {
+  @keyframes certification-float-six {
     0%,
     100% {
-      margin-top: 0;
+      transform: translateY(0);
     }
   
     50% {
-      margin-top: 8px;
+      transform: translateY(9px);
     }
   }
   
   /* =========================================================
-     CENTER
+     CENTER CONTENT
      ========================================================= */
   
   .certification-center {
     position: absolute;
-    z-index: 3;
   
     top: 50%;
     left: 50%;
   
-    width: min(700px, 70%);
+    z-index: 2;
+  
+    width: min(620px, 62%);
   
     transform: translate(-50%, -50%);
   }
@@ -234,26 +273,31 @@
   
     font-size: 26px;
     font-weight: 800;
+  
+    text-shadow:
+      0 0 20px rgba(139, 92, 246, 0.2);
   }
   
   /* =========================================================
-     CERTIFICATION NAMES
+     CERTIFICATION LIST
      ========================================================= */
   
   .certification-list {
     display: flex;
+  
     flex-wrap: wrap;
   
     align-items: center;
     justify-content: center;
   
-    gap: 12px 20px;
+    gap: 10px 18px;
   }
   
   .floating-certification {
     color: #cbd5e1;
   
     font-size: 12px;
+  
     line-height: 1.5;
   
     transition:
@@ -263,7 +307,8 @@
   
   .floating-certification:hover {
     color: #ffffff;
-    transform: translateY(-3px);
+  
+    transform: translateY(-2px);
   }
   
   /* =========================================================
@@ -271,9 +316,10 @@
      ========================================================= */
   
   .certification-controls {
-    margin-top: 25px;
+    margin-top: 24px;
   
     display: flex;
+  
     align-items: center;
     justify-content: center;
   
@@ -285,15 +331,17 @@
     height: 36px;
   
     display: flex;
+  
     align-items: center;
     justify-content: center;
   
     padding: 0;
   
     border: 1px solid rgba(255, 255, 255, 0.08);
+  
     border-radius: 50%;
   
-    background: transparent;
+    background: rgba(255, 255, 255, 0.025);
   
     color: #94a3b8;
   
@@ -324,7 +372,9 @@
   
   .certification-dots {
     display: flex;
+  
     align-items: center;
+  
     gap: 6px;
   }
   
@@ -335,6 +385,7 @@
     padding: 0;
   
     border: 0;
+  
     border-radius: 50%;
   
     background: #334155;
@@ -352,7 +403,9 @@
   
   .certification-dot.active {
     width: 20px;
+  
     border-radius: 999px;
+  
     background: #8b5cf6;
   }
   
@@ -366,11 +419,11 @@
     }
   
     .floating-certification-stage {
-      min-height: 540px;
+      height: 520px;
     }
   
     .certification-center {
-      width: 78%;
+      width: 70%;
     }
   
     .certification-center-provider {
@@ -382,37 +435,33 @@
     }
   
     .provider-one {
-      top: 30px;
-      left: 5%;
+      top: 45px;
+      left: 8%;
     }
   
     .provider-two {
       top: 80px;
-      right: 5%;
-    }
-  
-    .provider-three {
-      top: 200px;
-      left: 2%;
-    }
-  
-    .provider-four {
-      top: 195px;
-      right: 2%;
-    }
-  
-    .provider-five {
-      bottom: 65px;
-      left: 8%;
-    }
-  
-    .provider-six {
-      bottom: 55px;
       right: 8%;
     }
   
-    .floating-certification {
-      font-size: 11px;
+    .provider-three {
+      top: 190px;
+      left: 3%;
+    }
+  
+    .provider-four {
+      top: 190px;
+      right: 3%;
+    }
+  
+    .provider-five {
+      top: 360px;
+      left: 10%;
+    }
+  
+    .provider-six {
+      top: 360px;
+      right: 10%;
     }
   }
   
