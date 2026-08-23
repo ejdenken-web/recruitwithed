@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./Clients.css";
 
 function Clients() {
@@ -39,14 +40,28 @@ function Clients() {
     "Wells Fargo",
   ];
 
-  const firstRow = clients.slice(0, 18);
-  const secondRow = clients.slice(18);
+  const [activeClient, setActiveClient] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveClient((current) => (current + 1) % clients.length);
+    }, 3500);
+
+    return () => window.clearInterval(interval);
+  }, [clients.length]);
+
+  const surroundingClients = clients.filter(
+    (_, index) => index !== activeClient
+  );
+
+  const leftClients = surroundingClients.slice(0, 8);
+  const rightClients = surroundingClients.slice(8, 16);
+  const bottomClients = surroundingClients.slice(16, 24);
 
   return (
     <section id="clients" className="clients-section">
-
-      <div className="clients-glow clients-glow-one" />
-      <div className="clients-glow clients-glow-two" />
+      <div className="clients-light clients-light-one" />
+      <div className="clients-light clients-light-two" />
 
       <div className="clients-container">
 
@@ -54,56 +69,92 @@ function Clients() {
           <span className="section-tag">CLIENTS</span>
         </div>
 
-        <div className="clients-moving-wall">
+        <div className="clients-showcase">
 
-          {/* ROW ONE */}
+          {/* LEFT CLIENTS */}
 
-          <div className="client-track">
+          <div className="clients-column clients-column-left">
+            {leftClients.map((client) => (
+              <button
+                className="client-tile"
+                key={client}
+                onMouseEnter={() =>
+                  setActiveClient(clients.indexOf(client))
+                }
+              >
+                <span className="client-tile-dot" />
+                <span>{client}</span>
+              </button>
+            ))}
+          </div>
 
-            <div className="client-row">
+          {/* CENTER SPOTLIGHT */}
 
-              {[...firstRow, ...firstRow].map(
-                (client, index) => (
-                  <div
-                    className="client-pill"
-                    key={`row-one-${client}-${index}`}
-                  >
-                    <span className="client-dot" />
-                    <span>{client}</span>
-                  </div>
-                )
-              )}
+          <div className="client-spotlight">
+
+            <div className="spotlight-ring spotlight-ring-one" />
+            <div className="spotlight-ring spotlight-ring-two" />
+
+            <div className="spotlight-content">
+
+              <span className="spotlight-label">
+                CLIENT SPOTLIGHT
+              </span>
+
+              <div className="spotlight-icon">
+                ✦
+              </div>
+
+              <h2 key={clients[activeClient]}>
+                {clients[activeClient]}
+              </h2>
+
+              <p>
+                Professional recruiting and talent acquisition
+                engagement.
+              </p>
 
             </div>
 
           </div>
 
-          {/* ROW TWO */}
+          {/* RIGHT CLIENTS */}
 
-          <div className="client-track">
-
-            <div className="client-row client-row-two">
-
-              {[...secondRow, ...secondRow].map(
-                (client, index) => (
-                  <div
-                    className="client-pill"
-                    key={`row-two-${client}-${index}`}
-                  >
-                    <span className="client-dot" />
-                    <span>{client}</span>
-                  </div>
-                )
-              )}
-
-            </div>
-
+          <div className="clients-column clients-column-right">
+            {rightClients.map((client) => (
+              <button
+                className="client-tile"
+                key={client}
+                onMouseEnter={() =>
+                  setActiveClient(clients.indexOf(client))
+                }
+              >
+                <span className="client-tile-dot" />
+                <span>{client}</span>
+              </button>
+            ))}
           </div>
 
         </div>
 
-      </div>
+        {/* BOTTOM CLIENTS */}
 
+        <div className="clients-bottom-grid">
+          {bottomClients.map((client) => (
+            <button
+              className="client-tile"
+              key={client}
+              onMouseEnter={() =>
+                setActiveClient(clients.indexOf(client))
+              }
+            >
+              <span className="client-tile-dot" />
+              <span>{client}</span>
+            </button>
+          ))}
+        </div>
+
+      </div>
     </section>
   );
 }
