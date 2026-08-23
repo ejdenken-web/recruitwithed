@@ -1,80 +1,48 @@
 /* =========================================================
    RECRUITWITHED — CLIENTS
-   INTERACTIVE CLIENT WALL
    ========================================================= */
 
    .clients-section {
     position: relative;
-  
-    padding: 90px 6% 100px;
-  
+    padding: 75px 0 55px;
     background: #111827;
-  
     overflow: hidden;
   }
   
   /* =========================================================
-     BACKGROUND
+     BACKGROUND GLOW
      ========================================================= */
   
   .clients-section::before {
     content: "";
-  
     position: absolute;
-  
-    inset: 0;
-  
-    background:
-      radial-gradient(
-        circle at 15% 20%,
-        rgba(56, 189, 248, 0.045),
-        transparent 25%
-      ),
-      radial-gradient(
-        circle at 85% 75%,
-        rgba(236, 72, 153, 0.045),
-        transparent 25%
-      );
-  
-    pointer-events: none;
-  }
-  
-  .clients-section::after {
-    content: "";
-  
-    position: absolute;
-  
-    width: 600px;
-    height: 600px;
-  
-    top: 50%;
+    top: 48%;
     left: 50%;
-  
+    width: 680px;
+    height: 680px;
     transform: translate(-50%, -50%);
-  
     border-radius: 50%;
   
-    background:
-      radial-gradient(
-        circle,
-        rgba(139, 92, 246, 0.045),
-        transparent 70%
-      );
+    background: radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.09),
+      transparent 68%
+    );
   
     pointer-events: none;
   
-    animation: wallGlow 8s ease-in-out infinite;
+    animation: clientsGlow 7s ease-in-out infinite;
   }
   
-  @keyframes wallGlow {
+  @keyframes clientsGlow {
     0%,
     100% {
-      transform: translate(-50%, -50%) scale(0.8);
-      opacity: 0.4;
+      transform: translate(-50%, -50%) scale(0.92);
+      opacity: 0.55;
     }
   
     50% {
-      transform: translate(-50%, -50%) scale(1.15);
+      transform: translate(-50%, -50%) scale(1.08);
       opacity: 1;
     }
   }
@@ -85,12 +53,10 @@
   
   .clients-container {
     position: relative;
-  
     z-index: 2;
   
     width: 100%;
-  
-    max-width: 1250px;
+    max-width: 1240px;
   
     margin: 0 auto;
   }
@@ -100,562 +66,591 @@
      ========================================================= */
   
   .clients-header {
-    max-width: 760px;
-  
-    margin: 0 auto 55px;
-  
     text-align: center;
+    margin-bottom: 8px;
   }
   
   .clients-header h2 {
-    margin: 18px 0 14px;
+    margin: 18px 0 12px;
   
     color: #f8fafc;
   
-    font-size: clamp(35px, 4.5vw, 55px);
-  
+    font-size: clamp(32px, 4vw, 50px);
     line-height: 1.05;
-  
     font-weight: 800;
   }
   
   .clients-header h2 span {
-    background:
-      linear-gradient(
-        90deg,
-        #38bdf8,
-        #8b5cf6,
-        #ec4899
-      );
-  
-    background-size: 220% auto;
+    background: linear-gradient(
+      90deg,
+      #8b5cf6,
+      #a78bfa,
+      #ec4899
+    );
   
     -webkit-background-clip: text;
     background-clip: text;
   
     color: transparent;
   
-    animation: clientGradient 6s ease-in-out infinite;
+    background-size: 200% auto;
+  
+    animation: clientsTitleGradient 5s ease-in-out infinite;
   }
   
-  @keyframes clientGradient {
-    0% {
+  @keyframes clientsTitleGradient {
+    0%,
+    100% {
       background-position: 0% 50%;
     }
   
     50% {
       background-position: 100% 50%;
     }
-  
-    100% {
-      background-position: 0% 50%;
-    }
   }
   
   .clients-header p {
-    max-width: 650px;
+    max-width: 680px;
   
     margin: 0 auto;
   
     color: #8b95a5;
   
     font-size: 14px;
-  
     line-height: 1.7;
   }
   
   /* =========================================================
-     CLIENT WALL
+     CLIENT FIELD
      ========================================================= */
   
-  .clients-wall {
+  .clients-marquee {
     position: relative;
-  
-    display: grid;
-  
-    grid-template-columns:
-      repeat(4, minmax(0, 1fr));
-  
-    gap: 1px;
   
     width: 100%;
-  
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
-  
-    border-left: 1px solid rgba(255, 255, 255, 0.07);
-  
-    background: rgba(255, 255, 255, 0.035);
+    height: 405px;
   
     overflow: hidden;
-  
-    box-shadow:
-      0 25px 80px rgba(0, 0, 0, 0.22);
   }
   
-  /* =========================================================
-     GRID LINES
-     ========================================================= */
-  
-  .clients-wall-line {
-    position: absolute;
-  
-    z-index: 5;
-  
-    pointer-events: none;
-  
-    opacity: 0.22;
-  }
-  
-  .line-one {
-    top: 0;
-    bottom: 0;
-    left: 25%;
-  
-    width: 1px;
-  
-    background:
-      linear-gradient(
-        to bottom,
-        transparent,
-        rgba(139, 92, 246, 0.3),
-        transparent
-      );
-  }
-  
-  .line-two {
-    top: 0;
-    bottom: 0;
-    left: 50%;
-  
-    width: 1px;
-  
-    background:
-      linear-gradient(
-        to bottom,
-        transparent,
-        rgba(56, 189, 248, 0.25),
-        transparent
-      );
-  }
-  
-  .line-three {
-    top: 0;
-    bottom: 0;
-    left: 75%;
-  
-    width: 1px;
-  
-    background:
-      linear-gradient(
-        to bottom,
-        transparent,
-        rgba(236, 72, 153, 0.25),
-        transparent
-      );
-  }
-  
-  /* =========================================================
-     CLIENT TILE
-     ========================================================= */
-  
-  .client-tile {
+  .clients-track {
     position: relative;
   
-    min-height: 88px;
+    width: 100%;
+    height: 100%;
+  
+    display: block;
+  }
+  
+  /* =========================================================
+     CLIENT ITEMS
+     ========================================================= */
+  
+  .client-item {
+    position: absolute;
   
     display: flex;
-  
     align-items: center;
   
-    gap: 13px;
+    gap: 7px;
   
-    padding: 20px 18px;
+    width: max-content;
+    min-width: 0;
   
-    border: 0;
+    padding: 8px 13px;
   
-    border-right: 1px solid rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 999px;
   
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(21, 27, 36, 0.48);
   
-    background:
-      rgba(13, 17, 23, 0.72);
+    color: #64748b;
   
-    color: #718096;
+    font-size: 12px;
+    font-weight: 700;
   
-    font-family: inherit;
-  
-    text-align: left;
+    white-space: nowrap;
   
     cursor: pointer;
   
-    overflow: hidden;
-  
-    transition:
-      color 0.35s ease,
-      background 0.35s ease,
-      transform 0.35s ease,
-      box-shadow 0.35s ease;
-  }
-  
-  /* =========================================================
-     MOVING LIGHT
-     ========================================================= */
-  
-  .client-tile::before {
-    content: "";
-  
-    position: absolute;
-  
-    top: -100%;
-  
-    left: -60%;
-  
-    width: 45%;
-  
-    height: 300%;
-  
-    background:
-      linear-gradient(
-        90deg,
-        transparent,
-        rgba(139, 92, 246, 0.12),
-        transparent
-      );
-  
-    transform: rotate(20deg);
-  
-    transition:
-      left 0.7s ease;
-  }
-  
-  .client-tile:hover::before,
-  .client-tile.selected::before {
-    left: 130%;
-  }
-  
-  /* =========================================================
-     CLIENT NUMBER
-     ========================================================= */
-  
-  .client-index {
-    position: relative;
-  
-    z-index: 2;
-  
-    min-width: 24px;
-  
-    color: #334155;
-  
-    font-size: 9px;
-  
-    font-weight: 800;
-  
-    letter-spacing: 0.08em;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   
     transition:
       color 0.3s ease,
+      border-color 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease,
       transform 0.3s ease;
+  
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
   
   /* =========================================================
-     CLIENT NAME
+     CLIENT DOT
      ========================================================= */
   
-  .client-tile-name {
-    position: relative;
+  .client-dot {
+    width: 5px;
+    height: 5px;
   
-    z-index: 2;
+    flex-shrink: 0;
   
-    color: inherit;
+    border-radius: 50%;
   
-    font-size: 12px;
-  
-    font-weight: 700;
-  
-    line-height: 1.35;
+    background: #475569;
   
     transition:
-      color 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease,
       transform 0.3s ease;
   }
   
-  /* =========================================================
-     ARROW
-     ========================================================= */
+  .client-item:hover .client-dot {
+    background: #a78bfa;
   
-  .client-arrow {
-    position: absolute;
+    box-shadow:
+      0 0 10px rgba(139, 92, 246, 0.9);
   
-    right: 14px;
-  
-    top: 50%;
-  
-    z-index: 2;
-  
-    transform:
-      translateY(-50%)
-      translateX(8px);
-  
-    color: #334155;
-  
-    font-size: 13px;
-  
-    opacity: 0;
-  
-    transition:
-      opacity 0.3s ease,
-      transform 0.3s ease,
-      color 0.3s ease;
+    transform: scale(1.5);
   }
   
   /* =========================================================
      HOVER
      ========================================================= */
   
-  .client-tile:hover {
-    z-index: 10;
-  
-    color: #ffffff;
-  
-    background:
-      linear-gradient(
-        135deg,
-        rgba(139, 92, 246, 0.13),
-        rgba(13, 17, 23, 0.9)
-      );
-  
-    transform: scale(1.025);
-  
-    box-shadow:
-      0 0 35px rgba(139, 92, 246, 0.09);
-  }
-  
-  .client-tile:hover .client-index {
-    color: #8b5cf6;
-  
-    transform: translateX(3px);
-  }
-  
-  .client-tile:hover .client-tile-name {
-    color: #ffffff;
-  
-    transform: translateX(4px);
-  }
-  
-  .client-tile:hover .client-arrow {
-    opacity: 1;
-  
-    color: #a78bfa;
-  
-    transform:
-      translateY(-50%)
-      translateX(0);
-  }
-  
-  /* =========================================================
-     SELECTED
-     ========================================================= */
-  
-  .client-tile.selected {
+  .client-item:hover {
     z-index: 20;
   
     color: #ffffff;
   
-    background:
-      linear-gradient(
-        135deg,
-        rgba(139, 92, 246, 0.2),
-        rgba(56, 189, 248, 0.055)
-      );
+    border-color: rgba(167, 139, 250, 0.5);
+  
+    background: rgba(139, 92, 246, 0.12);
   
     box-shadow:
-      inset 0 0 0 1px rgba(167, 139, 250, 0.25),
-      0 0 40px rgba(139, 92, 246, 0.12);
-  
-    transform: scale(1.025);
-  }
-  
-  .client-tile.selected .client-index {
-    color: #a78bfa;
-  }
-  
-  .client-tile.selected .client-tile-name {
-    color: #ffffff;
-  
-    transform: translateX(5px);
-  }
-  
-  .client-tile.selected .client-arrow {
-    opacity: 1;
-  
-    color: #38bdf8;
+      0 0 20px rgba(139, 92, 246, 0.12),
+      0 10px 30px rgba(0, 0, 0, 0.2);
   
     transform:
-      translateY(-50%)
-      translateX(0)
-      rotate(45deg);
+      scale(1.12)
+      translateY(-4px);
   }
   
   /* =========================================================
-     INDIVIDUAL TILE MOTION
+     CLIENT POSITIONS
      ========================================================= */
   
-  .client-tile:nth-child(5n) {
-    animation: tilePulse 5s ease-in-out infinite;
+  .client-item:nth-child(1) {
+    top: 6%;
+    left: 10%;
+    animation: clientFloat1 5s infinite;
   }
   
-  .client-tile:nth-child(7n) {
-    animation-delay: 1s;
+  .client-item:nth-child(2) {
+    top: 4%;
+    left: 39%;
+    animation: clientFloat2 5.8s infinite;
   }
   
-  .client-tile:nth-child(11n) {
-    animation-delay: 2s;
+  .client-item:nth-child(3) {
+    top: 9%;
+    left: 72%;
+    animation: clientFloat3 4.8s infinite;
   }
   
-  .client-tile:nth-child(13n) {
-    animation-delay: 0.5s;
+  .client-item:nth-child(4) {
+    top: 17%;
+    left: 23%;
+    animation: clientFloat4 6.1s infinite;
   }
   
-  @keyframes tilePulse {
-    0%,
-    100% {
-      background-color: rgba(13, 17, 23, 0.72);
-    }
+  .client-item:nth-child(5) {
+    top: 18%;
+    left: 57%;
+    animation: clientFloat5 5.2s infinite;
+  }
   
+  .client-item:nth-child(6) {
+    top: 26%;
+    left: 82%;
+    animation: clientFloat6 6.3s infinite;
+  }
+  
+  .client-item:nth-child(7) {
+    top: 29%;
+    left: 5%;
+    animation: clientFloat7 5.5s infinite;
+  }
+  
+  .client-item:nth-child(8) {
+    top: 30%;
+    left: 39%;
+    animation: clientFloat8 6s infinite;
+  }
+  
+  .client-item:nth-child(9) {
+    top: 36%;
+    left: 66%;
+    animation: clientFloat9 5.1s infinite;
+  }
+  
+  .client-item:nth-child(10) {
+    top: 41%;
+    left: 16%;
+    animation: clientFloat10 6.4s infinite;
+  }
+  
+  .client-item:nth-child(11) {
+    top: 43%;
+    left: 51%;
+    animation: clientFloat11 5.4s infinite;
+  }
+  
+  .client-item:nth-child(12) {
+    top: 46%;
+    left: 82%;
+    animation: clientFloat12 6.2s infinite;
+  }
+  
+  .client-item:nth-child(13) {
+    top: 52%;
+    left: 4%;
+    animation: clientFloat13 5.7s infinite;
+  }
+  
+  .client-item:nth-child(14) {
+    top: 53%;
+    left: 30%;
+    animation: clientFloat14 6.3s infinite;
+  }
+  
+  .client-item:nth-child(15) {
+    top: 55%;
+    left: 63%;
+    animation: clientFloat15 5.2s infinite;
+  }
+  
+  .client-item:nth-child(16) {
+    top: 61%;
+    left: 85%;
+    animation: clientFloat16 6.1s infinite;
+  }
+  
+  .client-item:nth-child(17) {
+    top: 64%;
+    left: 9%;
+    animation: clientFloat17 5.5s infinite;
+  }
+  
+  .client-item:nth-child(18) {
+    top: 65%;
+    left: 42%;
+    animation: clientFloat18 6.4s infinite;
+  }
+  
+  .client-item:nth-child(19) {
+    top: 68%;
+    left: 70%;
+    animation: clientFloat19 5.1s infinite;
+  }
+  
+  .client-item:nth-child(20) {
+    top: 73%;
+    left: 20%;
+    animation: clientFloat20 6.2s infinite;
+  }
+  
+  .client-item:nth-child(21) {
+    top: 73%;
+    left: 53%;
+    animation: clientFloat21 5.6s infinite;
+  }
+  
+  .client-item:nth-child(22) {
+    top: 77%;
+    left: 82%;
+    animation: clientFloat22 6.5s infinite;
+  }
+  
+  .client-item:nth-child(23) {
+    top: 81%;
+    left: 5%;
+    animation: clientFloat23 5.3s infinite;
+  }
+  
+  .client-item:nth-child(24) {
+    top: 82%;
+    left: 36%;
+    animation: clientFloat24 6.1s infinite;
+  }
+  
+  .client-item:nth-child(25) {
+    top: 84%;
+    left: 64%;
+    animation: clientFloat25 5.5s infinite;
+  }
+  
+  .client-item:nth-child(26) {
+    top: 11%;
+    left: 54%;
+    animation: clientFloat26 6.3s infinite;
+  }
+  
+  .client-item:nth-child(27) {
+    top: 24%;
+    left: 43%;
+    animation: clientFloat27 5.4s infinite;
+  }
+  
+  .client-item:nth-child(28) {
+    top: 35%;
+    left: 27%;
+    animation: clientFloat28 6.2s infinite;
+  }
+  
+  .client-item:nth-child(29) {
+    top: 47%;
+    left: 40%;
+    animation: clientFloat29 5.7s infinite;
+  }
+  
+  .client-item:nth-child(30) {
+    top: 58%;
+    left: 52%;
+    animation: clientFloat30 6.4s infinite;
+  }
+  
+  .client-item:nth-child(31) {
+    top: 70%;
+    left: 32%;
+    animation: clientFloat31 5.3s infinite;
+  }
+  
+  .client-item:nth-child(32) {
+    top: 15%;
+    left: 87%;
+    animation: clientFloat32 6.1s infinite;
+  }
+  
+  .client-item:nth-child(33) {
+    top: 72%;
+    left: 4%;
+    animation: clientFloat33 5.8s infinite;
+  }
+  
+  .client-item:nth-child(34) {
+    top: 82%;
+    left: 76%;
+    animation: clientFloat34 6.5s infinite;
+  }
+  
+  /* =========================================================
+     FLOATING MOTION
+     ========================================================= */
+  
+  @keyframes clientFloat1 {
     50% {
-      background-color: rgba(25, 30, 42, 0.82);
+      transform: translate(8px, -8px);
     }
   }
   
-  /* =========================================================
-     SELECTED ORGANIZATION
-     ========================================================= */
-  
-  .client-focus {
-    position: relative;
-  
-    display: flex;
-  
-    align-items: center;
-  
-    justify-content: center;
-  
-    gap: 16px;
-  
-    min-height: 0;
-  
-    margin: 0 auto;
-  
-    padding: 0;
-  
-    opacity: 0;
-  
-    transform:
-      translateY(-10px)
-      scale(0.96);
-  
-    pointer-events: none;
-  
-    transition:
-      opacity 0.35s ease,
-      transform 0.35s ease,
-      padding 0.35s ease,
-      min-height 0.35s ease;
-  }
-  
-  .client-focus.visible {
-    min-height: 58px;
-  
-    margin-top: 18px;
-  
-    padding: 14px 20px;
-  
-    opacity: 1;
-  
-    transform:
-      translateY(0)
-      scale(1);
-  
-    border: 1px solid rgba(139, 92, 246, 0.15);
-  
-    background:
-      rgba(139, 92, 246, 0.055);
-  
-    pointer-events: auto;
-  }
-  
-  .client-focus span {
-    color: #64748b;
-  
-    font-size: 8px;
-  
-    font-weight: 800;
-  
-    letter-spacing: 0.18em;
-  }
-  
-  .client-focus strong {
-    color: #f8fafc;
-  
-    font-size: 13px;
-  
-    font-weight: 800;
-  }
-  
-  .client-focus button {
-    width: 24px;
-    height: 24px;
-  
-    padding: 0;
-  
-    border: 0;
-  
-    border-radius: 50%;
-  
-    background: transparent;
-  
-    color: #64748b;
-  
-    font-size: 18px;
-  
-    line-height: 1;
-  
-    cursor: pointer;
-  
-    transition:
-      color 0.25s ease,
-      background 0.25s ease,
-      transform 0.25s ease;
-  }
-  
-  .client-focus button:hover {
-    color: #ffffff;
-  
-    background: rgba(255, 255, 255, 0.06);
-  
-    transform: rotate(90deg);
-  }
-  
-  /* =========================================================
-     TABLET
-     ========================================================= */
-  
-  @media (max-width: 950px) {
-    .clients-wall {
-      grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+  @keyframes clientFloat2 {
+    50% {
+      transform: translate(-7px, 9px);
     }
+  }
   
-    .line-one {
-      left: 33.333%;
+  @keyframes clientFloat3 {
+    50% {
+      transform: translate(9px, -6px);
     }
+  }
   
-    .line-two {
-      left: 66.666%;
+  @keyframes clientFloat4 {
+    50% {
+      transform: translate(-8px, 8px);
     }
+  }
   
-    .line-three {
-      display: none;
+  @keyframes clientFloat5 {
+    50% {
+      transform: translate(7px, -10px);
+    }
+  }
+  
+  @keyframes clientFloat6 {
+    50% {
+      transform: translate(-9px, 7px);
+    }
+  }
+  
+  @keyframes clientFloat7 {
+    50% {
+      transform: translate(8px, 9px);
+    }
+  }
+  
+  @keyframes clientFloat8 {
+    50% {
+      transform: translate(-7px, -8px);
+    }
+  }
+  
+  @keyframes clientFloat9 {
+    50% {
+      transform: translate(10px, 6px);
+    }
+  }
+  
+  @keyframes clientFloat10 {
+    50% {
+      transform: translate(-8px, 9px);
+    }
+  }
+  
+  @keyframes clientFloat11 {
+    50% {
+      transform: translate(7px, -7px);
+    }
+  }
+  
+  @keyframes clientFloat12 {
+    50% {
+      transform: translate(-10px, 8px);
+    }
+  }
+  
+  @keyframes clientFloat13 {
+    50% {
+      transform: translate(8px, -9px);
+    }
+  }
+  
+  @keyframes clientFloat14 {
+    50% {
+      transform: translate(-7px, 7px);
+    }
+  }
+  
+  @keyframes clientFloat15 {
+    50% {
+      transform: translate(9px, 8px);
+    }
+  }
+  
+  @keyframes clientFloat16 {
+    50% {
+      transform: translate(-8px, -8px);
+    }
+  }
+  
+  @keyframes clientFloat17 {
+    50% {
+      transform: translate(7px, 10px);
+    }
+  }
+  
+  @keyframes clientFloat18 {
+    50% {
+      transform: translate(-9px, -7px);
+    }
+  }
+  
+  @keyframes clientFloat19 {
+    50% {
+      transform: translate(8px, 8px);
+    }
+  }
+  
+  @keyframes clientFloat20 {
+    50% {
+      transform: translate(-7px, -9px);
+    }
+  }
+  
+  @keyframes clientFloat21 {
+    50% {
+      transform: translate(10px, 7px);
+    }
+  }
+  
+  @keyframes clientFloat22 {
+    50% {
+      transform: translate(-8px, 8px);
+    }
+  }
+  
+  @keyframes clientFloat23 {
+    50% {
+      transform: translate(7px, -8px);
+    }
+  }
+  
+  @keyframes clientFloat24 {
+    50% {
+      transform: translate(-9px, 9px);
+    }
+  }
+  
+  @keyframes clientFloat25 {
+    50% {
+      transform: translate(8px, -7px);
+    }
+  }
+  
+  @keyframes clientFloat26 {
+    50% {
+      transform: translate(-7px, 10px);
+    }
+  }
+  
+  @keyframes clientFloat27 {
+    50% {
+      transform: translate(9px, -8px);
+    }
+  }
+  
+  @keyframes clientFloat28 {
+    50% {
+      transform: translate(-8px, 7px);
+    }
+  }
+  
+  @keyframes clientFloat29 {
+    50% {
+      transform: translate(7px, -9px);
+    }
+  }
+  
+  @keyframes clientFloat30 {
+    50% {
+      transform: translate(-10px, 8px);
+    }
+  }
+  
+  @keyframes clientFloat31 {
+    50% {
+      transform: translate(8px, 7px);
+    }
+  }
+  
+  @keyframes clientFloat32 {
+    50% {
+      transform: translate(-7px, -8px);
+    }
+  }
+  
+  @keyframes clientFloat33 {
+    50% {
+      transform: translate(9px, 8px);
+    }
+  }
+  
+  @keyframes clientFloat34 {
+    50% {
+      transform: translate(-8px, -7px);
     }
   }
   
@@ -663,66 +658,47 @@
      MOBILE
      ========================================================= */
   
-  @media (max-width: 650px) {
+  @media (max-width: 700px) {
     .clients-section {
-      padding: 65px 20px 75px;
+      padding: 55px 0 45px;
     }
   
     .clients-header {
-      margin-bottom: 35px;
+      padding: 0 20px;
     }
   
     .clients-header h2 {
-      font-size: 31px;
+      font-size: 30px;
     }
   
     .clients-header p {
       font-size: 13px;
     }
   
-    .clients-wall {
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+    .clients-marquee {
+      height: 560px;
     }
   
-    .client-tile {
-      min-height: 72px;
-  
-      padding: 15px 12px;
-  
-      gap: 8px;
-    }
-  
-    .client-index {
-      min-width: 18px;
-  
-      font-size: 8px;
-    }
-  
-    .client-tile-name {
+    .client-item {
       font-size: 10px;
+      padding: 6px 9px;
     }
   
-    .client-arrow {
-      display: none;
+    .client-item:nth-child(odd) {
+      left: 5%;
     }
   
-    .line-one {
-      left: 50%;
+    .client-item:nth-child(even) {
+      left: auto;
+      right: 5%;
     }
   
-    .line-two {
-      display: none;
-    }
-  
-    .client-focus {
-      flex-wrap: wrap;
-  
-      gap: 8px;
-    }
-  
-    .client-focus span {
-      width: 100%;
+    .client-item:nth-child(23),
+    .client-item:nth-child(24),
+    .client-item:nth-child(25),
+    .client-item:nth-child(34) {
+      top: auto;
+      bottom: 5%;
     }
   }
   
@@ -731,14 +707,15 @@
      ========================================================= */
   
   @media (prefers-reduced-motion: reduce) {
-    .clients-section::after,
-    .clients-header h2 span,
-    .client-tile {
+    .clients-section::before {
       animation: none;
     }
   
-    .client-tile,
-    .client-focus {
-      transition: none;
+    .client-item {
+      animation: none;
+    }
+  
+    .clients-header h2 span {
+      animation: none;
     }
   }
