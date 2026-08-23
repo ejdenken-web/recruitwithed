@@ -5,11 +5,13 @@
    .recruiting-platforms-section {
     position: relative;
   
-    padding: 70px 6%;
+    padding: 45px 6%;
   
     background: #0d1117;
   
     overflow: hidden;
+  
+    scroll-margin-top: 80px;
   }
   
   .recruiting-platforms-container {
@@ -25,7 +27,7 @@
      ========================================================= */
   
   .recruiting-platforms-header {
-    margin: 0 auto 28px;
+    margin: 0 auto 24px;
   
     text-align: center;
   }
@@ -73,7 +75,7 @@
   
     flex-wrap: wrap;
   
-    gap: 12px;
+    gap: 10px;
   }
   
   /* =========================================================
@@ -87,9 +89,9 @@
   
     justify-content: center;
   
-    min-height: 48px;
+    min-height: 44px;
   
-    padding: 10px 18px;
+    padding: 9px 17px;
   
     border: 1px solid rgba(255, 255, 255, 0.08);
   
@@ -138,7 +140,11 @@
   
   @media (max-width: 600px) {
     .recruiting-platforms-section {
-      padding: 55px 24px;
+      padding: 40px 24px;
+    }
+  
+    .recruiting-platforms-header {
+      margin-bottom: 20px;
     }
   
     .recruiting-platforms-header h2 {
@@ -146,13 +152,13 @@
     }
   
     .recruiting-platforms-track {
-      gap: 9px;
+      gap: 8px;
     }
   
     .recruiting-platform-card {
-      min-height: 44px;
+      min-height: 42px;
   
-      padding: 9px 15px;
+      padding: 8px 14px;
     }
   
     .recruiting-platform-card span {
