@@ -44,7 +44,12 @@
   
     opacity: 0.16;
   
-    animation: clientLightMove 12s ease-in-out infinite alternate;
+    animation:
+      clientLightMove
+      12s
+      ease-in-out
+      infinite
+      alternate;
   }
   
   .clients-light-one {
@@ -148,13 +153,16 @@
   
     align-items: center;
   
+    justify-content: center;
+  
     gap: 9px;
   
-    width: max-content;
+    width: 175px;
+    min-width: 175px;
   
-    max-width: 100%;
+    height: 42px;
   
-    padding: 10px 15px;
+    padding: 0 14px;
   
     border: 1px solid rgba(255, 255, 255, 0.08);
   
@@ -175,7 +183,17 @@
   
     font-weight: 650;
   
+    line-height: 1;
+  
+    white-space: nowrap;
+  
+    overflow: hidden;
+  
+    text-overflow: ellipsis;
+  
     cursor: pointer;
+  
+    box-sizing: border-box;
   
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.035),
@@ -193,6 +211,29 @@
       transform 0.3s ease;
   }
   
+  /* =========================================================
+     CONTROLLED SIZE VARIATION
+     ========================================================= */
+  
+  .clients-column .client-tile:nth-child(3n + 1) {
+    width: 155px;
+    min-width: 155px;
+  }
+  
+  .clients-column .client-tile:nth-child(3n + 2) {
+    width: 175px;
+    min-width: 175px;
+  }
+  
+  .clients-column .client-tile:nth-child(3n) {
+    width: 205px;
+    min-width: 205px;
+  }
+  
+  /* =========================================================
+     LEFT / RIGHT ALIGNMENT
+     ========================================================= */
+  
   .clients-column-left .client-tile {
     transform-origin: right center;
   }
@@ -200,6 +241,10 @@
   .clients-column-right .client-tile {
     transform-origin: left center;
   }
+  
+  /* =========================================================
+     HOVER
+     ========================================================= */
   
   .client-tile:hover {
     color: #ffffff;
@@ -361,22 +406,6 @@
     padding: 30px;
   }
   
-  .spotlight-label {
-    display: block;
-  
-    margin-bottom: 15px;
-  
-    color: #94a3b8;
-  
-    font-size: 10px;
-  
-    font-weight: 700;
-  
-    letter-spacing: 0.16em;
-  
-    text-transform: uppercase;
-  }
-  
   .spotlight-icon {
     display: flex;
   
@@ -431,25 +460,19 @@
   @keyframes spotlightText {
     from {
       opacity: 0;
-      transform: translateY(8px) scale(0.97);
+  
+      transform:
+        translateY(8px)
+        scale(0.97);
     }
   
     to {
       opacity: 1;
-      transform: translateY(0) scale(1);
+  
+      transform:
+        translateY(0)
+        scale(1);
     }
-  }
-  
-  .spotlight-content p {
-    max-width: 260px;
-  
-    margin: 14px auto 0;
-  
-    color: #94a3b8;
-  
-    font-size: 11px;
-  
-    line-height: 1.6;
   }
   
   /* =========================================================
@@ -469,7 +492,18 @@
   }
   
   .clients-bottom-grid .client-tile {
-    width: auto;
+    width: 175px;
+    min-width: 175px;
+  }
+  
+  .clients-bottom-grid .client-tile:nth-child(3n + 1) {
+    width: 155px;
+    min-width: 155px;
+  }
+  
+  .clients-bottom-grid .client-tile:nth-child(3n) {
+    width: 205px;
+    min-width: 205px;
   }
   
   /* =========================================================
@@ -505,14 +539,20 @@
       justify-items: center;
     }
   
-    .client-tile {
+    .clients-column .client-tile,
+    .clients-bottom-grid .client-tile {
       width: 100%;
+      min-width: 0;
+    }
   
-      justify-content: center;
-  
-      text-align: center;
+    .client-tile {
+      max-width: 100%;
     }
   }
+  
+  /* =========================================================
+     SMALL MOBILE
+     ========================================================= */
   
   @media (max-width: 550px) {
     .clients-section {
@@ -546,6 +586,11 @@
       display: grid;
   
       grid-template-columns: 1fr 1fr;
+    }
+  
+    .clients-bottom-grid .client-tile {
+      width: 100%;
+      min-width: 0;
     }
   }
   
