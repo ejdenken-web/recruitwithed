@@ -3,9 +3,13 @@
    ========================================================= */
 
    .certifications-section {
+    position: relative;
+  
     padding: 45px 6%;
   
     background: #0d1117;
+  
+    overflow: hidden;
   }
   
   .certifications-container {
@@ -17,6 +21,10 @@
   
     text-align: center;
   }
+  
+  /* =========================================================
+     HEADER
+     ========================================================= */
   
   .certifications-title {
     margin: 20px 0 0;
@@ -53,25 +61,35 @@
   }
   
   /* =========================================================
-     CAROUSEL
+     FLOATING CERTIFICATIONS AREA
      ========================================================= */
   
   .certification-carousel {
-    margin-top: 35px;
+    position: relative;
   
-    display: grid;
+    margin-top: 30px;
   
-    grid-template-columns: 55px 1fr 55px;
+    min-height: 260px;
+  
+    display: flex;
   
     align-items: center;
   
-    gap: 15px;
+    justify-content: center;
   }
   
-  .certification-showcase {
-    min-height: 280px;
+  /* =========================================================
+     REMOVE THE OLD BOX
+     ========================================================= */
   
-    padding: 35px;
+  .certification-showcase {
+    position: relative;
+  
+    width: 100%;
+  
+    min-height: 240px;
+  
+    padding: 30px 70px;
   
     display: flex;
   
@@ -81,111 +99,17 @@
   
     justify-content: center;
   
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 0;
   
-    border-radius: 18px;
+    border-radius: 0;
   
-    background: #151b24;
+    background: transparent;
+  
+    box-shadow: none;
   }
   
   /* =========================================================
-     FLOATING CERTIFICATION PILLS
-     ========================================================= */
-  
-  .certification-pills {
-    display: flex;
-  
-    flex-wrap: wrap;
-  
-    justify-content: center;
-  
-    gap: 12px;
-  }
-  
-  .interactive-cert {
-    padding: 9px 13px;
-  
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  
-    border-radius: 999px;
-  
-    background: rgba(255, 255, 255, 0.035);
-  
-    color: #cbd5e1;
-  
-    font-size: 12px;
-  
-    line-height: 1.3;
-  
-    transition:
-      transform 0.3s ease,
-      border-color 0.3s ease,
-      color 0.3s ease,
-      background 0.3s ease;
-  
-    animation:
-      certification-float 4.5s ease-in-out infinite;
-  }
-  
-  /* Different floating rhythm */
-  
-  .interactive-cert:nth-child(2) {
-    animation-delay: -1s;
-  }
-  
-  .interactive-cert:nth-child(3) {
-    animation-delay: -2s;
-  }
-  
-  .interactive-cert:nth-child(4) {
-    animation-delay: -3s;
-  }
-  
-  .interactive-cert:nth-child(5) {
-    animation-delay: -4s;
-  }
-  
-  .interactive-cert:nth-child(6) {
-    animation-delay: -1.7s;
-  }
-  
-  .interactive-cert:nth-child(7) {
-    animation-delay: -2.8s;
-  }
-  
-  .interactive-cert:nth-child(8) {
-    animation-delay: -3.6s;
-  }
-  
-  .interactive-cert:hover {
-    animation-play-state: paused;
-  
-    transform:
-      translateY(-6px)
-      scale(1.03);
-  
-    color: #ffffff;
-  
-    border-color:
-      rgba(139, 92, 246, 0.45);
-  
-    background:
-      rgba(139, 92, 246, 0.08);
-  }
-  
-  @keyframes certification-float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(-7px);
-    }
-  }
-  
-  /* =========================================================
-     PROVIDER / LABELS
+     PROVIDER
      ========================================================= */
   
   .provider-label {
@@ -199,13 +123,114 @@
   }
   
   .active-provider {
-    margin: 10px 0 25px;
+    margin: 8px 0 24px;
   
     color: #f8fafc;
   
-    font-size: 30px;
+    font-size: 26px;
   
     font-weight: 800;
+  }
+  
+  /* =========================================================
+     FLOATING CERTIFICATION ITEMS
+     ========================================================= */
+  
+  .certification-pills {
+    width: 100%;
+  
+    max-width: 1050px;
+  
+    display: flex;
+  
+    flex-wrap: wrap;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    gap: 14px 16px;
+  }
+  
+  .interactive-cert {
+    position: relative;
+  
+    padding: 11px 17px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  
+    border-radius: 999px;
+  
+    background:
+      rgba(255, 255, 255, 0.025);
+  
+    color: #cbd5e1;
+  
+    font-size: 12px;
+  
+    line-height: 1.35;
+  
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.14);
+  
+    cursor: pointer;
+  
+    animation:
+      certification-float 5s ease-in-out infinite;
+  
+    transition:
+      transform 0.25s ease,
+      border-color 0.25s ease,
+      background 0.25s ease,
+      color 0.25s ease;
+  }
+  
+  /* Different floating movement */
+  
+  .interactive-cert:nth-child(2n) {
+    animation-delay: -1.2s;
+  }
+  
+  .interactive-cert:nth-child(3n) {
+    animation-delay: -2.4s;
+  }
+  
+  .interactive-cert:nth-child(4n) {
+    animation-delay: -3.1s;
+  }
+  
+  .interactive-cert:nth-child(5n) {
+    animation-delay: -4s;
+  }
+  
+  .interactive-cert:hover {
+    animation-play-state: paused;
+  
+    transform:
+      translateY(-7px)
+      scale(1.03);
+  
+    color: #ffffff;
+  
+    border-color:
+      rgba(139, 92, 246, 0.45);
+  
+    background:
+      rgba(139, 92, 246, 0.08);
+  
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.22);
+  }
+  
+  @keyframes certification-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-8px);
+    }
   }
   
   /* =========================================================
@@ -213,9 +238,13 @@
      ========================================================= */
   
   .carousel-arrow {
-    width: 45px;
+    position: absolute;
   
-    height: 45px;
+    z-index: 5;
+  
+    width: 42px;
+  
+    height: 42px;
   
     display: flex;
   
@@ -231,7 +260,7 @@
   
     color: #cbd5e1;
   
-    font-size: 18px;
+    font-size: 17px;
   
     cursor: pointer;
   
@@ -242,16 +271,26 @@
       background 0.2s ease;
   }
   
+  .certification-carousel
+  .carousel-arrow:first-child {
+    left: 0;
+  }
+  
+  .certification-carousel
+  .carousel-arrow:last-child {
+    right: 0;
+  }
+  
   .carousel-arrow:hover {
-    transform: scale(1.06);
+    transform: scale(1.08);
   
     color: #ffffff;
   
     border-color:
-      rgba(139, 92, 246, 0.35);
+      rgba(139, 92, 246, 0.4);
   
     background:
-      rgba(139, 92, 246, 0.07);
+      rgba(139, 92, 246, 0.08);
   }
   
   /* =========================================================
@@ -259,15 +298,17 @@
      ========================================================= */
   
   .provider-selector {
-    margin-top: 25px;
+    margin-top: 20px;
   
     display: flex;
   
     justify-content: center;
   
+    align-items: center;
+  
     flex-wrap: wrap;
   
-    gap: 8px;
+    gap: 9px;
   }
   
   .provider-selector-item {
@@ -290,11 +331,11 @@
     transition:
       color 0.2s ease,
       border-color 0.2s ease,
-      background 0.2s ease;
+      background 0.2s ease,
+      transform 0.2s ease;
   }
   
-  .provider-selector-item:hover,
-  .provider-selector-item.selected {
+  .provider-selector-item:hover {
     color: #ffffff;
   
     border-color:
@@ -302,6 +343,18 @@
   
     background:
       rgba(139, 92, 246, 0.08);
+  
+    transform: translateY(-2px);
+  }
+  
+  .provider-selector-item.selected {
+    color: #ffffff;
+  
+    border-color:
+      rgba(139, 92, 246, 0.45);
+  
+    background:
+      rgba(139, 92, 246, 0.1);
   }
   
   /* =========================================================
@@ -309,7 +362,7 @@
      ========================================================= */
   
   .carousel-progress {
-    margin-top: 16px;
+    margin-top: 14px;
   
     display: flex;
   
@@ -356,27 +409,33 @@
     }
   
     .certification-carousel {
-      grid-template-columns: 1fr;
-    }
-  
-    .carousel-arrow {
-      display: none;
+      min-height: 320px;
     }
   
     .certification-showcase {
-      padding: 28px 20px;
+      padding: 30px 5px;
     }
   
     .active-provider {
-      font-size: 26px;
+      font-size: 24px;
+  
+      margin-bottom: 20px;
     }
   
     .certification-pills {
-      gap: 8px;
+      gap: 10px;
     }
   
     .interactive-cert {
+      padding: 9px 13px;
+  
       font-size: 11px;
+    }
+  
+    .carousel-arrow {
+      width: 38px;
+  
+      height: 38px;
     }
   }
   
