@@ -26,6 +26,19 @@ function Hero() {
             organizations building and scaling high-performing teams.
           </p>
 
+          <p className="hero-profile">
+            With over a decade of experience scaling technical and
+            engineering teams within fast-paced, high-growth IT ecosystems.
+            Trusted advisor to executive leadership, providing deep
+            competency in technical workforce strategy, developer talent
+            branding, and data-driven hiring metrics. Track record of
+            designing agile recruitment infrastructures that support rapid
+            organizational evolution — from engineering headcount planning
+            through offer close. Dedicated to aligning tech talent
+            acquisition with broader business architecture to fuel
+            sustainable technical innovation.
+          </p>
+
           <a
             href="#home"
             className="hero-top-arrow"

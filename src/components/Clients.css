@@ -1,1 +1,454 @@
-/* ========================================================= RECRUITWITHED — CLIENTS CLEAN CLIENT CLOUD ========================================================= */ .clients-section { position: relative; padding: 80px 6% 85px; background: #111827; overflow: hidden; } /* ========================================================= SUBTLE BACKGROUND ========================================================= */ .clients-section::before { content: ""; position: absolute; width: 520px; height: 520px; left: 50%; top: 55%; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient( circle, rgba(139, 92, 246, 0.08), transparent 68% ); pointer-events: none; } .clients-section::after { content: ""; position: absolute; inset: 0; background: radial-gradient( circle at 15% 30%, rgba(255, 255, 255, 0.025), transparent 22% ), radial-gradient( circle at 85% 70%, rgba(255, 255, 255, 0.02), transparent 24% ); pointer-events: none; } /* ========================================================= CONTAINER ========================================================= */ .clients-container { position: relative; z-index: 2; width: 100%; max-width: 1180px; margin: 0 auto; } /* ========================================================= HEADER ========================================================= */ .clients-header { max-width: 700px; margin: 0 auto 42px; text-align: center; } .clients-header h2 { margin: 18px 0 14px; color: #f8fafc; font-size: clamp(34px, 4.5vw, 50px); line-height: 1.08; font-weight: 800; } .clients-header h2 span { color: #a78bfa; } .clients-header p { max-width: 620px; margin: 0 auto; color: #8b95a5; font-size: 14px; line-height: 1.7; } /* ========================================================= CLIENT CLOUD ========================================================= */ .clients-cloud { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; max-width: 1120px; margin: 0 auto; } /* ========================================================= CLIENT PILL ========================================================= */ .client-pill { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 999px; background: rgba(21, 27, 36, 0.75); color: #a8b1bf; font-size: 12px; font-weight: 600; white-space: nowrap; cursor: default; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); opacity: 0; animation: clientReveal 0.5s ease forwards; animation-delay: var(--delay); transition: transform 0.25s ease, color 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; } /* ========================================================= DOT ========================================================= */ .client-dot { width: 6px; height: 6px; flex-shrink: 0; border-radius: 50%; background: #475569; transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease; } /* ========================================================= HOVER ========================================================= */ .client-pill:hover { color: #ffffff; border-color: rgba(167, 139, 250, 0.4); background: rgba(139, 92, 246, 0.1); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22), 0 0 18px rgba(139, 92, 246, 0.08); transform: translateY(-4px); } .client-pill:hover .client-dot { background: #a78bfa; box-shadow: 0 0 8px rgba(167, 139, 250, 0.9); transform: scale(1.25); } /* ========================================================= REVEAL ========================================================= */ @keyframes clientReveal { from { opacity: 0; transform: translateY(10px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } } /* ========================================================= SUBTLE FLOAT ========================================================= */ .client-pill:nth-child(4n) { animation: clientReveal 0.5s ease forwards, clientFloatA 5s ease-in-out infinite; animation-delay: var(--delay), 1.5s; } .client-pill:nth-child(4n + 1) { animation: clientReveal 0.5s ease forwards, clientFloatB 6s ease-in-out infinite; animation-delay: var(--delay), 2s; } @keyframes clientFloatA { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } } @keyframes clientFloatB { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(3px); } } /* ========================================================= TABLET ========================================================= */ @media (max-width: 800px) { .clients-section { padding: 65px 5% 70px; } .clients-cloud { gap: 10px; } .client-pill { padding: 10px 14px; font-size: 11px; } } /* ========================================================= MOBILE ========================================================= */ @media (max-width: 600px) { .clients-section { padding: 55px 18px 65px; } .clients-header { margin-bottom: 30px; } .clients-header h2 { font-size: 30px; } .clients-header p { font-size: 13px; } .clients-cloud { gap: 8px; } .client-pill { padding: 9px 12px; font-size: 10px; } .client-dot { width: 5px; height: 5px; } } /* ========================================================= REDUCED MOTION ========================================================= */ @media (prefers-reduced-motion: reduce) { .client-pill { animation: none; opacity: 1; } .client-pill:hover { transform: none; } }
+/* =========================================================
+   RECRUITWITHED — CLIENTS
+   ========================================================= */
+
+   .clients-section {
+    position: relative;
+  
+    padding: 90px 6% 80px;
+  
+    overflow: hidden;
+  
+    background:
+      radial-gradient(
+        circle at 15% 30%,
+        rgba(139, 92, 246, 0.08),
+        transparent 28%
+      ),
+      radial-gradient(
+        circle at 85% 70%,
+        rgba(236, 72, 153, 0.06),
+        transparent 30%
+      ),
+      #111827;
+  }
+  
+  /* =========================================================
+     GLOW
+     ========================================================= */
+  
+  .clients-glow {
+    position: absolute;
+  
+    border-radius: 50%;
+  
+    pointer-events: none;
+  
+    filter: blur(90px);
+  
+    opacity: 0.12;
+  }
+  
+  .clients-glow-one {
+    width: 280px;
+    height: 280px;
+  
+    left: -120px;
+    top: 20%;
+  
+    background: #8b5cf6;
+  
+    animation: clientGlowOne 10s ease-in-out infinite;
+  }
+  
+  .clients-glow-two {
+    width: 320px;
+    height: 320px;
+  
+    right: -150px;
+    bottom: 10%;
+  
+    background: #ec4899;
+  
+    animation: clientGlowTwo 12s ease-in-out infinite;
+  }
+  
+  @keyframes clientGlowOne {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(160px, 80px);
+    }
+  }
+  
+  @keyframes clientGlowTwo {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(-130px, -90px);
+    }
+  }
+  
+  /* =========================================================
+     CONTAINER
+     ========================================================= */
+  
+  .clients-container {
+    position: relative;
+  
+    z-index: 2;
+  
+    width: 100%;
+  
+    max-width: 1240px;
+  
+    margin: 0 auto;
+  }
+  
+  /* =========================================================
+     HEADER
+     ========================================================= */
+  
+  .clients-header {
+    max-width: 760px;
+  
+    margin: 0 auto 48px;
+  
+    text-align: center;
+  }
+  
+  .clients-header h2 {
+    margin: 18px 0 14px;
+  
+    color: #f8fafc;
+  
+    font-size: clamp(34px, 4.5vw, 52px);
+  
+    line-height: 1.05;
+  
+    font-weight: 800;
+  
+    letter-spacing: -0.035em;
+  }
+  
+  .clients-header h2 span {
+    background:
+      linear-gradient(
+        90deg,
+        #a78bfa,
+        #ec4899,
+        #a78bfa
+      );
+  
+    background-size: 200% auto;
+  
+    -webkit-background-clip: text;
+    background-clip: text;
+  
+    color: transparent;
+  
+    animation: clientHeadingFlow 5s linear infinite;
+  }
+  
+  @keyframes clientHeadingFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+  
+  .clients-header p {
+    max-width: 650px;
+  
+    margin: 0 auto;
+  
+    color: #8b95a5;
+  
+    font-size: 14px;
+  
+    line-height: 1.7;
+  }
+  
+  /* =========================================================
+     CLIENT CLOUD
+     ========================================================= */
+  
+  .clients-cloud {
+    display: flex;
+  
+    flex-wrap: wrap;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    gap: 12px;
+  
+    max-width: 1150px;
+  
+    margin: 0 auto;
+  }
+  
+  /* =========================================================
+     CLIENT PILL
+     ========================================================= */
+  
+  .client-pill {
+    position: relative;
+  
+    display: inline-flex;
+  
+    align-items: center;
+  
+    gap: 9px;
+  
+    min-height: 42px;
+  
+    padding: 10px 16px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  
+    border-radius: 999px;
+  
+    background:
+      rgba(255, 255, 255, 0.025);
+  
+    color: #a8b1bf;
+  
+    font-size: 12px;
+  
+    font-weight: 650;
+  
+    white-space: nowrap;
+  
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  
+    box-shadow:
+      0 8px 25px rgba(0, 0, 0, 0.12);
+  
+    opacity: 0;
+  
+    animation:
+      clientEnter 0.6s ease forwards,
+      clientFloat 6s ease-in-out infinite;
+  
+    animation-delay:
+      var(--delay),
+      calc(var(--delay) + 1s);
+  
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  
+  @keyframes clientEnter {
+    from {
+      opacity: 0;
+  
+      transform:
+        translateY(15px)
+        scale(0.94);
+    }
+  
+    to {
+      opacity: 1;
+  
+      transform:
+        translateY(0)
+        scale(1);
+    }
+  }
+  
+  @keyframes clientFloat {
+    0%,
+    100% {
+      margin-top: 0;
+    }
+  
+    50% {
+      margin-top: -3px;
+    }
+  }
+  
+  /* =========================================================
+     VARIATION
+     ========================================================= */
+  
+  .client-pill-2,
+  .client-pill-5 {
+    border-radius: 14px;
+  }
+  
+  .client-pill-3,
+  .client-pill-7 {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+  
+  .client-pill-4,
+  .client-pill-8 {
+    background:
+      rgba(139, 92, 246, 0.035);
+  }
+  
+  /* =========================================================
+     DOT
+     ========================================================= */
+  
+  .client-dot {
+    width: 6px;
+    height: 6px;
+  
+    flex-shrink: 0;
+  
+    border-radius: 50%;
+  
+    background: #64748b;
+  
+    transition:
+      background 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+  
+  /* =========================================================
+     HOVER
+     ========================================================= */
+  
+  .client-pill:hover {
+    color: #ffffff;
+  
+    border-color:
+      rgba(167, 139, 250, 0.4);
+  
+    background:
+      linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.13),
+        rgba(236, 72, 153, 0.07)
+      );
+  
+    box-shadow:
+      0 12px 35px rgba(0, 0, 0, 0.25),
+      0 0 25px rgba(139, 92, 246, 0.1);
+  
+    transform:
+      translateY(-6px)
+      scale(1.04);
+  }
+  
+  .client-pill:hover .client-dot {
+    background: #a78bfa;
+  
+    box-shadow:
+      0 0 8px rgba(167, 139, 250, 0.9);
+  
+    transform: scale(1.35);
+  }
+  
+  /* =========================================================
+     BOTTOM LINE
+     ========================================================= */
+  
+  .clients-bottom-line {
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    gap: 15px;
+  
+    margin-top: 45px;
+  }
+  
+  .clients-bottom-line span {
+    width: 80px;
+    height: 1px;
+  
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(167, 139, 250, 0.35)
+      );
+  }
+  
+  .clients-bottom-line span:last-child {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(236, 72, 153, 0.35),
+        transparent
+      );
+  }
+  
+  .clients-bottom-line p {
+    margin: 0;
+  
+    color: #64748b;
+  
+    font-size: 10px;
+  
+    letter-spacing: 0.08em;
+  
+    text-transform: uppercase;
+  }
+  
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+  
+  @media (max-width: 650px) {
+    .clients-section {
+      padding: 65px 20px;
+    }
+  
+    .clients-header {
+      margin-bottom: 32px;
+    }
+  
+    .clients-header h2 {
+      font-size: 31px;
+    }
+  
+    .clients-header p {
+      font-size: 13px;
+    }
+  
+    .clients-cloud {
+      gap: 9px;
+    }
+  
+    .client-pill {
+      min-height: 38px;
+  
+      padding: 8px 12px;
+  
+      font-size: 10px;
+    }
+  
+    .clients-bottom-line {
+      margin-top: 30px;
+    }
+  
+    .clients-bottom-line span {
+      width: 35px;
+    }
+  }
+  
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .clients-glow,
+    .clients-header h2 span,
+    .client-pill {
+      animation: none;
+      opacity: 1;
+    }
+  }

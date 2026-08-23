@@ -12,18 +12,23 @@ function Footer() {
     });
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer id="lets-connect" className="footer">
       <div className="footer-container">
 
-        {/* LEFT SIDE */}
         <div className="footer-brand">
           <div className="footer-logo">
             RecruitWithEd
           </div>
 
           <div className="footer-socials">
-
             <a
               href="mailto:recruitwithed@gmail.com"
               className="footer-social"
@@ -48,27 +53,18 @@ function Footer() {
             >
               LinkedIn
             </a>
-
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
         <div className="footer-column footer-quick-links">
           <h3>Quick Links</h3>
 
           <nav className="footer-nav">
-
-            <button
-              onClick={() => scrollToSection("hero")}
-            >
-             
+            <button onClick={() => scrollToSection("home")}>
               About
             </button>
 
-            <button
-              onClick={() => scrollToSection("clients")}
-            >
-              
+            <button onClick={() => scrollToSection("clients")}>
               Clients
             </button>
 
@@ -77,7 +73,6 @@ function Footer() {
                 scrollToSection("recruiting-platforms")
               }
             >
-              
               Recruiting Platforms
             </button>
 
@@ -86,25 +81,14 @@ function Footer() {
                 scrollToSection("certifications")
               }
             >
-              
               Certifications
             </button>
 
-            <button
-              onClick={() =>
-                scrollToSection("projects")
-              }
-            >
-              
+            <button onClick={() => scrollToSection("projects")}>
               Featured Projects
             </button>
 
-            <button
-              onClick={() =>
-                scrollToSection("tech-stack")
-              }
-            >
-              
+            <button onClick={() => scrollToSection("tech-stack")}>
               Technology & Tools
             </button>
 
@@ -113,13 +97,24 @@ function Footer() {
                 scrollToSection("lets-connect")
               }
             >
-              
               Let's Connect
             </button>
-
           </nav>
         </div>
 
+      </div>
+
+      <div className="footer-back-top">
+        <button
+          type="button"
+          onClick={scrollToTop}
+          aria-label="Back to top"
+          className="footer-top-arrow"
+        >
+          ↑
+        </button>
+
+        <span>Back to top</span>
       </div>
 
       <div className="footer-bottom">

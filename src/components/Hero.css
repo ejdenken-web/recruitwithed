@@ -202,7 +202,7 @@
   }
   
   /* =========================================================
-     DESCRIPTION
+     SHORT DESCRIPTION
      ========================================================= */
   
   .hero-description {
@@ -215,6 +215,62 @@
     font-size: 14px;
   
     line-height: 1.75;
+  }
+  
+  /* =========================================================
+     EXPERIENCE PROFILE
+     ========================================================= */
+  
+  .hero-profile {
+    position: relative;
+  
+    max-width: 820px;
+  
+    margin: 24px auto 0;
+  
+    color: #8b95a5;
+  
+    font-size: 13px;
+  
+    line-height: 1.8;
+  
+    text-align: center;
+  
+    transition:
+      color 0.4s ease,
+      text-shadow 0.4s ease;
+  }
+  
+  .hero-profile::before {
+    content: "";
+  
+    position: absolute;
+  
+    left: 50%;
+    top: -12px;
+  
+    width: 90px;
+    height: 1px;
+  
+    transform: translateX(-50%);
+  
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        #8b5cf6,
+        #ec4899,
+        transparent
+      );
+  
+    opacity: 0.6;
+  }
+  
+  .hero-profile:hover {
+    color: #cbd5e1;
+  
+    text-shadow:
+      0 0 18px rgba(167, 139, 250, 0.12);
   }
   
   /* =========================================================
@@ -298,6 +354,14 @@
   
     .hero-description {
       font-size: 13px;
+    }
+  
+    .hero-profile {
+      font-size: 12px;
+  
+      line-height: 1.75;
+  
+      margin-top: 20px;
     }
   
     .hero-top-arrow {
