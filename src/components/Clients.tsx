@@ -97,9 +97,6 @@ function Clients() {
 
             <div className="spotlight-content">
 
-              <span className="spotlight-label">
-                CLIENT SPOTLIGHT
-              </span>
 
               <div className="spotlight-icon">
                 ✦
@@ -109,10 +106,7 @@ function Clients() {
                 {clients[activeClient]}
               </h2>
 
-              <p>
-                Professional recruiting and talent acquisition
-                engagement.
-              </p>
+              
 
             </div>
 
