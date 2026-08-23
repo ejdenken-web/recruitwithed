@@ -57,9 +57,7 @@ function RecruitingPlatforms() {
               <span />
             </div>
 
-            <div className="radar-center-label">
-              ACTIVE
-            </div>
+            
 
             <strong>
               {platforms[activeIndex]}
@@ -81,9 +79,7 @@ function RecruitingPlatforms() {
               >
                 <span className="platform-pulse" />
 
-                <span className="platform-number">
-                  0{index + 1}
-                </span>
+                
 
                 <span className="platform-name">
                   {platform}
