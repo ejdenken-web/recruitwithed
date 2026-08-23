@@ -1,51 +1,60 @@
 /* =========================================================
    RECRUITWITHED — TECHNOLOGY & TOOLS
-   FLOATING INTERACTIVE DESIGN
+   VERTICAL TECHNOLOGY STREAM
    ========================================================= */
 
    .tech-stack-section {
     position: relative;
-    padding: 85px 6%;
+    padding: 100px 6%;
     background: #0d1117;
     overflow: hidden;
   }
   
   /* =========================================================
-     ATMOSPHERE
+     BACKGROUND
      ========================================================= */
   
   .tech-stack-section::before {
     content: "";
     position: absolute;
-    width: 700px;
-    height: 700px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background:
-      radial-gradient(
-        circle,
-        rgba(139, 92, 246, 0.08),
-        transparent 65%
-      );
-    pointer-events: none;
-    animation: techAtmosphere 8s ease-in-out infinite;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(139, 92, 246, 0.25),
+      transparent
+    );
   }
   
-  @keyframes techAtmosphere {
+  .tech-stack-section::after {
+    content: "";
+    position: absolute;
+    right: -180px;
+    top: 35%;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.07),
+      transparent 70%
+    );
+    pointer-events: none;
+    animation: techGlow 7s ease-in-out infinite;
+  }
+  
+  @keyframes techGlow {
     0%,
     100% {
-      transform:
-        translate(-50%, -50%)
-        scale(0.9);
-      opacity: 0.55;
+      transform: scale(0.9);
+      opacity: 0.5;
     }
   
     50% {
-      transform:
-        translate(-50%, -50%)
-        scale(1.15);
+      transform: scale(1.15);
       opacity: 1;
     }
   }
@@ -58,7 +67,7 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1180px;
     margin: 0 auto;
   }
   
@@ -67,529 +76,505 @@
      ========================================================= */
   
   .tech-stack-header {
+    max-width: 720px;
+    margin: 0 auto 70px;
     text-align: center;
-    max-width: 700px;
-    margin: 0 auto 45px;
   }
   
   .tech-stack-header h2 {
-    margin: 18px 0 14px;
+    margin: 20px 0 15px;
     color: #f8fafc;
     font-size: clamp(38px, 5vw, 58px);
-    line-height: 1;
+    line-height: 1.05;
     font-weight: 900;
   }
   
   .tech-stack-header h2 span {
-    background:
-      linear-gradient(
-        90deg,
-        #8b5cf6,
-        #a78bfa,
-        #ec4899,
-        #8b5cf6
-      );
-    background-size: 300% auto;
+    display: inline-block;
+    background: linear-gradient(
+      90deg,
+      #8b5cf6,
+      #a78bfa,
+      #ec4899
+    );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: techGradient 5s linear infinite;
+    animation: techTitlePulse 4s ease-in-out infinite;
   }
   
-  @keyframes techGradient {
-    to {
-      background-position: 300% center;
+  @keyframes techTitlePulse {
+    0%,
+    100% {
+      filter: brightness(1);
+    }
+  
+    50% {
+      filter: brightness(1.35);
     }
   }
   
   .tech-stack-header p {
-    margin: 0;
+    margin: 0 auto;
+    max-width: 620px;
     color: #8b95a5;
     font-size: 14px;
     line-height: 1.7;
   }
   
   /* =========================================================
-     INTERACTIVE STAGE
+     MAIN STREAM
      ========================================================= */
   
-  .tech-interactive-stage {
+  .tech-stream {
     position: relative;
-    width: 100%;
-    max-width: 1000px;
-    height: 500px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 390px 1fr;
+    gap: 85px;
+    min-height: 570px;
   }
   
   /* =========================================================
-     CENTRAL ORBIT
+     VERTICAL LINE
      ========================================================= */
   
-  .tech-center {
+  .tech-stream-line {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 220px;
-    height: 220px;
-    transform: translate(-50%, -50%);
+    left: 24px;
+    top: 15px;
+    bottom: 15px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
   }
   
-  .tech-center-orbit {
+  .tech-stream-progress {
     position: absolute;
-    inset: 0;
-    border:
-      1px solid
-      rgba(139, 92, 246, 0.22);
-    border-radius: 50%;
-    animation: centerOrbit 12s linear infinite;
-  }
-  
-  .tech-center-orbit::before,
-  .tech-center-orbit::after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-  }
-  
-  .tech-center-orbit::before {
-    inset: 20px;
-    border:
-      1px dashed
-      rgba(167, 139, 250, 0.13);
-    animation: centerOrbitReverse 8s linear infinite;
-  }
-  
-  .tech-center-orbit::after {
-    width: 7px;
-    height: 7px;
-    top: 12px;
-    left: 50%;
-    background: #a78bfa;
+    top: 0;
+    left: 0;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      #8b5cf6,
+      #a78bfa,
+      #ec4899
+    );
     box-shadow:
-      0 0 12px #8b5cf6,
-      0 0 25px rgba(139, 92, 246, 0.7);
+      0 0 12px rgba(139, 92, 246, 0.7);
+    transition: height 0.6s ease;
   }
   
-  @keyframes centerOrbit {
-    to {
-      transform: rotate(360deg);
-    }
-  }
+  /* =========================================================
+     STREAM ITEMS
+     ========================================================= */
   
-  @keyframes centerOrbitReverse {
-    to {
-      transform: rotate(-360deg);
-    }
-  }
-  
-  .tech-center-content {
-    position: absolute;
-    inset: 42px;
+  .tech-stream-items {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    min-height: 570px;
+  }
+  
+  .tech-stream-item {
+    position: relative;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    min-height: 105px;
+  }
+  
+  /* =========================================================
+     NODE
+     ========================================================= */
+  
+  .tech-stream-node {
+    position: relative;
+    z-index: 4;
+    width: 49px;
+    height: 49px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 50%;
-    background:
-      radial-gradient(
-        circle,
-        rgba(139, 92, 246, 0.13),
-        rgba(13, 17, 23, 0.94) 70%
-      );
-    box-shadow:
-      0 0 45px rgba(139, 92, 246, 0.08);
+    background: #0d1117;
+    color: #64748b;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 900;
+    cursor: pointer;
     transition:
-      transform 0.45s ease,
-      box-shadow 0.45s ease;
+      transform 0.35s ease,
+      color 0.35s ease,
+      border-color 0.35s ease,
+      box-shadow 0.35s ease,
+      background 0.35s ease;
   }
   
-  .tech-center-content:hover {
-    transform: scale(1.05);
+  .tech-stream-node:hover {
+    transform: scale(1.15);
+    color: #ffffff;
+    border-color: #a78bfa;
     box-shadow:
-      0 0 55px rgba(139, 92, 246, 0.17);
+      0 0 20px rgba(139, 92, 246, 0.35);
   }
   
-  .tech-center-label {
+  .tech-stream-item.active .tech-stream-node {
+    transform: scale(1.2);
+    color: #ffffff;
+    border-color: #a78bfa;
+    background: rgba(139, 92, 246, 0.13);
+    box-shadow:
+      0 0 0 7px rgba(139, 92, 246, 0.05),
+      0 0 30px rgba(139, 92, 246, 0.35);
+  }
+  
+  .tech-stream-item.active
+    .tech-stream-node::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border-radius: 50%;
+    background: #8b5cf6;
+    box-shadow:
+      0 0 14px #8b5cf6;
+    animation: nodePulse 1.8s infinite;
+  }
+  
+  .tech-stream-item.active
+    .tech-stream-node span {
+    position: relative;
+    z-index: 2;
+  }
+  
+  @keyframes nodePulse {
+    50% {
+      opacity: 0.45;
+      transform: scale(0.7);
+    }
+  }
+  
+  /* =========================================================
+     LABEL
+     ========================================================= */
+  
+  .tech-stream-label {
+    margin-left: 25px;
+    padding: 15px 18px;
+    border: 0;
+    background: transparent;
+    color: #64748b;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition:
+      transform 0.35s ease,
+      color 0.35s ease;
+  }
+  
+  .tech-stream-label:hover {
+    transform: translateX(7px);
+    color: #cbd5e1;
+  }
+  
+  .tech-stream-item.active
+    .tech-stream-label {
+    transform: translateX(12px);
+    color: #f8fafc;
+  }
+  
+  .tech-stream-number {
+    display: block;
+    margin-bottom: 5px;
+    color: #475569;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+  }
+  
+  .tech-stream-item.active
+    .tech-stream-number {
+    color: #a78bfa;
+  }
+  
+  .tech-stream-label strong {
+    display: block;
+    max-width: 270px;
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 800;
+  }
+  
+  /* =========================================================
+     DISPLAY AREA
+     ========================================================= */
+  
+  .tech-stream-display {
+    position: relative;
+    align-self: center;
+    min-height: 410px;
+    padding: 34px;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.025),
+        transparent
+      );
+    overflow: hidden;
+  }
+  
+  .tech-stream-display::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(
+      to bottom,
+      #8b5cf6,
+      transparent
+    );
+    animation: displayScanner 3.5s linear infinite;
+  }
+  
+  @keyframes displayScanner {
+    0% {
+      top: -80px;
+    }
+  
+    100% {
+      top: 100%;
+    }
+  }
+  
+  /* =========================================================
+     DISPLAY TOP
+     ========================================================= */
+  
+  .tech-display-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 45px;
+  }
+  
+  .tech-display-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+  }
+  
+  .tech-display-status span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #8b5cf6;
+    box-shadow:
+      0 0 9px #8b5cf6;
+    animation: statusPulse 1.5s infinite;
+  }
+  
+  @keyframes statusPulse {
+    50% {
+      opacity: 0.35;
+    }
+  }
+  
+  .tech-display-index {
+    color: #475569;
+    font-size: 10px;
+    font-weight: 800;
+  }
+  
+  /* =========================================================
+     DISPLAY HEADING
+     ========================================================= */
+  
+  .tech-display-heading > span {
     color: #a78bfa;
     font-size: 9px;
     font-weight: 900;
     letter-spacing: 2px;
   }
   
-  .tech-center-content strong {
-    max-width: 115px;
-    margin-top: 8px;
+  .tech-display-heading h3 {
+    margin: 10px 0 10px;
     color: #f8fafc;
-    font-size: 14px;
-    line-height: 1.25;
+    font-size: 25px;
+    line-height: 1.2;
+    font-weight: 850;
+    animation: headingAppear 0.4s ease;
   }
   
-  .tech-center-content small {
-    margin-top: 7px;
-    color: #64748b;
-    font-size: 9px;
+  .tech-display-heading p {
+    max-width: 450px;
+    margin: 0;
+    color: #8b95a5;
+    font-size: 12px;
+    line-height: 1.7;
+    animation: headingAppear 0.5s ease;
+  }
+  
+  @keyframes headingAppear {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   /* =========================================================
-     CATEGORY BUTTONS
+     SKILLS
      ========================================================= */
   
-  .tech-category {
-    position: absolute;
-    z-index: 5;
+  .tech-display-skills {
+    margin-top: 35px;
     display: flex;
+    flex-direction: column;
+  }
+  
+  .tech-skill {
+    display: grid;
+    grid-template-columns: 35px 1fr 25px;
     align-items: center;
-    gap: 10px;
-    padding: 12px 17px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 999px;
-    background:
-      rgba(13, 17, 23, 0.68);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    color: #94a3b8;
-    font-family: inherit;
-    cursor: pointer;
+    min-height: 48px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    color: #cbd5e1;
+    opacity: 0;
+    transform: translateX(20px);
+    animation:
+      techSkillAppear
+      0.45s
+      ease
+      forwards;
+    animation-delay: var(--skill-delay);
     transition:
-      transform 0.4s ease,
-      color 0.3s ease,
-      border-color 0.3s ease,
-      background 0.3s ease,
-      box-shadow 0.4s ease;
+      padding 0.25s ease,
+      color 0.25s ease,
+      background 0.25s ease;
   }
   
-  .tech-category:hover {
+  .tech-skill:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  
+  .tech-skill:hover {
+    padding-left: 8px;
+    padding-right: 8px;
     color: #ffffff;
-    border-color:
-      rgba(167, 139, 250, 0.45);
-    background:
-      rgba(139, 92, 246, 0.09);
-    box-shadow:
-      0 0 30px
-      rgba(139, 92, 246, 0.13);
+    background: rgba(139, 92, 246, 0.05);
   }
   
-  .tech-category.active {
-    color: #ffffff;
-    border-color:
-      rgba(167, 139, 250, 0.65);
-    background:
-      rgba(139, 92, 246, 0.14);
-    box-shadow:
-      0 0 35px
-      rgba(139, 92, 246, 0.2);
-    transform: scale(1.08);
+  @keyframes techSkillAppear {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
   
-  .tech-category-dot {
-    width: 7px;
-    height: 7px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: #64748b;
-    transition:
-      background 0.3s ease,
-      box-shadow 0.3s ease,
-      transform 0.3s ease;
+  .tech-skill-index {
+    color: #475569;
+    font-size: 9px;
+    font-weight: 800;
   }
   
-  .tech-category:hover .tech-category-dot,
-  .tech-category.active .tech-category-dot {
-    background: #a78bfa;
-    box-shadow:
-      0 0 10px #8b5cf6;
-    transform: scale(1.35);
-  }
-  
-  .tech-category-name {
+  .tech-skill-name {
     font-size: 12px;
     font-weight: 700;
   }
   
-  .tech-category-short {
+  .tech-skill-arrow {
     color: #64748b;
-    font-size: 8px;
-    font-weight: 900;
-    letter-spacing: 1px;
+    text-align: right;
+    transition:
+      transform 0.25s ease,
+      color 0.25s ease;
   }
   
-  .tech-category.active
-    .tech-category-short {
-    color: #c4b5fd;
-  }
-  
-  /* =========================================================
-     CATEGORY POSITIONS
-     ========================================================= */
-  
-  .tech-category-1 {
-    left: 6%;
-    top: 17%;
-    animation:
-      categoryFloatOne
-      5.2s
-      ease-in-out
-      infinite;
-  }
-  
-  .tech-category-2 {
-    right: 5%;
-    top: 23%;
-    animation:
-      categoryFloatTwo
-      5.8s
-      ease-in-out
-      infinite;
-  }
-  
-  .tech-category-3 {
-    left: 10%;
-    bottom: 18%;
-    animation:
-      categoryFloatThree
-      5.5s
-      ease-in-out
-      infinite;
-  }
-  
-  .tech-category-4 {
-    right: 8%;
-    bottom: 14%;
-    animation:
-      categoryFloatFour
-      6s
-      ease-in-out
-      infinite;
-  }
-  
-  @keyframes categoryFloatOne {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(-13px);
-    }
-  }
-  
-  @keyframes categoryFloatTwo {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(12px);
-    }
-  }
-  
-  @keyframes categoryFloatThree {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(10px);
-    }
-  }
-  
-  @keyframes categoryFloatFour {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(-11px);
-    }
+  .tech-skill:hover .tech-skill-arrow {
+    transform: translateX(4px);
+    color: #a78bfa;
   }
   
   /* =========================================================
-     FLOATING TECHNOLOGIES
+     BOTTOM LINE
      ========================================================= */
   
-  .tech-floating-skills {
+  .tech-display-line {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 10;
-    width: 600px;
-    max-width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-  
-  .tech-floating-skill {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 8px 12px;
-    border:
-      1px solid
-      rgba(167, 139, 250, 0.28);
-    border-radius: 999px;
+    right: 34px;
+    bottom: 25px;
+    left: 34px;
+    height: 1px;
     background:
-      rgba(13, 17, 23, 0.86);
-    color: #e2e8f0;
-    font-size: 10px;
-    font-weight: 700;
-    box-shadow:
-      0 8px 25px
-      rgba(0, 0, 0, 0.25),
-      0 0 18px
-      rgba(139, 92, 246, 0.08);
-    opacity: 0;
-    transform:
-      translateY(20px)
-      scale(0.65);
-    animation:
-      skillAppear
-      0.55s
-      cubic-bezier(0.2, 0.8, 0.2, 1)
-      forwards;
-    animation-delay: var(--skill-delay);
-  }
-  
-  @keyframes skillAppear {
-    to {
-      opacity: 1;
-      transform:
-        translateY(0)
-        scale(1);
-    }
-  }
-  
-  .skill-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: #a78bfa;
-    box-shadow:
-      0 0 8px #8b5cf6;
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(139, 92, 246, 0.4),
+        transparent
+      );
   }
   
   /* =========================================================
-     PARTICLES
+     NAVIGATION
      ========================================================= */
   
-  .tech-particle {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: #a78bfa;
-    box-shadow:
-      0 0 10px
-      rgba(167, 139, 250, 0.8);
-    opacity: 0.6;
-  }
-  
-  .particle-one {
-    left: 28%;
-    top: 12%;
-    animation: particleMoveOne 6s infinite ease-in-out;
-  }
-  
-  .particle-two {
-    right: 25%;
-    top: 10%;
-    animation: particleMoveTwo 7s infinite ease-in-out;
-  }
-  
-  .particle-three {
-    left: 32%;
-    bottom: 9%;
-    animation: particleMoveThree 5s infinite ease-in-out;
-  }
-  
-  .particle-four {
-    right: 30%;
-    bottom: 15%;
-    animation: particleMoveFour 6.5s infinite ease-in-out;
-  }
-  
-  .particle-five {
-    left: 50%;
-    top: 8%;
-    animation: particleMoveFive 5.5s infinite ease-in-out;
-  }
-  
-  @keyframes particleMoveOne {
-    50% {
-      transform:
-        translate(20px, -25px)
-        scale(1.8);
-    }
-  }
-  
-  @keyframes particleMoveTwo {
-    50% {
-      transform:
-        translate(-25px, 20px)
-        scale(1.5);
-    }
-  }
-  
-  @keyframes particleMoveThree {
-    50% {
-      transform:
-        translate(30px, 15px)
-        scale(1.7);
-    }
-  }
-  
-  @keyframes particleMoveFour {
-    50% {
-      transform:
-        translate(-20px, -20px)
-        scale(1.5);
-    }
-  }
-  
-  @keyframes particleMoveFive {
-    50% {
-      transform:
-        translate(0, 30px)
-        scale(2);
-    }
-  }
-  
-  /* =========================================================
-     INTERACTION HINT
-     ========================================================= */
-  
-  .tech-interaction-hint {
+  .tech-navigation {
     display: flex;
-    align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-top: 12px;
-    color: #64748b;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 1.6px;
-    text-transform: uppercase;
+    margin-top: 35px;
   }
   
-  .hint-dot {
-    width: 6px;
-    height: 6px;
+  .tech-nav-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
     border-radius: 50%;
-    background: #8b5cf6;
-    animation: hintPulse 1.6s infinite;
+    background: #334155;
+    cursor: pointer;
+    transition:
+      width 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease;
   }
   
-  @keyframes hintPulse {
-    50% {
-      opacity: 0.35;
-      transform: scale(1.6);
+  .tech-nav-dot:hover {
+    background: #a78bfa;
+  }
+  
+  .tech-nav-dot.active {
+    width: 25px;
+    border-radius: 999px;
+    background: #8b5cf6;
+    box-shadow:
+      0 0 12px rgba(139, 92, 246, 0.6);
+  }
+  
+  /* =========================================================
+     TABLET
+     ========================================================= */
+  
+  @media (max-width: 900px) {
+    .tech-stream {
+      grid-template-columns: 330px 1fr;
+      gap: 45px;
+    }
+  
+    .tech-stream-display {
+      padding: 28px;
+    }
+  
+    .tech-stream-label strong {
+      font-size: 14px;
     }
   }
   
@@ -597,50 +582,62 @@
      MOBILE
      ========================================================= */
   
-  @media (max-width: 750px) {
+  @media (max-width: 700px) {
     .tech-stack-section {
-      padding: 65px 20px;
+      padding: 70px 20px;
     }
   
-    .tech-interactive-stage {
-      height: 570px;
+    .tech-stack-header {
+      margin-bottom: 45px;
     }
   
-    .tech-center {
-      width: 190px;
-      height: 190px;
+    .tech-stream {
+      display: block;
+      min-height: auto;
     }
   
-    .tech-category-name {
-      font-size: 10px;
+    .tech-stream-line {
+      left: 19px;
+      top: 10px;
+      bottom: 10px;
     }
   
-    .tech-category-short {
-      display: none;
+    .tech-stream-items {
+      min-height: auto;
+      gap: 8px;
     }
   
-    .tech-category-1 {
-      left: 2%;
-      top: 10%;
+    .tech-stream-item {
+      min-height: 85px;
     }
   
-    .tech-category-2 {
-      right: 2%;
-      top: 24%;
+    .tech-stream-node {
+      width: 40px;
+      height: 40px;
+      font-size: 9px;
     }
   
-    .tech-category-3 {
-      left: 2%;
-      bottom: 24%;
+    .tech-stream-label {
+      margin-left: 15px;
     }
   
-    .tech-category-4 {
-      right: 2%;
-      bottom: 10%;
+    .tech-stream-label strong {
+      font-size: 13px;
     }
   
-    .tech-floating-skills {
-      width: 90%;
+    .tech-stream-display {
+      margin-top: 30px;
+      min-height: 390px;
+      border-left: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  
+    .tech-display-heading h3 {
+      font-size: 21px;
+    }
+  
+    .tech-display-top {
+      margin-bottom: 35px;
     }
   }
   
@@ -649,17 +646,17 @@
      ========================================================= */
   
   @media (prefers-reduced-motion: reduce) {
-    .tech-stack-section::before,
+    .tech-stack-section::after,
     .tech-stack-header h2 span,
-    .tech-center-orbit,
-    .tech-category,
-    .tech-particle,
-    .hint-dot {
+    .tech-stream-node,
+    .tech-stream-progress,
+    .tech-stream-display::before,
+    .tech-display-status span,
+    .tech-skill {
       animation: none;
     }
   
-    .tech-floating-skill {
-      animation: none;
+    .tech-skill {
       opacity: 1;
       transform: none;
     }

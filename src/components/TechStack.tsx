@@ -4,58 +4,37 @@ import "./TechStack.css";
 function TechStack() {
   const categories = [
     {
+      number: "01",
       title: "Languages & Core Technologies",
-      short: "CORE",
-      skills: [
-        "TypeScript",
-        "JavaScript",
-        "HTML5",
-        "CSS3",
-        "JSX",
-      ],
+      description: "The foundation behind the development workflow.",
+      skills: ["TypeScript", "JavaScript", "HTML5", "CSS3", "JSX"],
     },
     {
+      number: "02",
       title: "Frontend & Development",
-      short: "FRONTEND",
-      skills: [
-        "React",
-        "Vite",
-        "CSS",
-        "Responsive Design",
-      ],
+      description: "Modern tools used to create responsive interfaces.",
+      skills: ["React", "Vite", "CSS", "Responsive Design"],
     },
     {
+      number: "03",
       title: "AI-Assisted Development",
-      short: "AI",
-      skills: [
-        "ChatGPT",
-        "Claude AI",
-      ],
+      description: "AI tools used throughout research and development.",
+      skills: ["ChatGPT", "Claude AI"],
     },
     {
+      number: "04",
       title: "Development & Deployment",
-      short: "DEVOPS",
-      skills: [
-        "Git",
-        "GitHub",
-        "Netlify",
-        "StackBlitz",
-      ],
+      description: "Version control, collaboration, and deployment.",
+      skills: ["Git", "GitHub", "Netlify", "StackBlitz"],
     },
   ];
 
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const activeCategory =
-    activeIndex === null
-      ? null
-      : categories[activeIndex];
+  const activeCategory = categories[activeIndex];
 
   return (
-    <section
-      id="tech-stack"
-      className="tech-stack-section"
-    >
+    <section id="tech-stack" className="tech-stack-section">
       <div className="tech-stack-container">
 
         <div className="tech-stack-header">
@@ -64,108 +43,130 @@ function TechStack() {
           </span>
 
           <h2>
-            Technology &{" "}
-            <span>Tools.</span>
+            Built With <span>Modern Technology.</span>
           </h2>
 
           <p>
-            Click a technology area to explore the tools
+            Explore the technologies and development tools
             behind RecruitWithEd.
           </p>
         </div>
 
-        <div className="tech-interactive-stage">
+        <div className="tech-stream">
 
-          <div className="tech-particle particle-one" />
-          <div className="tech-particle particle-two" />
-          <div className="tech-particle particle-three" />
-          <div className="tech-particle particle-four" />
-          <div className="tech-particle particle-five" />
-
-          <div className="tech-center">
-            <div className="tech-center-orbit" />
-
-            <div className="tech-center-content">
-              <span className="tech-center-label">
-                {activeCategory
-                  ? activeCategory.short
-                  : "TECH STACK"}
-              </span>
-
-              <strong>
-                {activeCategory
-                  ? activeCategory.title
-                  : "Explore"}
-              </strong>
-
-              <small>
-                {activeCategory
-                  ? "Technologies in use"
-                  : "Select a category"}
-              </small>
-            </div>
+          <div className="tech-stream-line">
+            <div
+              className="tech-stream-progress"
+              style={{
+                height: `${((activeIndex + 1) / categories.length) * 100}%`,
+              }}
+            />
           </div>
 
-          {categories.map((category, index) => {
-            const isActive = activeIndex === index;
+          <div className="tech-stream-items">
+            {categories.map((category, index) => {
+              const active = index === activeIndex;
+              const completed = index < activeIndex;
 
-            return (
-              <button
-                type="button"
-                key={category.title}
-                className={`tech-category tech-category-${index + 1} ${
-                  isActive ? "active" : ""
-                }`}
-                onClick={() =>
-                  setActiveIndex(
-                    isActive ? null : index
-                  )
-                }
-                aria-pressed={isActive}
-              >
-                <span className="tech-category-dot" />
+              return (
+                <div
+                  className={`tech-stream-item ${
+                    active ? "active" : ""
+                  } ${completed ? "completed" : ""}`}
+                  key={category.title}
+                >
+                  <button
+                    type="button"
+                    className="tech-stream-node"
+                    onClick={() => setActiveIndex(index)}
+                    aria-label={`Show ${category.title}`}
+                  >
+                    <span>{category.number}</span>
+                  </button>
 
-                <span className="tech-category-name">
-                  {category.title}
-                </span>
+                  <button
+                    type="button"
+                    className="tech-stream-label"
+                    onClick={() => setActiveIndex(index)}
+                  >
+                    <span className="tech-stream-number">
+                      {category.number}
+                    </span>
 
-                <span className="tech-category-short">
-                  {category.short}
-                </span>
-              </button>
-            );
-          })}
+                    <strong>{category.title}</strong>
+                  </button>
+                </div>
+              );
+            })}
+          </div>
 
-          {activeCategory && (
-            <div className="tech-floating-skills">
+          <div className="tech-stream-display">
+            <div className="tech-display-top">
+              <span className="tech-display-status">
+                <span />
+                ACTIVE TECHNOLOGY SET
+              </span>
+
+              <span className="tech-display-index">
+                {activeCategory.number} / 04
+              </span>
+            </div>
+
+            <div className="tech-display-heading">
+              <span>SELECTED</span>
+
+              <h3>{activeCategory.title}</h3>
+
+              <p>{activeCategory.description}</p>
+            </div>
+
+            <div className="tech-display-skills">
               {activeCategory.skills.map(
                 (skill, index) => (
-                  <span
+                  <div
+                    className="tech-skill"
                     key={skill}
-                    className="tech-floating-skill"
                     style={
                       {
-                        "--skill-delay": `${
-                          index * 90
-                        }ms`,
+                        "--skill-delay": `${index * 80}ms`,
                       } as React.CSSProperties
                     }
                   >
-                    <span className="skill-dot" />
-                    {skill}
-                  </span>
+                    <span className="tech-skill-index">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="tech-skill-name">
+                      {skill}
+                    </span>
+
+                    <span className="tech-skill-arrow">
+                      →
+                    </span>
+                  </div>
                 )
               )}
             </div>
-          )}
+
+            <div className="tech-display-line" />
+          </div>
 
         </div>
 
-        <div className="tech-interaction-hint">
-          <span className="hint-dot" />
-          {activeCategory
-            ? `Viewing ${activeCategory.title}`
-            : "Select any category"}
+        <div className="tech-navigation">
+          {categories.map((category, index) => (
+            <button
+              type="button"
+              key={category.number}
+              className={
+                index === activeIndex
+                  ? "tech-nav-dot active"
+                  : "tech-nav-dot"
+              }
+              onClick={() => setActiveIndex(index)}
+              aria-label={`Technology section ${index + 1}`}
+            />
+          ))}
         </div>
 
       </div>
