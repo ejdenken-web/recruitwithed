@@ -1,24 +1,24 @@
 /* =========================================================
    RECRUITWITHED — CLIENTS
-   CONTINUOUS MOVING CLIENT WALL
+   TWO-WAY CONTINUOUS CLIENT WALL
    ========================================================= */
 
    .clients-section {
     position: relative;
   
-    padding: 90px 0 80px;
+    padding: 75px 0 70px;
   
     overflow: hidden;
   
     background:
       radial-gradient(
-        circle at 15% 30%,
-        rgba(139, 92, 246, 0.08),
+        circle at 15% 35%,
+        rgba(139, 92, 246, 0.07),
         transparent 30%
       ),
       radial-gradient(
-        circle at 85% 70%,
-        rgba(236, 72, 153, 0.06),
+        circle at 85% 65%,
+        rgba(236, 72, 153, 0.05),
         transparent 30%
       ),
       #111827;
@@ -64,68 +64,11 @@
      ========================================================= */
   
   .clients-header {
-    width: min(760px, 88%);
+    display: flex;
   
-    margin: 0 auto 55px;
+    justify-content: center;
   
-    text-align: center;
-  }
-  
-  .clients-header h2 {
-    margin: 18px 0 14px;
-  
-    color: #f8fafc;
-  
-    font-size: clamp(34px, 4.5vw, 52px);
-  
-    line-height: 1.05;
-  
-    font-weight: 800;
-  
-    letter-spacing: -0.035em;
-  }
-  
-  .clients-header h2 span {
-    background:
-      linear-gradient(
-        90deg,
-        #a78bfa,
-        #ec4899,
-        #38bdf8,
-        #a78bfa
-      );
-  
-    background-size: 300% auto;
-  
-    -webkit-background-clip: text;
-    background-clip: text;
-  
-    color: transparent;
-  
-    animation:
-      clientsHeadingFlow 6s linear infinite;
-  }
-  
-  @keyframes clientsHeadingFlow {
-    from {
-      background-position: 0% 50%;
-    }
-  
-    to {
-      background-position: 300% 50%;
-    }
-  }
-  
-  .clients-header p {
-    max-width: 650px;
-  
-    margin: 0 auto;
-  
-    color: #8b95a5;
-  
-    font-size: 14px;
-  
-    line-height: 1.7;
+    margin-bottom: 35px;
   }
   
   /* =========================================================
@@ -143,14 +86,12 @@
   
     gap: 14px;
   
-    padding: 15px 0;
-  
     overflow: hidden;
   }
   
-  /*
-     Fade the edges so pills smoothly appear/disappear.
-  */
+  /* =========================================================
+     EDGE FADE
+     ========================================================= */
   
   .clients-moving-wall::before,
   .clients-moving-wall::after {
@@ -161,7 +102,7 @@
     top: 0;
     bottom: 0;
   
-    width: 140px;
+    width: 150px;
   
     z-index: 10;
   
@@ -174,8 +115,9 @@
     background:
       linear-gradient(
         90deg,
-        #111827,
-        transparent
+        #111827 0%,
+        rgba(17, 24, 39, 0.8) 35%,
+        transparent 100%
       );
   }
   
@@ -185,8 +127,9 @@
     background:
       linear-gradient(
         270deg,
-        #111827,
-        transparent
+        #111827 0%,
+        rgba(17, 24, 39, 0.8) 35%,
+        transparent 100%
       );
   }
   
@@ -198,8 +141,6 @@
     width: 100%;
   
     overflow: hidden;
-  
-    display: flex;
   
     white-space: nowrap;
   }
@@ -221,50 +162,19 @@
   }
   
   /* =========================================================
-     LEFT MOVEMENT
+     TOP ROW
+     RIGHT → LEFT
      ========================================================= */
   
-  .client-row-left {
+  .client-track:first-child .client-row {
     animation:
-      clientsMoveLeft
+      clientsRightToLeft
       38s
       linear
       infinite;
   }
   
-  .client-row-left-slow {
-    animation:
-      clientsMoveLeft
-      48s
-      linear
-      infinite;
-  }
-  
-  /* =========================================================
-     RIGHT MOVEMENT
-     ========================================================= */
-  
-  .client-row-right {
-    animation:
-      clientsMoveRight
-      42s
-      linear
-      infinite;
-  }
-  
-  .client-row-right-slow {
-    animation:
-      clientsMoveRight
-      52s
-      linear
-      infinite;
-  }
-  
-  /* =========================================================
-     MOVEMENT
-     ========================================================= */
-  
-  @keyframes clientsMoveLeft {
+  @keyframes clientsRightToLeft {
     from {
       transform: translateX(0);
     }
@@ -274,7 +184,22 @@
     }
   }
   
-  @keyframes clientsMoveRight {
+  /* =========================================================
+     BOTTOM ROW
+     LEFT → RIGHT
+     ========================================================= */
+  
+  .client-row-two {
+    animation:
+      clientsLeftToRight
+      42s
+      linear
+      infinite;
+  
+    transform: translateX(-50%);
+  }
+  
+  @keyframes clientsLeftToRight {
     from {
       transform: translateX(-50%);
     }
@@ -301,7 +226,7 @@
   
     padding: 10px 18px;
   
-    border: 1px solid rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   
     border-radius: 999px;
   
@@ -363,7 +288,7 @@
     background:
       linear-gradient(
         135deg,
-        rgba(139, 92, 246, 0.16),
+        rgba(139, 92, 246, 0.15),
         rgba(236, 72, 153, 0.08)
       );
   
@@ -371,7 +296,7 @@
       0 10px 30px rgba(0, 0, 0, 0.25),
       0 0 24px rgba(139, 92, 246, 0.1);
   
-    transform: translateY(-4px);
+    transform: translateY(-3px);
   }
   
   .client-pill:hover .client-dot {
@@ -384,92 +309,16 @@
   }
   
   /* =========================================================
-     DIFFERENT PILL STYLES
-     ========================================================= */
-  
-  .client-pill:nth-child(4n + 1) {
-    border-radius: 999px;
-  }
-  
-  .client-pill:nth-child(4n + 2) {
-    border-radius: 14px;
-  }
-  
-  .client-pill:nth-child(4n + 3) {
-    border-radius: 18px;
-  }
-  
-  .client-pill:nth-child(4n) {
-    border-radius: 12px;
-  }
-  
-  /* =========================================================
-     BOTTOM
-     ========================================================= */
-  
-  .clients-bottom-line {
-    display: flex;
-  
-    align-items: center;
-    justify-content: center;
-  
-    gap: 15px;
-  
-    margin-top: 45px;
-  }
-  
-  .clients-bottom-line span {
-    width: 80px;
-    height: 1px;
-  
-    background:
-      linear-gradient(
-        90deg,
-        transparent,
-        rgba(167, 139, 250, 0.3)
-      );
-  }
-  
-  .clients-bottom-line span:last-child {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(236, 72, 153, 0.3),
-        transparent
-      );
-  }
-  
-  .clients-bottom-line p {
-    margin: 0;
-  
-    color: #475569;
-  
-    font-size: 10px;
-  
-    letter-spacing: 0.08em;
-  
-    text-transform: uppercase;
-  }
-  
-  /* =========================================================
      MOBILE
      ========================================================= */
   
   @media (max-width: 650px) {
     .clients-section {
-      padding: 65px 0;
+      padding: 60px 0;
     }
   
     .clients-header {
-      margin-bottom: 38px;
-    }
-  
-    .clients-header h2 {
-      font-size: 31px;
-    }
-  
-    .clients-header p {
-      font-size: 13px;
+      margin-bottom: 28px;
     }
   
     .clients-moving-wall {
@@ -478,6 +327,14 @@
   
     .client-row {
       gap: 8px;
+    }
+  
+    .client-track:first-child .client-row {
+      animation-duration: 32s;
+    }
+  
+    .client-row-two {
+      animation-duration: 36s;
     }
   
     .client-pill {
@@ -492,14 +349,6 @@
     .clients-moving-wall::after {
       width: 70px;
     }
-  
-    .clients-bottom-line {
-      margin-top: 30px;
-    }
-  
-    .clients-bottom-line span {
-      width: 35px;
-    }
   }
   
   /* =========================================================
@@ -509,9 +358,6 @@
   @media (prefers-reduced-motion: reduce) {
     .client-row {
       animation: none;
-    }
-  
-    .clients-header h2 span {
-      animation: none;
+      transform: none;
     }
   }
