@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./Clients.css";
 
 function Clients() {
@@ -39,8 +40,36 @@ function Clients() {
     "Wells Fargo",
   ];
 
-  const firstRow = clients.slice(0, 18);
-  const secondRow = clients.slice(18);
+  const [activeClient, setActiveClient] = useState(0);
+  const [direction, setDirection] = useState<"left" | "right">("right");
+
+  const nextClient = () => {
+    setDirection("right");
+
+    setActiveClient((current) =>
+      current === clients.length - 1 ? 0 : current + 1
+    );
+  };
+
+  const previousClient = () => {
+    setDirection("left");
+
+    setActiveClient((current) =>
+      current === 0 ? clients.length - 1 : current - 1
+    );
+  };
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setDirection("right");
+
+      setActiveClient((current) =>
+        current === clients.length - 1 ? 0 : current + 1
+      );
+    }, 3000);
+
+    return () => window.clearInterval(timer);
+  }, []);
 
   return (
     <section id="clients" className="clients-section">
@@ -50,33 +79,36 @@ function Clients() {
           <span className="section-tag">CLIENTS</span>
         </div>
 
-        <div className="clients-moving-wall">
+        <div className="client-carousel">
 
-          <div className="client-track">
-            <div className="client-row client-row-left">
-              {[...firstRow, ...firstRow].map((client, index) => (
-                <div
-                  className="client-pill"
-                  key={`top-${client}-${index}`}
-                >
-                  <span>{client}</span>
-                </div>
-              ))}
+          <button
+            type="button"
+            className="client-arrow"
+            onClick={previousClient}
+            aria-label="Previous client"
+          >
+            ←
+          </button>
+
+          <div className="client-box">
+
+            <div
+              key={`${activeClient}-${direction}`}
+              className={`client-name client-name-${direction}`}
+            >
+              {clients[activeClient]}
             </div>
+
           </div>
 
-          <div className="client-track">
-            <div className="client-row client-row-right">
-              {[...secondRow, ...secondRow].map((client, index) => (
-                <div
-                  className="client-pill"
-                  key={`bottom-${client}-${index}`}
-                >
-                  <span>{client}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <button
+            type="button"
+            className="client-arrow"
+            onClick={nextClient}
+            aria-label="Next client"
+          >
+            →
+          </button>
 
         </div>
 

@@ -1,13 +1,17 @@
 /* =========================================================
    RECRUITWITHED — CLIENTS
-   STRICT GLOBAL BLACK THEME
+   ONE CLIENT AT A TIME
    ========================================================= */
 
    .clients-section {
     position: relative;
+  
     width: 100%;
-    padding: 90px 0 100px;
+  
+    padding: 90px 6% 100px;
+  
     overflow: hidden;
+  
     background: #0d1117 !important;
   }
   
@@ -18,11 +22,8 @@
   .clients-container {
     position: relative;
   
-    z-index: 2;
-  
     width: 100%;
-  
-    max-width: 1100px;
+    max-width: 1000px;
   
     margin: 0 auto;
   }
@@ -34,146 +35,225 @@
   .clients-header {
     display: flex;
   
+    justify-content: center;
+  
+    margin-bottom: 38px;
+  }
+  
+  /* =========================================================
+     CAROUSEL
+     ========================================================= */
+  
+  .client-carousel {
+    display: flex;
+  
     align-items: center;
   
     justify-content: center;
   
-    margin-bottom: 45px;
-  }
+    gap: 22px;
   
-  /* =========================================================
-     MOVING CLIENT AREA
-     ========================================================= */
-  
-  .clients-moving-wall {
     width: 100%;
-  
-    display: flex;
-  
-    flex-direction: column;
-  
-    gap: 16px;
-  
-    overflow: hidden;
   }
   
   /* =========================================================
-     TRACK
+     CLIENT BOX
      ========================================================= */
   
-  .client-track {
-    width: 100%;
+  .client-box {
+    position: relative;
   
-    overflow: hidden;
-  }
-  
-  /* =========================================================
-     ROW
-     ========================================================= */
-  
-  .client-row {
     display: flex;
   
     align-items: center;
   
-    width: max-content;
+    justify-content: center;
   
-    gap: 12px;
+    width: min(680px, 70vw);
   
-    animation:
-      clientsMoveLeft
-      35s
-      linear
-      infinite;
-  }
+    height: 180px;
   
-  .client-row-two {
-    animation:
-      clientsMoveRight
-      35s
-      linear
-      infinite;
+    overflow: hidden;
+  
+    border: 1px solid rgba(255, 255, 255, 0.09);
+  
+    border-radius: 20px;
+  
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.055),
+        rgba(255, 255, 255, 0.018)
+      );
+  
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.22);
+  
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
   
   /* =========================================================
-     CLIENT PILLS
+     SUBTLE BOX LIGHT
      ========================================================= */
   
-  .client-pill {
+  .client-box::before {
+    content: "";
+  
+    position: absolute;
+  
+    width: 260px;
+    height: 260px;
+  
+    left: 50%;
+    top: 50%;
+  
+    transform: translate(-50%, -50%);
+  
+    border-radius: 50%;
+  
+    background:
+      radial-gradient(
+        circle,
+        rgba(139, 92, 246, 0.10),
+        transparent 70%
+      );
+  
+    pointer-events: none;
+  }
+  
+  /* =========================================================
+     CLIENT NAME
+     ========================================================= */
+  
+  .client-name {
+    position: relative;
+  
+    z-index: 2;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    width: 100%;
+  
+    padding: 20px;
+  
+    color: #f8fafc;
+  
+    font-size: clamp(22px, 3vw, 34px);
+  
+    font-weight: 700;
+  
+    letter-spacing: -0.02em;
+  
+    text-align: center;
+  
+    white-space: nowrap;
+  }
+  
+  /* =========================================================
+     SLIDE RIGHT
+     ========================================================= */
+  
+  .client-name-right {
+    animation:
+      clientEnterRight 0.55s
+      cubic-bezier(0.22, 1, 0.36, 1)
+      forwards;
+  }
+  
+  @keyframes clientEnterRight {
+    from {
+      opacity: 0;
+  
+      transform: translateX(100%);
+    }
+  
+    to {
+      opacity: 1;
+  
+      transform: translateX(0);
+    }
+  }
+  
+  /* =========================================================
+     SLIDE LEFT
+     ========================================================= */
+  
+  .client-name-left {
+    animation:
+      clientEnterLeft 0.55s
+      cubic-bezier(0.22, 1, 0.36, 1)
+      forwards;
+  }
+  
+  @keyframes clientEnterLeft {
+    from {
+      opacity: 0;
+  
+      transform: translateX(-100%);
+    }
+  
+    to {
+      opacity: 1;
+  
+      transform: translateX(0);
+    }
+  }
+  
+  /* =========================================================
+     ARROWS
+     ========================================================= */
+  
+  .client-arrow {
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+  
     flex-shrink: 0;
   
-    display: inline-flex;
-  
-    align-items: center;
-  
-    justify-content: center;
-  
-    min-height: 42px;
-  
-    padding: 10px 16px;
+    width: 48px;
+    height: 48px;
   
     border: 1px solid rgba(255, 255, 255, 0.10);
   
-    border-radius: 999px;
+    border-radius: 50%;
   
-    background: #000000;
+    background: rgba(255, 255, 255, 0.035);
   
-    color: #b8b8b8;
+    color: #cbd5e1;
   
-    font-size: 12px;
+    font-size: 22px;
   
-    font-weight: 600;
-  
-    white-space: nowrap;
+    cursor: pointer;
   
     transition:
+      transform 0.25s ease,
       color 0.25s ease,
       border-color 0.25s ease,
-      background 0.25s ease;
+      background 0.25s ease,
+      box-shadow 0.25s ease;
   }
   
-  .client-pill:hover {
+  .client-arrow:hover {
     color: #ffffff;
   
-    border-color: rgba(255, 255, 255, 0.24);
+    border-color: rgba(139, 92, 246, 0.4);
   
-    background: #080808;
+    background: rgba(139, 92, 246, 0.10);
+  
+    box-shadow:
+      0 0 20px rgba(139, 92, 246, 0.12);
+  
+    transform: scale(1.08);
   }
   
-  /* =========================================================
-     DOT
-     ========================================================= */
-  
-  .client-dot {
-    display: none;
-  }
-  
-  /* =========================================================
-     LEFT → RIGHT
-     ========================================================= */
-  
-  @keyframes clientsMoveRight {
-    from {
-      transform: translateX(-50%);
-    }
-  
-    to {
-      transform: translateX(0);
-    }
-  }
-  
-  /* =========================================================
-     RIGHT → LEFT
-     ========================================================= */
-  
-  @keyframes clientsMoveLeft {
-    from {
-      transform: translateX(0);
-    }
-  
-    to {
-      transform: translateX(-50%);
-    }
+  .client-arrow:active {
+    transform: scale(0.94);
   }
   
   /* =========================================================
@@ -182,25 +262,36 @@
   
   @media (max-width: 700px) {
     .clients-section {
-      padding: 70px 18px 80px;
+      padding: 70px 20px 80px;
     }
   
-    .clients-moving-wall {
-      gap: 12px;
+    .clients-header {
+      margin-bottom: 28px;
     }
   
-    .client-row {
-      gap: 9px;
-  
-      animation-duration: 28s;
+    .client-carousel {
+      gap: 10px;
     }
   
-    .client-pill {
-      min-height: 38px;
+    .client-box {
+      width: calc(100vw - 120px);
   
-      padding: 8px 13px;
+      height: 140px;
   
-      font-size: 10px;
+      border-radius: 16px;
+    }
+  
+    .client-name {
+      font-size: 18px;
+  
+      white-space: normal;
+    }
+  
+    .client-arrow {
+      width: 40px;
+      height: 40px;
+  
+      font-size: 18px;
     }
   }
   
@@ -209,8 +300,8 @@
      ========================================================= */
   
   @media (prefers-reduced-motion: reduce) {
-    .client-row,
-    .client-row-two {
+    .client-name-right,
+    .client-name-left {
       animation: none;
     }
   }
