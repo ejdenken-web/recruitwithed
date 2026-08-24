@@ -1,1 +1,428 @@
-/* ========================================================= RECRUITWITHED — GLOBAL APPLICATION STYLES DARK + SILVER + PURPLE ========================================================= */ :root { --background: #0d1117; --surface: #111827; --surface-soft: #151b24; --surface-silver: #1a2029; --text-primary: #f8fafc; --text-secondary: #d1d5db; --text-silver: #c0c7d1; --text-muted: #8b95a5; --border: rgba(209, 213, 219, 0.10); --border-silver: rgba(209, 213, 219, 0.16); --border-strong: rgba(139, 92, 246, 0.35); --accent: #8b5cf6; --accent-hover: #a78bfa; --pink: #ec4899; --shadow: 0 10px 30px rgba(0, 0, 0, 0.25); } /* ========================================================= GLOBAL RESET ========================================================= */ * { box-sizing: border-box; } html { scroll-behavior: smooth; background: var(--background); } body { margin: 0; min-width: 320px; background: var(--background); color: var(--text-secondary); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; overflow-x: hidden; } #root { min-height: 100vh; background: var(--background); } .app { min-height: 100vh; background: var(--background); color: var(--text-secondary); } /* ========================================================= GLOBAL SECTIONS ========================================================= */ section { position: relative; color: var(--text-secondary); background: var(--background); } /* ========================================================= SECTION TAG ========================================================= */ .section-tag { display: inline-flex; align-items: center; padding: 6px 12px; border: 1px solid var(--border-silver); border-radius: 999px; background: rgba(209, 213, 219, 0.035); color: var(--text-silver); font-size: 10px; font-weight: 800; letter-spacing: 1.7px; } /* ========================================================= GLOBAL HEADINGS ========================================================= */ h1, h2, h3, h4 { color: var(--text-primary); } h1 span, h2 span { background: linear-gradient( 90deg, var(--accent), var(--accent-hover), var(--text-silver) ); -webkit-background-clip: text; background-clip: text; color: transparent; } /* ========================================================= GLOBAL CARDS ========================================================= */ .project-card, .tech-stack-card, .recruiting-platform-card, .client-item, .certification-showcase { border: 1px solid var(--border); background: linear-gradient( 145deg, rgba(209, 213, 219, 0.045), rgba(255, 255, 255, 0.012) ); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18); } .project-card:hover, .tech-stack-card:hover, .recruiting-platform-card:hover, .client-item:hover { border-color: rgba(139, 92, 246, 0.30); background: linear-gradient( 145deg, rgba(139, 92, 246, 0.055), rgba(209, 213, 219, 0.018) ); box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25); } /* ========================================================= CLIENT / PLATFORM INDICATORS ========================================================= */ .client-dot, .platform-indicator { background: var(--accent); box-shadow: none; } /* ========================================================= PILLS / TAGS ========================================================= */ .tech-stack-item, .interactive-cert, .provider-selector-item, .footer-social { border: 1px solid var(--border); background: rgba(209, 213, 219, 0.035); color: var(--text-silver); } .tech-stack-item:hover, .interactive-cert:hover, .provider-selector-item:hover, .provider-selector-item.selected, .footer-social:hover { color: var(--text-primary); border-color: rgba(139, 92, 246, 0.35); background: rgba(139, 92, 246, 0.07); } /* ========================================================= CERTIFICATION PROGRESS ========================================================= */ .progress-dot { background: #3f4650; } .progress-dot.active { background: var(--accent); } /* ========================================================= CAROUSEL ARROWS ========================================================= */ .carousel-arrow { border: 1px solid var(--border-silver); background: rgba(209, 213, 219, 0.035); color: var(--text-silver); } .carousel-arrow:hover { color: var(--text-primary); border-color: rgba(139, 92, 246, 0.35); background: rgba(139, 92, 246, 0.08); } /* ========================================================= FOOTER ========================================================= */ .footer { background: var(--background); border-top: 1px solid var(--border); } .footer-logo { color: var(--text-primary); } .footer-brand h2 span { background: none !important; -webkit-background-clip: initial !important; background-clip: initial !important; color: inherit !important; } .footer-label { color: var(--text-silver); } /* ========================================================= SCROLLBAR ========================================================= */ ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: var(--background); } ::-webkit-scrollbar-thumb { border-radius: 999px; background: #3b424c; } ::-webkit-scrollbar-thumb:hover { background: var(--accent); } /* ========================================================= TEXT SELECTION ========================================================= */ ::selection { background: rgba(139, 92, 246, 0.30); color: #ffffff; } /* ========================================================= MOBILE ========================================================= */ @media (max-width: 700px) { body, #root, .app { background: var(--background); } }
+/* =========================================================
+   RECRUITWITHED — GLOBAL APPLICATION STYLES
+   PREMIUM DARK + SILVER THEME
+   ========================================================= */
+
+   :root {
+    --background: #0d1117;
+  
+    --surface: #111827;
+    --surface-soft: #151b24;
+    --surface-elevated: #18202b;
+  
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+  
+    /* SILVER */
+    --silver: #cbd5e1;
+    --silver-light: #e2e8f0;
+    --silver-bright: #f1f5f9;
+    --silver-muted: #94a3b8;
+  
+    --silver-border: rgba(203, 213, 225, 0.16);
+    --silver-border-strong: rgba(226, 232, 240, 0.3);
+    --silver-soft: rgba(203, 213, 225, 0.07);
+    --silver-glow: rgba(226, 232, 240, 0.08);
+  
+    /* EXISTING BRAND ACCENTS */
+    --accent: #8b5cf6;
+    --accent-hover: #a78bfa;
+  
+    --creative-accent: #ec4899;
+  
+    --border: rgba(203, 213, 225, 0.12);
+  
+    --shadow:
+      0 15px 40px rgba(0, 0, 0, 0.28);
+  }
+  
+  /* =========================================================
+     GLOBAL RESET
+     ========================================================= */
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    background: var(--background);
+  }
+  
+  body {
+    margin: 0;
+  
+    min-width: 320px;
+  
+    background: var(--background);
+  
+    color: var(--text-secondary);
+  
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  
+    overflow-x: hidden;
+  }
+  
+  #root {
+    min-height: 100vh;
+  
+    background: var(--background);
+  }
+  
+  .app {
+    min-height: 100vh;
+  
+    background: var(--background);
+  
+    color: var(--text-secondary);
+  }
+  
+  /* =========================================================
+     GLOBAL SECTIONS
+     ========================================================= */
+  
+  main {
+    background: var(--background);
+  }
+  
+  section {
+    position: relative;
+  
+    color: var(--text-secondary);
+  
+    background: var(--background);
+  }
+  
+  /* =========================================================
+     HEADINGS
+     ========================================================= */
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--text-primary);
+  }
+  
+  /* Silver heading emphasis */
+  
+  h1 span,
+  h2 span {
+    background:
+      linear-gradient(
+        90deg,
+        var(--silver-light),
+        var(--silver-bright),
+        var(--silver)
+      );
+  
+    -webkit-background-clip: text;
+    background-clip: text;
+  
+    color: transparent;
+  }
+  
+  /* =========================================================
+     SECTION TAGS
+     ========================================================= */
+  
+  .section-tag {
+    display: inline-flex;
+  
+    align-items: center;
+  
+    padding: 6px 12px;
+  
+    border: 1px solid var(--silver-border);
+  
+    border-radius: 999px;
+  
+    background: var(--silver-soft);
+  
+    color: var(--silver-light);
+  
+    font-size: 10px;
+  
+    font-weight: 800;
+  
+    letter-spacing: 1.7px;
+  
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+  
+  /* =========================================================
+     GLOBAL CARDS
+     ========================================================= */
+  
+  .project-card,
+  .tech-stack-card,
+  .recruiting-platform-card,
+  .client-item,
+  .certification-showcase {
+    border: 1px solid var(--silver-border);
+  
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.055),
+        rgba(203, 213, 225, 0.018)
+      );
+  
+    box-shadow:
+      0 15px 40px rgba(0, 0, 0, 0.24),
+      inset 0 1px 0 rgba(255, 255, 255, 0.025);
+  }
+  
+  /* =========================================================
+     GLOBAL CARD HOVER
+     ========================================================= */
+  
+  .project-card:hover,
+  .tech-stack-card:hover,
+  .recruiting-platform-card:hover,
+  .client-item:hover {
+    border-color: var(--silver-border-strong);
+  
+    background:
+      linear-gradient(
+        145deg,
+        rgba(226, 232, 240, 0.075),
+        rgba(139, 92, 246, 0.025)
+      );
+  
+    box-shadow:
+      0 25px 60px rgba(0, 0, 0, 0.3),
+      0 0 30px var(--silver-glow);
+  }
+  
+  /* =========================================================
+     SILVER CARD TOP HIGHLIGHT
+     ========================================================= */
+  
+  .project-card::after,
+  .tech-stack-card::after,
+  .recruiting-platform-card::after,
+  .client-item::after,
+  .certification-showcase::after {
+    content: "";
+  
+    position: absolute;
+  
+    top: 0;
+    left: 12%;
+  
+    width: 76%;
+    height: 1px;
+  
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(226, 232, 240, 0.35),
+        transparent
+      );
+  
+    pointer-events: none;
+  }
+  
+  /* =========================================================
+     CLIENT / PLATFORM INDICATORS
+     ========================================================= */
+  
+  .client-dot,
+  .platform-indicator {
+    background: var(--silver);
+  
+    box-shadow:
+      0 0 8px rgba(226, 232, 240, 0.35);
+  }
+  
+  /* =========================================================
+     PILLS / TAGS
+     ========================================================= */
+  
+  .tech-stack-item,
+  .interactive-cert,
+  .provider-selector-item,
+  .footer-social {
+    border: 1px solid var(--silver-border);
+  
+    background:
+      rgba(203, 213, 225, 0.035);
+  
+    color: var(--text-secondary);
+  }
+  
+  .tech-stack-item:hover,
+  .interactive-cert:hover,
+  .provider-selector-item:hover,
+  .provider-selector-item.selected,
+  .footer-social:hover {
+    color: var(--silver-bright);
+  
+    border-color: var(--silver-border-strong);
+  
+    background:
+      rgba(203, 213, 225, 0.075);
+  
+    box-shadow:
+      0 0 20px var(--silver-glow);
+  }
+  
+  /* =========================================================
+     CERTIFICATION PROGRESS
+     ========================================================= */
+  
+  .progress-dot {
+    background: #475569;
+  }
+  
+  .progress-dot.active {
+    background: var(--silver-light);
+  
+    box-shadow:
+      0 0 10px rgba(226, 232, 240, 0.45);
+  }
+  
+  /* =========================================================
+     CAROUSEL ARROWS
+     ========================================================= */
+  
+  .carousel-arrow {
+    border: 1px solid var(--silver-border);
+  
+    background:
+      rgba(203, 213, 225, 0.045);
+  
+    color: var(--silver);
+  }
+  
+  .carousel-arrow:hover {
+    color: var(--silver-bright);
+  
+    border-color: var(--silver-border-strong);
+  
+    background:
+      rgba(203, 213, 225, 0.09);
+  
+    box-shadow:
+      0 0 20px var(--silver-glow);
+  }
+  
+  /* =========================================================
+     GLOBAL DIVIDERS
+     ========================================================= */
+  
+  hr {
+    border: 0;
+  
+    height: 1px;
+  
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(203, 213, 225, 0.22),
+        transparent
+      );
+  }
+  
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+  
+  .footer {
+    background: var(--background);
+  
+    border-top:
+      1px solid var(--silver-border);
+  }
+  
+  .footer-logo {
+    color: var(--silver-bright);
+  }
+  
+  .footer-brand h2 span {
+    background: none !important;
+  
+    -webkit-background-clip: initial !important;
+  
+    background-clip: initial !important;
+  
+    color: inherit !important;
+  }
+  
+  .footer-label {
+    color: var(--silver);
+  }
+  
+  /* =========================================================
+     SCROLLBAR
+     ========================================================= */
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+  
+    background: #475569;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--silver-light);
+  }
+  
+  /* =========================================================
+     TEXT SELECTION
+     ========================================================= */
+  
+  ::selection {
+    background:
+      rgba(203, 213, 225, 0.22);
+  
+    color: var(--silver-bright);
+  }
+  
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+  
+  @media (max-width: 700px) {
+    body,
+    #root,
+    .app {
+      background: var(--background);
+    }
+  }
+  
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }

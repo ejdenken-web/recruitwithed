@@ -1,6 +1,6 @@
 /* =========================================================
    RECRUITWITHED — CLIENTS
-   ONE CLIENT AT A TIME
+   PREMIUM SILVER CLIENT CAROUSEL
    ========================================================= */
 
    .clients-section {
@@ -12,7 +12,7 @@
   
     overflow: hidden;
   
-    background: #0d1117 !important;
+    background: #0d1117;
   }
   
   /* =========================================================
@@ -22,8 +22,11 @@
   .clients-container {
     position: relative;
   
+    z-index: 2;
+  
     width: 100%;
-    max-width: 1000px;
+  
+    max-width: 1100px;
   
     margin: 0 auto;
   }
@@ -37,7 +40,7 @@
   
     justify-content: center;
   
-    margin-bottom: 38px;
+    margin-bottom: 42px;
   }
   
   /* =========================================================
@@ -51,7 +54,7 @@
   
     justify-content: center;
   
-    gap: 22px;
+    gap: 24px;
   
     width: 100%;
   }
@@ -71,30 +74,60 @@
   
     width: min(680px, 70vw);
   
-    height: 180px;
+    height: 320px;
   
     overflow: hidden;
   
-    border: 1px solid rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(203, 213, 225, 0.16);
   
-    border-radius: 20px;
+    border-radius: 24px;
   
     background:
       linear-gradient(
         145deg,
-        rgba(255, 255, 255, 0.055),
-        rgba(255, 255, 255, 0.018)
+        rgba(255, 255, 255, 0.065),
+        rgba(203, 213, 225, 0.018)
       );
   
     box-shadow:
-      0 20px 50px rgba(0, 0, 0, 0.22);
+      0 20px 55px rgba(0, 0, 0, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.035);
   
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px);
+  
+    -webkit-backdrop-filter: blur(14px);
   }
   
   /* =========================================================
-     SUBTLE BOX LIGHT
+     SILVER TOP EDGE
+     ========================================================= */
+  
+  .client-box::after {
+    content: "";
+  
+    position: absolute;
+  
+    top: 0;
+  
+    left: 10%;
+  
+    width: 80%;
+  
+    height: 1px;
+  
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(226, 232, 240, 0.45),
+        transparent
+      );
+  
+    pointer-events: none;
+  }
+  
+  /* =========================================================
+     SUBTLE SILVER LIGHT
      ========================================================= */
   
   .client-box::before {
@@ -102,10 +135,12 @@
   
     position: absolute;
   
-    width: 260px;
-    height: 260px;
+    width: 320px;
+  
+    height: 320px;
   
     left: 50%;
+  
     top: 50%;
   
     transform: translate(-50%, -50%);
@@ -115,8 +150,8 @@
     background:
       radial-gradient(
         circle,
-        rgba(139, 92, 246, 0.10),
-        transparent 70%
+        rgba(226, 232, 240, 0.075),
+        transparent 68%
       );
   
     pointer-events: none;
@@ -139,9 +174,9 @@
   
     width: 100%;
   
-    padding: 20px;
+    padding: 30px;
   
-    color: #f8fafc;
+    color: #f1f5f9;
   
     font-size: clamp(22px, 3vw, 34px);
   
@@ -149,9 +184,14 @@
   
     letter-spacing: -0.02em;
   
+    line-height: 1.25;
+  
     text-align: center;
   
     white-space: nowrap;
+  
+    text-shadow:
+      0 1px 18px rgba(226, 232, 240, 0.08);
   }
   
   /* =========================================================
@@ -209,27 +249,37 @@
      ========================================================= */
   
   .client-arrow {
+    position: relative;
+  
+    z-index: 3;
+  
     display: flex;
   
     align-items: center;
+  
     justify-content: center;
   
     flex-shrink: 0;
   
-    width: 48px;
-    height: 48px;
+    width: 52px;
   
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    height: 52px;
+  
+    border: 1px solid rgba(203, 213, 225, 0.16);
   
     border-radius: 50%;
   
-    background: rgba(255, 255, 255, 0.035);
+    background:
+      rgba(203, 213, 225, 0.045);
   
     color: #cbd5e1;
   
     font-size: 22px;
   
     cursor: pointer;
+  
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.035);
   
     transition:
       transform 0.25s ease,
@@ -239,21 +289,43 @@
       box-shadow 0.25s ease;
   }
   
+  /* =========================================================
+     ARROW HOVER
+     ========================================================= */
+  
   .client-arrow:hover {
-    color: #ffffff;
+    color: #f1f5f9;
   
-    border-color: rgba(139, 92, 246, 0.4);
+    border-color: rgba(226, 232, 240, 0.38);
   
-    background: rgba(139, 92, 246, 0.10);
+    background:
+      rgba(203, 213, 225, 0.09);
   
     box-shadow:
-      0 0 20px rgba(139, 92, 246, 0.12);
+      0 0 22px rgba(226, 232, 240, 0.08);
   
     transform: scale(1.08);
   }
   
+  /* =========================================================
+     ARROW ACTIVE
+     ========================================================= */
+  
   .client-arrow:active {
     transform: scale(0.94);
+  }
+  
+  /* =========================================================
+     BOX HOVER
+     ========================================================= */
+  
+  .client-box:hover {
+    border-color: rgba(226, 232, 240, 0.26);
+  
+    box-shadow:
+      0 26px 65px rgba(0, 0, 0, 0.32),
+      0 0 30px rgba(226, 232, 240, 0.045),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
   
   /* =========================================================
@@ -266,7 +338,7 @@
     }
   
     .clients-header {
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
   
     .client-carousel {
@@ -276,20 +348,23 @@
     .client-box {
       width: calc(100vw - 120px);
   
-      height: 140px;
+      height: 280px;
   
-      border-radius: 16px;
+      border-radius: 20px;
     }
   
     .client-name {
+      padding: 20px;
+  
       font-size: 18px;
   
       white-space: normal;
     }
   
     .client-arrow {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+  
+      height: 42px;
   
       font-size: 18px;
     }

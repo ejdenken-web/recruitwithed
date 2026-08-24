@@ -1,9 +1,11 @@
 /* =========================================================
    RECRUITWITHED — GLOBAL PAGE STYLES
+   PREMIUM DARK + SILVER BASE
    ========================================================= */
 
    html {
     scroll-behavior: smooth;
+  
     background: #0d1117;
   }
   
@@ -14,7 +16,7 @@
   
     background: #0d1117;
   
-    color: #ffffff;
+    color: #cbd5e1;
   
     font-family:
       Inter,
@@ -43,6 +45,7 @@
   
   a {
     color: inherit;
+  
     text-decoration: none;
   }
   
@@ -55,16 +58,17 @@
   }
   
   /* =========================================================
-     TEXT SELECTION
+     IMAGES
      ========================================================= */
   
-  ::selection {
-    background: rgba(139, 92, 246, 0.35);
-    color: #ffffff;
+  img {
+    max-width: 100%;
+  
+    display: block;
   }
   
   /* =========================================================
-     GLOBAL PAGE BACKGROUND
+     GLOBAL PAGE
      ========================================================= */
   
   main {
@@ -72,7 +76,25 @@
   }
   
   section {
-    background-color: #0d1117;
+    background: #0d1117;
+  }
+  
+  /* =========================================================
+     GLOBAL SILVER DIVIDER
+     ========================================================= */
+  
+  .page-divider {
+    width: 100%;
+  
+    height: 1px;
+  
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(203, 213, 225, 0.22),
+        transparent
+      );
   }
   
   /* =========================================================
@@ -88,11 +110,21 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #30363d;
+    background: #475569;
   
     border-radius: 999px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #8b5cf6;
+    background: #cbd5e1;
+  }
+  
+  /* =========================================================
+     SELECTION
+     ========================================================= */
+  
+  ::selection {
+    background: rgba(203, 213, 225, 0.22);
+  
+    color: #f8fafc;
   }
