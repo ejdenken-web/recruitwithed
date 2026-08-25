@@ -74,7 +74,7 @@
   
     width: min(680px, 70vw);
   
-    height: 210px;
+    height: 150px;
   
     overflow: hidden;
   
@@ -348,7 +348,7 @@
     .client-box {
       width: calc(100vw - 120px);
   
-      height: 195px;
+      height: 140px;
   
       border-radius: 20px;
     }
