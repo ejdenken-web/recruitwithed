@@ -8,7 +8,7 @@
   
     width: 100%;
   
-    padding: 90px 6% 100px;
+    padding: 80px 6% 85px;
   
     overflow: hidden;
   
@@ -40,7 +40,7 @@
   
     justify-content: center;
   
-    margin-bottom: 42px;
+    margin-bottom: 32px;
   }
   
   /* =========================================================
@@ -74,7 +74,7 @@
   
     width: min(680px, 70vw);
   
-    height: 320px;
+    height: 240px;
   
     overflow: hidden;
   
@@ -135,9 +135,9 @@
   
     position: absolute;
   
-    width: 320px;
+    width: 2400px;
   
-    height: 320px;
+    height: 240px;
   
     left: 50%;
   
@@ -348,7 +348,7 @@
     .client-box {
       width: calc(100vw - 120px);
   
-      height: 280px;
+      height: 220px;
   
       border-radius: 20px;
     }
