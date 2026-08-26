@@ -53,6 +53,15 @@ function Footer() {
             >
               LinkedIn
             </a>
+
+            <a
+              href="/Ed_Johnson_Resume.docx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social"
+            >
+              Resume
+            </a>
           </div>
         </div>
 
