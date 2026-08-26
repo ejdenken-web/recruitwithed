@@ -37,15 +37,6 @@ function Footer() {
             </a>
 
             <a
-              href="https://github.com/ejdenken-web/recruitwithed"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-social"
-            >
-              GitHub
-            </a>
-
-            <a
               href="https://www.linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
