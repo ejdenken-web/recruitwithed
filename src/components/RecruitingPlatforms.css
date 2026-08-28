@@ -1,10 +1,12 @@
 /* =========================================================
    RECRUITWITHED — RECRUITING PLATFORMS
    INTERACTIVE RECRUITING RADAR
+   FULL-WIDTH PREMIUM DARK + SILVER
    ========================================================= */
 
    .recruiting-platforms-section {
     position: relative;
+    width: 100%;
     padding: 95px 6%;
     background: #0d1117;
     overflow: hidden;
@@ -52,8 +54,10 @@
   .recruiting-platforms-container {
     position: relative;
     z-index: 2;
+  
     width: 100%;
     max-width: 1180px;
+  
     margin: 0 auto;
   }
   
@@ -62,20 +66,28 @@
      ========================================================= */
   
   .recruiting-platforms-header {
+    width: 100%;
     max-width: 700px;
+  
     margin: 0 auto 55px;
+  
     text-align: center;
   }
   
   .recruiting-platforms-header h2 {
     margin: 20px 0 15px;
+  
     color: #f8fafc;
+  
     font-size: clamp(38px, 5vw, 58px);
+  
     line-height: 1.05;
     font-weight: 900;
   }
   
   .recruiting-platforms-header h2 span {
+    display: inline-block;
+  
     background:
       linear-gradient(
         90deg,
@@ -83,10 +95,14 @@
         #a78bfa,
         #ec4899
       );
+  
     -webkit-background-clip: text;
     background-clip: text;
+  
     color: transparent;
+  
     background-size: 200% auto;
+  
     animation: radarGradient 4s ease-in-out infinite;
   }
   
@@ -103,8 +119,11 @@
   
   .recruiting-platforms-header p {
     max-width: 620px;
+  
     margin: 0 auto;
+  
     color: #8b95a5;
+  
     font-size: 14px;
     line-height: 1.7;
   }
@@ -115,10 +134,14 @@
   
   .platform-radar {
     position: relative;
+  
     width: min(680px, 90vw);
     height: min(680px, 90vw);
+  
     margin: 0 auto;
+  
     border-radius: 50%;
+  
     background:
       radial-gradient(
         circle,
@@ -133,28 +156,35 @@
   
   .radar-ring {
     position: absolute;
+  
     top: 50%;
     left: 50%;
+  
     border: 1px solid rgba(139, 92, 246, 0.14);
+  
     border-radius: 50%;
+  
     transform: translate(-50%, -50%);
   }
   
   .radar-ring-one {
     width: 34%;
     height: 34%;
+  
     animation: radarRingOne 4s ease-in-out infinite;
   }
   
   .radar-ring-two {
     width: 62%;
     height: 62%;
+  
     animation: radarRingTwo 5s ease-in-out infinite;
   }
   
   .radar-ring-three {
     width: 90%;
     height: 90%;
+  
     animation: radarRingThree 6s ease-in-out infinite;
   }
   
@@ -200,22 +230,28 @@
   .platform-radar::before,
   .platform-radar::after {
     content: "";
+  
     position: absolute;
+  
     top: 50%;
     left: 50%;
+  
     background: rgba(139, 92, 246, 0.09);
+  
     pointer-events: none;
   }
   
   .platform-radar::before {
     width: 90%;
     height: 1px;
+  
     transform: translate(-50%, -50%);
   }
   
   .platform-radar::after {
     width: 1px;
     height: 90%;
+  
     transform: translate(-50%, -50%);
   }
   
@@ -225,11 +261,15 @@
   
   .radar-sweep {
     position: absolute;
+  
     top: 50%;
     left: 50%;
+  
     width: 45%;
     height: 45%;
+  
     transform-origin: 0 0;
+  
     background:
       conic-gradient(
         from 0deg,
@@ -238,13 +278,16 @@
         transparent 28deg,
         transparent 360deg
       );
+  
     clip-path: polygon(
       0 0,
       100% 0,
       100% 100%,
       0 100%
     );
+  
     animation: radarSweep 4s linear infinite;
+  
     pointer-events: none;
   }
   
@@ -264,27 +307,39 @@
   
   .radar-center {
     position: absolute;
+  
     top: 50%;
     left: 50%;
+  
     z-index: 8;
+  
     width: 185px;
     height: 185px;
+  
     display: flex;
+  
     flex-direction: column;
+  
     align-items: center;
     justify-content: center;
+  
     transform: translate(-50%, -50%);
+  
     border: 1px solid rgba(139, 92, 246, 0.25);
+  
     border-radius: 50%;
+  
     background:
       radial-gradient(
         circle,
         rgba(139, 92, 246, 0.12),
         rgba(13, 17, 23, 0.96) 68%
       );
+  
     box-shadow:
       0 0 45px rgba(139, 92, 246, 0.1),
       inset 0 0 30px rgba(139, 92, 246, 0.05);
+  
     animation: centerFloat 4s ease-in-out infinite;
   }
   
@@ -299,13 +354,22 @@
     }
   }
   
+  /* =========================================================
+     RADAR CORE
+     ========================================================= */
+  
   .radar-core {
     position: relative;
+  
     width: 24px;
     height: 24px;
+  
     margin-bottom: 12px;
+  
     border-radius: 50%;
+  
     background: rgba(139, 92, 246, 0.18);
+  
     box-shadow:
       0 0 20px rgba(139, 92, 246, 0.4);
   }
@@ -313,10 +377,15 @@
   .radar-core::before,
   .radar-core::after {
     content: "";
+  
     position: absolute;
+  
     inset: -8px;
+  
     border: 1px solid rgba(139, 92, 246, 0.2);
+  
     border-radius: 50%;
+  
     animation: corePulse 2s ease-out infinite;
   }
   
@@ -326,9 +395,13 @@
   
   .radar-core span {
     position: absolute;
+  
     inset: 7px;
+  
     border-radius: 50%;
+  
     background: #a78bfa;
+  
     box-shadow:
       0 0 15px #8b5cf6;
   }
@@ -345,20 +418,33 @@
     }
   }
   
+  /* =========================================================
+     CENTER TEXT
+     ========================================================= */
+  
   .radar-center-label {
     margin-bottom: 5px;
+  
     color: #64748b;
+  
     font-size: 8px;
+  
     font-weight: 900;
+  
     letter-spacing: 2px;
   }
   
   .radar-center strong {
     max-width: 140px;
+  
     color: #f8fafc;
+  
     font-size: 12px;
+  
     line-height: 1.3;
+  
     text-align: center;
+  
     animation: centerTextIn 0.35s ease;
   }
   
@@ -380,18 +466,31 @@
   
   .platform-orbit {
     position: absolute;
+  
     z-index: 10;
+  
     display: flex;
+  
     flex-direction: column;
+  
     align-items: center;
+  
     gap: 8px;
+  
     min-width: 125px;
+  
     padding: 12px;
+  
     border: 0;
+  
     background: transparent;
+  
     color: #64748b;
+  
     font-family: inherit;
+  
     cursor: pointer;
+  
     transition:
       color 0.35s ease,
       transform 0.35s ease;
@@ -399,11 +498,13 @@
   
   .platform-orbit:hover {
     color: #ffffff;
+  
     transform: scale(1.12);
   }
   
   .platform-orbit.active {
     color: #f8fafc;
+  
     transform: scale(1.08);
   }
   
@@ -414,6 +515,7 @@
   .platform-orbit-1 {
     top: 4%;
     left: 50%;
+  
     transform: translateX(-50%);
   }
   
@@ -451,11 +553,16 @@
   
   .platform-pulse {
     position: relative;
+  
     width: 13px;
     height: 13px;
+  
     border: 1px solid rgba(167, 139, 250, 0.4);
+  
     border-radius: 50%;
+  
     background: #0d1117;
+  
     transition:
       background 0.3s ease,
       border-color 0.3s ease,
@@ -464,27 +571,33 @@
   
   .platform-pulse::before {
     content: "";
+  
     position: absolute;
+  
     inset: 3px;
+  
     border-radius: 50%;
+  
     background: #475569;
+  
     transition:
       background 0.3s ease,
       box-shadow 0.3s ease;
   }
   
-  .platform-orbit.active
-    .platform-pulse {
+  .platform-orbit.active .platform-pulse {
     border-color: #a78bfa;
+  
     box-shadow:
       0 0 16px rgba(139, 92, 246, 0.5);
   }
   
-  .platform-orbit.active
-    .platform-pulse::before {
+  .platform-orbit.active .platform-pulse::before {
     background: #a78bfa;
+  
     box-shadow:
       0 0 10px #8b5cf6;
+  
     animation: activeNode 1.4s infinite;
   }
   
@@ -501,17 +614,25 @@
   
   .platform-number {
     color: #475569;
+  
     font-size: 8px;
+  
     font-weight: 900;
+  
     letter-spacing: 2px;
   }
   
   .platform-name {
     max-width: 130px;
+  
     color: inherit;
+  
     font-size: 12px;
+  
     line-height: 1.3;
+  
     font-weight: 800;
+  
     text-align: center;
   }
   
@@ -525,19 +646,28 @@
   
   .platform-indicators {
     display: flex;
+  
     justify-content: center;
+  
     gap: 7px;
+  
     margin-top: 35px;
   }
   
   .platform-indicator {
     width: 7px;
     height: 7px;
+  
     padding: 0;
+  
     border: 0;
+  
     border-radius: 50%;
+  
     background: #334155;
+  
     cursor: pointer;
+  
     transition:
       width 0.3s ease,
       background 0.3s ease,
@@ -550,8 +680,11 @@
   
   .platform-indicator.active {
     width: 25px;
+  
     border-radius: 999px;
+  
     background: #8b5cf6;
+  
     box-shadow:
       0 0 12px rgba(139, 92, 246, 0.6);
   }
@@ -581,11 +714,13 @@
   
     .platform-orbit {
       min-width: 95px;
+  
       padding: 8px;
     }
   
     .platform-name {
       max-width: 100px;
+  
       font-size: 10px;
     }
   
