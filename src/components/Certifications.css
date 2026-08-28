@@ -1,49 +1,63 @@
 /* =========================================================
    RECRUITWITHED — CERTIFICATIONS
-   HIGH-INTERACTION FLOATING DESIGN
+   FULL-WIDTH INTERACTIVE CERTIFICATION FIELD
    ========================================================= */
 
    .certifications-section {
     position: relative;
-    padding: 45px 6%;
-    background: #0d1117;
+    width: 100%;
+    min-width: 0;
+    padding: 70px 5vw 85px;
     overflow: hidden;
+    background: #0d1117;
   }
   
+  /* =========================================================
+     CONTAINER — FULL BROWSER WIDTH
+     ========================================================= */
+  
   .certifications-container {
+    position: relative;
     width: 100%;
-    max-width: 1240px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
     text-align: center;
   }
   
+  /* =========================================================
+     INTRO
+     ========================================================= */
+  
   .certifications-intro {
+    width: min(680px, 90%);
     max-width: 680px;
     margin: 18px auto 0;
+  
     color: #8b95a5;
+  
     font-size: 14px;
     line-height: 1.7;
   }
   
   /* =========================================================
-     FLOATING UNIVERSE
+     FLOATING FIELD
      ========================================================= */
   
   .floating-certification-stage {
     position: relative;
   
     width: 100%;
-    max-width: 1100px;
+    max-width: none;
   
-    height: 470px;
+    height: 500px;
   
-    margin: 5px auto 0;
+    margin: 15px 0 0;
   
     isolation: isolate;
   }
   
   /* =========================================================
-     CENTER GLOW
+     CENTER ATMOSPHERE
      ========================================================= */
   
   .floating-certification-stage::before {
@@ -54,8 +68,8 @@
     top: 50%;
     left: 50%;
   
-    width: 360px;
-    height: 360px;
+    width: min(480px, 42vw);
+    height: min(480px, 42vw);
   
     transform: translate(-50%, -50%);
   
@@ -64,7 +78,7 @@
     background:
       radial-gradient(
         circle,
-        rgba(139, 92, 246, 0.13) 0%,
+        rgba(139, 92, 246, 0.14) 0%,
         rgba(139, 92, 246, 0.06) 35%,
         rgba(139, 92, 246, 0.02) 55%,
         transparent 72%
@@ -93,7 +107,7 @@
   }
   
   /* =========================================================
-     PROVIDER BUTTON
+     PROVIDER BUTTONS
      ========================================================= */
   
   .floating-provider {
@@ -106,18 +120,19 @@
     align-items: center;
     justify-content: center;
   
-    min-width: 90px;
+    min-width: 100px;
   
-    padding: 10px 15px;
+    padding: 10px 16px;
   
     border: 1px solid rgba(167, 139, 250, 0.18);
   
     border-radius: 999px;
   
-    background:
-      rgba(13, 17, 23, 0.5);
+    background: rgba(13, 17, 23, 0.5);
   
     backdrop-filter: blur(8px);
+  
+    -webkit-backdrop-filter: blur(8px);
   
     color: #94a3b8;
   
@@ -162,9 +177,6 @@
   
     background: #64748b;
   
-    box-shadow:
-      0 0 0 rgba(139, 92, 246, 0);
-  
     transition:
       background 0.25s ease,
       box-shadow 0.25s ease,
@@ -172,7 +184,7 @@
   }
   
   /* =========================================================
-     HOVER
+     PROVIDER HOVER
      ========================================================= */
   
   .floating-provider:hover {
@@ -182,8 +194,7 @@
   
     border-color: rgba(167, 139, 250, 0.7);
   
-    background:
-      rgba(139, 92, 246, 0.13);
+    background: rgba(139, 92, 246, 0.13);
   
     box-shadow:
       0 0 12px rgba(139, 92, 246, 0.25),
@@ -216,8 +227,7 @@
   
     border-color: rgba(167, 139, 250, 0.65);
   
-    background:
-      rgba(139, 92, 246, 0.1);
+    background: rgba(139, 92, 246, 0.1);
   
     box-shadow:
       0 0 12px rgba(139, 92, 246, 0.25),
@@ -237,8 +247,7 @@
   .floating-provider[data-active="true"]:hover {
     border-color: #c4b5fd;
   
-    background:
-      rgba(139, 92, 246, 0.18);
+    background: rgba(139, 92, 246, 0.18);
   
     box-shadow:
       0 0 15px rgba(167, 139, 250, 0.45),
@@ -247,47 +256,48 @@
   }
   
   /* =========================================================
-     SIX DIFFERENT FLOATING MOTIONS
+     PROVIDER POSITIONS
+     USE VIEWPORT-BASED SPACING
      ========================================================= */
   
   .provider-one {
-    top: 45px;
-    left: 20%;
+    top: 55px;
+    left: 20vw;
   
     animation: orbit-one 5s ease-in-out infinite;
   }
   
   .provider-two {
-    top: 65px;
-    right: 20%;
+    top: 75px;
+    right: 20vw;
   
     animation: orbit-two 5.8s ease-in-out infinite;
   }
   
   .provider-three {
-    top: 205px;
-    left: 5%;
+    top: 220px;
+    left: 8vw;
   
     animation: orbit-three 6.2s ease-in-out infinite;
   }
   
   .provider-four {
-    top: 205px;
-    right: 5%;
+    top: 220px;
+    right: 8vw;
   
     animation: orbit-four 5.4s ease-in-out infinite;
   }
   
   .provider-five {
-    top: 350px;
-    left: 24%;
+    top: 365px;
+    left: 24vw;
   
     animation: orbit-five 6.5s ease-in-out infinite;
   }
   
   .provider-six {
-    top: 345px;
-    right: 24%;
+    top: 360px;
+    right: 24vw;
   
     animation: orbit-six 5.7s ease-in-out infinite;
   }
@@ -434,10 +444,14 @@
   
     z-index: 3;
   
-    width: min(560px, 52%);
+    width: min(700px, 55vw);
   
     transform: translate(-50%, -50%);
   }
+  
+  /* =========================================================
+     ACTIVE PROVIDER NAME
+     ========================================================= */
   
   .certification-center-provider {
     margin-bottom: 20px;
@@ -452,7 +466,7 @@
   }
   
   /* =========================================================
-     CERTIFICATION NAMES
+     CERTIFICATION LIST
      ========================================================= */
   
   .certification-list {
@@ -463,7 +477,7 @@
     align-items: center;
     justify-content: center;
   
-    gap: 10px 20px;
+    gap: 10px 22px;
   }
   
   .floating-certification {
@@ -605,15 +619,25 @@
   
   @media (max-width: 700px) {
     .certifications-section {
-      padding: 40px 20px;
+      padding: 55px 20px 65px;
+    }
+  
+    .certifications-intro {
+      width: 100%;
+      max-width: 500px;
     }
   
     .floating-certification-stage {
-      height: 500px;
+      height: 510px;
+    }
+  
+    .floating-certification-stage::before {
+      width: 300px;
+      height: 300px;
     }
   
     .certification-center {
-      width: 62%;
+      width: 64%;
     }
   
     .certification-center-provider {
@@ -621,40 +645,96 @@
     }
   
     .floating-provider {
-      min-width: 75px;
+      min-width: 78px;
       padding: 8px 10px;
-  
       font-size: 11px;
     }
   
     .provider-one {
       top: 35px;
-      left: 3%;
+      left: 4%;
     }
   
     .provider-two {
       top: 60px;
-      right: 3%;
+      right: 4%;
     }
   
     .provider-three {
-      top: 185px;
+      top: 190px;
+      left: 0;
+    }
+  
+    .provider-four {
+      top: 190px;
+      right: 0;
+    }
+  
+    .provider-five {
+      top: 385px;
+      left: 6%;
+    }
+  
+    .provider-six {
+      top: 380px;
+      right: 6%;
+    }
+  
+    .certification-list {
+      gap: 8px 12px;
+    }
+  
+    .floating-certification {
+      font-size: 11px;
+    }
+  }
+  
+  /* =========================================================
+     VERY SMALL MOBILE
+     ========================================================= */
+  
+  @media (max-width: 430px) {
+    .certifications-section {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+  
+    .floating-certification-stage {
+      height: 535px;
+    }
+  
+    .certification-center {
+      width: 70%;
+    }
+  
+    .floating-provider {
+      min-width: 70px;
+      padding: 7px 8px;
+      font-size: 10px;
+    }
+  
+    .provider-one {
+      left: 1%;
+    }
+  
+    .provider-two {
+      right: 1%;
+    }
+  
+    .provider-three {
       left: -2%;
     }
   
     .provider-four {
-      top: 185px;
       right: -2%;
     }
   
     .provider-five {
-      top: 375px;
-      left: 5%;
+      left: 2%;
     }
   
     .provider-six {
-      top: 370px;
-      right: 5%;
+      right: 2%;
     }
   }
   
