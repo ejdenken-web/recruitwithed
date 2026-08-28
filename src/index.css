@@ -1,6 +1,6 @@
 /* =========================================================
    RECRUITWITHED — GLOBAL APPLICATION STYLES
-   FULL-BROWSER-WIDTH PREMIUM DARK + SILVER THEME
+   UNIFIED DARK / BLACK / WHITE / SILVER THEME
    ========================================================= */
 
    :root {
@@ -44,7 +44,9 @@
   html {
     width: 100%;
     min-width: 320px;
+  
     scroll-behavior: smooth;
+  
     background: var(--background);
   }
   
@@ -77,7 +79,6 @@
   
   #root {
     width: 100%;
-    min-width: 100%;
     min-height: 100vh;
   
     margin: 0;
@@ -92,7 +93,6 @@
   
   .app {
     width: 100%;
-    min-width: 100%;
     min-height: 100vh;
   
     margin: 0;
@@ -110,7 +110,6 @@
     display: block;
   
     width: 100%;
-    min-width: 100%;
     min-height: 100vh;
   
     margin: 0;
@@ -120,59 +119,22 @@
   }
   
   /* =========================================================
-     ALL DIRECT MAIN CHILDREN
-     ========================================================= */
-  
-  main > section,
-  main > div,
-  main > article,
-  main > header,
-  main > footer {
-    width: 100%;
-    max-width: none;
-  
-    margin-left: 0;
-    margin-right: 0;
-  }
-  
-  /* =========================================================
      SECTIONS
+     IMPORTANT:
+     Do NOT force internal containers to full width.
+     Each component controls its own content width.
      ========================================================= */
   
   section {
     position: relative;
   
     width: 100%;
-    max-width: none;
   
     margin: 0;
     border: 0;
   
     background: var(--background);
     color: var(--text-secondary);
-  }
-  
-  /* =========================================================
-     FORCE COMMON SECTION CONTAINERS FULL WIDTH
-     ========================================================= */
-  
-  .hero-container,
-  .clients-container,
-  .recruiting-platforms-container,
-  .certifications-container,
-  .about-container,
-  .impact-container,
-  .organizations-container,
-  .projects-container,
-  .footer-container,
-  .why-work-with-me-container,
-  .career-highlights-container,
-  .tech-stack-container {
-    width: 100%;
-    max-width: none;
-  
-    margin-left: 0;
-    margin-right: 0;
   }
   
   /* =========================================================
@@ -467,7 +429,6 @@
     min-width: 100%;
   
     margin: 0;
-    padding: 0;
   
     background: var(--background);
   
@@ -549,25 +510,6 @@
   
     section[id] {
       scroll-margin-top: 70px;
-    }
-  
-    .hero-container,
-    .clients-container,
-    .recruiting-platforms-container,
-    .certifications-container,
-    .about-container,
-    .impact-container,
-    .organizations-container,
-    .projects-container,
-    .footer-container,
-    .why-work-with-me-container,
-    .career-highlights-container,
-    .tech-stack-container {
-      width: 100%;
-      max-width: none;
-  
-      margin-left: 0;
-      margin-right: 0;
     }
   }
   
