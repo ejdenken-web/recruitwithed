@@ -1,7 +1,7 @@
 /* =========================================================
    RECRUITWITHED — RECRUITING PLATFORMS
-   INTERACTIVE RECRUITING RADAR
-   FULL-WIDTH PREMIUM DARK + SILVER
+   PREMIUM DARK + SILVER
+   MATCHES GLOBAL SITE THEME
    ========================================================= */
 
    .recruiting-platforms-section {
@@ -13,7 +13,7 @@
   }
   
   /* =========================================================
-     ATMOSPHERE
+     BACKGROUND ATMOSPHERE
      ========================================================= */
   
   .recruiting-platforms-section::before {
@@ -21,29 +21,35 @@
     position: absolute;
     top: 50%;
     left: 50%;
+  
     width: 700px;
     height: 700px;
+  
     transform: translate(-50%, -50%);
+  
     border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(139, 92, 246, 0.055),
-      transparent 68%
-    );
+  
+    background:
+      radial-gradient(
+        circle,
+        rgba(203, 213, 225, 0.045),
+        transparent 68%
+      );
+  
     pointer-events: none;
-    animation: radarAtmosphere 6s ease-in-out infinite;
+    animation: platformsAtmosphere 7s ease-in-out infinite;
   }
   
-  @keyframes radarAtmosphere {
+  @keyframes platformsAtmosphere {
     0%,
     100% {
       opacity: 0.45;
-      transform: translate(-50%, -50%) scale(0.92);
+      transform: translate(-50%, -50%) scale(0.94);
     }
   
     50% {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1.08);
+      opacity: 0.8;
+      transform: translate(-50%, -50%) scale(1.06);
     }
   }
   
@@ -67,7 +73,7 @@
   
   .recruiting-platforms-header {
     width: 100%;
-    max-width: 700px;
+    max-width: 720px;
   
     margin: 0 auto 55px;
   
@@ -91,29 +97,34 @@
     background:
       linear-gradient(
         90deg,
-        #8b5cf6,
-        #a78bfa,
-        #ec4899
+        #cbd5e1,
+        #f1f5f9,
+        #94a3b8,
+        #f1f5f9,
+        #cbd5e1
       );
+  
+    background-size: 300% 100%;
   
     -webkit-background-clip: text;
     background-clip: text;
   
     color: transparent;
   
-    background-size: 200% auto;
-  
-    animation: radarGradient 4s ease-in-out infinite;
+    animation: platformsTitleFlow 6s linear infinite;
   }
   
-  @keyframes radarGradient {
-    0%,
-    100% {
+  @keyframes platformsTitleFlow {
+    0% {
       background-position: 0% 50%;
     }
   
     50% {
       background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
     }
   }
   
@@ -145,13 +156,13 @@
     background:
       radial-gradient(
         circle,
-        rgba(139, 92, 246, 0.045),
-        transparent 67%
+        rgba(203, 213, 225, 0.035),
+        transparent 68%
       );
   }
   
   /* =========================================================
-     RINGS
+     RADAR RINGS
      ========================================================= */
   
   .radar-ring {
@@ -160,7 +171,7 @@
     top: 50%;
     left: 50%;
   
-    border: 1px solid rgba(139, 92, 246, 0.14);
+    border: 1px solid rgba(203, 213, 225, 0.12);
   
     border-radius: 50%;
   
@@ -191,28 +202,17 @@
   @keyframes radarRingOne {
     0%,
     100% {
-      opacity: 0.4;
-      transform: translate(-50%, -50%) scale(0.96);
-    }
-  
-    50% {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1.04);
-    }
-  }
-  
-  @keyframes radarRingTwo {
-    0%,
-    100% {
-      opacity: 0.25;
+      opacity: 0.35;
+      transform: translate(-50%, -50%) scale(0.97);
     }
   
     50% {
       opacity: 0.75;
+      transform: translate(-50%, -50%) scale(1.03);
     }
   }
   
-  @keyframes radarRingThree {
+  @keyframes radarRingTwo {
     0%,
     100% {
       opacity: 0.2;
@@ -220,6 +220,17 @@
   
     50% {
       opacity: 0.5;
+    }
+  }
+  
+  @keyframes radarRingThree {
+    0%,
+    100% {
+      opacity: 0.15;
+    }
+  
+    50% {
+      opacity: 0.35;
     }
   }
   
@@ -236,7 +247,7 @@
     top: 50%;
     left: 50%;
   
-    background: rgba(139, 92, 246, 0.09);
+    background: rgba(203, 213, 225, 0.08);
   
     pointer-events: none;
   }
@@ -273,18 +284,11 @@
     background:
       conic-gradient(
         from 0deg,
-        rgba(139, 92, 246, 0.32),
-        rgba(139, 92, 246, 0.08),
+        rgba(226, 232, 240, 0.18),
+        rgba(203, 213, 225, 0.05),
         transparent 28deg,
         transparent 360deg
       );
-  
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% 100%,
-      0 100%
-    );
   
     animation: radarSweep 4s linear infinite;
   
@@ -302,7 +306,7 @@
   }
   
   /* =========================================================
-     CENTER
+     RADAR CENTER
      ========================================================= */
   
   .radar-center {
@@ -325,20 +329,20 @@
   
     transform: translate(-50%, -50%);
   
-    border: 1px solid rgba(139, 92, 246, 0.25);
+    border: 1px solid rgba(203, 213, 225, 0.18);
   
     border-radius: 50%;
   
     background:
       radial-gradient(
         circle,
-        rgba(139, 92, 246, 0.12),
-        rgba(13, 17, 23, 0.96) 68%
+        rgba(203, 213, 225, 0.075),
+        rgba(13, 17, 23, 0.97) 68%
       );
   
     box-shadow:
-      0 0 45px rgba(139, 92, 246, 0.1),
-      inset 0 0 30px rgba(139, 92, 246, 0.05);
+      0 0 45px rgba(226, 232, 240, 0.045),
+      inset 0 0 30px rgba(203, 213, 225, 0.035);
   
     animation: centerFloat 4s ease-in-out infinite;
   }
@@ -350,7 +354,7 @@
     }
   
     50% {
-      transform: translate(-50%, -50%) scale(1.035);
+      transform: translate(-50%, -50%) scale(1.025);
     }
   }
   
@@ -368,10 +372,10 @@
   
     border-radius: 50%;
   
-    background: rgba(139, 92, 246, 0.18);
+    background: rgba(203, 213, 225, 0.12);
   
     box-shadow:
-      0 0 20px rgba(139, 92, 246, 0.4);
+      0 0 20px rgba(226, 232, 240, 0.18);
   }
   
   .radar-core::before,
@@ -382,7 +386,7 @@
   
     inset: -8px;
   
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    border: 1px solid rgba(203, 213, 225, 0.16);
   
     border-radius: 50%;
   
@@ -400,15 +404,15 @@
   
     border-radius: 50%;
   
-    background: #a78bfa;
+    background: #e2e8f0;
   
     box-shadow:
-      0 0 15px #8b5cf6;
+      0 0 15px rgba(226, 232, 240, 0.55);
   }
   
   @keyframes corePulse {
     0% {
-      opacity: 0.8;
+      opacity: 0.75;
       transform: scale(0.7);
     }
   
@@ -437,7 +441,7 @@
   .radar-center strong {
     max-width: 140px;
   
-    color: #f8fafc;
+    color: #f1f5f9;
   
     font-size: 12px;
   
@@ -497,13 +501,13 @@
   }
   
   .platform-orbit:hover {
-    color: #ffffff;
+    color: #f1f5f9;
   
     transform: scale(1.12);
   }
   
   .platform-orbit.active {
-    color: #f8fafc;
+    color: #f1f5f9;
   
     transform: scale(1.08);
   }
@@ -557,7 +561,7 @@
     width: 13px;
     height: 13px;
   
-    border: 1px solid rgba(167, 139, 250, 0.4);
+    border: 1px solid rgba(203, 213, 225, 0.35);
   
     border-radius: 50%;
   
@@ -586,17 +590,17 @@
   }
   
   .platform-orbit.active .platform-pulse {
-    border-color: #a78bfa;
+    border-color: #e2e8f0;
   
     box-shadow:
-      0 0 16px rgba(139, 92, 246, 0.5);
+      0 0 16px rgba(226, 232, 240, 0.28);
   }
   
   .platform-orbit.active .platform-pulse::before {
-    background: #a78bfa;
+    background: #e2e8f0;
   
     box-shadow:
-      0 0 10px #8b5cf6;
+      0 0 10px rgba(226, 232, 240, 0.55);
   
     animation: activeNode 1.4s infinite;
   }
@@ -637,7 +641,7 @@
   }
   
   .platform-orbit.active .platform-number {
-    color: #a78bfa;
+    color: #cbd5e1;
   }
   
   /* =========================================================
@@ -675,7 +679,7 @@
   }
   
   .platform-indicator:hover {
-    background: #a78bfa;
+    background: #cbd5e1;
   }
   
   .platform-indicator.active {
@@ -683,10 +687,10 @@
   
     border-radius: 999px;
   
-    background: #8b5cf6;
+    background: #e2e8f0;
   
     box-shadow:
-      0 0 12px rgba(139, 92, 246, 0.6);
+      0 0 12px rgba(226, 232, 240, 0.35);
   }
   
   /* =========================================================
@@ -714,13 +718,11 @@
   
     .platform-orbit {
       min-width: 95px;
-  
       padding: 8px;
     }
   
     .platform-name {
       max-width: 100px;
-  
       font-size: 10px;
     }
   
@@ -753,6 +755,7 @@
   
   @media (prefers-reduced-motion: reduce) {
     .recruiting-platforms-section::before,
+    .recruiting-platforms-header h2 span,
     .radar-ring-one,
     .radar-ring-two,
     .radar-ring-three,
