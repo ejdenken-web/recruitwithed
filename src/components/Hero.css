@@ -1,10 +1,12 @@
 /* =========================================================
    RECRUITWITHED — HERO
+   FULL-WIDTH PREMIUM DARK + SILVER
    ========================================================= */
 
    .hero {
     position: relative;
   
+    width: 100%;
     min-height: 78vh;
   
     display: flex;
@@ -87,13 +89,24 @@
     z-index: 2;
   
     width: 100%;
-    max-width: 1000px;
+    max-width: none;
   
-    margin: 0 auto;
+    margin: 0;
   }
   
-  .hero-content {
-    text-align: center;
+  /* =========================================================
+     CONTENT
+     ========================================================= */
+  
+  .hero-container {
+    position: relative;
+  
+    z-index: 2;
+  
+    width: 100%;
+    max-width: none;
+  
+    margin: 0;
   }
   
   /* =========================================================
@@ -206,7 +219,8 @@
      ========================================================= */
   
   .hero-description {
-    max-width: 700px;
+    width: 100%;
+    max-width: 900px;
   
     margin: 16px auto 0;
   
@@ -224,7 +238,8 @@
   .hero-profile {
     position: relative;
   
-    max-width: 820px;
+    width: 100%;
+    max-width: 1050px;
   
     margin: 24px auto 0;
   
@@ -274,62 +289,6 @@
   }
   
   /* =========================================================
-     TOP ARROW
-     ========================================================= */
-  
-  .hero-top-arrow {
-    display: flex;
-  
-    align-items: center;
-    justify-content: center;
-  
-    width: 42px;
-    height: 42px;
-  
-    margin: 32px auto 0;
-  
-    border: 1px solid rgba(167, 139, 250, 0.3);
-  
-    border-radius: 50%;
-  
-    background:
-      rgba(139, 92, 246, 0.06);
-  
-    color: #a78bfa;
-  
-    font-size: 20px;
-  
-    font-weight: 600;
-  
-    text-decoration: none;
-  
-    box-shadow:
-      0 0 20px rgba(139, 92, 246, 0.08);
-  
-    transition:
-      transform 0.3s ease,
-      color 0.3s ease,
-      border-color 0.3s ease,
-      background 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-  
-  .hero-top-arrow:hover {
-    color: #ffffff;
-  
-    border-color:
-      rgba(236, 72, 153, 0.55);
-  
-    background:
-      rgba(236, 72, 153, 0.08);
-  
-    transform: translateY(-5px);
-  
-    box-shadow:
-      0 0 28px rgba(236, 72, 153, 0.2);
-  }
-  
-  /* =========================================================
      MOBILE
      ========================================================= */
   
@@ -357,18 +316,13 @@
     }
   
     .hero-profile {
+      max-width: none;
+  
       font-size: 12px;
   
       line-height: 1.75;
   
       margin-top: 20px;
-    }
-  
-    .hero-top-arrow {
-      width: 40px;
-      height: 40px;
-  
-      margin-top: 26px;
     }
   
     .hero-background {
