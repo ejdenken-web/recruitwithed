@@ -1,0 +1,202 @@
+/* =========================================================
+   RECRUITWITHED — GLOBAL SILVER SPARKLES
+   ========================================================= */
+
+   .global-sparkles {
+    position: fixed;
+    inset: 0;
+  
+    width: 100%;
+    height: 100%;
+  
+    overflow: hidden;
+    pointer-events: none;
+  
+    z-index: 0;
+  
+    opacity: 0.55;
+  }
+  
+  .sparkle {
+    position: absolute;
+    top: -10px;
+  
+    width: 2px;
+    height: 2px;
+  
+    border-radius: 50%;
+  
+    background: #f8fafc;
+  
+    box-shadow:
+      0 0 6px rgba(248, 250, 252, 0.8),
+      0 0 14px rgba(203, 213, 225, 0.35);
+  
+    animation:
+      sparkle-fall 14s linear infinite,
+      sparkle-twinkle 2.8s ease-in-out infinite;
+  }
+  
+  /* Silver variation */
+  
+  .sparkle:nth-child(3n) {
+    background: #cbd5e1;
+  
+    box-shadow:
+      0 0 6px rgba(203, 213, 225, 0.75),
+      0 0 14px rgba(203, 213, 225, 0.3);
+  }
+  
+  /* Bright white variation */
+  
+  .sparkle:nth-child(5n) {
+    background: #ffffff;
+  
+    box-shadow:
+      0 0 8px rgba(255, 255, 255, 0.95),
+      0 0 18px rgba(226, 232, 240, 0.4);
+  }
+  
+  /* Dark silver variation */
+  
+  .sparkle:nth-child(7n) {
+    background: #64748b;
+  
+    box-shadow:
+      0 0 5px rgba(100, 116, 139, 0.35);
+  }
+  
+  /* Different sizes */
+  
+  .sparkle:nth-child(4n) {
+    width: 1px;
+    height: 1px;
+  }
+  
+  .sparkle:nth-child(8n) {
+    width: 3px;
+    height: 3px;
+  }
+  
+  /* Positions */
+  
+  .sparkle:nth-child(1)  { left: 2%;  animation-delay: -2s, -1s; }
+  .sparkle:nth-child(2)  { left: 6%;  animation-delay: -8s, -2s; }
+  .sparkle:nth-child(3)  { left: 10%; animation-delay: -5s, -1s; }
+  .sparkle:nth-child(4)  { left: 14%; animation-delay: -12s, -2s; }
+  .sparkle:nth-child(5)  { left: 18%; animation-delay: -7s, -1.5s; }
+  .sparkle:nth-child(6)  { left: 22%; animation-delay: -10s, -2.5s; }
+  .sparkle:nth-child(7)  { left: 26%; animation-delay: -4s, -1s; }
+  .sparkle:nth-child(8)  { left: 30%; animation-delay: -13s, -2s; }
+  .sparkle:nth-child(9)  { left: 34%; animation-delay: -6s, -1.5s; }
+  .sparkle:nth-child(10) { left: 38%; animation-delay: -11s, -2.5s; }
+  .sparkle:nth-child(11) { left: 42%; animation-delay: -3s, -1s; }
+  .sparkle:nth-child(12) { left: 46%; animation-delay: -9s, -2s; }
+  .sparkle:nth-child(13) { left: 50%; animation-delay: -14s, -1.5s; }
+  .sparkle:nth-child(14) { left: 54%; animation-delay: -5s, -2.5s; }
+  .sparkle:nth-child(15) { left: 58%; animation-delay: -12s, -1s; }
+  .sparkle:nth-child(16) { left: 62%; animation-delay: -7s, -2s; }
+  .sparkle:nth-child(17) { left: 66%; animation-delay: -10s, -1.5s; }
+  .sparkle:nth-child(18) { left: 70%; animation-delay: -4s, -2.5s; }
+  .sparkle:nth-child(19) { left: 74%; animation-delay: -13s, -1s; }
+  .sparkle:nth-child(20) { left: 78%; animation-delay: -6s, -2s; }
+  .sparkle:nth-child(21) { left: 82%; animation-delay: -11s, -1.5s; }
+  .sparkle:nth-child(22) { left: 86%; animation-delay: -3s, -2.5s; }
+  .sparkle:nth-child(23) { left: 90%; animation-delay: -9s, -1s; }
+  .sparkle:nth-child(24) { left: 94%; animation-delay: -14s, -2s; }
+  .sparkle:nth-child(25) { left: 98%; animation-delay: -5s, -1.5s; }
+  
+  .sparkle:nth-child(26) { left: 4%;  animation-delay: -8s, -2.5s; }
+  .sparkle:nth-child(27) { left: 12%; animation-delay: -13s, -1s; }
+  .sparkle:nth-child(28) { left: 20%; animation-delay: -6s, -2s; }
+  .sparkle:nth-child(29) { left: 28%; animation-delay: -10s, -1.5s; }
+  .sparkle:nth-child(30) { left: 36%; animation-delay: -4s, -2.5s; }
+  .sparkle:nth-child(31) { left: 44%; animation-delay: -12s, -1s; }
+  .sparkle:nth-child(32) { left: 52%; animation-delay: -7s, -2s; }
+  .sparkle:nth-child(33) { left: 60%; animation-delay: -11s, -1.5s; }
+  .sparkle:nth-child(34) { left: 68%; animation-delay: -3s, -2.5s; }
+  .sparkle:nth-child(35) { left: 76%; animation-delay: -9s, -1s; }
+  .sparkle:nth-child(36) { left: 84%; animation-delay: -14s, -2s; }
+  .sparkle:nth-child(37) { left: 92%; animation-delay: -5s, -1.5s; }
+  
+  .sparkle:nth-child(38) { left: 8%;  animation-delay: -10s, -2.5s; }
+  .sparkle:nth-child(39) { left: 16%; animation-delay: -4s, -1s; }
+  .sparkle:nth-child(40) { left: 24%; animation-delay: -12s, -2s; }
+  .sparkle:nth-child(41) { left: 32%; animation-delay: -7s, -1.5s; }
+  .sparkle:nth-child(42) { left: 40%; animation-delay: -11s, -2.5s; }
+  .sparkle:nth-child(43) { left: 48%; animation-delay: -3s, -1s; }
+  .sparkle:nth-child(44) { left: 56%; animation-delay: -9s, -2s; }
+  .sparkle:nth-child(45) { left: 64%; animation-delay: -14s, -1.5s; }
+  .sparkle:nth-child(46) { left: 72%; animation-delay: -5s, -2.5s; }
+  .sparkle:nth-child(47) { left: 80%; animation-delay: -8s, -1s; }
+  .sparkle:nth-child(48) { left: 88%; animation-delay: -13s, -2s; }
+  .sparkle:nth-child(49) { left: 96%; animation-delay: -6s, -1.5s; }
+  
+  .sparkle:nth-child(50) { left: 7%;  animation-delay: -11s, -2.5s; }
+  .sparkle:nth-child(51) { left: 25%; animation-delay: -3s, -1s; }
+  .sparkle:nth-child(52) { left: 43%; animation-delay: -8s, -2s; }
+  .sparkle:nth-child(53) { left: 61%; animation-delay: -13s, -1.5s; }
+  .sparkle:nth-child(54) { left: 79%; animation-delay: -5s, -2.5s; }
+  .sparkle:nth-child(55) { left: 97%; animation-delay: -10s, -1s; }
+  
+  /* Falling movement */
+  
+  @keyframes sparkle-fall {
+    0% {
+      transform: translate3d(0, -20px, 0);
+    }
+  
+    25% {
+      transform: translate3d(10px, 25vh, 0);
+    }
+  
+    50% {
+      transform: translate3d(-8px, 50vh, 0);
+    }
+  
+    75% {
+      transform: translate3d(12px, 75vh, 0);
+    }
+  
+    100% {
+      transform: translate3d(-6px, 110vh, 0);
+    }
+  }
+  
+  /* Twinkle */
+  
+  @keyframes sparkle-twinkle {
+    0%,
+    100% {
+      opacity: 0.15;
+      transform: scale(0.7);
+    }
+  
+    50% {
+      opacity: 0.9;
+      transform: scale(1.3);
+    }
+  }
+  
+  /* Keep content above sparkles */
+  
+  .app > *:not(.global-sparkles) {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Mobile */
+  
+  @media (max-width: 700px) {
+    .global-sparkles {
+      opacity: 0.4;
+    }
+  }
+  
+  /* Reduced motion */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .global-sparkles {
+      display: none;
+    }
+  }
