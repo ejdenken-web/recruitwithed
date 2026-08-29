@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import "./Clients.css";
 
 function Clients() {
+  const sceneRef = useRef<HTMLDivElement>(null);
+
   const clients = [
     "Abercrombie & Fitch",
     "Accenture",
@@ -40,101 +42,133 @@ function Clients() {
     "Wells Fargo",
   ];
 
-  const [cameraProgress, setCameraProgress] = useState(0);
-
   useEffect(() => {
     const handleScroll = () => {
-      const section = document.getElementById("clients");
+      const scene = sceneRef.current;
+
+      if (!scene) return;
+
+      const section = scene.parentElement;
 
       if (!section) return;
 
       const rect = section.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
 
-      const totalDistance = rect.height - viewportHeight;
-
-      if (totalDistance <= 0) {
-        setCameraProgress(0);
-        return;
-      }
+      const totalDistance =
+        section.offsetHeight - viewportHeight;
 
       const progress = Math.min(
         1,
-        Math.max(0, -rect.top / totalDistance)
+        Math.max(
+          0,
+          -rect.top / Math.max(totalDistance, 1)
+        )
       );
 
-      setCameraProgress(progress);
+      scene.style.setProperty(
+        "--camera-progress",
+        progress.toString()
+      );
     };
 
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
   return (
-    <section id="clients" className="clients-section">
+    <section
+      id="clients"
+      className="clients-section"
+    >
       <div className="clients-camera">
+
         <div className="clients-header">
-          <span className="section-tag">CLIENTS I’VE SUPPORTED</span>
+          <span className="section-tag">
+            CLIENTS I'VE SUPPORTED
+          </span>
         </div>
 
         <div
-          className="clients-city"
-          style={{
-            transform: `
-              translate3d(
-                ${cameraProgress * -220}px,
-                0,
-                0
-              )
-              rotateY(${cameraProgress * -7}deg)
-            `,
-          }}
+          ref={sceneRef}
+          className="clients-scene"
         >
-          {clients.map((client, index) => {
-            const height = 150 + ((index * 47) % 180);
-            const depth = 90 + ((index * 31) % 55);
+          <div className="clients-skyline">
 
-            return (
-              <div
-                className="client-building"
-                key={client}
-                style={{
-                  height: `${height}px`,
-                  width: `${depth}px`,
-                }}
-              >
-                <div className="building-side building-side-left" />
-                <div className="building-side building-side-right" />
+            {clients.map((client, index) => {
+              const buildingHeight =
+                150 + ((index * 47) % 230);
 
-                <div className="building-front">
-                  <div className="building-windows">
-                    {Array.from({ length: 12 }, (_, windowIndex) => (
-                      <span
-                        key={windowIndex}
-                        className={
-                          (windowIndex + index) % 4 === 0
-                            ? "window-lit"
-                            : ""
-                        }
-                      />
-                    ))}
+              const lane =
+                (index % 5) - 2;
+
+              const depth =
+                Math.floor(index / 5);
+
+              const horizontalOffset =
+                (index % 7) * 13 - 39;
+
+              return (
+                <div
+                  key={client}
+                  className={`client-building client-building-${index + 1}`}
+                  style={
+                    {
+                      "--building-height": `${buildingHeight}px`,
+                      "--building-lane": lane,
+                      "--building-depth": depth,
+                      "--building-offset": `${horizontalOffset}px`,
+                    } as React.CSSProperties
+                  }
+                >
+                  <div className="building-side building-side-left" />
+
+                  <div className="building-front">
+
+                    <div className="building-windows">
+                      {Array.from(
+                        { length: 18 },
+                        (_, windowIndex) => (
+                          <span
+                            key={windowIndex}
+                            className={
+                              windowIndex % 7 ===
+                              index % 7
+                                ? "window-lit"
+                                : ""
+                            }
+                          />
+                        )
+                      )}
+                    </div>
+
+                    <span className="building-name">
+                      {client}
+                    </span>
+
                   </div>
 
-                  <div className="building-name">
-                    {client}
-                  </div>
+                  <div className="building-side building-side-right" />
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
 
-        <div className="clients-ground" />
+          </div>
+
+          <div className="clients-horizon" />
+          <div className="clients-ground" />
+
+        </div>
       </div>
     </section>
   );
