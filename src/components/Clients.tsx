@@ -40,78 +40,101 @@ function Clients() {
     "Wells Fargo",
   ];
 
-  const [activeClient, setActiveClient] = useState(0);
-  const [direction, setDirection] = useState<"left" | "right">("right");
-
-  const nextClient = () => {
-    setDirection("right");
-
-    setActiveClient((current) =>
-      current === clients.length - 1 ? 0 : current + 1
-    );
-  };
-
-  const previousClient = () => {
-    setDirection("left");
-
-    setActiveClient((current) =>
-      current === 0 ? clients.length - 1 : current - 1
-    );
-  };
+  const [cameraProgress, setCameraProgress] = useState(0);
 
   useEffect(() => {
-    const timer = window.setInterval(() => {
-      setDirection("right");
+    const handleScroll = () => {
+      const section = document.getElementById("clients");
 
-      setActiveClient((current) =>
-        current === clients.length - 1 ? 0 : current + 1
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      const totalDistance = rect.height - viewportHeight;
+
+      if (totalDistance <= 0) {
+        setCameraProgress(0);
+        return;
+      }
+
+      const progress = Math.min(
+        1,
+        Math.max(0, -rect.top / totalDistance)
       );
-    }, 3000);
 
-    return () => window.clearInterval(timer);
+      setCameraProgress(progress);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
     <section id="clients" className="clients-section">
-      <div className="clients-container">
-
+      <div className="clients-camera">
         <div className="clients-header">
-          <span className="section-tag">CLIENTS</span>
+          <span className="section-tag">CLIENTS I’VE SUPPORTED</span>
         </div>
 
-        <div className="client-carousel">
+        <div
+          className="clients-city"
+          style={{
+            transform: `
+              translate3d(
+                ${cameraProgress * -220}px,
+                0,
+                0
+              )
+              rotateY(${cameraProgress * -7}deg)
+            `,
+          }}
+        >
+          {clients.map((client, index) => {
+            const height = 150 + ((index * 47) % 180);
+            const depth = 90 + ((index * 31) % 55);
 
-          <button
-            type="button"
-            className="client-arrow"
-            onClick={previousClient}
-            aria-label="Previous client"
-          >
-            ←
-          </button>
+            return (
+              <div
+                className="client-building"
+                key={client}
+                style={{
+                  height: `${height}px`,
+                  width: `${depth}px`,
+                }}
+              >
+                <div className="building-side building-side-left" />
+                <div className="building-side building-side-right" />
 
-          <div className="client-box">
+                <div className="building-front">
+                  <div className="building-windows">
+                    {Array.from({ length: 12 }, (_, windowIndex) => (
+                      <span
+                        key={windowIndex}
+                        className={
+                          (windowIndex + index) % 4 === 0
+                            ? "window-lit"
+                            : ""
+                        }
+                      />
+                    ))}
+                  </div>
 
-            <div
-              key={`${activeClient}-${direction}`}
-              className={`client-name client-name-${direction}`}
-            >
-              {clients[activeClient]}
-            </div>
-
-          </div>
-
-          <button
-            type="button"
-            className="client-arrow"
-            onClick={nextClient}
-            aria-label="Next client"
-          >
-            →
-          </button>
-
+                  <div className="building-name">
+                    {client}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
+        <div className="clients-ground" />
       </div>
     </section>
   );

@@ -1,33 +1,35 @@
 /* =========================================================
-   RECRUITWITHED — CLIENTS
-   FULL-WIDTH PREMIUM SILVER CLIENT CAROUSEL
+   RECRUITWITHED — CLIENTS I’VE SUPPORTED
+   METALLIC TECHNOLOGY SKYLINE
    ========================================================= */
 
    .clients-section {
     position: relative;
-  
     width: 100%;
-  
-    padding: 80px 6% 85px;
-  
+    min-height: 180vh;
     overflow: hidden;
-  
     background: #0d1117;
+    perspective: 1400px;
   }
   
   /* =========================================================
-     CONTAINER
+     CAMERA
      ========================================================= */
   
-  .clients-container {
-    position: relative;
-  
-    z-index: 2;
+  .clients-camera {
+    position: sticky;
+    top: 0;
   
     width: 100%;
-    max-width: none;
+    height: 100vh;
   
-    margin: 0;
+    overflow: hidden;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  
+    perspective: 1400px;
   }
   
   /* =========================================================
@@ -35,285 +37,331 @@
      ========================================================= */
   
   .clients-header {
-    display: flex;
+    position: absolute;
+    top: 80px;
+    left: 0;
   
-    justify-content: center;
+    z-index: 30;
   
     width: 100%;
   
-    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+  
+    pointer-events: none;
   }
   
   /* =========================================================
-     CAROUSEL
+     CITY
      ========================================================= */
   
-  .client-carousel {
+  .clients-city {
+    position: absolute;
+  
+    left: -4%;
+    bottom: 95px;
+  
+    z-index: 10;
+  
     display: flex;
+    align-items: flex-end;
   
-    align-items: center;
-    justify-content: center;
+    gap: 16px;
   
-    gap: 24px;
+    width: max-content;
   
-    width: 100%;
+    transform-origin: center bottom;
+  
+    transition: transform 0.08s linear;
+  
+    transform-style: preserve-3d;
   }
   
   /* =========================================================
-     CLIENT BOX
+     BUILDINGS
      ========================================================= */
   
-  .client-box {
+  .client-building {
     position: relative;
   
-    display: flex;
+    flex-shrink: 0;
   
-    align-items: center;
-    justify-content: center;
+    min-width: 90px;
+    max-width: 135px;
   
-    width: min(850px, 72vw);
+    transform-style: preserve-3d;
   
-    height: 150px;
+    transition:
+      transform 0.25s ease,
+      filter 0.25s ease;
+  }
+  
+  .client-building:hover {
+    transform:
+      translateY(-14px)
+      rotateY(-8deg)
+      scale(1.035);
+  
+    filter:
+      brightness(1.3)
+      drop-shadow(0 0 18px rgba(226, 232, 240, 0.14));
+  }
+  
+  /* =========================================================
+     BUILDING FRONT
+     ========================================================= */
+  
+  .building-front {
+    position: absolute;
+  
+    inset: 0;
+  
+    z-index: 3;
   
     overflow: hidden;
   
-    border: 1px solid rgba(203, 213, 225, 0.16);
-  
-    border-radius: 24px;
+    border: 1px solid rgba(203, 213, 225, 0.18);
   
     background:
       linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.065),
-        rgba(203, 213, 225, 0.018)
+        165deg,
+        rgba(226, 232, 240, 0.12),
+        rgba(71, 85, 105, 0.09) 42%,
+        rgba(15, 23, 42, 0.92)
       );
   
     box-shadow:
-      0 20px 55px rgba(0, 0, 0, 0.28),
-      inset 0 1px 0 rgba(255, 255, 255, 0.035);
+      inset 1px 0 rgba(255, 255, 255, 0.08),
+      inset -1px 0 rgba(0, 0, 0, 0.55),
+      0 15px 35px rgba(0, 0, 0, 0.42);
   
-    backdrop-filter: blur(14px);
-  
-    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(3px);
   }
   
   /* =========================================================
-     SILVER TOP EDGE
+     BUILDING SIDES
      ========================================================= */
   
-  .client-box::after {
-    content: "";
-  
+  .building-side {
     position: absolute;
   
     top: 0;
-    left: 10%;
+    bottom: 0;
   
-    width: 80%;
-    height: 1px;
+    width: 18px;
   
     background:
       linear-gradient(
-        90deg,
-        transparent,
-        rgba(226, 232, 240, 0.45),
-        transparent
+        180deg,
+        rgba(148, 163, 184, 0.16),
+        rgba(15, 23, 42, 0.92)
       );
   
-    pointer-events: none;
+    border-top: 1px solid rgba(203, 213, 225, 0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.55);
+  
+    transform-origin: center;
+  }
+  
+  .building-side-left {
+    left: -18px;
+  
+    transform:
+      skewY(-18deg)
+      translateX(1px);
+  }
+  
+  .building-side-right {
+    right: -18px;
+  
+    transform:
+      skewY(18deg)
+      translateX(-1px);
   }
   
   /* =========================================================
-     SUBTLE SILVER LIGHT
+     WINDOWS
      ========================================================= */
   
-  .client-box::before {
-    content: "";
-  
+  .building-windows {
     position: absolute;
   
-    width: 2400px;
-    height: 240px;
+    top: 16px;
+    left: 12px;
+    right: 12px;
   
-    left: 50%;
-    top: 50%;
+    display: grid;
   
-    transform: translate(-50%, -50%);
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
   
-    border-radius: 50%;
+    gap: 10px;
+  
+    opacity: 0.7;
+  }
+  
+  .building-windows span {
+    display: block;
+  
+    width: 100%;
+    height: 9px;
+  
+    border: 1px solid rgba(148, 163, 184, 0.12);
   
     background:
-      radial-gradient(
-        circle,
-        rgba(226, 232, 240, 0.075),
-        transparent 68%
-      );
+      rgba(30, 41, 59, 0.8);
   
-    pointer-events: none;
+    box-shadow:
+      inset 0 0 5px rgba(0, 0, 0, 0.35);
+  
+    animation:
+      windowPulse 4s ease-in-out infinite;
+  }
+  
+  .building-windows .window-lit {
+    background:
+      rgba(226, 232, 240, 0.72);
+  
+    border-color:
+      rgba(241, 245, 249, 0.55);
+  
+    box-shadow:
+      0 0 8px rgba(226, 232, 240, 0.3);
+  
+    animation:
+      windowGlow 3.5s ease-in-out infinite;
+  }
+  
+  @keyframes windowPulse {
+    0%,
+    100% {
+      opacity: 0.45;
+    }
+  
+    50% {
+      opacity: 0.75;
+    }
+  }
+  
+  @keyframes windowGlow {
+    0%,
+    100% {
+      opacity: 0.55;
+    }
+  
+    50% {
+      opacity: 1;
+    }
   }
   
   /* =========================================================
      CLIENT NAME
      ========================================================= */
   
-  .client-name {
-    position: relative;
+  .building-name {
+    position: absolute;
   
-    z-index: 2;
+    left: 50%;
+    bottom: 18px;
   
-    display: flex;
+    width: 90%;
   
-    align-items: center;
-    justify-content: center;
+    transform: translateX(-50%);
   
-    width: 100%;
+    color: #e2e8f0;
   
-    padding: 30px;
-  
-    color: #f1f5f9;
-  
-    font-size: clamp(22px, 3vw, 34px);
-  
-    font-weight: 700;
-  
-    letter-spacing: -0.02em;
-  
+    font-size: 9px;
     line-height: 1.25;
+  
+    font-weight: 800;
+  
+    letter-spacing: 0.02em;
   
     text-align: center;
   
-    white-space: nowrap;
-  
     text-shadow:
-      0 1px 18px rgba(226, 232, 240, 0.08);
+      0 1px 8px rgba(0, 0, 0, 0.9);
+  
+    overflow-wrap: anywhere;
   }
   
   /* =========================================================
-     SLIDE RIGHT
+     BUILDING VARIATION
      ========================================================= */
   
-  .client-name-right {
-    animation:
-      clientEnterRight 0.55s
-      cubic-bezier(0.22, 1, 0.36, 1)
-      forwards;
+  .client-building:nth-child(3n) {
+    margin-bottom: 22px;
   }
   
-  @keyframes clientEnterRight {
-    from {
-      opacity: 0;
-      transform: translateX(100%);
-    }
+  .client-building:nth-child(4n) {
+    margin-bottom: 48px;
+  }
   
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+  .client-building:nth-child(5n) {
+    margin-bottom: 10px;
+  }
+  
+  .client-building:nth-child(7n) {
+    margin-bottom: 65px;
   }
   
   /* =========================================================
-     SLIDE LEFT
+     GROUND
      ========================================================= */
   
-  .client-name-left {
-    animation:
-      clientEnterLeft 0.55s
-      cubic-bezier(0.22, 1, 0.36, 1)
-      forwards;
-  }
+  .clients-ground {
+    position: absolute;
   
-  @keyframes clientEnterLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
+    left: -5%;
+    right: -5%;
+    bottom: 0;
   
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+    z-index: 20;
   
-  /* =========================================================
-     ARROWS
-     ========================================================= */
-  
-  .client-arrow {
-    position: relative;
-  
-    z-index: 3;
-  
-    display: flex;
-  
-    align-items: center;
-    justify-content: center;
-  
-    flex-shrink: 0;
-  
-    width: 52px;
-    height: 52px;
-  
-    border: 1px solid rgba(203, 213, 225, 0.16);
-  
-    border-radius: 50%;
+    height: 100px;
   
     background:
-      rgba(203, 213, 225, 0.045);
+      linear-gradient(
+        180deg,
+        rgba(13, 17, 23, 0),
+        #090d13 35%,
+        #070a0f 100%
+      );
   
-    color: #cbd5e1;
-  
-    font-size: 22px;
-  
-    cursor: pointer;
+    border-top:
+      1px solid rgba(203, 213, 225, 0.08);
   
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.035);
+      0 -20px 50px rgba(0, 0, 0, 0.4);
   
-    transition:
-      transform 0.25s ease,
-      color 0.25s ease,
-      border-color 0.25s ease,
-      background 0.25s ease,
-      box-shadow 0.25s ease;
+    pointer-events: none;
   }
   
   /* =========================================================
-     ARROW HOVER
+     HORIZON LIGHT
      ========================================================= */
   
-  .client-arrow:hover {
-    color: #f1f5f9;
+  .clients-camera::after {
+    content: "";
   
-    border-color: rgba(226, 232, 240, 0.38);
+    position: absolute;
+  
+    left: 50%;
+    bottom: 75px;
+  
+    width: 90%;
+    height: 180px;
+  
+    transform: translateX(-50%);
   
     background:
-      rgba(203, 213, 225, 0.09);
+      radial-gradient(
+        ellipse,
+        rgba(226, 232, 240, 0.065),
+        transparent 68%
+      );
   
-    box-shadow:
-      0 0 22px rgba(226, 232, 240, 0.08);
-  
-    transform: scale(1.08);
-  }
-  
-  /* =========================================================
-     ARROW ACTIVE
-     ========================================================= */
-  
-  .client-arrow:active {
-    transform: scale(0.94);
-  }
-  
-  /* =========================================================
-     BOX HOVER
-     ========================================================= */
-  
-  .client-box:hover {
-    border-color: rgba(226, 232, 240, 0.26);
-  
-    box-shadow:
-      0 26px 65px rgba(0, 0, 0, 0.32),
-      0 0 30px rgba(226, 232, 240, 0.045),
-      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    pointer-events: none;
   }
   
   /* =========================================================
@@ -322,38 +370,58 @@
   
   @media (max-width: 700px) {
     .clients-section {
-      padding: 70px 20px 80px;
+      min-height: 150vh;
     }
   
     .clients-header {
-      margin-bottom: 30px;
+      top: 65px;
     }
   
-    .client-carousel {
+    .clients-city {
+      left: -30%;
+  
+      bottom: 80px;
+  
       gap: 10px;
     }
   
-    .client-box {
-      width: calc(100vw - 120px);
-  
-      height: 140px;
-  
-      border-radius: 20px;
+    .client-building {
+      min-width: 75px;
+      max-width: 105px;
     }
   
-    .client-name {
-      padding: 20px;
-  
-      font-size: 18px;
-  
-      white-space: normal;
+    .building-side {
+      width: 12px;
     }
   
-    .client-arrow {
-      width: 42px;
-      height: 42px;
+    .building-side-left {
+      left: -12px;
+    }
   
-      font-size: 18px;
+    .building-side-right {
+      right: -12px;
+    }
+  
+    .building-windows {
+      top: 12px;
+      left: 8px;
+      right: 8px;
+  
+      gap: 7px;
+    }
+  
+    .building-windows span {
+      height: 7px;
+    }
+  
+    .building-name {
+      bottom: 12px;
+  
+      font-size: 7px;
+    }
+  
+    .clients-ground {
+      height: 80px;
     }
   }
   
@@ -362,8 +430,10 @@
      ========================================================= */
   
   @media (prefers-reduced-motion: reduce) {
-    .client-name-right,
-    .client-name-left {
+    .client-building,
+    .building-windows span,
+    .building-windows .window-lit {
       animation: none;
+      transition: none;
     }
   }
