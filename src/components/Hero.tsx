@@ -2,7 +2,7 @@ import "./Hero.css";
 
 function Hero() {
   return (
-    <section className="hero" id="home">
+    <section className="hero" id="hero">
       <div className="hero-background hero-background-one" />
       <div className="hero-background hero-background-two" />
 
