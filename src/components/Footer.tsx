@@ -85,7 +85,7 @@ function Footer() {
             </button>
 
             <button onClick={() => scrollToSection("projects")}>
-              Featured Projects
+              Projects
             </button>
 
             <button onClick={() => scrollToSection("tech-stack")}>
