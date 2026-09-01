@@ -60,7 +60,7 @@ function Footer() {
           <h3>Quick Links</h3>
 
           <nav className="footer-nav">
-            <button onClick={() => scrollToSection("home")}>
+            <button onClick={() => scrollToSection("hero")}>
               About
             </button>
 
