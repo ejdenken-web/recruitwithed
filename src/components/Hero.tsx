@@ -39,7 +39,22 @@ function Hero() {
             sustainable technical innovation.
           </p>
 
-          
+          <div className="hero-learning">
+            <div className="hero-learning-line" />
+
+            <p className="hero-learning-statement">
+              <span className="hero-learning-primary">
+                Continuous learning
+              </span>{" "}
+              is{" "}
+              <span className="hero-learning-highlight">
+                non-negotiable
+              </span>{" "}
+              when you're building solutions for clients.
+            </p>
+
+            <div className="hero-learning-line hero-learning-line-bottom" />
+          </div>
 
         </div>
       </div>
